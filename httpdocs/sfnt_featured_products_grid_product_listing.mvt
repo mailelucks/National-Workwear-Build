@@ -1,0 +1,10 @@
+<div class="x-featured-brands-prods x-product-list x-carousel x-product-list--carousel" data-hook="product-carousel">
+	<button class="c-nww-button c-button x-carousel__button x-carousel__button-left u-nww-icon-arrow-left" data-hook="carousel__button-previous"></button>
+	<mvt:assign name="g.theme_path" value="'themes/shadows'" />
+	<div class="x-carousel__container x-carousel--animate u-flex u-width-12" data-hook="carousel__container">
+		<mvt:foreach iterator="product" array="readytheme:products">
+			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+		</mvt:foreach>
+	</div>
+	<button class="c-nww-button c-button x-carousel__button x-carousel__button-right u-nww-icon-arrow-right" data-hook="carousel__button-next"></button>
+</div>

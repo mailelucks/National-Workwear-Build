@@ -1,0 +1,16 @@
+<div class="disclaimers u-bg-black">
+  <div class="u-flex o-layout--align-center o-wrapper">
+    <div class="payment-methods o-layout__item u-hidden u-flex--m u-width-4--m">
+      <mvt:item name="readytheme" param="image( 'payment_methods' )" />
+    </div>
+    <div class="copyright-text o-layout__item u-text-left u-text-center--m u-width-8 u-width-5--m">
+      <p>&copy; <mvt:eval expr="s.tm_year" /> &mvt:global:store:company; <span class="breaker u-hide--m"></span>All Rights Reserved. <a href="https://www.miva.com/" target="_blank" rel="nofollow">Powered by Miva</a></p>
+    </div>
+    <div class="bbb-logo o-layout__item u-width-4 u-width-3--m u-text-right u-text-center--m">
+      <mvt:item name="readytheme" param="image( 'bbb_logo' )" />
+    </div>
+    
+    <!-- end back-to-top -->
+  </div>
+</div>
+<!-- end disclaimers -->

@@ -1,0 +1,51 @@
+<mvt:item name="readytheme" param="Load_Image('fasten_header_logo', l.settings:fasten_header_logo)" />
+<section class="o-layout o-layout--align-center x-fasten-header t-site-header__masthead u-nww-bg-secondary &mvt:global:checkout_hidden;" data-hook="fasten-header">
+	<div class="o-wrapper o-nww-wrapper u-flex o-layout--align-center">
+		<div class="o-layout__item u-text-left t-site-header__logo u-flex-static">
+			<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
+				<mvt:if expr="l.settings:readytheme:fasten_header_logo:active">
+					<img class="x-fasten-header__logo-image" src="&mvt:readytheme:fasten_header_logo:image;" alt="&mvt:readytheme:fasten_header_logo:image_alt;" title="&mvt:readytheme:fasten_header_logo:image_alt;">
+				<mvt:else>
+					<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+						<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
+						<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
+					<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
+						<img class="x-fasten-header__logo-image" src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
+					</mvt:if>
+				</mvt:if>
+			</a>
+		</div>
+		
+		<div class="o-layout__item ">
+			<div class="o-layout o-layout--align-center o-layout--flush o-layout--justify-center t-site-navigation__wrap">
+				<nav class="o-layout__item u-width-12 u-text-bold x-transfigure-navigation c-navigation &mvt:global:checkout_hidden;">
+					<div class="x-transfigure-navigation__wrap nww-bg-secondary" data-layout="&mvte:readytheme:layout;">
+						<mvt:item name="readytheme" param="navigationset( 'primary_navigation' )" />
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+		<div class="o-layout__item u-flex t-site-header__masthead-links">
+			<form class="t-site-header__search-form o-layout--align-center u-hidden u-flex--xl" method="post" action="&mvte:urls:SRCH:rr;">
+				<fieldset>
+					<legend>Product Search</legend>
+					<ul class="c-form-list">
+						<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+							<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview--fasten" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required>
+							<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
+						</li>
+					</ul>
+				</fieldset>
+				<span class="x-search-preview " data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview--fasten"></span>
+			</form>
+			<div class="o-layout__item u-nww-bg-primary nww-color-secondary t-site-header__cart u-flex-static">
+				<a class="t-site-header__basket-link u-flex o-layout--align-center o-layout--justify-center u-nww-color-secondary" data-hook="open-mini-basket" href="&mvte:urls:BASK:auto;">
+					<span class="u-icon-cart-empty u-hidden--m u-flex o-layout--align-center" data-hook="open-mini-basket"></span>
+					<span class="t-site-header__cart-text u-hidden u-flex--m u-text-bold" data-hook="open-mini-basket">Cart</span>
+					<span class="u-font-primary u-text-bold t-site-header__basket-link-quantity" data-hook="mini-basket-count open-mini-basket">&mvte:global_minibasket:basket_count;</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

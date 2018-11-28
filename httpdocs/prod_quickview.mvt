@@ -1,0 +1,172 @@
+<mvt:item name="html_profile"/>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:product:page_title">
+		<title>&mvt:product:page_title;</title>
+	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:product:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="attributemachine" param="head" />
+	<mvt:item name="product_display_imagemachine" param="head" />
+	<mvt:assign name="g.socialURL" value="l.settings:product:link" />
+	<mvt:assign name="g.socialText" value="'Check out the deal on ' $ l.settings:product:name $ ' at ' $ g.store:name" />
+	<mvt:do file="g.Module_Library_DB" name="l.success" value="ImageType_Load_Code('main', l.settings:imagetype)" />
+	<mvt:do name="l.success" file="g.Module_Library_DB" value="ProductImage_Load_Type(l.settings:product:id, 1, l.settings:imagetype)" />
+	<mvt:do name="l.success" file="g.Module_Library_DB" value="Image_Load_ID(l.settings:imagetype:image_id, l.settings:imagedata)" />
+	<mvt:assign name="g.socialImage" value="g.baseurl $ l.settings:imagedata:image" />
+	<meta property="og:title" content="&mvte:product:name;">
+	<meta property="og:type" content="product">
+	<meta property="og:image" content="&mvt:global:socialImage;">
+	<meta property="og:url" content="&mvt:global:socialURL;">
+	<meta property="og:site_name" content="&mvte:global:store:name;">
+	<meta property="og:description" content="&mvte:global:socialText;">
+	<meta property="og:locale" content="en_US">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@TWITTER_ACCOUNT">
+	<meta name="twitter:creator" content="@TWITTER_ACCOUNT">
+	<meta name="twitter:url" content="&mvt:global:socialURL;">
+	<meta name="twitter:title" content="&mvte:product:name;">
+	<meta name="twitter:description" content="&mvte:global:socialText;">
+	<meta name="twitter:image" content="&mvt:global:socialImage;">
+	<meta name="twitter:image:alt" content="&mvte:product:name;">
+</head>
+
+<mvt:item name="customfields" param="Read_Product_ID( l.settings:product:id, 'brands_assignment', l.settings:product:brand_assignment )" />
+<mvt:item name="customfields" param="Read_Category_Code( l.settings:product:brand_assignment, 'brands_logo', l.settings:product:brand_logo )" />
+
+<body id="js-&mvte:page:code;-quickview" class="o-site-wrapper t-page-&mvt:global:pageClass; o-layout--justify-center o-layout--align-center x-quickview">
+	
+	<section class="o-layout--wide u-flex u-grids-2 x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
+		<figure class="o-layout__item u-text-center x-product-layout-images">
+			<a data-mini-modal data-mini-modal-type="inline" href="#closeup_image" title="&mvte:product:name;">
+				<img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+			</a>
+			<ul id="thumbnails" class="o-layout u-grids-3 u-grids-6--m o-layout--justify-center x-product-layout-images__thumbnail-list"></ul>
+			<img id="closeup_image" class="u-hide-visually" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+			<span id="closeup_close" class="u-hidden">
+				<span id="closeup_div" class="u-hide-visually"></span>
+			</span>
+			<mvt:item name="product_display_imagemachine" param="body:product:id"/>
+		</figure>
+		<!-- end .x-product-layout-images -->
+
+		<form class="o-layout__item x-product-layout-purchase" data-hook="purchase" action="&mvte:urls:BASK:auto;" method="post" name="add">
+			<input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
+			<input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
+			<input type="hidden" name="Action" value="ADPR" />
+			<input type="hidden" name="Product_Code" value="&mvte:product:code;" />
+			<input type="hidden" name="Category_Code" value="&mvte:global:category_code;" />
+			<input type="hidden" name="Offset" value="&mvte:global:Offset;" />
+			<input type="hidden" name="AllOffset" value="&mvte:global:AllOffset;" />
+			<input type="hidden" name="CatListingOffset" value="&mvte:global:CatListingOffset;" />
+			<input type="hidden" name="RelatedOffset" value="&mvte:global:RelatedOffset;" />
+			<input type="hidden" name="SearchOffset" value="&mvte:global:SearchOffset;" />
+		
+			<ul class="o-layout__item o-list-bare x-product-layout-purchase__details">
+				<li class="o-list-block__item">
+					<mvt:if expr="l.settings:product:brand_logo">
+						<img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvte:product:brand_logo;">
+					</mvt:if>
+					<h1 class="c-heading-delta u-text-bold x-product-layout-purchase__name">
+						<span class="u-color-gray-20 c-heading--subheading x-product-layout-purchase__code">&mvt:product:code;</span><br>
+						<span itemprop="name">&mvt:product:name;</span>
+					</h1>
+				</li>
+				<li class="o-list-block__item">
+					<p class="u-flex x-product-layout-purchase__pricing o-layout--align-center">
+						<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+							<span class="c-heading-delta x-product-layout-purchase__pricing-original">
+								<s id="price-value-additional">&mvt:product:formatted_base_price;</s>
+							</span>
+						</mvt:if>
+						<span class="c-heading-delta x-product-layout-purchase__pricing-current">
+							<span id="price-value" itemprop="price" content="&mvt:product:price;">&mvt:product:formatted_price;</span>
+						</span>
+					</p>
+					<mvt:comment><div id="product-discounts" class="x-product-layout-purchase__product-discounts u-font-small">
+						<mvt:foreach iterator="discount" array="product:discounts">
+							<p class="x-product-layout-purchase__product-discounts">
+								&mvt:discount:descrip;: <strong>&mvt:discount:formatted_discount;</strong>
+							</p>
+						</mvt:foreach>
+					</div></mvt:comment>
+					<mvt:comment><mvt:if expr="l.settings:product:weight NE 0">
+						<p class="x-product-layout-purchase__product-weight u-font-small">
+							Shipping Weight: <strong>&mvt:product:weight;</strong> &mvt:store:wtunits;
+						</p>
+					</mvt:if></mvt:comment>
+					<mvt:comment><mvt:if expr="l.settings:product:inv_active OR l.settings:attributemachine:product:inv_active">
+						<div id="inventory-message" class="x-product-layout-purchase__inventory-message">
+							<link itemprop="availability" href="http://schema.org/&mvt:product:inv_short;">
+							<div class="x-messages x-messages--info">&mvt:product:inv_long;</div>
+						</div>
+					</mvt:if></mvt:comment>
+				</li>
+				<li class="o-layout c-form-list__item x-product-layout-purchase__options u-width-7">
+					<mvt:item name="product_attributes" param="product:id" />
+				</li>
+				<li class="c-form-list__item c-form-list__item--full x-product-layout-purchase__cta">
+					<div class="x-product-layout-purchase__message" data-hook="purchase-message"></div>
+					<div class="o-layout">
+						<mvt:if expr="l.settings:subscription:enabled AND l.settings:subscription:mandatory">
+							<mvt:if expr="l.settings:product:inv_level NE 'out'">
+								<div class="o-layout__item u-width-12 u-width-4--m x-product-layout-purchase__options-quantity">
+									<label class="c-form-label u-text-bold u-font-small is-required" for="l-quantity">Quantity</label>
+									<div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
+										<button class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
+										<input class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="1">
+										<button class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
+									</div>
+								</div>
+								<p class="o-layout__item u-width-12 u-width-8--m">
+									<br>
+									<mvt:item name="buttons" param="AddToBasket"/>
+								</p>
+							</mvt:if>
+						<mvt:else>
+							<div class="o-layout__item u-width-5 x-product-layout-purchase__options-quantity">
+								<label class="c-form-label u-text-bold u-font-small u-color-gray-40 is-required" for="l-quantity">Quantity</label>
+								<div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
+									<button class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
+									<input class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="1">
+									<button class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
+								</div>
+							</div>
+							<p class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between">
+								<mvt:if expr="l.settings:product:inv_level NE 'out'">
+									<span class="o-layout__item x-product-layout__purchase-button" onclick="document.forms.add.action = '&mvtj:urls:BASK:auto;'; document.forms.add.elements.Action.value = 'ADPR';">
+										<mvt:item name="buttons" param="AddToBasket"/>
+									</span>
+								</mvt:if>
+								<span class="o-layout__item x-wlst-button" data-mmnodisable="true">
+									<span onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';">
+										<mvt:item name="buttons" param="AddToWishList"/>
+
+										<mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
+									</span>
+
+								</span>
+							</p>
+						</mvt:if>
+					</div>
+				</li>
+			</ul>
+
+			<div class="x-product__page-link o-layout__item">
+				<a target="_blank" class="u-font-secondary u-nww-color-secondary u-flex o-layout--align-center" href="&mvt:urls:prod:auto_sep;Product_Code=&mvte:product:code;"><span class="x-product__page-link-text">Customize or order multiple sizes</span> <span class="u-nww-icon-arrow-long"></span></a>
+			</div>
+		</form>
+
+		
+
+	</section>
+
+</body>
+</html>

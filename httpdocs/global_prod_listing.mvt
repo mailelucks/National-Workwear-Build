@@ -1,0 +1,37 @@
+<mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:flags">
+	<div class="x-product-list__flag">
+		<span class="u-text-uppercase u-text-bold">&mvte:product:customfield_values:customfields:flags;</span>
+	</div>
+</mvt:if>
+<a class="u-block x-product-list__link" href="&mvte:product:link;" title="&mvte:product:name;">
+	<figure class="x-product-list__figure o-layout--column">
+		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product:imagetypes:prod_outfit">
+			<mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:prod_outfit" />
+			<mvt:assign name="l.settings:product:tall_class" value="'x-product-list__outfit-image'" />
+		<mvt:elseif expr="ISNULL l.settings:product:imagetypes:main">
+			<mvt:assign name="l.settings:product:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+		</mvt:if>
+		<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product:tall_class;">
+			<mvt:assign name="l.settings:product:tall_class" value="''" />
+			<mvt:if expr="l.settings:product:imagetypes:product_hover">
+				<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product:imagetypes:product_hover;" alt="&mvte:product:name;">
+				<mvt:assign name="l.settings:product:hover_class" value="'hover-active'" />
+			</mvt:if>
+			<img class="x-product-list__image &mvte:product:hover_class;" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
+		</div>
+		<figcaption class="u-text-left u-width-12">
+			<strong class="x-product-list__code u-text-bold">&mvte:product:code</strong>
+			<strong class="x-product-list__name">&mvte:product:name;</strong>
+			<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+				<span class="x-product-list__price--base"><s>&mvt:product:formatted_base_price;</s></span>
+				<span class="x-product-list__price">&mvt:product:formatted_price;</span>
+			<mvt:else>
+				<span class="x-product-list__price">&mvt:product:formatted_price;</span>
+			</mvt:if>
+		</figcaption>
+	</figure>
+</a>
+<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
+	<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product:link;" title="&mvte:product:name;">Shop Now</a>
+	<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product:link;?show=quickview"></a>
+</div>

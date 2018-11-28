@@ -1,0 +1,5 @@
+<div id="x-carousel-featured-prods" class="x-featured-brands-prods x-product-list u-width-12 o-layout o-layout--flush">
+	<mvt:foreach iterator="product" array="readytheme:products">
+		<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+	</mvt:foreach>
+</div>

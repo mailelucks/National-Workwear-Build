@@ -1,0 +1,56 @@
+<section class="u-color-white t-site-header__top-navigation &mvt:global:checkout_hidden;">
+	<div class="t-site-header__top-navigation__inner o-nww-wrapper o-layout u-width-1">
+		<div class="t-site-header__store-number o-layout__item o-layout--align-center u-hidden u-flex--m u-flex-static">
+			<span class="u-nww-icon-phone u-nww-color-primary"></span>
+			<span class="store-number o-layout__item u-text-bold">
+				&mvt:global:store:phone;
+			</span>
+		</div>
+		<div class="o-layout__item o-layout--align-center u-flex u-text-left u-text-left--l">
+			<mvt:item name="readytheme" param="banner( 'header_message' )" />
+		</div>
+		<div class="t-site-header__customer-links o-layout__item u-flex-static u-hidden u-flex--l">
+			<span class="t-site-header__store-locator u-flex o-layout__item o-layout--align-center flex-static">Store Locator</span>
+			<mvt:item name="customerlink" />
+			<div class="u-over-everything t-global-account o-layout__item u-flex-static u-hidden u-flex--l" data-hook="global-account">
+				<form class="t-global-account__form" method="post" action="&mvte:urls:_self:secure;" autocomplete="off">
+					<fieldset>
+						<legend>Global Account Log In</legend>
+						<input type="hidden" name="Action" value="LOGN" />
+						<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
+						<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
+						<input type="hidden" name="Search" value="&mvte:global:Search;" />
+						<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
+						<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
+						<ul class="c-form-list">
+							<li class="c-form-list__item c-form-list__item--full">
+								<label class="u-hide-visually">Email Adress</label>
+								<input class="c-form-input c-form-input--large" type="email" name="Customer_LoginEmail" value="&mvte:global:Customer_LoginEmail;" autocomplete="email" placeholder="Email" required>
+							</li>
+							<li class="c-form-list__item c-form-list__item--full">
+								<label class="u-hide-visually">Password</label>
+								<input class="c-form-input c-form-input--large" type="password" name="Customer_Password" autocomplete="current-password" placeholder="Password">
+							</li>
+							<li class="c-form-list__item c-form-list__item--full">
+								<input class="c-button c-button--full c-button--huge u-bg-gray-50 u-color-white u-text-bold u-text-uppercase" type="submit" value="Sign In">
+							</li>
+							<li class="c-form-list__item c-form-list__item--full">
+								<a class="c-button c-button--full c-button--hollow c-button--huge u-bg-white  u-text-bold u-text-uppercase" href="&mvte:urls:LOGN:secure;">Register</a>
+							</li>
+							<li class="c-form-list__item c-form-list__item--full u-text-center">
+								<a class="u-color-gray-30 u-text-bold u-font-small u-text-uppercase" href="&mvte:urls:FPWD:secure;">Forgot Password?</a>
+							</li>
+						</ul>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="o-layout__item u-nww-bg-primary u-nww-color-secondary t-site-header__cart u-flex-static">
+			<a class="t-site-header__basket-link u-flex o-layout--align-center o-layout--justify-center" data-hook="open-mini-basket" href="&mvte:urls:BASK:auto;">
+				<span class="u-icon-cart-empty u-hidden--m u-flex o-layout--align-center" data-hook="open-mini-basket"></span>
+				<span class="t-site-header__cart-text u-hidden u-flex--m u-text-bold" data-hook="open-mini-basket">Cart</span>
+				<span class="u-font-primary u-text-bold t-site-header__basket-link-quantity" data-hook="mini-basket-count open-mini-basket">&mvte:global_minibasket:basket_count;</span>
+			</a>
+		</div>
+	</div>
+</section>

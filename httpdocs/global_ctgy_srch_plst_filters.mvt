@@ -1,0 +1,135 @@
+<mvt:if expr="l.settings:page:code EQ 'CTGY'">
+  <mvt:assign name="l.settings:page_iterator" value="l.settings:category_listing" />
+<mvt:elseif expr="l.settings:page:code EQ 'SRCH'">
+  <mvt:assign name="l.settings:page_iterator" value="l.settings:search_results" />
+<mvt:elseif expr="l.settings:page:code EQ 'PLST'">
+  <mvt:assign name="l.settings:page_iterator" value="l.settings:all_products" />
+</mvt:if>
+
+<mvt:if expr="l.settings:page_iterator:products_on_page_count GT 1">
+	<mvt:assign name="g.facet_listings" value="''"/>
+	<mvt:foreach iterator="facet" array="facets:facets">
+		<mvt:foreach iterator="facet_value" array="facet:values">
+			<mvt:if expr="l.settings:facet_value:selected">
+				<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;"/>
+				<mvt:assign name="g.facet_listings" value="'&' $ l.settings::facet:code $ '=' $ l.settings::facet_value:value"/>
+			</mvt:if>
+		</mvt:foreach>
+	</mvt:foreach>
+
+	<section class="u-hidden u-flex--l o-layout--align-center o-layout--justify-between o-layout--wrap o-layout--flush t-display-list-filtering__container">
+		<div class="o-layout__item">
+			<div class="x-product-list__title" title="&mvte:category:name;">
+				<h1 class="u-text-bold">&mvte:category:name;</h1>
+			</div>
+		</div>
+		<div class="o-layout__item x-display-list-filtering t-display-list-filtering o-layout--justify-end">
+			<form class="x-display-list-filtering__per-page" method="get" action="&mvte:urls:_self:auto_noparams;">
+				<fieldset>
+					<legend>Number of Products to Show</legend>
+					<mvt:if expr="tolower( l.settings:page_iterator:mode ) EQ 'ctgy' AND toupper( g.Screen ) NE 'CTGY'">
+						<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
+					<mvt:elseif expr="tolower( l.settings:page_iterator:mode ) EQ 'relp' AND toupper( g.Screen ) NE 'PROD'">
+						<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
+					</mvt:if>
+					<mvt:item name="urls" param="hidden_params:_self:auto" />
+					<input type="hidden" name="Search" value="&mvte:global:Search;" />
+					<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
+					<mvt:foreach iterator="facet" array="facets:facets">
+						<mvt:foreach iterator="facet_value" array="facet:values">
+							<mvt:if expr="l.settings:facet_value:selected">
+								<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;" />
+							</mvt:if>
+						</mvt:foreach>
+					</mvt:foreach>
+					<ul class="c-form-list">
+						<li class="c-form-list__item">
+							<label class="c-form-label u-text-uppercase u-font-tiny u-text-normal" for="l-per_page">View</label>
+							<div class="c-form-select">
+								<select id="l-per_page" class="c-form-select__dropdown u-font-small u-text-bold" name="Per_Page" onchange="MMProdList_UpdateQuery( this ); return true;">
+									<mvt:if expr="g.Per_Page EQ 12">
+										<option value="12" selected="selected">12 Items/Page</option>
+									<mvt:else>
+										<option value="12">12 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ 24">
+										<option value="24" selected="selected">24 Items/Page</option>
+									<mvt:else>
+										<option value="24">24 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ 48">
+										<option value="48" selected="selected">48 Items/Page</option>
+									<mvt:else>
+										<option value="48">48 Items/Page</option>
+									</mvt:if>
+									<mvt:if expr="g.Per_Page EQ -1">
+										<option value="-1" selected="selected">All Items</option>
+									<mvt:else>
+										<option value="-1">All Items</option>
+									</mvt:if>
+								</select>
+							</div>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+			<!-- end .x-display-list-filtering__per-page -->
+			<form class="x-display-list-filtering__sort-by" method="get" action="&mvte:urls:_self:auto_noparams;">
+				<fieldset>
+					<legend>Sort Products By</legend>
+					<mvt:if expr="tolower( l.settings:page_iterator:mode ) EQ 'ctgy' AND toupper( g.Screen ) NE 'CTGY'">
+						<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;">
+					<mvt:elseif expr="tolower( l.settings:page_iterator:mode ) EQ 'relp' AND toupper( g.Screen ) NE 'PROD'">
+						<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;">
+					</mvt:if>
+					<mvt:item name="urls" param="hidden_params:_self:auto"/>
+					<input type="hidden" name="Search" value="&mvte:global:Search;"/>
+					<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;"/>
+					<mvt:foreach iterator="facet" array="facets:facets">
+						<mvt:foreach iterator="facet_value" array="facet:values">
+							<mvt:if expr="l.settings:facet_value:selected">
+								<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;">
+							</mvt:if>
+						</mvt:foreach>
+					</mvt:foreach>
+					<ul class="c-form-list">
+						<li class="c-form-list__item">
+							<label class="c-form-label u-text-uppercase u-font-tiny u-text-normal" for="l-sort_by">Sort</label>
+							<div class="c-form-select">
+								<select id="l-sort_by" class="c-form-select__dropdown u-font-small u-text-bold" name="Sort_By" onchange="MMProdList_UpdateQuery( this ); return true;">
+									<mvt:if expr="ISNULL g.Sort_By">
+										<option value="disp_order" selected>Featured</option>
+									<mvt:else>
+										<option value="disp_order">Featured</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'bestsellers'">
+										<option value="bestsellers" selected>Best Selling</option>
+									<mvt:else>
+										<option value="bestsellers">Best Selling</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'price_asc'">
+										<option value="price_asc" selected>Price (Low to High)</option>
+									<mvt:else>
+										<option value="price_asc">Price (Low to High)</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'price_desc'">
+										<option value="price_desc" selected>Price (High to Low)</option>
+									<mvt:else>
+										<option value="price_desc">Price (High to Low)</option>
+									</mvt:if>
+									<mvt:if expr="g.Sort_By EQ 'newest'">
+										<option value="newest" selected>Newest Items</option>
+									<mvt:else>
+										<option value="newest">Newest Items</option>
+									</mvt:if>
+								</select>
+							</div>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+			<!-- end .x-display-list-filtering__sort-by -->
+		</div>
+		<!-- end .x-display-list-filtering -->
+	</section>
+</mvt:if>
