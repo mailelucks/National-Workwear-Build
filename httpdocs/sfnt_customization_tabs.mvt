@@ -1,0 +1,18 @@
+<div class="x-sfnt--customization--tabs x-flex-tabs o-layout--justify-center">
+	<input id="tab-embroidery" data-flex-tab type="radio" name="flex-tab" checked>
+	<label class="x-flex-tabs__tab u-font-secondary" for="tab-embroidery">Embroidery</label>
+	<div class="x-flex-tabs__content">
+		<p>National Workwear offers a variety of options to get the embroidered look you want. You can choose just text embroidery like your name, or you can choose text with one of our stock logos that represent your business or profession. Finally, if you do need a custom design or logo, we can help with that too.</p>
+
+	</div>
+	<input id="tab-screenprinting" data-flex-tab type="radio" name="flex-tab">
+	<label class="x-flex-tabs__tab u-font-secondary" for="tab-screenprinting">Screenprinting</label>
+	<div class="x-flex-tabs__content">
+		<p>Give your crew the great look and the soft feel that screenprinting offers. This versatile ink-based process lets you display your message and design in rich, sharp detail. Plus, screenprinting is an efficient and affordable way to outfit a large number of people.</p>
+	</div>
+	<input id="tab-heatpress" data-flex-tab type="radio" name="flex-tab">
+	<label class="x-flex-tabs__tab u-font-secondary" for="tab-heatpress">Heatpress</label>
+	<div class="x-flex-tabs__content">
+		<p>Heatpress is a great option when you only need to customize a few items as it has a low minimum. Heatpress can be applied to a variety of fabrics including hi-vis apparel. Plus, you can identify yourself with just text or your business logo along with your choice of sizes.</p>
+	</div>
+</div>

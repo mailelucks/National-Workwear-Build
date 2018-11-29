@@ -145,34 +145,40 @@
 		</section>
 		<!-- end featured categories -->
 
-		<section class="x-sfnt--customization__container t-container u-flex o-layout--flush u-cement-bg" &mvt:global:debug_hide_0;>
+		<section class="x-sfnt--customization__container t-container u-flex u-cement-bg" &mvt:global:debug_hide;>
 			<div class="o-layout__item">
 				<div class="x-sfnt--customization u-flex o-layout o-layout--align-end o-layout--justify-start u-grids-2--l">
-					<div class="x-sfnt--customization--col-1 o-layout__item">
-						<h2 class="u-sfnt-header--customization u-sfnt-header u-font-secondary u-text-bold u-nww-color-secondary">Use Our In House Customization</h2>
-						<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
-							<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">
-								<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
-							</span>
-							<span class="c-sfnt__video-button-text u-nww-color-secondary u-text-underline u-font-secondary" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">Play Video</span>
+					<div class="x-sfnt--customization--col-1 o-layout__item u-flex o-layout--align-center o-layout--justify-center">
+						<div class="x-sfnt--customization--col-1__inner">
+							<h2 class="u-sfnt-header--customization u-sfnt-header u-font-secondary u-text-bold u-nww-color-secondary">Use Our In House Customization</h2>
+							<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
+								<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">
+									<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+								</span>
+								<span class="c-sfnt__video-button-text u-nww-color-secondary u-text-underline u-font-secondary" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">Play Video</span>
+							</div>
+							<mvt:item name="readytheme" param="contentsection( 'sfnt_customization_tabs' )" />
+							<button class="c-button t-nww-cta-button u-bg-white">
+								<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:storefront_hero_image:uri;" target="&mvt:global:storefront_hero_image:link_targ;">
+									<span class="t-nww-cta-button__text">Start Customizing</span>
+									<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
+								</a>
+							</button>
 						</div>
-						<mvt:item name="readytheme" param="contentsection( 'sfnt_customization_tabs' )" />
-						<button class="c-button t-nww-cta-button u-bg-white">
-							<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:storefront_hero_image:uri;" target="&mvt:global:storefront_hero_image:link_targ;">
-								<span class="t-nww-cta-button__text">Start Customizating</span>
-								<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
-							</a>
-						</button>
 					</div>
 					<div class="x-sfnt--customization--col-2 o-layout__item u-hidden u-flex--l">
-						<video class="x-sfnt--customization__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/customization-placeholder.jpg" controls>
-						  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
-						  <p>Your browser doesn't support HTML5 video. Here is
-						     a <a href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">link to the video</a> instead.</p>
-						</video>
-						<mvt:comment><a class="c-sfnt__video-button u-flex o-layout--justify-center o-layout--align-center">
-							<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
-						</a></mvt:comment>
+						<div class="x-sfnt--customization--col-2__inner">
+							<div class="x-nww-video" data-hook="nww-video">
+								<video id="x-sfnt-customization-video" class="c-sfnt__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/customization-placeholder.jpg">
+								  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
+								  <p>Your browser doesn't support HTML5 video. Here is
+								     a <a href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">link to the video</a> instead.</p>
+								</video>
+								<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center">
+								  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -232,15 +238,16 @@
 						<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 						<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--justify-end">
 							<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden">
-								<video class="x-featured-service-bravo__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
-								  <source src="mobile_shoe_service.mp4" type="video/mp4">
-								  <source src="mobile_shoe_service.webm" type="video/webm">
-								  <p>Your browser doesn't support HTML5 video. Here is
-								     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
-								</video>
-								<a class="c-sfnt__video-button u-flex o-layout--justify-center o-layout--align-center">
-									<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
-								</a>
+								<div class="x-nww-video" data-hook="nww-video">
+									<video data-hook="nww-video" class="x-featured-service-bravo__video c-sfnt__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
+									  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
+									  <p>Your browser doesn't support HTML5 video. Here is
+									     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
+									</video>
+									<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-nww-bg-primary">
+									  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
+									</button>
+								</div>
 							</div>
 							<div class="o-layout__item x-featured-service-bravo--col-2">
 								<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-bravo u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_bravo:image_alt;</h2>
