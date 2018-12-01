@@ -25,7 +25,7 @@
 		<div class="x-product-layout-purchase__options-attribute o-layout__item">
 			<span class="c-form-label u-block &mvt:required_attribute_classes;" title="&mvte:attribute:prompt;">&mvte:attribute:prompt;</span>
 			<mvt:foreach iterator="option" array="attribute:options">
-				<label class="c-form-checkbox c-form-checkbox--radio c-form-checkbox--inline" title="&mvt:option:prompt;">
+				<label class="c-form-checkbox c-form-checkbox--radio c-form-checkbox--inline u-font-secondary" title="&mvt:option:prompt;">
 					<mvt:if expr="((g.Product_Attributes[l.settings:attribute:index]:value EQ 0) AND (l.settings:option:id EQ l.settings:attribute:default_id)) OR (g.Product_Attributes[l.settings:attribute:index]:value EQ l.settings:option:code)">
 						<input class="c-form-checkbox__input" data-attribute="&mvte:attribute:code;" data-option-price="&mvt:option:price;" data-regular-price="" type="radio" name="Product_Attributes[&mvte:attribute:index;]:value" value="&mvte:option:code;" checked &mvt:required_attribute;>
 					<mvt:else>
@@ -50,7 +50,7 @@
 		</div>
 	<mvt:elseif expr="l.settings:attribute:type EQ 'select'">
 		<div class="x-product-layout-purchase__options-attribute o-layout__item">
-			<label class="c-form-label &mvt:required_attribute_classes;" for="&mvt:attribute_ID;" title="&mvt:attribute:prompt;">&mvt:attribute:prompt;</label>
+			<label class="c-form-label &mvt:required_attribute_classes; u-font-secondary" for="&mvt:attribute_ID;" title="&mvt:attribute:prompt;">&mvt:attribute:prompt;</label>
 			<div class="c-form-select">
 				<select id="&mvt:attribute_ID;" class="c-form-select__dropdown c-form-input--large" data-attribute="&mvte:attribute:code;" name="Product_Attributes[&mvt:attribute:index;]:value" &mvt:required_attribute;>
 					<mvt:foreach iterator="option" array="attribute:options">
@@ -83,7 +83,7 @@
 		</div>
 	<mvt:elseif expr="l.settings:attribute:type EQ 'swatch-select'">
 		<div class="x-product-layout-purchase__options-attribute o-layout__item">
-			<label class="c-form-label &mvt:required_attribute_classes;" for="&mvt:attribute_ID;" title="&mvt:attribute:prompt;">&mvt:attribute:prompt; <span data-hook="attribute-swatch-name">&nbsp;</span></label>
+			<label class="c-form-label &mvt:required_attribute_classes; u-font-secondary" for="&mvt:attribute_ID;" title="&mvt:attribute:prompt;">&mvt:attribute:prompt; <span data-hook="attribute-swatch-name">&nbsp;</span></label>
 			<div class="c-form-select u-hidden">
 				<select id="&mvt:attribute_ID;" class="c-form-select__dropdown c-form-input--large" data-attribute="&mvte:attribute:code;" data-hook="attribute-swatch-select" name="Product_Attributes[&mvt:attribute:index;]:value" &mvt:required_attribute;>
 					<mvt:foreach iterator="option" array="attribute:options">
@@ -118,7 +118,7 @@
 	<mvt:elseif expr="l.settings:attribute:type EQ 'checkbox'">
 		<div class="x-product-layout-purchase__options-attribute o-layout__item">
 			<span class="c-form-label u-block">&nbsp;</span>
-			<label class="c-form-checkbox &mvt:required_attribute_classes;" title="&mvte:attribute:prompt;">
+			<label class="c-form-checkbox u-font-secondary &mvt:required_attribute_classes;" title="&mvte:attribute:prompt;">
 				<mvt:if expr="g.Product_Attributes[l.settings:attribute:index]:value">
 					<input class="c-form-checkbox__input" data-attribute="&mvte:attribute:code;" data-option-price="&mvt:attribute:price;" data-regular-price="" type="checkbox" name="Product_Attributes[&mvte:attribute:index;]:value" value="Yes" checked &mvt:required_attribute;>
 				<mvt:else>
@@ -138,6 +138,7 @@
 						</mvt:if>
 					</mvt:if>
 				</span>
+				<div class="c-checkmark"></div>
 			</label>
 		</div>
 	</mvt:if>
@@ -145,7 +146,7 @@
 <mvt:if expr="l.settings:subscription:enabled AND l.settings:subscription:term_count">
 	<div class="x-product-layout-purchase__options-attribute o-layout__item">
 		<mvt:if expr="l.settings:subscription:mandatory">
-			<label class="c-form-label &mvt:required_attribute_classes;" for="l-subscription" title="Subscribe">Select Subscription</label>
+			<label class="c-form-label &mvt:required_attribute_classes; u-font-secondary" for="l-subscription" title="Subscribe">Select Subscription</label>
 			<div class="c-form-select">
 				<select id="l-subscription" class="c-form-select__dropdown" name="Product_Subscription_Term_ID" &mvt:required_attribute;>
 					<mvt:foreach iterator="term" array="subscription:terms">

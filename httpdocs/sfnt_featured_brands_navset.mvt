@@ -1,43 +1,47 @@
 <mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
-	<div class="x-featured-brands__inner x-featured-brands-prods x-flex-tabs x-navigation-set &mvte:readytheme:layout; u-flex u-width-12">
+	<div class="x-featured-brands__inner x-featured-brands-prods x-navigation-set &mvte:readytheme:layout; o-layout o-layout--flush u-width-12">
 		<div class="u-cement-bg u-hidden u-show--l"></div>
-		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
-			<mvt:if expr="l.settings:navigationitem:link_type EQ 'G'">
-				<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_g )" />
-				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
-			<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'C'">
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_c )" />
-				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
-				<mvt:item name="customfields" param="Read_Category_ID( l.settings:rt_c:id, 'brands_logo', l.settings:navigationitem:logo )" />
-			<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'P'">
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_p )" />
-				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
-			<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'U'">
-				<mvt:assign name="l.settings:navigationitem:uri" value="l.settings:navigationitem:link_dest" />
-			<mvt:else>
-				<mvt:assign name="l.settings:navigationitem:uri" value="NULL" />
-			</mvt:if>
-			<mvt:assign name="g.tab_checked" value="''" />
-			<mvt:assign name="g.counter" value="l.pos1" />
-			<mvt:if expr="l.pos1 EQ 1">
-				<mvt:assign name="g.tab_checked" value="'checked'" />
-			</mvt:if>
-			<input id="tab-feature-brand-&mvt:global:counter;" data-flex-tab type="radio" name="flex-tab" &mvt:global:tab_checked;>
-			<label class="x-flex-tabs__tab x-flex-brands-tabs__tab u-text-uppercase u-flex o-layout--align-center o-layout--justify-center" for="tab-feature-brand-&mvt:global:counter;" data-brand-action="&mvt:urls:ctgy:auto_sep;Category_Code=&mvte:navigationitem:link_dest;&Per_Page=12&Sort_By=disp_order&show=sfnt_brands">
-				<mvt:if expr="l.settings:navigationitem:logo">
-					<img src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
+		<div class="x-flex-brands-tabs u-flex">
+			<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+				<mvt:if expr="l.settings:navigationitem:link_type EQ 'G'">
+					<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_g )" />
+					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
+				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'C'">
+					<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_c )" />
+					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
+					<mvt:item name="customfields" param="Read_Category_ID( l.settings:rt_c:id, 'brands_logo', l.settings:navigationitem:logo )" />
+				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'P'">
+					<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_p )" />
+					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
+				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'U'">
+					<mvt:assign name="l.settings:navigationitem:uri" value="l.settings:navigationitem:link_dest" />
 				<mvt:else>
-					<span class="u-font-tiny">&mvte:navigationitem:name;</span>
+					<mvt:assign name="l.settings:navigationitem:uri" value="NULL" />
 				</mvt:if>
-			</label>
-			<div class="x-flex-tabs__content">
-				<h4 class="x-featured-brand__cta u-text-center">
-					<a href="&mvte:navigationitem:uri;" class="u-text-bold u-text-underline">Shop All &mvte:navigationitem:name;</a>
-				</h4>
+				<mvt:assign name="g.active" value="''" />
+				<mvt:assign name="g.counter" value="l.pos1" />
+				<mvt:if expr="l.pos1 EQ 1">
+					<mvt:comment>assign first active class and create global var for use outside of loop</mvt:comment>
+					<mvt:assign name="g.active" value="'x-brands-active'" />
+					<mvt:assign name="g.init_uri" value="l.settings:navigationitem:uri" />
+					<mvt:assign name="g.init_name" value="l.settings:navigationitem:name" />
+				</mvt:if>
+				<div class="x-flex-brands-tabs__tab u-text-uppercase u-flex o-layout--align-center o-layout--justify-center &mvt:global:active;" data-brand-name="&mvte:navigationitem:name;" data-brand-action="&mvt:urls:ctgy:auto_sep;Category_Code=&mvte:navigationitem:link_dest;&Per_Page=12&Sort_By=disp_order&show=sfnt_brands">
+					<mvt:if expr="l.settings:navigationitem:logo">
+						<img src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
+					<mvt:else>
+						<span class="u-font-tiny">&mvte:navigationitem:name;</span>
+					</mvt:if>
+				</div>
+			</mvt:foreach>
+		</div>
+		<div class="x-featured-brands-prods x-product-list u-width-12">
+			<h4 id="x-featured-brand__cta" class="u-text-center">
+				<a href="&mvt:global:init_uri;" id="x-featured-brand__cta-link" class="u-text-bold u-text-underline">Shop All &mvt:global:init_name;</a>
+			</h4>
+			<div id="x-carousel-featured-brand">
+				 <mvt:item name="readytheme" param="productlisting( 'sfnt_featured_brand' )" />
 			</div>
-		</mvt:foreach>
-		<div id="x-carousel-featured-brand" class="x-featured-brands-prods x-product-list u-width-12 o-layout o-layout--flush">
-			 <mvt:item name="readytheme" param="productlisting( 'sfnt_featured_brand' )" />
 		</div>
 	</div>	
 </mvt:if>

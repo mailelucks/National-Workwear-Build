@@ -1,7 +1,7 @@
 <mvt:item name="customfields" param="Read_Product_ID( l.settings:product:id, 'brands_assignment', l.settings:product:brand_assignment )" />
 <mvt:item name="customfields" param="Read_Category_Code( l.settings:product:brand_assignment, 'brands_logo', l.settings:product:brand_logo )" />
 <section class="o-layout o-layout--flush u-flex u-grids-2--l x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
-	<div class="x-product-layout--col-1">
+	<div class="x-product-layout--col-1 o-layout__item">
 		<figure class="o-layout__item u-text-center x-product-layout-images">
 			<a data-mini-modal data-mini-modal-type="inline" href="#closeup_image" title="&mvte:product:name;">
 				<img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
@@ -15,7 +15,7 @@
 		</figure>
 		<!-- end .x-product-layout-images -->
 	</div>
-	<div class="x-product-layout--col-2">
+	<div class="x-product-layout--col-2 o-layout__item">
 		<form class="o-layout__item x-product-layout-purchase u-cement-bg" data-hook="purchase" action="&mvte:urls:BASK:auto;" method="post" name="add">
 			<input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
 			<input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
@@ -133,11 +133,6 @@
 							&mvt:product:descrip;
 						</div>
 					</mvt:if>
-					<input id="tab-description" data-flex-tab type="radio" name="flex-tab" checked>
-						<label class="x-flex-tabs__tab u-font-secondary" for="tab-description">Details</label>
-						<div class="x-flex-tabs__content" itemprop="description">
-							&mvt:product:descrip;
-						</div>
 					<input id="tab-return-policy" data-flex-tab type="radio" name="flex-tab" &mvt:global:checked;>
 					<label class="x-flex-tabs__tab u-font-secondary" for="tab-return-policy">Return Policy</label>
 					<div class="x-flex-tabs__content" itemprop="return-policy">
@@ -157,5 +152,5 @@
 			</div>
 		</section>
 	</div>
-	
+
 </section>
