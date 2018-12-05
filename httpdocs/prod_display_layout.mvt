@@ -49,13 +49,13 @@
 							<span id="price-value" itemprop="price" content="&mvt:product:price;">&mvt:product:formatted_price;</span>
 						</span>
 					</p>
-					<mvt:comment><div id="product-discounts" class="x-product-layout-purchase__product-discounts u-font-small">
+					<div id="product-discounts" class="x-product-layout-purchase__product-discounts u-font-small">
 						<mvt:foreach iterator="discount" array="product:discounts">
 							<p class="x-product-layout-purchase__product-discounts">
 								&mvt:discount:descrip;: <strong>&mvt:discount:formatted_discount;</strong>
 							</p>
 						</mvt:foreach>
-					</div></mvt:comment>
+					</div>
 					<mvt:comment><mvt:if expr="l.settings:product:weight NE 0">
 						<p class="x-product-layout-purchase__product-weight u-font-small">
 							Shipping Weight: <strong>&mvt:product:weight;</strong> &mvt:store:wtunits;
