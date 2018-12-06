@@ -1,5 +1,20 @@
 <mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:flags">
-	<div class="x-product-list__flag">
+	<mvt:if expr="l.settings:product:customfield_values:customfields:flags EQ 'Sale'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Clearance'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-red'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'New'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-yellow'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Limited Stock'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-blue'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Best Seller'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-purple'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Featured'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-orange'" />
+	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Coming Soon'">
+		<mvt:assign name="g.flag_bg" value="'u-bg-pink'" />
+	</mvt:if>
+	<div class="x-product-list__flag &mvt:global:flag_bg;">
 		<span class="u-text-uppercase u-text-bold">&mvte:product:customfield_values:customfields:flags;</span>
 	</div>
 </mvt:if>
@@ -31,7 +46,9 @@
 		</figcaption>
 	</figure>
 </a>
-<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
-	<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product:link;" title="&mvte:product:name;">Shop Now</a>
-	<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product:link;?show=quickview"></a>
-</div>
+<mvt:if expr="l.settings:page:code NE 'PROD'">
+	<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
+		<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product:link;" title="&mvte:product:name;">Shop Now</a>
+		<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product:link;?show=quickview"></a>
+	</div>
+</mvt:if>

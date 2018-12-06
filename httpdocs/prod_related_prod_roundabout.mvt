@@ -1,0 +1,15 @@
+
+<section class="x-related-products">
+	<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">You May Also Like</h4>
+	<div id="x-related-products-carousel" data-hook="product-carousel">
+		<button class="c-nww-button c-button x-carousel__button x-carousel__button-left u-nww-icon-arrow-left" data-hook="carousel__button-previous"></button>
+		<div class="x-carousel__container x-carousel--animate" data-hook="carousel__container">
+		<mvt:foreach iterator="product" array="related_products:products">
+			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+		</mvt:foreach>
+	</div>
+	<button class="c-nww-button c-button x-carousel__button x-carousel__button-right u-nww-icon-arrow-right" data-hook="carousel__button-next"></button>
+	</div>
+</section>
+<br>
+<!-- end .x-product-list -->

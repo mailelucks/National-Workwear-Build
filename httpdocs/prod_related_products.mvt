@@ -1,43 +1,11 @@
 
 <section class="x-related-products">
 	<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">You May Also Like</h4>
-	<div id="x-related-products-carousel" data-hook="product-carousel">
-		<button class="c-nww-button c-button x-carousel__button x-carousel__button-left u-nww-icon-arrow-left" data-hook="carousel__button-previous"></button>
-		<div class="x-carousel__container x-carousel--animate" data-hook="carousel__container">
+	<div id="x-related-products-carousel">
 		<mvt:foreach iterator="product" array="related_products:products">
-			<div class="o-layout__item u-text-center x-product-list__item">
-				<a class="u-block x-product-list__link" href="&mvte:product:link;" title="&mvte:product:name;">
-					<figure class="x-product-list__figure o-layout--column">
-						<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product:imagetypes:prod_outfit">
-							<mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:prod_outfit" />
-							<mvt:assign name="l.settings:product:tall_class" value="'x-product-list__outfit-image'" />
-						<mvt:elseif expr="ISNULL l.settings:product:imagetypes:main">
-							<mvt:assign name="l.settings:product:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
-						</mvt:if>
-						<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product:tall_class;">
-							<mvt:assign name="l.settings:product:tall_class" value="''" />
-							<mvt:if expr="l.settings:product:imagetypes:product_hover">
-								<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product:imagetypes:product_hover;" alt="&mvte:product:name;">
-								<mvt:assign name="l.settings:product:hover_class" value="'hover-active'" />
-							</mvt:if>
-							<img class="x-product-list__image &mvte:product:hover_class;" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
-						</div>
-						<figcaption class="u-text-left u-width-12">
-							<strong class="x-product-list__code u-text-bold">&mvte:product:code</strong>
-							<strong class="x-product-list__name">&mvte:product:name;</strong>
-							<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
-								<span class="x-product-list__price--base"><s>&mvt:product:formatted_base_price;</s></span>
-								<span class="x-product-list__price">&mvt:product:formatted_price;</span>
-							<mvt:else>
-								<span class="x-product-list__price">&mvt:product:formatted_price;</span>
-							</mvt:if>
-						</figcaption>
-					</figure>
-				</a>
-			</div>
+			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 		</mvt:foreach>
 	</div>
-	<button class="c-nww-button c-button x-carousel__button x-carousel__button-right u-nww-icon-arrow-right" data-hook="carousel__button-next"></button>
 	</div>
 </section>
 <br>
