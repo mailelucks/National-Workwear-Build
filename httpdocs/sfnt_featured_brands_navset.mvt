@@ -39,7 +39,7 @@
 			<h4 id="x-featured-brand__cta" class="u-text-center">
 				<a href="&mvt:global:init_uri;" id="x-featured-brand__cta-link" class="u-text-bold u-text-underline">Shop All &mvt:global:init_name;</a>
 			</h4>
-			<div id="x-carousel-featured-brand">
+			<div id="x-carousel-featured-brand" class="x-nww-slider">
 				 <mvt:item name="readytheme" param="productlisting( 'sfnt_featured_brand' )" />
 			</div>
 		</div>

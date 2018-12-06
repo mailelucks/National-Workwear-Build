@@ -151,6 +151,11 @@
 				</div>
 			</div>
 		</section>
+
+		<mvt:if expr="l.settings:related_product_count NE 0">
+			<mvt:item name="related_products" />
+		</mvt:if>
+		
 	</div>
 
 </section>

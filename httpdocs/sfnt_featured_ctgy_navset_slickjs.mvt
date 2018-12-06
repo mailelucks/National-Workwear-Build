@@ -1,6 +1,6 @@
 <mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
 	<div class="x-featured-ctgy__inner x-product-list navigation-element &mvte:readytheme:code;">
-		<div id="x-carousel-featured-ctgy" class="u-flex">
+		<div id="x-carousel-featured-ctgy" class="u-flex x-nww-slider">
 			<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
 				<mvt:if expr="l.settings:navigationitem:link_type EQ 'G'">
 					<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Pagse_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_g )" />
