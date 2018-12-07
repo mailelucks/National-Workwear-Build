@@ -35,7 +35,7 @@
 			<img class="x-product-list__image &mvte:product:hover_class;" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
 		</div>
 		<figcaption class="u-text-left u-width-12">
-			<strong class="x-product-list__code u-text-bold">&mvte:product:code</strong>
+			<strong class="x-product-list__code u-text-bold">&mvte:product:code;</strong>
 			<strong class="x-product-list__name">&mvte:product:name;</strong>
 			<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
 				<span class="x-product-list__price--base"><s>&mvt:product:formatted_base_price;</s></span>

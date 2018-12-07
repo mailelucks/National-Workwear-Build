@@ -1,0 +1,30 @@
+
+<mvt:assign name="l.settings:query:query" value="'SELECT code FROM s01_OrderItems WHERE order_id IN (SELECT order_id FROM s01_OrderItems WHERE code = \"'$ l.settings:product:code $'\" ORDER BY order_id DESC) AND code <> \"'$ l.settings:product:code $'\" GROUP BY code LIMIT 10'" />
+	<mvt:item name="sql" param="l.settings:query" />
+	<mvt:if expr="l.settings:query:results">
+		<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Customers Also Bought...</h4>
+		<mvt:comment><div id="x-customers-also-bought-carousel" class="x-nww-slider x-nww-grid-slider"></mvt:comment>
+		<div class="x-nww-slider x-nww-grid-slider">
+			<mvt:foreach iterator="alsobought" array="query:results">
+				<mvt:assign name="l.settings:product" value="''" />
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Product_Load_Code( l.settings:alsobought:code, l.settings:product )" />
+
+
+				<mvt:item name="customfields" param="Read_Product_Code( l.settings:product:code, 'flags', l.settings:product:customfield_values:customfields:flags )" />
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product:id, l.imagetype:main:id, l.loaded_type )" />
+                <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
+                <mvt:do file="g.Module_Library_DB" name="l.image_loaded_success" value="Image_Load_File( l.imagedata:image, l.image )" />
+                 <mvt:assign name="l.settings:product:imagetypes:main" value="l.image" />
+                 <mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:main:image" />
+
+				<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:product ), ',', asciichar( 10 ) )" />
+				<!--
+				@@product
+				=====================
+				&mvt:global:mvt_debug;
+				-->
+				
+				 <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+			</mvt:foreach>
+		</div>
+	</mvt:if>

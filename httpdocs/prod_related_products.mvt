@@ -1,12 +1,10 @@
 
 <section class="x-related-products">
 	<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">You May Also Like</h4>
-	<div id="x-related-products-carousel">
+	<div id="x-related-products-carousel" class="x-nww-slider x-nww-grid-slider">
 		<mvt:foreach iterator="product" array="related_products:products">
 			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 		</mvt:foreach>
 	</div>
-	</div>
 </section>
-<br>
 <!-- end .x-product-list -->

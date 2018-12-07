@@ -2,11 +2,11 @@
 <mvt:item name="customfields" param="Read_Category_Code( l.settings:product:brand_assignment, 'brands_logo', l.settings:product:brand_logo )" />
 <section class="o-layout o-layout--flush u-flex u-grids-2--l x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
 	<div class="x-product-layout--col-1 o-layout__item">
-		<figure class="o-layout__item u-text-center x-product-layout-images">
-			<a data-mini-modal data-mini-modal-type="inline" href="#closeup_image" title="&mvte:product:name;">
+		<figure class="o-layout__item u-text-center x-product-layout-images u-flex">
+			<ul id="thumbnails" class="o-layout x-product-layout-images__thumbnail-list"></ul>
+			<a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
 				<img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
 			</a>
-			<ul id="thumbnails" class="o-layout u-grids-3 u-grids-6--m o-layout--justify-center x-product-layout-images__thumbnail-list"></ul>
 			<img id="closeup_image" class="u-hide-visually" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
 			<span id="closeup_close" class="u-hidden">
 				<span id="closeup_div" class="u-hide-visually"></span>
@@ -155,7 +155,10 @@
 		<mvt:if expr="l.settings:related_product_count NE 0">
 			<mvt:item name="related_products" />
 		</mvt:if>
-		
+
+		<section class="x-customers-also-bought">
+			<mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
+		</section>
 	</div>
 
 </section>
