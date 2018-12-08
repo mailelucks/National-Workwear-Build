@@ -1,0 +1,52 @@
+<mvt:if expr="l.settings:page_iterator:page_links:last_page GT 1">
+	<nav class="x-pagination x-pagination--centered t-pagination">
+		<ul class="o-list-inline">
+			<mvt:if expr="l.settings:page_iterator:page_links:current_page NE 1">
+				<li class="o-list-inline__item">
+					<a class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:prev_link_params;" title="Go to the previous page.">
+					</a>
+				</li>
+			<mvt:else>
+				<li class="o-list-inline__item">
+					<span class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left inactive" title="You are on the first page.">
+					</span>
+				</li>
+			</mvt:if>
+			<li class="o-list-inline__item o-layout--grow">
+				 <span class="o-page-links-container u-flex o-layout--align-center o-layout--justify-around">
+				   <mvt:if expr="NOT l.settings:page_iterator:page_links:contains_first">
+				     <a href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:first_link_params;" class="u-nww-color-secondary o-page-links-inactive">01</a><a href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:first_link_params;" class="o-page-links-inactive hellip u-nww-color-secondary">&hellip;</a>
+				   </mvt:if>
+				   <mvt:foreach iterator="pages" array="page_iterator:page_links:pages">
+				   	<mvt:if expr="l.settings:pages:page_num LT 10">
+				   		<mvt:assign name="l.settings:pages:page_num" value="'0' $ l.settings:pages:page_num" />
+				   	</mvt:if>
+				     <mvt:if expr="l.settings:page_iterator:page_links:current_page EQ l.settings:pages:page_num">
+				       <span class="o-page-links-active u-text-bold">&mvte:pages:page_num;</span>
+				     <mvt:else>
+				       <a href="&mvte:urls:_self:auto_sep;&mvte:pages:link_params;" class="o-page-links-inactive u-nww-color-secondary">&mvte:pages:page_num;</a>
+				     </mvt:if>
+				   </mvt:foreach>
+				   <mvt:if expr="NOT l.settings:page_iterator:page_links:contains_last">
+				   	<mvt:if expr="l.settings:page_iterator:page_links:last_page LT 10">
+				   		<mvt:assign name="l.settings:page_iterator:page_links:last_page" value="'0' $ l.settings:page_iterator:page_links:last_page" />
+				   	</mvt:if>
+				     <a href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:last_link_params;" class="o-page-links-inactive hellip u-nww-color-secondary">&hellip;</a><a href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:last_link_params;" class="o-page-links-inactive u-nww-color-secondary">&mvte:page_iterator:page_links:last_page;</a>
+				   </mvt:if>
+				 </span>
+			</li>
+			<mvt:if expr="l.settings:page_iterator:page_links:current_page NE l.settings:page_iterator:page_links:last_page">
+				<li class="o-list-inline__item">
+					<a class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:next_link_params;" title="Go to the next page.">
+					</a>
+				</li>
+			<mvt:else>
+				<li class="o-list-inline__item">
+					<span class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right inactive" title="You are on the last page.">
+					</span>
+				</li>
+			</mvt:if>
+		</ul>
+	</nav>
+	<!-- end .x-pagination -->
+</mvt:if>

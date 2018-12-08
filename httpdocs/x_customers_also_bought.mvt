@@ -3,28 +3,40 @@
 	<mvt:item name="sql" param="l.settings:query" />
 	<mvt:if expr="l.settings:query:results">
 		<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Customers Also Bought...</h4>
-		<mvt:comment><div id="x-customers-also-bought-carousel" class="x-nww-slider x-nww-grid-slider"></mvt:comment>
-		<div class="x-nww-slider x-nww-grid-slider">
+		<div id="x-customers-also-bought-carousel" class="x-nww-slider x-nww-grid-slider">
+		<mvt:comment><div class="x-nww-slider x-nww-grid-slider"></mvt:comment>
 			<mvt:foreach iterator="alsobought" array="query:results">
-				<mvt:assign name="l.settings:product" value="''" />
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Product_Load_Code( l.settings:alsobought:code, l.settings:product )" />
-
-
-				<mvt:item name="customfields" param="Read_Product_Code( l.settings:product:code, 'flags', l.settings:product:customfield_values:customfields:flags )" />
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product:id, l.imagetype:main:id, l.loaded_type )" />
-                <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
-                <mvt:do file="g.Module_Library_DB" name="l.image_loaded_success" value="Image_Load_File( l.imagedata:image, l.image )" />
-                 <mvt:assign name="l.settings:product:imagetypes:main" value="l.image" />
-                 <mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:main:image" />
-
-				<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:product ), ',', asciichar( 10 ) )" />
-				<!--
-				@@product
-				=====================
-				&mvt:global:mvt_debug;
-				-->
 				
-				 <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+				<mvt:comment>Get basic product data and ID</mvt:comment>
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Product_Load_Code( l.settings:alsobought:code, l.settings:product_list )" />
+				
+				<mvt:comment>Get flag customfields, add on as needed but reassign to direct entity to match conditionals in the "global product list display" content section</mvt:comment>
+				<mvt:item name="customfields" param="Read_Product_Code( l.settings:product_list:code, 'flags', l.settings:product_list:customfield_values:customfields:flags )" />
+							
+				<mvt:comment>Get Main image for product</mvt:comment>
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 1, l.loaded_type )" />
+                <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
+                 <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.imagedata:image" />
+
+ 				<mvt:comment>Get Hover image for product</mvt:comment>
+ 				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 17, l.loaded_type )" />
+                 <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
+                  <mvt:assign name="l.settings:product_list:imagetypes:product_list_hover" value="l.imagedata:image" />
+
+				<mvt:comment>TODO Discounts</mvt:comment>
+                <mvt:do file="g.Module_Feature_TUI_UT" name="l.result" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:recently_viewed:product_lists, miva_array_elements(l.settings:recently_viewed:product_lists))" />
+				
+				<mvt:comment>Get product link</mvt:comment>
+                <mvt:do file="g.Module_Feature_URI_UT" name="l.settings:product_list:link" value="Store_Product_URL(l.settings:product_list, NULL)" />
+
+				<mvt:comment>Load product display</mvt:comment>
+				<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+
+				<mvt:comment>Clear variables each iteration</mvt:comment>
+				<mvt:assign name="l.loaded_type" value="''" />
+				<mvt:assign name="l.image" value="''" />
+				<mvt:assign name="l.image_loaded_success" value="''" />
+
 			</mvt:foreach>
 		</div>
 	</mvt:if>

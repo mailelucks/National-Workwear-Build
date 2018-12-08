@@ -1,54 +1,55 @@
-<mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:flags">
-	<mvt:if expr="l.settings:product:customfield_values:customfields:flags EQ 'Sale'">
+
+<mvt:if expr="NOT ISNULL l.settings:product_list:customfield_values:customfields:flags">
+	<mvt:if expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Sale'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Clearance'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Clearance'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-red'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'New'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'New'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-yellow'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Limited Stock'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Limited Stock'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-blue'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Best Seller'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Best Seller'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-purple'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Featured'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Featured'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-orange'" />
-	<mvt:elseif expr="l.settings:product:customfield_values:customfields:flags EQ 'Coming Soon'">
+	<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Coming Soon'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-pink'" />
 	</mvt:if>
 	<div class="x-product-list__flag &mvt:global:flag_bg;">
-		<span class="u-text-uppercase u-text-bold">&mvte:product:customfield_values:customfields:flags;</span>
+		<span class="u-text-uppercase u-text-bold">&mvte:product_list:customfield_values:customfields:flags;</span>
 	</div>
 </mvt:if>
-<a class="u-block x-product-list__link" href="&mvte:product:link;" title="&mvte:product:name;">
+<a class="u-block x-product-list__link" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
 	<figure class="x-product-list__figure o-layout--column">
-		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product:imagetypes:prod_outfit">
-			<mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:prod_outfit" />
-			<mvt:assign name="l.settings:product:tall_class" value="'x-product-list__outfit-image'" />
-		<mvt:elseif expr="ISNULL l.settings:product:imagetypes:main">
-			<mvt:assign name="l.settings:product:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit">
+			<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
+			<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
+		<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
+			<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 		</mvt:if>
-		<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product:tall_class;">
-			<mvt:assign name="l.settings:product:tall_class" value="''" />
-			<mvt:if expr="l.settings:product:imagetypes:product_hover">
-				<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product:imagetypes:product_hover;" alt="&mvte:product:name;">
-				<mvt:assign name="l.settings:product:hover_class" value="'hover-active'" />
+		<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product_list:tall_class;">
+			<mvt:assign name="l.settings:product_list:tall_class" value="''" />
+			<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
+				<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
+				<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 			</mvt:if>
-			<img class="x-product-list__image &mvte:product:hover_class;" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
+			<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
 		</div>
 		<figcaption class="u-text-left u-width-12">
-			<strong class="x-product-list__code u-text-bold">&mvte:product:code;</strong>
-			<strong class="x-product-list__name">&mvte:product:name;</strong>
-			<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
-				<span class="x-product-list__price--base"><s>&mvt:product:formatted_base_price;</s></span>
-				<span class="x-product-list__price">&mvt:product:formatted_price;</span>
+			<strong class="x-product-list__code u-text-bold">&mvte:product_list:code;</strong>
+			<strong class="x-product-list__name">&mvte:product_list:name;</strong>
+			<mvt:if expr="l.settings:product_list:base_price GT l.settings:product_list:price">
+				<span class="x-product-list__price--base"><s>&mvt:product_list:formatted_base_price;</s></span>
+				<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
 			<mvt:else>
-				<span class="x-product-list__price">&mvt:product:formatted_price;</span>
+				<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
 			</mvt:if>
 		</figcaption>
 	</figure>
 </a>
 <mvt:if expr="l.settings:page:code NE 'PROD'">
 	<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
-		<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product:link;" title="&mvte:product:name;">Shop Now</a>
-		<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product:link;?show=quickview"></a>
+		<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product_list:link;" title="&mvte:product_list:name;">Shop Now</a>
+		<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product_list:link;?show=quickview"></a>
 	</div>
 </mvt:if>

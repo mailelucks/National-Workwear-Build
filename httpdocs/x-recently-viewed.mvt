@@ -3,10 +3,7 @@
   | Initialization & Settings
 -->
 </mvt:comment>
-<mvt:assign name="l.settings:recently_viewed:max_product_count" value="10" />
-<mvt:assign name="l.settings:recently_viewed:image:width" value="150" />
-<mvt:assign name="l.settings:recently_viewed:image:height" value="150" />
-<mvt:do file="g.Module_Library_DB" name="l.result" value="ImageType_Load_Code( 'main', l.settings:recently_viewed:image:type )" />
+<mvt:assign name="l.settings:recently_viewed:max_product_count" value="8" />
 <mvt:comment>
 <!--
   | Load Recently Viewed Items from Basekt Custom Fields
@@ -20,21 +17,25 @@
   | If it does exist, then remove it from the list.
 -->
 </mvt:comment>
-<mvt:assign name="l.settings:recently_viewed:existing_index" value="miva_array_find( l.settings:product:code, l.settings:recently_viewed:product_codes, 0 )" />
+<mvt:assign name="l.settings:recently_viewed:existing_index" value="miva_array_find( g.Product_Code, l.settings:recently_viewed:product_codes, 1 )" />
 <mvt:if expr="l.settings:recently_viewed:existing_index GT 0">
   <mvt:assign name="l.settings:recently_viewed:deleted_existing_index" value="miva_array_delete( l.settings:recently_viewed:product_codes, l.settings:recently_viewed:existing_index, 1 )" />
+  <mvt:assign name="l.result" value="miva_array_collapse( l.settings:recently_viewed:product_codes )" />
 </mvt:if>
 <mvt:comment>
 <!--
   | Add the currently viewed product to the front of the list, and remove the last item in the list
 -->
 </mvt:comment>
-<mvt:assign name="l.insert_index" value="miva_array_insert( l.settings:recently_viewed:product_codes, l.settings:product:code, 1 )" />
+<mvt:assign name="l.insert_index" value="miva_array_insert( l.settings:recently_viewed:product_codes, g.Product_Code, 1 )" />
 <mvt:assign name="l.settings:recently_viewed:product_count" value="miva_array_elements( l.settings:recently_viewed:product_codes )" />
-<mvt:assign name="l.settings:recently_viewed:product_count_exceded" value="(l.settings:recently_viewed:product_count - l.settings:recently_viewed:max_product_count) - 2" />
+<mvt:assign name="l.settings:recently_viewed:product_count_exceded" value="l.settings:recently_viewed:product_count - l.settings:recently_viewed:max_product_count" />
 <mvt:if expr="l.settings:recently_viewed:product_count_exceded GT 0">
-  <mvt:assign name="l.settings:recently_viewed:truncated_list" value="miva_array_delete( l.settings:recently_viewed:product_codes, l.settings:recently_viewed:max_product_count, l.settings:recently_viewed:product_count_exceded)" />
+  <mvt:assign name="l.settings:recently_viewed:_product_codes" value="l.settings:recently_viewed:product_codes" />
+  <mvt:assign name="l.settings:recently_viewed:product_codes" value="''" />
+  <mvt:assign name="l.settings:recently_viewed:truncated_list" value="miva_array_copy( l.settings:recently_viewed:_product_codes, 1, l.settings:recently_viewed:max_product_count, l.settings:recently_viewed:product_codes, 1)" />
 </mvt:if>
+<mvt:assign name="l.result" value="miva_array_collapse( l.settings:recently_viewed:product_codes )" />
 <mvt:comment>
 <!--
   | Save the new state of recently viewed items ot the Basket Custom Field
@@ -47,27 +48,29 @@
 -->
 </mvt:comment>
 <mvt:foreach iterator="product_code" array="recently_viewed:product_codes">
+  <mvt:assign name="l.settings:recent_product" value="''" />
   <mvt:do file="g.Module_Library_DB" name="l.result" value="Runtime_Product_Load_Code( l.settings:product_code, l.settings:recent_product )" />
   <mvt:comment>
     <!-- Load Resized `main` Image -->
   </mvt:comment>
-  <mvt:do file="g.Module_Library_DB" name="l.result" value="ProductImage_Load_Type(l.settings:recent_product:id, l.settings:recently_viewed:image:type:id, l.settings:recent_product:imagetypes_data:type)" />
+  <mvt:do file="g.Module_Library_DB" name="l.result" value="ProductImage_Load_Type(l.settings:recent_product:id, 1, l.settings:recent_product:imagetypes_data:type)" />
   <mvt:do file="g.Module_Library_DB" name="l.result" value="Image_Load_ID( l.settings:recent_product:imagetypes_data:type:image_id, l.settings:recent_product:imagetypes_data:image )" />
-  <mvt:do file="g.Module_Library_DB" name="l.result" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:recent_product:imagetypes_data:image, l.settings:recently_viewed:image:width, l.settings:recently_viewed:image:height, l.settings:recent_product:imagetypes_data:generated )" />
-  <mvt:if expr="l.settings:recent_product:imagetypes_data:generated:id">
-    <mvt:assign name="l.settings:recent_product:src" value="l.settings:recent_product:imagetypes_data:generated:image" />
-  <mvt:else>
-    <mvt:assign name="l.settings:recent_product:src" value="g.theme_path $ '/images/img_no_thumb.jpg'" />
-  </mvt:if>
+  <mvt:assign name="l.settings:recent_product:imagetypes:main" value="l.settings:recent_product:imagetypes_data:image:image" />
+  <mvt:comment>
+    <!-- Load Resized `product hover` Image -->
+  </mvt:comment>
+  <mvt:do file="g.Module_Library_DB" name="l.result" value="ProductImage_Load_Type(l.settings:recent_product:id, 17, l.settings:recent_product:imagetypes_data:type_2)" />
+  <mvt:do file="g.Module_Library_DB" name="l.result" value="Image_Load_ID( l.settings:recent_product:imagetypes_data:type_2:image_id, l.settings:recent_product:imagetypes_data:image_2 )" />
+  <mvt:assign name="l.settings:recent_product:imagetypes:product_hover" value="l.settings:recent_product:imagetypes_data:image_2:image" />
   <mvt:comment>
     <!-- Load other product data (URI, Currency Formatting) -->
   </mvt:comment>
   <mvt:do file="g.Module_Feature_URI_DB" name="l.result" value="URI_Load_Product_Canonical( l.settings:recent_product:id, l.settings:recent_product:canonical )" />
-  <mvt:do file="g.Module_Store_Module_Currency" name="l.settings:recent_product:formatted_price" value="CurrencyModule_AddFormatting( g.Store:currncy_mod, l.settings:recent_product:price )" />
+  <mvt:assign name="l.settings:recent_product:link" value="l.settings:recent_product:canonical:uri" />
   <mvt:comment>
     <!-- Push product data into array -->
   </mvt:comment>
-  <mvt:assign name="l.result" value="miva_array_insert( l.settings:recently_viewed:products, l.settings:recent_product, -1 )" />
+  <mvt:assign name="l.result" value="miva_array_insert( l.settings:recently_viewed:products, l.settings:recent_product, 1 )" />
 </mvt:foreach>
 <mvt:do file="g.Module_Feature_TUI_UT" name="l.result" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:recently_viewed:products, miva_array_elements(l.settings:recently_viewed:products))" />
 <mvt:comment>
@@ -75,7 +78,7 @@
   | Debugging Helper
 -->
 </mvt:comment>
-<mvt:if expr="g.debug">
+<mvt:if expr="g.debug EQ 1">
   <mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:recently_viewed ), ',', asciichar( 10 ) )" />
   <!--
   @@recently_viewed
@@ -96,22 +99,15 @@
   | Output Recently Viewed Items to the Page
 -->
 </mvt:comment>
-<h2 class="carousel-products-heading">Recently Viewed</h2>
-<div class="carousel-products carousel-products row">
+
+<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Recently Viewed</h4>
+<div id="x-recently-viewed-carousel" class="x-nww-slider x-nww-grid-slider">
+<mvt:comment><div id="x-recently-viewed-carousel" class="x-nww-grid-slider"></mvt:comment>
   <mvt:foreach iterator="recent_product" array="recently_viewed:products">
     <mvt:if expr="l.settings:recent_product:code EQ g.Product_Code">
       <mvt:foreachcontinue/>
     </mvt:if>
-    <div class="carousel-product column half medium-one-fourth align-center">
-      <a href="&mvt:recent_product:canonical:uri;">
-        <img class="carousel-product-image" src="&mvt:recent_product:src;" alt="&mvt:recent_product:name;">
-      </a>
-      <div class="carousel-product-price">&mvt:recent_product:formatted_price;</div>
-      <div class="carousel-product-name">
-        <a href="&mvt:recent_product:canonical:uri;">
-          &mvt:recent_product:name;
-        </a>
-      </div>
-    </div>
+    <mvt:assign name="l.settings:product_list" value="l.settings:recent_product" />
+    <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
   </mvt:foreach>
 </div>
