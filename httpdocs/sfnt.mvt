@@ -272,7 +272,7 @@
 		</mvt:if>
 		<!-- end featured service bravo -->
 
-		<section class="t-container x-sfnt--featured-brands__container u-flex o-layout--flush" &mvt:global:debug_hide_0;>
+		<section class="t-container x-sfnt--featured-brands__container u-flex o-layout--flush u-cement-bg" &mvt:global:debug_hide_0;>
 			<div class="o-layout__item">
 				<h2 class="u-sfnt-header u-sfnt-header--featured-brands u-text-center">Featured Brands</h2>
 				 <mvt:item name="readytheme" param="navigationset( 'sfnt_featured_brands' )" />
