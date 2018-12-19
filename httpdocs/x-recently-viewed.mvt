@@ -50,6 +50,8 @@
 <mvt:foreach iterator="product_code" array="recently_viewed:product_codes">
   <mvt:assign name="l.settings:recent_product" value="''" />
   <mvt:do file="g.Module_Library_DB" name="l.result" value="Runtime_Product_Load_Code( l.settings:product_code, l.settings:recent_product )" />
+  <mvt:comment>Get flag customfields, add on as needed but reassign to direct entity to match conditionals in the "global product list display" content section</mvt:comment>
+  <mvt:item name="customfields" param="Read_Product_Code( l.settings:recent_product:code, 'flags', l.settings:recent_product:customfield_values:customfields:flags )" />
   <mvt:comment>
     <!-- Load Resized `main` Image -->
   </mvt:comment>
@@ -67,10 +69,13 @@
   </mvt:comment>
   <mvt:do file="g.Module_Feature_URI_DB" name="l.result" value="URI_Load_Product_Canonical( l.settings:recent_product:id, l.settings:recent_product:canonical )" />
   <mvt:assign name="l.settings:recent_product:link" value="l.settings:recent_product:canonical:uri" />
+  <mvt:assign name="l.settings:recent_product:base_price" value="l.settings:recent_product:price" />
+  <mvt:do file="g.Module_Store_Module_Currency" name="l.settings:recent_product:formatted_base_price" value="CurrencyModule_AddFormatting( g.Store:currncy_mod, l.settings:recent_product:price )" />
   <mvt:comment>
     <!-- Push product data into array -->
   </mvt:comment>
   <mvt:assign name="l.result" value="miva_array_insert( l.settings:recently_viewed:products, l.settings:recent_product, 1 )" />
+
 </mvt:foreach>
 <mvt:do file="g.Module_Feature_TUI_UT" name="l.result" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:recently_viewed:products, miva_array_elements(l.settings:recently_viewed:products))" />
 <mvt:comment>
@@ -99,15 +104,17 @@
   | Output Recently Viewed Items to the Page
 -->
 </mvt:comment>
-
-<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Recently Viewed</h4>
-<div id="x-recently-viewed-carousel" class="x-nww-slider x-nww-grid-slider">
-<mvt:comment><div id="x-recently-viewed-carousel" class="x-nww-grid-slider"></mvt:comment>
-  <mvt:foreach iterator="recent_product" array="recently_viewed:products">
-    <mvt:if expr="l.settings:recent_product:code EQ g.Product_Code">
-      <mvt:foreachcontinue/>
-    </mvt:if>
-    <mvt:assign name="l.settings:product_list" value="l.settings:recent_product" />
-    <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
-  </mvt:foreach>
-</div>
+<mvt:if expr="l.settings:recently_viewed:products">
+  <section class="x-recently-viewed">
+    <h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Recently Viewed</h4>
+    <div id="x-recently-viewed-carousel" class="x-nww-slider">
+    <mvt:comment><div id="x-recently-viewed-carousel" class="x-nww-grid-slider"></mvt:comment>
+      <mvt:foreach iterator="product_list" array="recently_viewed:products">
+        <mvt:if expr="l.settings:product_list:code EQ g.Product_Code">
+          <mvt:foreachcontinue/>
+        </mvt:if>
+        <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+      </mvt:foreach>
+    </div>
+  </section>
+</mvt:if>

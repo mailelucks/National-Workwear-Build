@@ -1,4 +1,6 @@
-
+<mvt:comment>reassign product entity to avoid system conflicts</mvt:comment>
+<mvt:assign name="l.settings:product_list" value="l.settings:product" />
+<mvt:comment>Get product pricing</mvt:comment>
 <mvt:if expr="NOT ISNULL l.settings:product_list:customfield_values:customfields:flags">
 	<mvt:if expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Sale'">
 		<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
@@ -53,3 +55,5 @@
 		<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product_list:link;?show=quickview"></a>
 	</div>
 </mvt:if>
+<mvt:comment>clear entity to avoid dupe/inaccurate prod vars</mvt:comment>
+<mvt:assign name="l.settings:product_list" value="''" />

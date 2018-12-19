@@ -1,5 +1,11 @@
-<mvt:item name="customfields" param="Read_Product_ID( l.settings:product:id, 'brands_assignment', l.settings:product:brand_assignment )" />
-<mvt:item name="customfields" param="Read_Category_Code( l.settings:product:brand_assignment, 'brands_logo', l.settings:product:brand_logo )" />
+
+<mvt:item name="customfields" param="Read_Category_Code( l.settings:product:customfield_values:customfields:brands_assignment, 'brands_logo,'$l.settings:product:customfield_values:customfields:sizechart_assignment, g.ctgy_cfs )" />
+<mvt:if expr="g.ctgy_cfs:sizechart_clothes">
+	<mvt:assign name="g.ctgy_cfs:sizechart" value="g.ctgy_cfs:sizechart_clothes" />
+<mvt:elseif expr="g.ctgy_cfs:sizechart_footwear">
+	<mvt:assign name="g.ctgy_cfs:sizechart" value="g.ctgy_cfs:sizechart_footwear" />
+</mvt:if>
+
 <section class="o-layout o-layout--flush u-flex u-grids-2--l x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
 	<div class="x-product-layout--col-1 o-layout__item">
 		<figure class="o-layout__item u-text-center x-product-layout-images u-flex">
@@ -30,8 +36,8 @@
 		
 			<ul class="o-layout__item o-list-bare x-product-layout-purchase__details">
 				<li class="o-list-block__item">
-					<mvt:if expr="l.settings:product:brand_logo">
-						<img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvte:product:brand_logo;">
+					<mvt:if expr="g.ctgy_cfs:brands_logo">
+						<img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:brands_logo;">
 					</mvt:if>
 					<span class="u-color-gray-20 c-heading--subheading x-product-layout-purchase__code">&mvt:product:code;</span>
 					<h1 class="c-heading-delta u-text-bold x-product-layout-purchase__name">
@@ -56,6 +62,13 @@
 							</p>
 						</mvt:foreach>
 					</div>
+					<mvt:if expr="g.ctgy_cfs:sizechart">
+						<div class="x-product-sizechart">
+							<a class="x-product-sizechart u-flex o-layout--align-center u-text-bold" data-mini-modal data-mini-modal-type="image" href="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:sizechart;">
+								<span class="u-nww-icon-ruler"></span><span>Size Chart</span>
+							</a>
+						</div>
+					</mvt:if>
 					<mvt:comment><mvt:if expr="l.settings:product:weight NE 0">
 						<p class="x-product-layout-purchase__product-weight u-font-small">
 							Shipping Weight: <strong>&mvt:product:weight;</strong> &mvt:store:wtunits;
@@ -85,7 +98,6 @@
 									</div>
 								</div>
 								<p class="o-layout__item u-width-12 u-width-8--m">
-									<br>
 									<mvt:item name="buttons" param="AddToBasket"/>
 								</p>
 							</mvt:if>
@@ -156,9 +168,13 @@
 			<mvt:item name="related_products" />
 		</mvt:if>
 
-		<section class="x-customers-also-bought">
-			<mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
-		</section>
+		<mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
+
+		<mvt:item name="readytheme" param="contentsection( 'x_recently_viewed' )" />
+
 	</div>
 
 </section>
+
+<mvt:comment>clear global</mvt:comment>
+<mvt:assign name="g.ctgy_cfs" value="''" />

@@ -135,9 +135,9 @@
 					<br>
 					<br>
 					<div class="o-layout__item u-color-gray-20">Thank you for your order, &mvte:order:ship_fname;!</div>
-					<p class="o-layout__item c-heading-delta u-text-uppercase u-text-bold">Confirmation #&mvt:order:id;</p>
+					<p class="o-layout__item c-heading-delta u-text-bold">Confirmation #&mvt:order:id;</p>
 					<p class="o-layout__item u-font-small">
-						<button class="c-button c-button--clear c-button--flush u-bg-transparent u-color-white u-text-uppercase" data-hook="print-invoice"><span class="u-icon-print u-color-gray-20"></span> Print Receipt</button>
+						<button class="c-button c-button--clear c-button--flush u-bg-transparent u-color-white" data-hook="print-invoice"><span class="u-icon-print u-color-gray-20"></span> Print Receipt</button>
 					</p>
 					<br>
 				</div>
@@ -147,7 +147,7 @@
 				<div class="o-layout__item">
 					<br>
 					<br>
-					<h1 class="c-heading-delta o-layout__item u-text-bold u-text-center u-text-uppercase">
+					<h1 class="c-heading-delta o-layout__item u-text-bold u-text-center">
 						&mvt:page:name;<br><br>
 						<a class="c-button c-button--hollow c-button--large c-heading--subheading u-bg-transparent u-color-gray-40 u-text-uppercase" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
 					</h1>
@@ -166,7 +166,7 @@
 		<mvt:elseif expr="l.settings:page:code EQ 'CSBE'">
 			<section class="o-layout">
 				<div class="o-layout__item">
-					<h1 class="c-heading-delta u-text-bold u-text-uppercase">
+					<h1 class="c-heading-delta u-text-bold">
 						Edit Subscription<br>
 						<span class="c-heading--subheading">&mvte:subscriptionfields:productsubscriptionterm:descrip;</span>
 					</h1>
@@ -176,7 +176,7 @@
 		<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP'">
 			<section class="o-layout">
 				<div class="o-layout__item">
-					<h1 class="c-heading-delta u-text-bold u-text-uppercase">&mvt:page:name;</h1>
+					<h1 class="c-heading-delta u-text-bold">&mvt:page:name;</h1>
 					<hr class="c-keyline">
 				</div>
 			</section>

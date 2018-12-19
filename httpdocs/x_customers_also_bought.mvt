@@ -1,42 +1,68 @@
 
 <mvt:assign name="l.settings:query:query" value="'SELECT code FROM s01_OrderItems WHERE order_id IN (SELECT order_id FROM s01_OrderItems WHERE code = \"'$ l.settings:product:code $'\" ORDER BY order_id DESC) AND code <> \"'$ l.settings:product:code $'\" GROUP BY code LIMIT 10'" />
-	<mvt:item name="sql" param="l.settings:query" />
-	<mvt:if expr="l.settings:query:results">
+<mvt:item name="sql" param="l.settings:query" />
+<mvt:foreach iterator="product_list" array="query:results">
+	<mvt:comment>Get basic product data and ID</mvt:comment>
+	<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Product_Load_Code( l.settings:product_list:code, l.settings:product_list )" />
+	
+	<mvt:comment>Get flag customfields, add on as needed but reassign to direct entity to match conditionals in the "global product list display" content section</mvt:comment>
+	<mvt:item name="customfields" param="Read_Product_Code( l.settings:product_list:code, 'flags', l.settings:product_list:customfield_values:customfields:flags )" />
+				
+	<mvt:comment>Get Main image for product</mvt:comment>
+	<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 1, l.settings:product_list:loaded_type )" />
+    <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.settings:product_list:loaded_type:image_id, l.settings:product_list:imagedata )" />
+    <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagedata:image" />
+
+	<mvt:comment>Get Hover image for product</mvt:comment>
+	<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 17, l.settings:product_list:loaded_type )" />
+     <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.settings:product_list:loaded_type:image_id, l.settings:product_list:imagedata )" />
+      <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:product_list:imagedata:image" />
+	
+	<mvt:comment>Get product link</mvt:comment>
+    <mvt:do file="g.Module_Feature_URI_UT" name="l.settings:product_list:link" value="Store_Product_URL(l.settings:product_list, NULL)" />
+	
+	<mvt:comment>assign base price</mvt:comment>
+	<mvt:assign name="l.settings:product_list:base_price" value="l.settings:product_list:price" />
+	<mvt:do file="g.Module_Store_Module_Currency" name="l.settings:product_list:formatted_base_price" value="CurrencyModule_AddFormatting( g.Store:currncy_mod, l.settings:product_list:price )" />
+	
+	<mvt:comment>Move product into array for pricing calculations</mvt:comment>
+	<mvt:assign name="l.result" value="miva_array_insert( l.settings:query:query_products, l.settings:product_list, -1 )" />
+
+</mvt:foreach>
+
+<mvt:comment>Get product pricing</mvt:comment>
+<mvt:do file="g.Module_Feature_TUI_UT" name="l.result" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:query:query_products, miva_array_elements(l.settings:query:query_products))" />
+
+<mvt:comment>
+<!--
+  | Debugging Helper
+-->
+</mvt:comment>
+<mvt:if expr="g.debug EQ 1">
+  <mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:query ), ',', asciichar( 10 ) )" />
+  <!--
+  @@query
+  =============================
+  &mvt:global:mvt_debug;
+  -->
+</mvt:if>
+<mvt:comment>
+<!--
+  | Output Customers Also Bought
+-->
+</mvt:comment>
+<mvt:if expr="l.settings:query:results">
+	<section class="x-customers-also-bought">
 		<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Customers Also Bought...</h4>
-		<div id="x-customers-also-bought-carousel" class="x-nww-slider x-nww-grid-slider">
-		<mvt:comment><div class="x-nww-slider x-nww-grid-slider"></mvt:comment>
-			<mvt:foreach iterator="alsobought" array="query:results">
-				
-				<mvt:comment>Get basic product data and ID</mvt:comment>
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Product_Load_Code( l.settings:alsobought:code, l.settings:product_list )" />
-				
-				<mvt:comment>Get flag customfields, add on as needed but reassign to direct entity to match conditionals in the "global product list display" content section</mvt:comment>
-				<mvt:item name="customfields" param="Read_Product_Code( l.settings:product_list:code, 'flags', l.settings:product_list:customfield_values:customfields:flags )" />
-							
-				<mvt:comment>Get Main image for product</mvt:comment>
-				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 1, l.loaded_type )" />
-                <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
-                 <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.imagedata:image" />
+	<div id="x-customers-also-bought-carousel" class="x-nww-slider">
+		<mvt:foreach iterator="product_list" array="query:query_products">
+			<mvt:assign name="l.settings:product_list:" value="l.value" />
+			<mvt:comment>Load product display</mvt:comment>
+			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
+		</mvt:foreach>
+	</div>
+	</section>
+	
+</mvt:if>
 
- 				<mvt:comment>Get Hover image for product</mvt:comment>
- 				<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 17, l.loaded_type )" />
-                 <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.loaded_type:image_id, l.imagedata )" />
-                  <mvt:assign name="l.settings:product_list:imagetypes:product_list_hover" value="l.imagedata:image" />
-
-				<mvt:comment>TODO Discounts</mvt:comment>
-                <mvt:do file="g.Module_Feature_TUI_UT" name="l.result" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:recently_viewed:product_lists, miva_array_elements(l.settings:recently_viewed:product_lists))" />
-				
-				<mvt:comment>Get product link</mvt:comment>
-                <mvt:do file="g.Module_Feature_URI_UT" name="l.settings:product_list:link" value="Store_Product_URL(l.settings:product_list, NULL)" />
-
-				<mvt:comment>Load product display</mvt:comment>
-				<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
-
-				<mvt:comment>Clear variables each iteration</mvt:comment>
-				<mvt:assign name="l.loaded_type" value="''" />
-				<mvt:assign name="l.image" value="''" />
-				<mvt:assign name="l.image_loaded_success" value="''" />
-
-			</mvt:foreach>
-		</div>
-	</mvt:if>
+	
