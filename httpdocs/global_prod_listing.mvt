@@ -23,7 +23,7 @@
 </mvt:if>
 <a class="u-block x-product-list__link" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
 	<figure class="x-product-list__figure o-layout--column">
-		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit">
+		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
 			<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
 			<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
 		<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">

@@ -1,5 +1,8 @@
 <div id="x-carousel-featured-prods" class="x-featured-brands-prods x-product-list u-width-12 o-layout o-layout--flush x-nww-slider">
 	<mvt:foreach iterator="product" array="readytheme:products">
+		<mvt:if expr="l.pos1 EQ 5">
+			<mvt:assign name="g.tall_outfit" value="1" />
+		</mvt:if>
 		<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 	</mvt:foreach>
 </div>
