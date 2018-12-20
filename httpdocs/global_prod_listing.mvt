@@ -37,7 +37,7 @@
 				<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
 				<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 			</mvt:if>
-			<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
+			<img class="x-product-list__image &mvte:product_list:hover_class;" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product_list:name;">
 		</div>
 		<figcaption class="u-text-left u-width-12">
 			<strong class="x-product-list__code u-text-bold">&mvte:product_list:code;</strong>

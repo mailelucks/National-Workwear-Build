@@ -48,6 +48,11 @@
 						<td class="c-table-responsive__cell" scope="row" data-label="">
 							<div class="o-layout">
 								<div class="o-layout__item u-width-12 u-width-4--m u-width-3--l u-text-center">
+									<mvt:if expr="ISNULL l.settings:group:imagetypes:main AND l.settings:group:imagetypes:Addtl">
+										<mvt:assign name="l.settings:group:imagetypes:main" value="g.domain:image_root $ l.settings:group:imagetypes:Addtl" />
+									<mvt:elseif expr="ISNULL l.settings:group:imagetypes:main">
+										<mvt:assign name="l.settings:group:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+									</mvt:if>
 									<p><img src="&mvte:group:imagetypes:main;" alt="&mvt:group:name;" title="&mvt:group:name;"></p>
 								</div>
 								<div class="o-layout__item u-width-12 u-width-8--m u-width-9--l t-basket__product-details">
