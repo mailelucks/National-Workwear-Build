@@ -1,0 +1,22 @@
+<div class="x-search-preview__list">
+	<div class="x-search-preview__line">
+		<figure class="x-search-preview__image">
+			<mvt:if expr="ISNULL l.settings:product:imagetypes:main AND l.settings:product:imagetypes:Addtl">
+				<mvt:assign name="l.settings:product:imagetypes:main" value="l.settings:product:imagetypes:Addtl" />
+			<mvt:elseif expr="ISNULL l.settings:product:imagetypes:Addtl AND ISNULL l.settings:product:imagetypes:main">
+				<mvt:assign name="l.settings:product:imagetypes:main" value="g.domain:image_root $ 'themes/shadows/core/images/img_no_thumb.jpg'" />
+			</mvt:if>
+			<img src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" title="&mvte:product:name;">
+		</figure>
+		<div class="x-search-preview__item">
+			<span class="x-search-preview__item-name">&mvte:product:name;</span>
+			<hr class="c-keyline">
+			<span class="x-search-preview__item-price u-text-right">
+				<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+					<span class="u-font-small">Was: <s>&mvt:product:formatted_base_price;</s><br></span>
+				</mvt:if>
+				<strong>&mvt:product:formatted_price;</strong>
+			</span>
+		</div>
+	</div>
+</div>

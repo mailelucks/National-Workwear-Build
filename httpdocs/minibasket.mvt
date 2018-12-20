@@ -14,6 +14,11 @@
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:item:uri" value="Store_Product_URL(l.settings:item_p, NULL)" />
 					<div class="x-mini-basket__line">
 						<figure class="x-mini-basket__image">
+							<mvt:if expr="ISNULL l.settings:item:imagetypes:main AND l.settings:item:imagetypes:Addtl">
+								<mvt:assign name="l.settings:item:imagetypes:main" value="g.domain:image_root $ l.settings:item:imagetypes:Addtl" />
+							<mvt:elseif expr="ISNULL l.settings:item:imagetypes:main">
+								<mvt:assign name="l.settings:item:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+							</mvt:if>
 							<img src="&mvte:item:imagetypes:main;" alt="&mvt:item:name;" title="&mvt:item:name;">
 						</figure>
 						<a class="x-mini-basket__item u-color-gray-40" href="&mvt:item:uri;">

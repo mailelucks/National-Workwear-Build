@@ -26,11 +26,13 @@
 		<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
 			<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
 			<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
+		<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main AND l.settings:product_list:imagetypes:Addtl">
+			<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ l.settings:product_list:imagetypes:Addtl" />
 		<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
 			<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 		</mvt:if>
 		<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product_list:tall_class;">
-			<mvt:assign name="l.settings:product_list:tall_class" value="''" />
+			<mvt:assign name="l.settings:product_list:tal_class" value="''" />
 			<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
 				<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
 				<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
@@ -55,5 +57,15 @@
 		<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product_list:link;?show=quickview"></a>
 	</div>
 </mvt:if>
+
+<mvt:if expr="g.Debug EQ 1">
+	<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:product_list ), ',', asciichar( 10 ) )" />
+	<!--
+	@@product_list
+	==========================
+	&mvt:global:mvt_debug;
+	-->
+</mvt:if>
+
 <mvt:comment>clear entity to avoid dupe/inaccurate prod vars</mvt:comment>
 <mvt:assign name="l.settings:product_list" value="''" />
