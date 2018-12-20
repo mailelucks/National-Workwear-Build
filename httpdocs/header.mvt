@@ -1,3 +1,7 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB83HPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />
 <header class="o-wrapper o-wrapper--full o-wrapper--flush t-site-header u-nww-bg-secondary u-color-white" data-hook="site-header">
 	<mvt:if expr="l.settings:page:code NE 'PROD' OR l.settings:page:code NE 'ORDL' OR l.settings:page:code NE 'OCST' OR l.settings:page:code NE 'OUS1' OR l.settings:page:code NE 'OUSM' OR l.settings:page:code NE 'UATM' OR l.settings:page:code NE 'UATR' OR l.settings:page:code NE 'OSEL' OR l.settings:page:code NE 'OPAY' OR l.settings:page:code NE'INVC'">
@@ -130,14 +134,14 @@
 	<mvt:if expr="l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK'">
 		<mvt:if expr="l.settings:page:code EQ 'ORDL' OR l.settings:page:code EQ 'OCST' OR l.settings:page:code EQ 'OUS1' OR l.settings:page:code EQ 'OUSM' OR l.settings:page:code EQ 'UATM' OR l.settings:page:code EQ 'UATR' OR l.settings:page:code EQ 'OSEL' OR l.settings:page:code EQ 'OPAY'">
 		<mvt:elseif expr="l.settings:page:code EQ 'ORDS' OR l.settings:page:code EQ 'INVC'">
-			<section class="o-layout u-bg-gray-50 u-color-white">
+			<section class="o-layout u-bg-gray-10 u-color-black">
 				<div class="o-layout__item">
 					<br>
 					<br>
-					<div class="o-layout__item u-color-gray-20">Thank you for your order, &mvte:order:ship_fname;!</div>
+					<div class="o-layout__item">Thank you for your order, &mvte:order:ship_fname;!</div>
 					<p class="o-layout__item c-heading-delta u-text-bold">Confirmation #&mvt:order:id;</p>
 					<p class="o-layout__item u-font-small">
-						<button class="c-button c-button--clear c-button--flush u-bg-transparent u-color-white" data-hook="print-invoice"><span class="u-icon-print u-color-gray-20"></span> Print Receipt</button>
+						<button class="c-button c-button--clear c-button--flush u-bg-transparent u-color-black" data-hook="print-invoice"><span class="u-icon-print"></span> Print Receipt</button>
 					</p>
 					<br>
 				</div>

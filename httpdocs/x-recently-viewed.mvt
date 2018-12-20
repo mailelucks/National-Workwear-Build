@@ -108,11 +108,13 @@
   <section class="x-recently-viewed">
     <h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Recently Viewed</h4>
     <div id="x-recently-viewed-carousel" class="x-nww-slider">
-    <mvt:comment><div id="x-recently-viewed-carousel" class="x-nww-grid-slider"></mvt:comment>
-      <mvt:foreach iterator="product_list" array="recently_viewed:products">
-        <mvt:if expr="l.settings:product_list:code EQ g.Product_Code">
+    <mvt:comment><div class="x-nww-grid-slider"></mvt:comment>
+      <mvt:foreach iterator="viewed_product" array="recently_viewed:products">
+        <mvt:if expr="l.settings:viewed_product:code EQ g.Product_Code">
           <mvt:foreachcontinue/>
         </mvt:if>
+        <mvt:assign name="l.settings:product" value="l.settings:viewed_product" />
+        
         <mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
       </mvt:foreach>
     </div>

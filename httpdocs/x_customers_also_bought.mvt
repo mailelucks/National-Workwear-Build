@@ -55,8 +55,8 @@
 	<section class="x-customers-also-bought">
 		<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Customers Also Bought...</h4>
 	<div id="x-customers-also-bought-carousel" class="x-nww-slider">
-		<mvt:foreach iterator="product_list" array="query:query_products">
-			<mvt:assign name="l.settings:product_list:" value="l.value" />
+		<mvt:foreach iterator="query_product" array="query:query_products">
+			<mvt:assign name="l.settings:product_list" value="l.settings:query_product" />
 			<mvt:comment>Load product display</mvt:comment>
 			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 		</mvt:foreach>

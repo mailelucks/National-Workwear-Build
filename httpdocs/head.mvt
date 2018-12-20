@@ -1,0 +1,204 @@
+<mvt:if expr="'CTGY' CIN l.settings:page:code">
+	<link rel="canonical" href="&mvte:category:link;" itemprop="url">
+<mvt:elseif expr="'PROD' CIN l.settings:page:code OR l.settings:page:code EQ 'PATR'">
+	<link rel="canonical" href="&mvt:product:link;" itemprop="url">
+<mvt:else>
+	<link rel="canonical" href="&mvte:urls:_self:auto;" itemprop="url">
+</mvt:if>
+<mvt:item name="prodctgy_meta" param="combined" />
+
+<mvt:item name="readytheme" param="contentsection( 'readytheme_styles' )" />
+
+<script>
+	
+	dataLayer = [];
+<mvt:comment>Google Tag Manager - Data Layer </mvt:comment>
+<mvt:comment><!-- Page Type Assignment --></mvt:comment>
+	<mvt:if expr="l.settings:page:code EQ 'SFNT'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'home'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'SEARCH'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'searchresults'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'category'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'product'" />
+	<mvt:elseif expr="l.settings:page:code CIN 'BASK,ORDL,OCST,OUS1,OUSM,OSEL,OPAY'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'cart'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'INVC'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'purchase'" />
+	<mvt:else>
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'other'" />
+	</mvt:if>
+
+	<mvt:if expr="l.settings:page:code EQ 'BASK'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="1"/>
+	<mvt:elseif expr="l.settings:page:code EQ 'ORDL'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="2"/>
+	<mvt:elseif expr="l.settings:page:code EQ 'OCST'">
+			<mvt:assign name="l.settings:datalayer:checkout_step" value="3"/>
+	<mvt:elseif expr="l.settings:page:code EQ 'OSEL'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="5"/>
+	<mvt:elseif expr="l.settings:page:code EQ 'OPAY'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="6"/>
+	</mvt:if>
+	
+	<mvt:if expr="g.basket:cust_id AND g.customer:bill_email">
+		<mvt:assign name="l.settings:datalayer:userEmail" value="g.customer:bill_email" />
+	<mvt:elseif expr="g.basket:bill_email">
+		<mvt:assign name="l.settings:datalayer:userEmail" value="g.basket:bill_email" />
+	<mvt:else>
+		<mvt:assign name="l.settings:datalayer:userEmail" value="''" />
+	</mvt:if>
+
+	dataLayer.push({
+		"pageCode": "&mvtj:page:code;",
+		<mvt:if expr="g.Screen EQ 'NTFD'">
+		  "canonicalUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
+		  "event": "NTFD",
+		</mvt:if>
+		"pageType": "&mvtj:datalayer:pageType;",
+		"pageName": "&mvtj:datalayer:pageName;",
+		"userId": "&mvtj:global:basket:cust_id;",
+		"userEmail": "&mvtj:datalayer:userEmail;",
+		"basketId": "&mvtj:global:basket:basket_id;",
+		"categoryCode": "&mvtj:global:Category_Code;",
+		"categoryName": "&mvtj:datalayer:categoryName;",
+		"productCode": "&mvtj:product:code;",
+		"checkoutStep": "&mvtj:datalayer:checkout_step;"
+	});
+
+	<mvt:if expr="l.settings:page:code EQ 'PROD'">
+		dataLayer.push({
+			"ecommerce": {
+				"detail": {
+					"products": [{
+						"name": "&mvtj:product:name;",
+						"id": "&mvtj:product:code;",
+						"price": "&mvtj:product:price;",
+						"sku": "&mvtj:item:code;",
+						"category": "",
+						"variant": ""
+					}]
+				}
+			},
+			"content_type": "product",
+			"content_ids": '&mvtj:product:code;',
+			"value": &mvt:product:price;,
+			"currency": "USD"
+		});
+	</mvt:if>
+	<mvt:if expr="l.settings:page:code EQ 'INVC'">
+		<mvt:foreach iterator="charge" array="order:charges">
+			<mvt:if expr="l.settings:charge:type EQ 'TAX'">
+				<mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
+			<mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
+				<mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="'['" />
+		</mvt:if>
+		<mvt:foreach iterator="item" array="order:items">
+			<mvt:if expr="POS1 GT 1">
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			<mvt:else>
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+		</mvt:if>
+			dataLayer.push({
+			'ecommerce': {
+				'purchase': {
+					'actionField': {
+						'id': '&mvtj:order:id;',
+						'revenue': '&mvtj:order:total;',
+						'tax': '&mvtj:gtm:tax;',
+						'shipping': '&mvtj:gtm:shipping;'
+					},
+					'products': [
+					<mvt:foreach iterator="item" array="order:groups">
+						<mvt:if expr="POS1 GT 1">,</mvt:if>
+						{
+							'name': '&mvtj:item:name;',
+							'id': '&mvtj:item:code;',
+							'price': '&mvtj:item:price;',
+							<mvt:if expr="miva_array_elements(l.settings:item:options) GT 0">
+								<mvt:assign name="l.settings:item:gtm_variant" value="''" />
+								<mvt:foreach iterator="option" array="item:options">
+									<mvt:if expr="POS2 GT 1">
+										<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ ' ' " />
+									</mvt:if>
+									<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ l.settings:option:opt_code" />
+								</mvt:foreach>
+								<mvt:if expr="l.settings:item:gtm_variant">
+								'variant': '&mvtj:item:gtm_variant;',
+								</mvt:if>
+							</mvt:if>
+							'quantity': &mvtj:item:quantity;
+						}
+					</mvt:foreach>
+					]
+				}
+			},
+			"order_id": '&mvt:order:id;',
+			"order_total": '&mvt:order:total;',
+			"content_type": "product",
+			"content_ids": &mvt:content_ids;,
+			"value": &mvt:order:total;,
+			"currency": "USD"
+		});
+	<mvt:elseif expr="l.settings:datalayer:checkout_step">
+		<mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="'['" />
+		</mvt:if>
+		<mvt:foreach iterator="item" array="basket:items">
+			<mvt:if expr="POS1 GT 1">
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			<mvt:else>
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+		</mvt:if>
+		dataLayer.push({
+			"event": "checkout",
+			"ecommerce": {
+				"checkout": {
+					"actionField": {
+						"step": &mvt:datalayer:checkout_step;
+					},
+					"products": [
+						<mvt:foreach iterator="item" array="global_minibasket:items">
+							{
+								"name": "&mvtj:item:name;",
+								"id": "&mvte:item:product:code;",
+								"price": "&mvte:item:price;",
+								"sku": "&mvte:item:code;",
+								"category": "",
+								"variant": "",
+								"quantity": &mvte:item:quantity;
+							},
+						</mvt:foreach>
+					]
+				}
+			},
+			"content_type": "product",
+			"content_ids": &mvt:content_ids;,
+			"value": &mvt:basket:total;,
+			"currency": "USD"
+		});
+	</mvt:if>
+
+</script>
+<!-- End Google Tag Manager - Data Layer -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TB83HPG');</script>
+<!-- End Google Tag Manager -->
