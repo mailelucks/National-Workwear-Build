@@ -20,7 +20,7 @@
 	<section class="u-hidden u-flex--l o-layout--align-center o-layout--justify-between o-layout--wrap o-layout--flush t-display-list-filtering__container">
 		<div class="o-layout__item">
 			<div class="x-product-list__title" title="&mvte:category:name;">
-				<h1 class="u-text-bold">&mvte:category:name;</h1>
+				<span class="x-product-list--ctgy-name u-font-secondary u-text-bold">&mvte:category:name;</span>
 			</div>
 		</div>
 		<div class="o-layout__item x-display-list-filtering t-display-list-filtering o-layout--justify-end">

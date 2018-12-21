@@ -91,7 +91,11 @@
 		</div>
 	</section>
 
-	<mvt:if expr="g.storefront_hero_image:image AND g.storefront_hero_image_mobile:image">
+	<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:sfnt_hero_section" value="Transient_ReadyTheme_ContentSection( 'sfnt_hero_section', 24*60*60, l.settings )" />
+	<mvt:if expr="l.settings:sfnt_hero_section">
+			&mvt:sfnt_hero_section;
+	<mvt:else>
+		<mvt:comment> <!-- Failsafe! --> </mvt:comment>
 		<mvt:item name="readytheme" param="contentsection( 'sfnt_hero_section' )" />
 	</mvt:if>
 	<!-- end hero banner -->

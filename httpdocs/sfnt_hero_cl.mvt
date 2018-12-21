@@ -1,0 +1,86 @@
+<mvt:item name="html_profile" />
+<head itemscope itemtype="http://schema.org/WebSite">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;" />
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title itemprop="name">&mvt:page:title;</title>
+	<mvt:else>
+		<title itemprop="name">&mvt:store:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+	<link rel="stylesheet" href="/mm5/themes/shadows/sfnt-styles-cl.css">
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="header" />
+		</div>
+	</section>
+
+<mvt:item name="tgcomponent" param="Layout_Load_Code( 'sfnt', l.settings:sfnt_layout )"/>
+
+<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:sfnt_layout ), ',', asciichar( 10 ) )" />
+<!--
+@@sfnt
+==================
+&mvt:global:mvt_debug;
+-->
+
+
+<mvt:foreach iterator="section" array="sfnt_layout">
+	<mvt:if expr="l.settings:section:name EQ 'Hero'">
+		<mvt:assign name="l.settings:hero" value="l.settings:section" />
+		<mvt:if expr="l.settings:hero:children">
+			<mvt:foreach iterator="child" array="hero:children">
+				<mvt:if expr="l.settings:child:component:name EQ 'Button'">
+					<mvt:assign name="l.settings:hero:button" value="l.settings:child" />
+				</mvt:if>
+			</mvt:foreach>
+		</mvt:if>
+		<section class="x-sfnt--hero__container u-flex o-layout--flush" &mvt:global:debug_hide;>
+			<div class="o-layout__item">
+				<div class="x-hero">
+					<picture class="x-sfnt--overlay x-hero--bg t-container">
+					  <source media="(max-width: 767px)" srcset="&mvt:global:domain:image_root;&mvte:hero:attributes:mobile_bg:value;">
+					  <source media="(min-width: 768px)" srcset="&mvt:global:domain:image_root;&mvte:hero:attributes:desktop_bg:value;">
+					  <img src="&mvt:global:domain:image_root;&mvte:hero:attributes:desktop_bg:value;" alt="&mvte:hero:attributes:header:value;">
+					</picture>
+					<div class="x-sfnt--overlay x-sfnt--overlay--black-gradient"></div>
+					<div class="x-sfnt--overlay x-sfnt--overlay--grey"></div>
+					<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
+					<div class="x-hero--content x-sfnt--overlay-content u-flex o-layout--column o-layout--align-flex-start o-layout--justify-center">
+						<h2 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white" itemprop="">&mvte:hero:attributes:header:value;</h2>
+						<mvt:if expr="l.settings:hero:button">
+							<button class="c-button t-nww-cta-button u-bg-white">
+								<a class="u-nww-color-secondary &mvte:hero:button:attributes:style_bg:value; u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:hero:button:attributes:link:value;" title="&mvte:hero:attributes:header:value;">
+									<span class="t-nww-cta-button__text">&mvte:hero:button:attributes:link_label:value;</span>
+									<span class="t-nww-cta-button__icon &mvte:hero:button:attributes:style_icon:value;"></span>
+								</a>
+							</button>
+						</mvt:if>
+					</div>
+				</div>
+			</div>
+		</section>
+	</mvt:if>
+	<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:component ), ',', asciichar( 10 ) )" />
+	<!--
+	@@component
+	=======================
+	&mvt:global:mvt_debug;
+	-->
+</mvt:foreach>
+
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="footer" />
+		</div>
+	</section>
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

@@ -123,7 +123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<mvt:item name="breadcrumbs" />
 </mvt:if>
 
-<mvt:if expr="l.settings:page:code EQ 'SFNT'">
+<mvt:if expr="l.settings:page:code EQ 'SFNT' or l.settings:page:code EQ 'SFNT_CL'">
 	<main>
 <mvt:elseif expr="l.settings:page:code EQ 'CTGY' OR l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
 	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--flush">
@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<hr class="c-keyline">
 				</div>
 			</section>
-		<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP'">
+		<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP' AND l.settings:page:code NE 'SFNT_CL'">
 			<section class="o-layout">
 				<div class="o-layout__item">
 					<h1 class="c-heading-delta u-text-bold">&mvt:page:name;</h1>
