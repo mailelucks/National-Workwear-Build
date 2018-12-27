@@ -1,68 +1,50 @@
 <Module code="TGCOMPONENTS" feature="util">
 	
 	<Component_Add>
-		<Code>sfnt_featured_ctgys_section</Code>
-		<Name>Storefront: Featured Categories</Name>
-		<Descrip>5 Categories may be featured, no more no less!</Descrip>
+		<Code>sfnt_tabbed_video_section</Code>
+		<Name>Storefront: Tabs and Video</Name>
+		<Descrip>A two column section with a patterned background, button, tabs and video.</Descrip>
+		<Allow_Nest>1</Allow_Nest>
+	</Component_Add>
+	
+	<ComponentAttribute_Add component="sfnt_tabbed_video_section">
+		<Code>sfnt_tabs_col</Code>
+		<Prompt>Tabs Active</Prompt>
+		<Type>checkbox</Type>
+		<Required>1</Required>
+	</ComponentAttribute_Add>
+	<ComponentAttribute_Add component="sfnt_tabbed_video_section">
+		<Code>sfnt_video_col</Code>
+		<Prompt>Video Active</Prompt>
+		<Type>checkbox</Type>
+		<Required>1</Required>
+	</ComponentAttribute_Add>
+
+
+	<Component_Add>
+		<Code>tabs</Code>
+		<Name>Tabs</Name>
+		<Descrip>Can assign exactly 3 tabs.</Descrip>
 		<Allow_Nest>0</Allow_Nest>
 	</Component_Add>
-
-	<ComponentAttribute_Add component="sfnt_featured_ctgys_section">
-		<Code>featured_ctgy_1</Code>
-		<Prompt>Featured Category 1</Prompt>
-		<Type>link</Type>
+	<ComponentAttribute_Add component="tabs">
+		<Code>tab_1_label</Code>
+		<Prompt>Tab 1: Label</Prompt>
+		<Type>text</Type>
 		<Required>1</Required>
 	</ComponentAttribute_Add>
-	<ComponentAttribute_Add component="sfnt_featured_ctgys_section">
-		<Code>featured_ctgy_2</Code>
-		<Prompt>Featured Category 2</Prompt>
-		<Type>link</Type>
-		<Required>1</Required>
-	</ComponentAttribute_Add>
-	<ComponentAttribute_Add component="sfnt_featured_ctgys_section">
-		<Code>featured_ctgy_3</Code>
-		<Prompt>Featured Category 3</Prompt>
-		<Type>link</Type>
-		<Required>1</Required>
-	</ComponentAttribute_Add>
-	<ComponentAttribute_Add component="sfnt_featured_ctgys_section">
-		<Code>featured_ctgy_4</Code>
-		<Prompt>Featured Category 4</Prompt>
-		<Type>link</Type>
-		<Required>1</Required>
-	</ComponentAttribute_Add>
-	<ComponentAttribute_Add component="sfnt_featured_ctgys_section">
-		<Code>featured_ctgy_5</Code>
-		<Prompt>Featured Category 5</Prompt>
-		<Type>link</Type>
+	<ComponentAttribute_Add component="tabs">
+		<Code>tab_1_content</Code>
+		<Prompt>Tab 1: Content</Prompt>
+		<Type>memo</Type>
 		<Required>1</Required>
 	</ComponentAttribute_Add>
 
-	<LayoutComponent_Add layout="sfnt" component="sfnt_featured_ctgys_section">
-		<Name>Featured Categories</Name>
-		<Active>1</Active>
-		<Attributes>
-			<Attribute code="featured_ctgy_1">
-				<LinkType>Category</LinkType>
-				<Value>safety_toe_shoes</Value>
-			</Attribute>
-			<Attribute code="featured_ctgy_2">
-				<LinkType>Category</LinkType>
-				<Value>footwear</Value>
-			</Attribute>
-			<Attribute code="featured_ctgy_3">
-				<LinkType>Category</LinkType>
-				<Value>workwear</Value>
-			</Attribute>
-			<Attribute code="featured_ctgy_4">
-				<LinkType>Category</LinkType>
-				<Value>outerwear</Value>
-			</Attribute>
-			<Attribute code="featured_ctgy_5">
-				<LinkType>Category</LinkType>
-				<Value>uniforms</Value>
-			</Attribute>
-		</Attributes>
-	</LayoutComponent_Add>	
+	<Component_Add>
+		<Code>video</Code>
+		<Name>Video</Name>
+		<Descrip>Video with custom player.</Descrip>
+		<Allow_Nest>0</Allow_Nest>
+	</Component_Add>
 
 </Module>
