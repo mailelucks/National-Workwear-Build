@@ -105,6 +105,7 @@
 			<mvt:item name="readytheme" param="navigationset( 'sfnt_featured_ctgy' )" />
 		</section>
 		<!-- end featured categories -->
+
 		<section class="x-sfnt--customization__container aos-item t-container u-flex u-cement-bg o-layout--flush" data-aos="fade-in" data-aos-once="true" data-aos-duration="1000" &mvt:global:debug_hide;>
 			<div class="o-layout__item">
 				<div class="x-sfnt--customization u-flex o-layout o-layout--justify-start u-grids-2--l">
@@ -200,8 +201,8 @@
 						<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 						<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--justify-end">
 							<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l">
-								<div class="x-featured-service-bravo--col-1__inner o-layout o-layout--align-center">
-									<video data-hook="nww-video" class="x-nww-video x-featured-service-bravo__video c-sfnt__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
+								<div class="x-featured-service-bravo--col-1__inner o-layout o-layout--align-center" data-hook="nww-video">
+									<video class="x-nww-video x-featured-service-bravo__video c-sfnt__video" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
 									  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
 									  <p>Your browser doesn't support HTML5 video. Here is
 									     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
@@ -221,7 +222,7 @@
 											<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 										</a>
 									</button>
-									<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-shown o-layout--justify-start o-layout--align-center u-hidden--l" data-mini-modal data-mini-modal-type="iframe" href="/storefront.html">
+									<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-shown o-layout--justify-start o-layout--align-center u-hidden--l" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">
 										<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
 										<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
 									</a>
