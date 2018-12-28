@@ -25,72 +25,89 @@
 
 	<mvt:item name="readytheme" param="contentsection( 'cl_layout_assignment' )" />
 
-	<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:custom_layout ), ',', asciichar( 10 ) )" />
-	<!--
-	@@sfnt_layout
-	=========================
-	&mvt:global:mvt_debug;
-	-->
-
-	
 	<div class="o-nww-wrapper">
 	
-		<mvt:foreach iterator="section" array="custom_layout">
-			<mvt:if expr="l.settings:section:a_name EQ 'hero_row' AND l.settings:section:active">
-				<mvt:assign name="l.settings:hero" value="l.settings:section" />
-				<section class="&mvte:hero:attributes:class;" &mvt:global:debug_hide;>
-					<div class="o-layout__item">
-						<div class="x-hero u-flex">
-							<picture class="x-sfnt--overlay x-hero--bg" data-responsive-background-image>
-							  <source media="(max-width: 767px)" srcset="&mvt:global:domain:image_root;&mvte:hero:attributes:bg_mobile:value;">
-							  <source media="(max-width: 1279px)" srcset="&mvt:global:domain:image_root;&mvte:hero:attributes:bg_tablet:value;">
-							  <source media="(min-width: 1280px)" srcset="&mvt:global:domain:image_root;&mvte:hero:attributes:bg_desktop:value;">
-							  <img src="&mvt:global:domain:image_root;&mvte:hero:attributes:bg_desktop:value;" alt="&mvte:hero:attributes:header:value;">
-							</picture>
-							<div class="x-sfnt--overlay x-sfnt--overlay--black-gradient"></div>
-							<div class="x-sfnt--overlay x-sfnt--overlay--grey"></div>
-							<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
-							<div class="x-hero--content x-sfnt--overlay-content o-layout--column u-flex o-layout--justify-center">
-								<h2 class="u-sfnt-header--hero &mvte:hero:attributes:header_color:value; u-sfnt-header u-font-secondary u-text-bold">&mvte:hero:attributes:header:value;</h2>
-								<button class="c-button t-nww-cta-button u-bg-white">
-									<a class="&mvte:hero:attributes:button_text_color:value; &mvte:hero:attributes:button_bg:value; u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:hero:attributes:button_link:value;" title="&mvte:hero:attributes:header:value;">
-										<span class="t-nww-cta-button__text">&mvte:hero:attributes:button_text:value;</span>
-										<span class="t-nww-cta-button__icon &mvte:hero:attributes:button_icon:value;"></span>
-									</a>
-								</button>
+		<mvt:foreach iterator="row" array="custom_layout">
+
+			<mvt:if expr="l.settings:row:a_name EQ 'hero_row' AND l.settings:row:active">
+				<section id="&mvte:row:attributes:id:value;" class="&mvte:row:attributes:class:value; &mvte:row:attributes:flex_align_items:value; &mvte:row:attributes:flex_justify_content:value; &mvte:row:attributes:flex_direction:value; &mvte:row:attributes:flex_wrap:value; u-flex" style="&mvte:row:attributes:css_string; ">
+					<picture class="x-sfnt--overlay x-hero--bg" data-responsive-background-image>
+						 <source media="(max-width: 767px)" srcset="&mvt:global:domain:image_root;&mvte:row:attributes:bg_img_mobile:value;">
+						 <source media="(max-width: 1279px)" srcset="&mvt:global:domain:image_root;&mvte:row:attributes:bg_img_tablet:value;">
+						 <source media="(min-width: 1280px)" srcset="&mvt:global:domain:image_root;&mvte:row:attributes:bg_img_desktop:value;">
+						 <img src="&mvt:global:domain:image_root;&mvte:row:attributes:bg_img_desktop:value;" alt="&mvt:global:store:name;">
+					</picture>
+					<div class="x-sfnt--overlay x-sfnt--overlay--black-gradient"></div>
+					<div class="x-sfnt--overlay x-sfnt--overlay--grey"></div>
+					<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
+					<mvt:foreach iterator="column" array="row:children">
+						<div class="o-layout__item">
+							<div class="x-cl-column &mvte:column:attributes:class:value; &mvte:column:attributes:flex_align_items:value; &mvte:column:attributes:flex_justify_content:value; &mvte:column:attributes:flex_direction:value; &mvte:column:attributes:flex_wrap:value;  x-sfnt--overlay-content u-flex" style="&mvte:column:attributes:css_string;">
+								<mvt:foreach iterator="element" array="column:children">
+									<mvt:if expr="l.settings:element:component:code EQ 'element_header'">
+										<h2 class="&mvte:element:attributes:class:value; &mvte:element:attributes:header_color:value; u-font-secondary u-text-bold">&mvte:element:attributes:header:value;</h2>
+									</mvt:if>
+									<mvt:if expr="l.settings:element:component:code EQ 'element_button'">
+										<button class="c-button t-nww-cta-button">
+											<a class="&mvte:element:attributes:button_class:value; &mvte:element:attributes:button_bg:value; &mvte:element:attributes:button_text_color:value; u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:element:attributes:button_link:value;" title="&mvte:element:attributes:button_text:value;">
+												<span class="t-nww-cta-button__text">&mvte:element:attributes:button_text:value;</span>
+												&mvt:element:attributes:button_icon:value;
+											</a>
+										</button>
+									</mvt:if>
+								</mvt:foreach>
 							</div>
 						</div>
-					</div>
+					</mvt:foreach>
 				</section>
 			</mvt:if>
-			<mvt:if expr="l.settings:section:component:code EQ 'sfnt_featured_ctgys_section' AND l.settings:section:active">
-				<mvt:assign name="l.success" value="miva_array_insert(l.settings:featured_ctgys, l.settings:section:attributes:featured_ctgy_1, 1)" />
-				<mvt:assign name="l.success" value="miva_array_insert(l.settings:featured_ctgys, l.settings:section:attributes:featured_ctgy_2, 2)" />
-				<mvt:assign name="l.success" value="miva_array_insert(l.settings:featured_ctgys, l.settings:section:attributes:featured_ctgy_3, 3)" />
-				<mvt:assign name="l.success" value="miva_array_insert(l.settings:featured_ctgys, l.settings:section:attributes:featured_ctgy_4, 4)" />
-				<mvt:assign name="l.success" value="miva_array_insert(l.settings:featured_ctgys, l.settings:section:attributes:featured_ctgy_5, 5)" />
-				<section class="t-container x-sfnt--featured-ctgys__container" &mvt:global:debug_hide;> 
-					<div class="x-featured-ctgy__inner x-product-list navigation-element &mvte:readytheme:code;">
-						<div id="x-carousel-featured-ctgy" class="u-flex x-nww-slider">
-							<mvt:foreach iterator="ctgy" array="featured_ctgys">
-								<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:ctgy:link:value, l.settings:ctgy:cl_c )" />
-								<mvt:item name="customfields" param="Read_Category_ID( l.settings:ctgy:cl_c:id, 'sfnt_featured_grid_bg, sfnt_featured_grid_product', l.settings:ctgy:sfnt_featured_imgs )" />
-								<div class="x-featured-ctgy">
-									<a class="o-layout--align-center o-layout--justify-center o-layout--column u-text-bold u-flex" href="&mvte:ctgy:uri;">
-										<div class="x-featured-ctgy--graphics-container u-flex o-layout--justify-end">
-											<div class="x-featured-ctgy--product">
-												<img src="&mvte:global:domain:image_root;&mvte:ctgy:sfnt_featured_imgs:sfnt_featured_grid_product;" alt="">
+			<mvt:if expr="l.settings:row:a_name EQ 'featured-categories_row' AND l.settings:row:active">
+				<section id="&mvte:row:attributes:id:value;" class="&mvte:row:attributes:class:value; &mvte:row:attributes:flex_align_items:value; &mvte:row:attributes:flex_justify_content:value; &mvte:row:attributes:flex_direction:value; &mvte:row:attributes:flex_wrap:value; t-container u-flex" style="&mvte:row:attributes:css_string;">
+					<mvt:foreach iterator="column" array="row:children">
+						<mvt:if expr="'slider' CIN l.settings:column:attributes:class:value">
+							<div id="&mvte:column:attributes:id:value;" class="x-cl-column &mvte:column:attributes:class:value; u-flex" style="&mvte:column:attributes:css_string;">
+								<mvt:foreach iterator="element" array="column:children">
+									<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:element ), ',', asciichar( 10 ) )" />
+									<!--
+									@@element
+									=====================
+									&mvt:global:mvt_debug;
+									-->
+									<div class="x-featured-ctgy">
+										<a class="o-layout--align-center o-layout--justify-center o-layout--column u-text-bold u-flex" href="&mvte:element:attributes:link:value;">
+											<div class="x-featured-ctgy--graphics-container u-flex o-layout--justify-end">
+												<div class="x-featured-ctgy--product">
+													<img src="&mvte:element:attributes:foreground_img:value;" alt="&mvte:element:attributes:link_label:value;">
+												</div>
+												<div class="x-featured-ctgy--background">
+													<img src="&mvte:element:attributes:background_img:value;" alt="&mvte:element:attributes:link_label:value;">
+												</div>
 											</div>
-											<div class="x-featured-ctgy--background">
-												<img src="&mvte:global:domain:image_root;&mvte:ctgy:sfnt_featured_imgs:sfnt_featured_grid_bg;">
-											</div>
-										</div>
-										<h3 class="x-featured-ctgy--title u-text-center">&mvte:ctgy:cl_c:name;</h3>
-									</a>
+											<h3 class="x-featured-ctgy--title u-text-center">&mvte:element:attributes:link_label:value;</h3>
+										</a>
+									</div>
+								</mvt:foreach>
+							</div>
+						<mvt:else>
+							<div class="o-layout__item">
+								<div class="x-cl-column &mvte:column:attributes:class:value; &mvte:column:attributes:flex_align_items:value; &mvte:column:attributes:flex_justify_content:value; &mvte:column:attributes:flex_direction:value; &mvte:column:attributes:flex_wrap:value; u-flex" style="&mvte:column:attributes:css_string;">
+									<mvt:foreach iterator="element" array="column:children">
+										<mvt:if expr="l.settings:element:component:code EQ 'element_header'">
+											<h2 class="&mvte:element:attributes:class:value; &mvte:element:attributes:header_color:value; u-font-secondary u-text-bold">&mvte:element:attributes:header:value;</h2>
+										</mvt:if>
+										<mvt:if expr="l.settings:element:component:code EQ 'element_button'">
+											<button class="c-button t-nww-cta-button">
+												<a class="&mvte:element:attributes:button_class:value; &mvte:element:attributes:button_bg:value; &mvte:element:attributes:button_text_color:value; u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:element:attributes:button_link:value;" title="&mvte:element:attributes:button_text:value;">
+													<span class="t-nww-cta-button__text">&mvte:element:attributes:button_text:value;</span>
+													&mvt:element:attributes:button_icon:value;
+												</a>
+											</button>
+										</mvt:if>
+									</mvt:foreach>
 								</div>
-							</mvt:foreach>
-						</div>
-					</div>	
+							</div>
+						</mvt:if>
+					</mvt:foreach>
 				</section>
 			</mvt:if>
 			<mvt:if expr="l.settings:section:component:code EQ 'sfnt_customize_section' AND l.settings:section:active">
