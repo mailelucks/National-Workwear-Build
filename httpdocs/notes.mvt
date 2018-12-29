@@ -1,0 +1,52 @@
+notes:
+
+GLOBAL
+
+finesse the transition on mobile drawer, shrinks into the middle, should fade back into the top
+
+theme inconsistently loads, page will be off on the margins (looks zoomed in, like it isnt resizing) or "zoomed in". also inconsistent footer loads
+
+go back and review z-indexs and padding: 0 items, maybe use an o-flush or o-full
+
+change click loop to a foreach on featbrand ajax
+
+SEARCH RESULTS ARE CONFLICTING 
+
+SFNT
+
+quickview breaks on resize, why?
+custom tabs need the click triggered, why?
+add mix-blend-mode to overlays for better contrast
+
+PROD
+
+add to cart button logic could be better, what if not in stock? TURN OFF WHEN DONE TESTING...they arent tracking inventory :)
+
+**IMPORTANT**
+Delete all images that are 360x360 and 300x300
+
+12/10/18
+ see if logic on dectrims can be copied over. re: thumbnail hiding if empty
+ possible hover update for cta boxes, they disappear too quickly, need mouseover logic
+
+
+12/19/18
+	estimate shipping is broken
+
+12/20/18
+	see about different load image function for sfnt instead of all the readytheme image uri pulls
+
+12/21/18
+	Rename components to lock in sections, dont share with "Banner Section"
+
+12/26/18
+	Copy over the sr-only class from levels, or figure out something similar re: h1 shenanigans. make sure its the h1 sitewide, everything else needs to be h2
+
+	Add in js to calculate height of sfnt container/all banner sections with absolutely positioned backgrounds. get logic from archived js file for ctgy?
+
+
+12/28/18
+	add in width attribute for CL boilerplate
+	css line 836 sfnt-overlays - more logic to do with retaining image before JS does its thing with the background? might not be necessary with CL
+	WHERE YA LEFT OFF: timing of animations on brands and killing then reiniting on click. line 204 with JS brands animations
+
