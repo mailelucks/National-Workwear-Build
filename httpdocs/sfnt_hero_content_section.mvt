@@ -9,6 +9,11 @@
 
 <mvt:if expr="g.storefront_hero_image:active AND g.storefront_hero_image_mobile:active">
 	<section class="x-sfnt--hero__container u-flex o-layout--flush" &mvt:global:debug_hide;>
+		<picture class="x-sfnt--overlay x-hero--bg" data-responsive-background-image>
+			 <source media="(max-width: 767px)" srcset="&mvt:global:storefront_hero_image_mobile:url;">
+			 <source media="(min-width: 768px)" srcset="&mvt:global:storefront_hero_image:url;">
+			 <img src="&mvt:global:storefront_hero_image:url;" alt="&mvt:global:store:name;">
+		</picture>
 		<div class="o-layout__item">
 			<div class="x-hero">
 				<div class="x-sfnt--overlay x-hero--bg t-container u-shown u-hidden--l" style="background-image: url('&mvt:global:storefront_hero_image_mobile:url;')"></div>
