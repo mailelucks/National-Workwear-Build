@@ -1,7 +1,15 @@
 <mvt:if expr="g.show EQ 'sfnt_brands'">
 	<mvt:assign name="g.theme_path" value="'themes/shadows'" />
 	<mvt:foreach iterator="product" array="category_listing:products">
-		<mvt:assign name="l.settings:product_list" value="l.settings:product" />
+		<mvt:assign name="g.aos_animate_settings" value="'data-aos-easing=\"linear\" data-aos-once=\"false\" data-anchor-placement=\"top\" data-aos-anchor=\".x-sfnt--featured-brands__container\"'" />
+		<mvt:assign name="g.aos_animate" value="'data-aos=\"fade-down\"'" />
+		<mvt:if expr="l.pos1 EQ 1 or l.pos1 EQ 3">
+			
+		<mvt:elseif expr="l.pos1 EQ 2 or l.pos1 EQ 4">
+			
+		<mvt:elseif expr="l.pos1 EQ 5">
+			
+		</mvt:if>
 		<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 	</mvt:foreach>
 	<mvt:exit />
