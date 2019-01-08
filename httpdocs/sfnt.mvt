@@ -244,7 +244,7 @@
 				<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 				<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 				<div class="o-layout__item">
-					<div class="x-featured-service-charlie--content x-sfnt--overlay-content o-layout o-layout--justify-start">
+					<div class="x-featured-service-charlie--content x-sfnt--overlay-content o-layout o-layout--justify-start" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
 							<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-charlie u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_charlie:image_alt;</h2>
 							<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_charlie' )" />
 							<a class="x-featured-service-charlie__cta-button t-nww-cta-text-button t-nww-cta-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_featured_service_charlie:uri;" target="&mvt:global:sfnt_featured_service_charlie:link_targ;">

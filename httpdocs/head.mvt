@@ -6,11 +6,45 @@
 	<link rel="canonical" href="&mvte:urls:_self:auto;" itemprop="url">
 </mvt:if>
 <mvt:item name="prodctgy_meta" param="combined" />
-
 <mvt:item name="readytheme" param="contentsection( 'readytheme_styles' )" />
-
+<mvt:comment> PER PAGE STYLES | GROUPED STYLES -- START </mvt:comment>
+<mvt:assign name="g.theme_path" value="'themes/shadows'" />
+<mvt:assign name="g.currentPageCode" value="l.settings:page:code" />
+<mvt:if expr="'PROD' CIN l.settings:page:code">
+	<mvt:comment>
+		
+	</mvt:comment>
+</mvt:if>
+<mvt:if expr="l.settings:page:code CIN 'BASK,BSKE,OCST,OSEL,OPAY,INVC,OUSM,OUSL'">
+	<mvt:comment>
+		CHECKOUT STYLES
+	</mvt:comment>
+	<mvt:assign name="g.currentPageCode" value="'CHECKOUT-BASKET'" />
+</mvt:if>
+<mvt:assign name="g.currentPageCode" value="tolower( g.currentPageCode )" />
+<mvt:assign name="l.settings:custom_css:path" value="g.theme_path $'/ui/css/pages/'$ g.currentPageCode $ '.css'" />
+<mvt:assign name="l.settings:custom_css:path_mini" value="g.theme_path $'/ui/css/pages/mini/'$ g.currentPageCode $ '.min.css'" />
+<mvt:assign name="l.settings:custom_css:exists" value="sexists( '/mm5/' $ l.settings:custom_css:path )" />
+<mvt:assign name="l.settings:custom_css:exists_mini" value="sexists( '/mm5/' $ l.settings:custom_css:path_mini )" />
+<mvt:if expr="l.settings:custom_css:exists">
+	<mvt:assign name="l.settings:custom_css:time" value="stime( '/mm5/' $ l.settings:custom_css:path )" />
+	<mvt:if expr="l.settings:custom_css:exists_mini">
+		<mvt:assign name="l.settings:custom_css:time_mini" value="stime( '/mm5/' $ l.settings:custom_css:path_mini )" />
+		<mvt:if expr="l.settings:custom_css:time GT l.settings:custom_css:time_mini">
+			<mvt:comment>
+				trigger task to create mini
+			</mvt:comment>
+		<mvt:else>
+			<mvt:comment>
+				serve minified version of css
+			</mvt:comment>
+			<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path_mini" />?v=<mvt:eval expr="l.settings:custom_css:time_mini" />">
+		</mvt:if>
+	</mvt:if>
+	<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path" />?v=<mvt:eval expr="l.settings:custom_css:time" />">
+</mvt:if>
+<mvt:comment> PER PAGE STYLES | GROUPED STYLES -- END </mvt:comment>
 <script>
-	
 	dataLayer = [];
 <mvt:comment>Google Tag Manager - Data Layer </mvt:comment>
 <mvt:comment><!-- Page Type Assignment --></mvt:comment>
@@ -20,7 +54,7 @@
 		<mvt:assign name="l.settings:dataLayer:pageType" value="'searchresults'" />
 	<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
 		<mvt:assign name="l.settings:dataLayer:pageType" value="'category'" />
-	<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+	<mvt:elseif expr="'PROD' CIN l.settings:page:code">
 		<mvt:assign name="l.settings:dataLayer:pageType" value="'product'" />
 	<mvt:elseif expr="l.settings:page:code CIN 'BASK,ORDL,OCST,OUS1,OUSM,OSEL,OPAY'">
 		<mvt:assign name="l.settings:dataLayer:pageType" value="'cart'" />
@@ -67,7 +101,7 @@
 		"checkoutStep": "&mvtj:datalayer:checkout_step;"
 	});
 
-	<mvt:if expr="l.settings:page:code EQ 'PROD'">
+	<mvt:if expr="'PROD' CIN l.settings:page:code">
 		dataLayer.push({
 			"ecommerce": {
 				"detail": {
@@ -88,67 +122,67 @@
 		});
 	</mvt:if>
 	<mvt:if expr="l.settings:page:code EQ 'INVC'">
-		<mvt:foreach iterator="charge" array="order:charges">
-			<mvt:if expr="l.settings:charge:type EQ 'TAX'">
-				<mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
-			<mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
-				<mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
-			</mvt:if>
-		</mvt:foreach>
-		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
-			<mvt:assign name="l.settings:content_ids" value="'['" />
+	<mvt:foreach iterator="charge" array="order:charges">
+		<mvt:if expr="l.settings:charge:type EQ 'TAX'">
+			<mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
+		<mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
+			<mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
 		</mvt:if>
-		<mvt:foreach iterator="item" array="order:items">
-			<mvt:if expr="POS1 GT 1">
-				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
-			<mvt:else>
-				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
-			</mvt:if>
-		</mvt:foreach>
-		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
-			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+	</mvt:foreach>
+	<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+		<mvt:assign name="l.settings:content_ids" value="'['" />
+	</mvt:if>
+	<mvt:foreach iterator="item" array="order:items">
+		<mvt:if expr="POS1 GT 1">
+			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+		<mvt:else>
+			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
 		</mvt:if>
-			dataLayer.push({
-			'ecommerce': {
-				'purchase': {
-					'actionField': {
-						'id': '&mvtj:order:id;',
-						'revenue': '&mvtj:order:total;',
-						'tax': '&mvtj:gtm:tax;',
-						'shipping': '&mvtj:gtm:shipping;'
-					},
-					'products': [
-					<mvt:foreach iterator="item" array="order:groups">
-						<mvt:if expr="POS1 GT 1">,</mvt:if>
-						{
-							'name': '&mvtj:item:name;',
-							'id': '&mvtj:item:code;',
-							'price': '&mvtj:item:price;',
-							<mvt:if expr="miva_array_elements(l.settings:item:options) GT 0">
-								<mvt:assign name="l.settings:item:gtm_variant" value="''" />
-								<mvt:foreach iterator="option" array="item:options">
-									<mvt:if expr="POS2 GT 1">
-										<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ ' ' " />
-									</mvt:if>
-									<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ l.settings:option:opt_code" />
-								</mvt:foreach>
-								<mvt:if expr="l.settings:item:gtm_variant">
-								'variant': '&mvtj:item:gtm_variant;',
+	</mvt:foreach>
+	<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+		<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+	</mvt:if>
+		dataLayer.push({
+		'ecommerce': {
+			'purchase': {
+				'actionField': {
+					'id': '&mvtj:order:id;',
+					'revenue': '&mvtj:order:total;',
+					'tax': '&mvtj:gtm:tax;',
+					'shipping': '&mvtj:gtm:shipping;'
+				},
+				'products': [
+				<mvt:foreach iterator="item" array="order:groups">
+					<mvt:if expr="POS1 GT 1">,</mvt:if>
+					{
+						'name': '&mvtj:item:name;',
+						'id': '&mvtj:item:code;',
+						'price': '&mvtj:item:price;',
+						<mvt:if expr="miva_array_elements(l.settings:item:options) GT 0">
+							<mvt:assign name="l.settings:item:gtm_variant" value="''" />
+							<mvt:foreach iterator="option" array="item:options">
+								<mvt:if expr="POS2 GT 1">
+									<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ ' ' " />
 								</mvt:if>
+								<mvt:assign name="l.settings:item:gtm_variant" value="l.settings:item:gtm_variant $ l.settings:option:opt_code" />
+							</mvt:foreach>
+							<mvt:if expr="l.settings:item:gtm_variant">
+							'variant': '&mvtj:item:gtm_variant;',
 							</mvt:if>
-							'quantity': &mvtj:item:quantity;
-						}
-					</mvt:foreach>
-					]
-				}
-			},
-			"order_id": '&mvt:order:id;',
-			"order_total": '&mvt:order:total;',
-			"content_type": "product",
-			"content_ids": &mvt:content_ids;,
-			"value": &mvt:order:total;,
-			"currency": "USD"
-		});
+						</mvt:if>
+						'quantity': &mvtj:item:quantity;
+					}
+				</mvt:foreach>
+				]
+			}
+		},
+		"order_id": '&mvt:order:id;',
+		"order_total": '&mvt:order:total;',
+		"content_type": "product",
+		"content_ids": &mvt:content_ids;,
+		"value": &mvt:order:total;,
+		"currency": "USD"
+	});
 	<mvt:elseif expr="l.settings:datalayer:checkout_step">
 		<mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
 			<mvt:assign name="l.settings:content_ids" value="'['" />

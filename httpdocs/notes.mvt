@@ -50,3 +50,5 @@ Delete all images that are 360x360 and 300x300
 	css line 836 sfnt-overlays - more logic to do with retaining image before JS does its thing with the background? might not be necessary with CL
 	WHERE YA LEFT OFF: timing of animations on brands and killing then reiniting on click. line 204 with JS brands animations
 
+01/07/19
+	- issues with the css minify, how does it get the $page array to populate and what do we do about linking font files? also, struggles with the MVTCALL statement running correctly

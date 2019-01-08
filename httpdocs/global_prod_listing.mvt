@@ -1,4 +1,4 @@
-<div class="u-text-center" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
+<div class="u-text-center x-product-list__contents" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
 	<mvt:comment>reassign product entity to avoid system conflicts</mvt:comment>
 	<mvt:assign name="l.settings:product_list" value="l.settings:product" />
 	<mvt:comment>Get product pricing</mvt:comment>
