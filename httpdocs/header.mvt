@@ -2,6 +2,20 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB83HPG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+<mvt:comment>CALL ALL TRANSIENTS</mvt:comment>
+
+<mvt:comment>static elements of the preheader</mvt:comment>
+<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_static_preheader" value="Transient_ReadyTheme_ContentSection( 'header_static_preheader', 24*60*60, l.settings )" />
+
+<mvt:comment>logo</mvt:comment>
+<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_logo" value="Transient_ReadyTheme_ContentSection( 'header_logo', 24*60*60, l.settings )" />
+
+<mvt:comment>main navigation</mvt:comment>
+<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_main_nav" value="Transient_ReadyTheme_ContentSection( 'header_main_nav', 24*60*60, l.settings )" />
+
+
 <mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />
 <header class="o-wrapper o-wrapper--full o-wrapper--flush t-site-header u-nww-bg-secondary u-color-white" data-hook="site-header">
 	<mvt:if expr="l.settings:page:code NE 'PROD' OR l.settings:page:code NE 'ORDL' OR l.settings:page:code NE 'OCST' OR l.settings:page:code NE 'OUS1' OR l.settings:page:code NE 'OUSM' OR l.settings:page:code NE 'UATM' OR l.settings:page:code NE 'UATR' OR l.settings:page:code NE 'OSEL' OR l.settings:page:code NE 'OPAY' OR l.settings:page:code NE'INVC'">
@@ -14,43 +28,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<button class="c-button c-button--flush c-button--full c-button--hollow u-bg-transparent u-border-none u-font-huge u-icon-menu" data-hook="open-main-menu"></button>
 			</div>
 			
-			<mvt:if expr="l.settings:page:code EQ 'SFNT'">
-				<h1 class="o-layout__item u-text-center u-text-left--l t-site-header__logo u-flex-static">
-					<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
-						<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
-							<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
-							<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
-						<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
-							<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
-						</mvt:if>
-					</a>
-				</h1>
+			<mvt:if expr="l.settings:header_logo">
+				&mvt:header_logo;
 			<mvt:else>
-				<div class="o-layout__item u-text-center u-text-left--l t-site-header__logo u-flex-static">
-					<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
-						<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
-							<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
-							<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
-						<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
-							<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
-						</mvt:if>
-					</a>
-				</div>
+				<mvt:comment> <!-- Failsafe! --> </mvt:comment>
+				<mvt:item name="readytheme" param="contentsection( 'header_logo' )" />
 			</mvt:if>
+
 				
 			<div class="o-layout__item u-flex--l t-site-navigation &mvt:global:checkout_hidden;">
 				<div class="o-layout o-layout--align-center o-layout--flush o-layout--justify-center t-site-navigation__wrap">
 					<nav class="o-layout__item u-width-12 u-text-bold c-navigation x-transfigure-navigation &mvt:global:checkout_hidden;" data-hook="transfigure-navigation">
 						<div class="x-transfigure-navigation__wrap u-nww-bg-secondary" data-layout="&mvte:readytheme:layout;">
-							<header class="x-transfigure-navigation__header u-hidden--l c-control-group">
+							<div class="x-transfigure-navigation__header u-hidden--l c-control-group">
 								<mvt:if expr="g.Basket:cust_id EQ 0">
 									<a class="c-button c-button--full c-button--large c-control-group__button u-text-bold u-text-uppercase u-flex o-layout--align-center o-layout--justify-center" href="&mvte:urls:LOGN:secure;"><span class="u-icon-user"></span> Sign In or Register</a>
 								<mvt:else>
 									<a class="c-button c-button--full c-button--large c-control-group__button u-text-bold u-flex o-layout--align-center o-layout--justify-center" href="&mvte:urls:ACLN:secure;"><span class="u-icon-user"></span> My Account</a>
 								</mvt:if>
 								<button class="c-button u-bg-gray-40 u-color-gray-10 u-icon-cross c-control-group__button" data-hook="close-main-menu&mvt:global:fasten_id;"></button>
-							</header>
-							<mvt:item name="readytheme" param="navigationset( 'primary_navigation' )" />
+							</div>
+							<mvt:if expr="l.settings:header_main_nav">
+								&mvt:header_main_nav;
+							<mvt:else>
+								<mvt:comment> <!-- Failsafe! --> </mvt:comment>
+								<mvt:item name="readytheme" param="contentsection( 'header_main_nav' )" />
+							</mvt:if>
 						</div>
 					</nav>
 				</div>
@@ -105,6 +108,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <mvt:if expr="l.settings:page:code EQ 'CTGY'">
 	<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
 	<mvt:item name="readytheme" param="Load_Image('ctgy_hero', g.ctgy_hero )" />
+
+	<mvt:comment>load in parent name of categories</mvt:comment>
 	<mvt:if expr="l.settings:category:parent_id NE 0">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_ID( l.settings:category:parent_id, g.parent_listing )" />
 	<mvt:else>
@@ -113,7 +118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<section class="o-layout u-flex">
 		<div class="o-layout__item">
 			<div class="x-hero" title="&mvte:global:parent_listing:name;" style="background-image: url('&mvte:global:ctgy_hero:image;');">
-				<h2 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:global:parent_listing:name;</h2>
+				<h1 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:global:parent_listing:name;</h1>
 			</div>
 		</div>
 	</section>
