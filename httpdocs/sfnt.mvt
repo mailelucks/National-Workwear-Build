@@ -101,7 +101,7 @@
 	<!-- end hero banner -->
 
 	<div class="o-wrapper o-nww-wrapper">
-		<section class="t-container x-sfnt--featured-ctgys__container" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top" &mvt:global:debug_hide;> 
+		<section class="t-container x-sfnt--featured-ctgys__container" data-aos="fade-up" data-aos-delay="500" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top" &mvt:global:debug_hide;> 
 			<mvt:item name="readytheme" param="navigationset( 'sfnt_featured_ctgy' )" />
 		</section>
 		<!-- end featured categories -->
@@ -143,11 +143,11 @@
 		<!-- end in house customization -->
 
 		<mvt:if expr="g.sfnt_featured_service_alpha:image AND g.sfnt_featured_service_alpha_mobile:image">
-			<section class="x-featured-service x-sfnt--featured-service-alpha__container t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
+			<section class="x-featured-service x-sfnt--featured-service-alpha__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
 				<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
-					 <source media="(max-width: 767px)" srcset="&mvt:global:sfnt_featured_service_alpha_mobile:image;">
-					 <source media="(min-width: 768px)" srcset="&mvt:global:sfnt_featured_service_alpha:image;">
-					 <img src="&mvt:global:sfnt_featured_service_alpha:image;" alt="&mvt:global:sfnt_featured_service_alpha:image_alt;">
+					 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_mobile:image;">
+					 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_alpha:image;">
+					 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_alpha:image;" alt="&mvt:global:sfnt_featured_service_alpha:image_alt;">
 				</picture>
 				<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 				<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
@@ -185,12 +185,11 @@
 		<!-- end featured products -->
 
 		<mvt:if expr="g.sfnt_featured_service_bravo:image AND g.sfnt_featured_service_bravo_mobile:image">
-			<section class="x-featured-service x-sfnt--featured-service-bravo__container t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
+			<section class="x-featured-service x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
 				<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
-					 <source media="(max-width: 767px)" srcset="&mvt:global:sfnt_featured_service_bravo_mobile:image;">
-					 <source media="(max-width: 1279px)" srcset="&mvt:global:sfnt_featured_service_bravo:image;">
-					 <source media="(min-width: 1280px)" srcset="&mvt:global:sfnt_featured_service_bravo:image;">
-					 <img src="&mvt:global:sfnt_featured_service_bravo:image;" alt="&mvt:global:sfnt_featured_service_bravo:image_alt;">
+					 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_mobile:image;">
+					 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_bravo:image;">
+					 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_bravo:image;" alt="&mvt:global:sfnt_featured_service_bravo:image_alt;">
 				</picture>
 				<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 				<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
@@ -235,11 +234,11 @@
 		<!-- end featured brands -->
 
 		<mvt:if expr="g.sfnt_featured_service_charlie:image AND g.sfnt_featured_service_charlie_mobile:image">
-			<section class="x-sfnt--featured-service-charlie__container t-container u-flex" &mvt:global:debug_hide;>
+			<section class="x-sfnt--featured-service-charlie__container x-bg-lazy t-container u-flex" &mvt:global:debug_hide;>
 				<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
-					 <source media="(max-width: 767px)" srcset="&mvt:global:sfnt_featured_service_charlie_mobile:image;">
-					 <source media="(min-width: 768px)" srcset="&mvt:global:sfnt_featured_service_charlie:image;">
-					 <img src="&mvt:global:sfnt_featured_service_charlie:image;" alt="&mvt:global:sfnt_featured_service_charlie:image_alt;">
+					 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_mobile:image;">
+					 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_charlie:image;">
+					 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_charlie:image;" alt="&mvt:global:sfnt_featured_service_charlie:image_alt;">
 				</picture>
 				<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 				<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>

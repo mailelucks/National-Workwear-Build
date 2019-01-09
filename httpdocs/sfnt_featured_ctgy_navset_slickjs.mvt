@@ -22,10 +22,10 @@
 					<a class="o-layout--align-center o-layout--justify-center o-layout--column u-text-bold u-flex" href="&mvte:navigationitem:uri;">
 						<div class="x-featured-ctgy--graphics-container u-flex o-layout--justify-end">
 							<div class="x-featured-ctgy--product">
-								<img src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_product;">
+								<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_product;">
 							</div>
 							<div class="x-featured-ctgy--background">
-								<img src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_bg;">
+								<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_bg;">
 							</div>
 						</div>
 						<h3 class="x-featured-ctgy--title u-text-center">&mvte:navigationitem:name;</h3>

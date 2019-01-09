@@ -11,6 +11,7 @@
 	</mvt:if>
 	<mvt:item name="head" param="css_list" />
 	<mvt:item name="head" param="head_tag" />
+	<link rel="stylesheet" href="/mm5/themes/shadows/ui/css/pages/sfnt.css">
 	<link rel="stylesheet" href="/mm5/themes/shadows/sfnt-styles-cl.css">
 </head>
 <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
@@ -131,6 +132,7 @@
 	<section class="o-layout">
 		<div class="o-layout__item">
 			<mvt:item name="hdft" param="footer" />
+			<script src="/mm5/themes/shadows/ui/js/pages/sfnt.js" type="text/javascript" defer></script>
 		</div>
 	</section>
 	<mvt:item name="hdft" param="global_footer" />

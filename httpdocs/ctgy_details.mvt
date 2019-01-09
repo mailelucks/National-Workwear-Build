@@ -4,13 +4,13 @@
 		<mvt:assign name="g.aos_animate_settings" value="'data-aos-easing=\"linear\" data-aos-once=\"true\"'" />
 		<mvt:assign name="g.aos_animate" value="'data-aos=\"fade-down\"'" />
 		<mvt:if expr="l.pos1 EQ 2">
-			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"300\"'" />
+			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"200\"'" />
 		<mvt:elseif expr="l.pos1 EQ 3">
-			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"600\"'" />
+			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"400\"'" />
 		<mvt:elseif expr="l.pos1 EQ 4">
-			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"900\"'" />
+			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"800\"'" />
 		<mvt:elseif expr="l.pos1 EQ 5">
-			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"1200\"'" />
+			<mvt:assign name="g.aos_animate_settings" value="g.aos_animate_settings $ ' data-aos-delay=\"1000\"'" />
 		</mvt:if>
 		<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 	</mvt:foreach>

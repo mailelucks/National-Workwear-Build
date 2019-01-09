@@ -28,7 +28,7 @@
 				</mvt:if>
 				<div class="x-flex-brands-tabs__tab  u-flex o-layout--align-center o-layout--justify-center &mvt:global:active;" data-brand-name="&mvte:navigationitem:name;" data-brand-action="&mvt:urls:ctgy:auto_sep;Category_Code=&mvte:navigationitem:link_dest;&Per_Page=12&Sort_By=disp_order&show=sfnt_brands">
 					<mvt:if expr="l.settings:navigationitem:logo">
-						<img src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
+						<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
 					<mvt:else>
 						<span class="u-font-tiny">&mvte:navigationitem:name;</span>
 					</mvt:if>
