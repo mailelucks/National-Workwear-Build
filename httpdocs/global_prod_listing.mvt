@@ -1,4 +1,4 @@
-<div class="u-text-center x-product-list__contents" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
+<div class="u-text-center x-product-list__contents u-flex o-layout--column" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
 	<mvt:comment>reassign product entity to avoid system conflicts</mvt:comment>
 	<mvt:assign name="l.settings:product_list" value="l.settings:product" />
 	<mvt:comment>Get product pricing</mvt:comment>
@@ -22,8 +22,8 @@
 			<span class="u-text-uppercase u-text-bold">&mvte:product_list:customfield_values:customfields:flags;</span>
 		</div>
 	</mvt:if>
-	<a class="u-block x-product-list__link" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
-		<figure class="x-product-list__figure o-layout--column">
+	<a class="u-block x-product-list__link u-flex o-layout--column" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
+		<figure class="x-product-list__figure u-flex o-layout--column o-layout__item">
 			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
 				<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
@@ -35,20 +35,24 @@
 			<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
-					<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
+					<img class="x-product-list__image x-product-list__hover-image x-img-lazy" data-src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
 					<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 				</mvt:if>
-				<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
+				<img class="x-product-list__image x-img-lazy &mvte:product_list:hover_class;" data-src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
 			</div>
-			<figcaption class="u-text-left u-width-12">
-				<strong class="x-product-list__code u-text-bold">&mvte:product_list:code;</strong>
-				<strong class="x-product-list__name">&mvte:product_list:name;</strong>
-				<mvt:if expr="l.settings:product_list:base_price GT l.settings:product_list:price">
-					<span class="x-product-list__price--base"><s>&mvt:product_list:formatted_base_price;</s></span>
-					<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
-				<mvt:else>
-					<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
-				</mvt:if>
+			<figcaption class="u-text-left u-width-12 o-layout--column o-layout__item o-layout--justify-around u-flex">
+				<div class="x-product-labels u-flex o-layout--column u-text-left">
+					<strong class="x-product-list__code u-text-bold">&mvte:product_list:code;</strong>
+					<strong class="x-product-list__name">&mvte:product_list:name;</strong>
+				</div>
+				<div class="x-product-price__container u-flex o-layout--row">
+					<mvt:if expr="l.settings:product_list:base_price GT l.settings:product_list:price">
+						<span class="x-product-list__price--base"><s>&mvt:product_list:formatted_base_price;</s></span>
+						<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
+					<mvt:else>
+						<span class="x-product-list__price">&mvt:product_list:formatted_price;</span>
+					</mvt:if>
+				</div>
 			</figcaption>
 		</figure>
 	</a>

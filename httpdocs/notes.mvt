@@ -52,3 +52,9 @@ Delete all images that are 360x360 and 300x300
 
 01/07/19
 	- issues with the css minify, how does it get the $page array to populate and what do we do about linking font files? also, struggles with the MVTCALL statement running correctly
+
+	/mm5/themes/shadows/ for css
+
+
+01/08/19
+	Redo header section of CTGY, should follow same type of format as the service banners on SFNT. Chat with PM about getting these assets (nicer grain/pattern that can also be used on the text masks)

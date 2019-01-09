@@ -1,0 +1,67 @@
+<mvt:comment>READYTHEME ASSET PULL</mvt:comment>
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha', g.sfnt_featured_service_alpha)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha_mobile', g.sfnt_featured_service_alpha_mobile)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_mobile', g.sfnt_featured_service_bravo_mobile)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie', g.sfnt_featured_service_charlie)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie_mobile', g.sfnt_featured_service_charlie_mobile)" />
+
+<mvt:if expr="g.sfnt_featured_service_alpha:link_type NE 'N'">
+	<mvt:if expr="g.sfnt_featured_service_alpha:link_type EQ 'G'">
+		<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_g )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_alpha:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'C'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_c )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_alpha:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
+		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'P'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_p )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_alpha:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'U'">
+		<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="g.sfnt_featured_service_alpha:link_dest" />
+	<mvt:else>
+		<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="NULL" />
+	</mvt:if>
+<mvt:else>
+	<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="NULL" />
+</mvt:if>
+
+<mvt:if expr="g.sfnt_featured_service_bravo:link_type NE 'N'">
+	<mvt:if expr="g.sfnt_featured_service_bravo:link_type EQ 'G'">
+		<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( g.sfnt_featured_service_bravo:link_dest, l.settings:rt_g )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_bravo:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'C'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_bravo:link_dest, l.settings:rt_c )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_bravo:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
+		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'P'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_bravo:link_dest, l.settings:rt_p )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_bravo:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'U'">
+		<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="g.sfnt_featured_service_bravo:link_dest" />
+	<mvt:else>
+		<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="NULL" />
+	</mvt:if>
+<mvt:else>
+	<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="NULL" />
+</mvt:if>
+
+<mvt:if expr="g.sfnt_featured_service_charlie:link_type NE 'N'">
+	<mvt:if expr="g.sfnt_featured_service_charlie:link_type EQ 'G'">
+		<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( g.sfnt_featured_service_charlie:link_dest, l.settings:rt_g )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_charlie:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'C'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_charlie:link_dest, l.settings:rt_c )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_charlie:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
+		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'P'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_charlie:link_dest, l.settings:rt_p )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_charlie:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
+	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'U'">
+		<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="g.sfnt_featured_service_charlie:link_dest" />
+	<mvt:else>
+		<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="NULL" />
+	</mvt:if>
+<mvt:else>
+	<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="NULL" />
+</mvt:if>
