@@ -14,9 +14,9 @@
     <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagedata:image" />
 
 	<mvt:comment>Get Hover image for product</mvt:comment>
-	<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 17, l.settings:product_list:loaded_type )" />
-     <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.settings:product_list:loaded_type:image_id, l.settings:product_list:imagedata )" />
-      <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:product_list:imagedata:image" />
+	<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductImage_Load_Type( l.settings:product_list:id, 17, l.settings:product_list:loaded_type_hover )" />
+     <mvt:do file="g.Module_Library_DB" name="l.success" value="Image_Load_ID( l.settings:product_list:loaded_type_hover:image_id, l.settings:product_list:imagedata_hover )" />
+      <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:product_list:imagedata_hover:image" />
 	
 	<mvt:comment>Get product link</mvt:comment>
     <mvt:do file="g.Module_Feature_URI_UT" name="l.settings:product_list:link" value="Store_Product_URL(l.settings:product_list, NULL)" />
@@ -55,8 +55,8 @@
 	<section class="x-customers-also-bought">
 		<h4 class="x-related-products__header c-heading-charlie u-text-bold u-text-left">Customers Also Bought...</h4>
 	<div id="x-customers-also-bought-carousel" class="x-nww-slider">
-		<mvt:foreach iterator="query_product" array="query:query_products">
-			<mvt:assign name="l.settings:product_list" value="l.settings:query_product" />
+		<mvt:foreach iterator="product" array="query:query_products">
+			<mvt:assign name="l.settings:product_list:" value="l.value" />
 			<mvt:comment>Load product display</mvt:comment>
 			<mvt:item name="readytheme" param="contentsection( 'global_product_list_display' )" />
 		</mvt:foreach>
