@@ -1,0 +1,8 @@
+
+<Module code="customfields" feature="fields_cat">
+	<CategoryField_Value category="brands_carhartt" field="sizechart_clothes">graphics/00000001/miva_size_charts/carhartt_size_chart.jpg</CategoryField_Value>
+	<CategoryField_Value category="brands_cat" field="sizechart_footwear">graphics/00000001/cat_footwear_size_chart.jpg</CategoryField_Value>
+	<CategoryField_Value category="brands_keen" field="sizechart_footwear">graphics/00000001/keen_utility_size_chart.jpg</CategoryField_Value>
+	<CategoryField_Value category="brands_puma" field="sizechart_footwear">graphics/00000001/puma_size_chart.png</CategoryField_Value>
+	<CategoryField_Value category="brands_timberland_pro" field="sizechart_footwear">graphics/00000001/timberland_pro_size_chart.jpg</CategoryField_Value>
+</Module>

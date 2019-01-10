@@ -1,15 +1,15 @@
 <mvt:comment>READYTHEME ASSET PULL</mvt:comment>
 <mvt:item name="readytheme" param="Load_Image('sfnt_hero', g.sfnt_hero)" />
-<mvt:item name="readytheme" param="Load_Image('sfnt_hero_tablet', g.sfnt_tablet_hero)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_hero_tablet', g.sfnt_hero_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_hero_mobile', g.sfnt_hero_mobile)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha', g.sfnt_featured_service_alpha)" />
-<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha', g.sfnt_featured_service_alpha_tablet)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha_tablet', g.sfnt_featured_service_alpha_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha_mobile', g.sfnt_featured_service_alpha_mobile)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo)" />
-<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo_tablet)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_tablet', g.sfnt_featured_service_bravo_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_mobile', g.sfnt_featured_service_bravo_mobile)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie', g.sfnt_featured_service_charlie)" />
-<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie', g.sfnt_featured_service_charlie_tablet)" />
+<mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie_tablet', g.sfnt_featured_service_charlie_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie_mobile', g.sfnt_featured_service_charlie_mobile)" />
 
 <mvt:if expr="g.sfnt_hero:link_type NE 'N'">
@@ -19,7 +19,7 @@
 	<mvt:elseif expr="g.sfnt_hero:link_type EQ 'C'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_hero:link_dest, l.settings:rt_c )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_hero:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
-		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+		<mvt:assign name="g.sfnt_hero:name" value="l.settings:rt_c:name" />
 	<mvt:elseif expr="g.sfnt_hero:link_type EQ 'P'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_hero:link_dest, l.settings:rt_p )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_hero:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
@@ -47,7 +47,7 @@
 	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'C'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_c )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_alpha:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
-		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+		<mvt:assign name="g.sfnt_featured_service_alpha:name" value="l.settings:rt_c:name" />
 	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'P'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_p )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_alpha:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
@@ -67,7 +67,7 @@
 	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'C'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_bravo:link_dest, l.settings:rt_c )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_bravo:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
-		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+		<mvt:assign name="l.settings:sfnt_featured_service_bravo:name" value="l.settings:rt_c:name" />
 	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'P'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_bravo:link_dest, l.settings:rt_p )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_bravo:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
@@ -87,7 +87,7 @@
 	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'C'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_service_charlie:link_dest, l.settings:rt_c )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_charlie:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
-		<mvt:assign name="g.link_name" value="l.settings:rt_c:name" />
+		<mvt:assign name="g.sfnt_featured_service_charlie:name" value="l.settings:rt_c:name" />
 	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'P'">
 		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.sfnt_featured_service_charlie:link_dest, l.settings:rt_p )" />
 		<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_service_charlie:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />

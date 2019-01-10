@@ -1,0 +1,29 @@
+<Module code="customfields" feature="util">
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_ariat" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_avenger" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_bogs" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_carolina" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_charles_river" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_cherokee" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_dickies_chef" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_florsheim_work" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_fxd" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_georgia_boot" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_iron_age" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_keen" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_mcrae" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_occunomix" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_puma" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_railroad_socks" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_red_kap" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_reebok_work" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_rockport_work" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_rocky" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_san_mar" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_stanley_boots" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_thorogood" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_timberland_pro" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_tough_duck" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_tri_mountain" />
+	<ProductFieldTypeOption_Add code="brands_assignment" value="brands_wolverine" />
+</Module>

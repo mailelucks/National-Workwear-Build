@@ -2,9 +2,10 @@
 
 <section class="x-sfnt--hero__container u-flex o-layout--flush" &mvt:global:debug_hide;>
 	<picture class="x-sfnt--overlay x-hero--bg" data-responsive-background-image>
-		 <source media="(max-width: 767px)" srcset="&mvt:global:storefront_hero_image_mobile:url;">
-		 <source media="(min-width: 768px)" srcset="&mvt:global:storefront_hero_image:url;">
-		 <img src="&mvt:global:storefront_hero_image:url;" alt="&mvt:global:store:name;">
+		<source media="(max-width: 767px)" srcset="&mvt:global:sfnt_hero_mobile:image;">
+		<source media="(min-width: 768px)" srcset="&mvt:global:sfnt_hero_tablet:image;">
+		<source media="(min-width: 1200px)" srcset="&mvt:global:sfnt_hero:image;">
+		<img src="&mvt:global:sfnt_hero_mobile:image;" alt="&mvt:global:store:name;">
 	</picture>
 	<div class="o-layout__item">
 		<div class="x-hero">
@@ -12,11 +13,11 @@
 			<div class="x-sfnt--overlay x-sfnt--overlay--grey"></div>
 			<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 			<div class="x-hero--content x-sfnt--overlay-content u-flex o-layout--column o-layout--align-flex-start o-layout--justify-center" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center"">
-				<h2 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white">&mvt:global:storefront_hero_image:image_alt;</h2>
-				<mvt:if expr="g.storefront_hero_image:link">
+				<h2 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white">&mvt:global:sfnt_hero:image_alt;</h2>
+				<mvt:if expr="g.sfnt_hero:uri">
 					<button class="c-button t-nww-cta-button u-bg-white">
-						<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:storefront_hero_image:uri;" target="&mvt:global:storefront_hero_image:link_targ;">
-							<span class="t-nww-cta-button__text">Shop &mvt:global:link_name;</span>
+						<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_hero:uri;" target="&mvt:global:sfnt_hero:link_targ;">
+							<span class="t-nww-cta-button__text">Shop &mvt:global:sfnt_hero:name;</span>
 							<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 						</a>
 					</button>
@@ -71,9 +72,10 @@
 <mvt:if expr="g.sfnt_featured_service_alpha:image AND g.sfnt_featured_service_alpha_mobile:image">
 	<section class="x-featured-service x-sfnt--featured-service-alpha__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
-			 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_mobile:image;">
-			 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_alpha:image;">
-			 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_alpha:image;" alt="&mvt:global:sfnt_featured_service_alpha:image_alt;">
+			<source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_mobile:image;">
+			<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_tablet:image;">
+			<source media="(min-width: 1200px)" data-srcset="&mvt:global:sfnt_featured_service_alpha:image;">
+			<img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_alpha:image;" alt="&mvt:global:sfnt_featured_service_alpha:image_alt;">
 		</picture>
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
@@ -114,7 +116,8 @@
 	<section class="x-featured-service x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
 			 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_mobile:image;">
-			 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_bravo:image;">
+			 	<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_tablet:image;">
+			 <source media="(min-width: 1200px)" data-srcset="&mvt:global:sfnt_featured_service_bravo:image;">
 			 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_bravo:image;" alt="&mvt:global:sfnt_featured_service_bravo:image_alt;">
 		</picture>
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
@@ -162,9 +165,10 @@
 <mvt:if expr="g.sfnt_featured_service_charlie:image AND g.sfnt_featured_service_charlie_mobile:image">
 	<section class="x-sfnt--featured-service-charlie__container x-bg-lazy t-container u-flex" &mvt:global:debug_hide;>
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
-			 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_mobile:image;">
-			 <source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_charlie:image;">
-			 <img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_charlie:image;" alt="&mvt:global:sfnt_featured_service_charlie:image_alt;">
+			<source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_mobile:image;">
+			<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_tablet:image;">
+			<source media="(min-width: 1200px)" data-srcset="&mvt:global:sfnt_featured_service_charlie:image;">
+			<img class="x-hero--bg-lazy" data-src="&mvt:global:sfnt_featured_service_charlie:image;" alt="&mvt:global:sfnt_featured_service_charlie:image_alt;">
 		</picture>
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
