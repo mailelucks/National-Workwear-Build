@@ -1,0 +1,24 @@
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="RK6734" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6734" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6736" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6736" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6737" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6737" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6982" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6982" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK634" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK634" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK670" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK670" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK673" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK673" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK600" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK600" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK2801" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK2801" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK2803" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK2803" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6745" field="brands_assignment"><![CDATA[brands_rockport_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RK6745" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

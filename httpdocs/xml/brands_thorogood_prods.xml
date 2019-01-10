@@ -1,0 +1,23 @@
+
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="804-4200" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4200" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4200" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4200" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4201" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4201" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4208" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4208" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4364" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4364" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4364" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4364" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4208" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="814-4208" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4205" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4205" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4061" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4061" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4320" field="brands_assignment"><![CDATA[brands_thorogood]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="804-4320" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

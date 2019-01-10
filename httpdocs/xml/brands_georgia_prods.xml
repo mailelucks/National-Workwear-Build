@@ -1,0 +1,29 @@
+
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="G6374" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G6374" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G101" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G101" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G103" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G103" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR262" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR262" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GS262" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GS262" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR500" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR500" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR530" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GR530" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G6274" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="G6274" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00219" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00219" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00220" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00220" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00233" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00233" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00128" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00128" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00129" field="brands_assignment"><![CDATA[brands_georgia_boot]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="GB00129" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

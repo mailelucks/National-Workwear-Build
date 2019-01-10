@@ -1,0 +1,34 @@
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="WK4961" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4961" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK961" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK961" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK630" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK630" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4630" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4630" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="235" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="235" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4311" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4311" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4312" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4312" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4313" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4313" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4960" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4960" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4203" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4203" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4201" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4201" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WKL992" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WKL992" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="765" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="765" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="4445" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="4445" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4300" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WK4300" field="sizechart_assignment"></ProductField_Value>
+	<ProductField_Value module="customfields" product="WKL9991" field="brands_assignment"><![CDATA[brands_justin]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="WKL9991" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

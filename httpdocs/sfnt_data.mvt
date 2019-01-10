@@ -32,14 +32,6 @@
 	<mvt:assign name="g.sfnt_hero:uri" value="NULL" />
 </mvt:if>
 
-<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( g.sfnt_hero ), ',', asciichar( 10 ) )" />
-<!--
-@@sfnt_hero
-==============
-&mvt:global:mvt_debug;
--->
-
-
 <mvt:if expr="g.sfnt_featured_service_alpha:link_type NE 'N'">
 	<mvt:if expr="g.sfnt_featured_service_alpha:link_type EQ 'G'">
 		<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( g.sfnt_featured_service_alpha:link_dest, l.settings:rt_g )" />

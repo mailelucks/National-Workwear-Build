@@ -1,3 +1,5 @@
+<mvt:comment>this will only work with category links! if you would like to use for other link types, we will need new customfields, or an alternative way to gather assets for the same look.</mvt:comment>
+
 <mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
 	<div class="x-featured-ctgy__inner x-product-list navigation-element &mvte:readytheme:code;">
 		<div id="x-carousel-featured-ctgy" class="u-flex x-nww-slider">
@@ -9,6 +11,23 @@
 					<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_c )" />
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
 					<mvt:item name="customfields" param="Read_Category_ID( l.settings:rt_c:id, 'sfnt_featured_grid_bg, sfnt_featured_grid_product', l.settings:navigationitem:sfnt_featured_imgs )" />
+
+					<mvt:if expr="l.settings:rt_c:active">
+						<div class="x-featured-ctgy">
+							<a class="o-layout--align-center o-layout--justify-center o-layout--column u-text-bold u-flex" href="&mvte:navigationitem:uri;">
+								<div class="x-featured-ctgy--graphics-container u-flex o-layout--justify-end">
+									<div class="x-featured-ctgy--product">
+										<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_product;">
+									</div>
+									<div class="x-featured-ctgy--background">
+										<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_bg;">
+									</div>
+								</div>
+								<h3 class="x-featured-ctgy--title u-text-center">&mvte:navigationitem:name;</h3>
+							</a>
+						</div>
+					</mvt:if>
+
 				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'P'">
 					<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_p )" />
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
@@ -18,20 +37,6 @@
 					<mvt:assign name="l.settings:navigationitem:uri" value="NULL" />
 				</mvt:if>
 
-				<div class="x-featured-ctgy">
-					<a class="o-layout--align-center o-layout--justify-center o-layout--column u-text-bold u-flex" href="&mvte:navigationitem:uri;">
-						<div class="x-featured-ctgy--graphics-container u-flex o-layout--justify-end">
-							<div class="x-featured-ctgy--product">
-								<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_product;">
-							</div>
-							<div class="x-featured-ctgy--background">
-								<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:sfnt_featured_imgs:sfnt_featured_grid_bg;">
-							</div>
-						</div>
-						<h3 class="x-featured-ctgy--title u-text-center">&mvte:navigationitem:name;</h3>
-					</a>
-				</div>
-				
 			</mvt:foreach>
 		</div>
 	</div>	

@@ -1,0 +1,22 @@
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="IA0130" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0130" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0160" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0160" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0163" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0163" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0195" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA0195" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5016" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5016" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5210" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5210" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5220" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5220" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5230" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5230" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5240" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA5240" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA507" field="brands_assignment"><![CDATA[brands_iron_age]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="IA507" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

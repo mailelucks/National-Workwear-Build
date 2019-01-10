@@ -1,0 +1,19 @@
+
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="A7302" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7302" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7542" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7542" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7876" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7876" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7123" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7123" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7116" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7116" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7165" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7165" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7300" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7300" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7710" field="brands_assignment"><![CDATA[brands_avenger]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="A7710" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+</Module>

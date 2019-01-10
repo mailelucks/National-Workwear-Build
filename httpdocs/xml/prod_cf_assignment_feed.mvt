@@ -1,0 +1,13 @@
+
+<mvt:do name="l.result" file="g.Module_Library_DB" value="CategoryList_Load_Offset_Product_Assigned(l.settings:record:id,0,'','',0,l.null, l.settings:product_ctgys )" />
+ 
+<mvt:foreach iterator="ctgy" array="product_ctgys">
+	<mvt:if expr="'brands_' CIN l.settings:ctgy:code">
+		<ProductField_Value module="customfields" product="&mvte:record:code;" field="brands_assignment"><![CDATA[&mvte:ctgy:code;]]></ProductField_Value>
+	</mvt:if>
+	<mvt:if expr="l.settings:ctgy:code EQ 'footwear'">
+		<ProductField_Value module="customfields" product="&mvte:record:code;" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+	</mvt:if>
+</mvt:foreach>
+
+<mvt:assign name="l.settings:product_ctgys" value="''" />

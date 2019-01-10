@@ -1,0 +1,119 @@
+<Module code="customfields" feature="util">
+	<ProductField_Value module="customfields" product="RB4250" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4250" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4251" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4251" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4091" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4091" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4092" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4092" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4141" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4141" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4142" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4142" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4143" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4143" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4040" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4040" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4041" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4041" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4005" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4005" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB3502" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB3502" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4444" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4444" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4555" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4555" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB7755" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB7755" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4721" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4721" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4805" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4805" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4327" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4327" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4177" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4177" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB8850" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB8850" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB8874" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB8874" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB8807" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB8807" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB8674" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB8674" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB251" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB251" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB094" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB094" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB041" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB041" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB045" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB045" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB046" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB046" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB047" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB047" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB354" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB354" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB444" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB444" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB455" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB455" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB755" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB755" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB485" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB485" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB864" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB864" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB874" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB874" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB885" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB885" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="FF247" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="FF247" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RBMT" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RBMT" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+	<ProductField_Value module="customfields" product="RB4049" field="brands_assignment"><![CDATA[brands_reebok_work]]></ProductField_Value>
+	<ProductField_Value module="customfields" product="RB4049" field="sizechart_assignment"><![CDATA[sizechart_footwear]]></ProductField_Value>
+
+</Module>

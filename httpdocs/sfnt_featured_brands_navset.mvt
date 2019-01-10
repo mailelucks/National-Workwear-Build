@@ -7,9 +7,29 @@
 					<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_g )" />
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
 				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'C'">
+					<mvt:assign name="l.settings:rt_c" value="NULL" />
 					<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_c )" />
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
 					<mvt:item name="customfields" param="Read_Category_ID( l.settings:rt_c:id, 'brands_logo', l.settings:navigationitem:logo )" />
+					
+					<mvt:comment>brands tabs</mvt:comment>
+					<mvt:if expr="l.settings:rt_c:active">
+						<mvt:assign name="g.active" value="''" />
+						<mvt:assign name="g.counter" value="l.pos1" />
+						<mvt:if expr="l.pos1 EQ 1">
+							<mvt:comment>assign first active class and create global var for use outside of loop</mvt:comment>
+							<mvt:assign name="g.active" value="'x-brands-active'" />
+							<mvt:assign name="g.init_uri" value="l.settings:navigationitem:uri" />
+							<mvt:assign name="g.init_name" value="l.settings:navigationitem:name" />
+						</mvt:if>
+						<div class="x-flex-brands-tabs__tab  u-flex o-layout--align-center o-layout--justify-center &mvt:global:active;" data-brand-name="&mvte:navigationitem:name;" data-brand-action="&mvt:urls:ctgy:auto_sep;Category_Code=&mvte:navigationitem:link_dest;&Per_Page=12&Sort_By=disp_order&show=sfnt_brands">
+							<mvt:if expr="l.settings:navigationitem:logo">
+								<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
+							<mvt:else>
+								<span class="u-font-tiny">&mvte:navigationitem:name;</span>
+							</mvt:if>
+						</div>
+					</mvt:if>
 				<mvt:elseif expr="l.settings:navigationitem:link_type EQ 'P'">
 					<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:navigationitem:link_dest, l.settings:rt_p )" />
 					<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:navigationitem:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
@@ -18,23 +38,10 @@
 				<mvt:else>
 					<mvt:assign name="l.settings:navigationitem:uri" value="NULL" />
 				</mvt:if>
-				<mvt:assign name="g.active" value="''" />
-				<mvt:assign name="g.counter" value="l.pos1" />
-				<mvt:if expr="l.pos1 EQ 1">
-					<mvt:comment>assign first active class and create global var for use outside of loop</mvt:comment>
-					<mvt:assign name="g.active" value="'x-brands-active'" />
-					<mvt:assign name="g.init_uri" value="l.settings:navigationitem:uri" />
-					<mvt:assign name="g.init_name" value="l.settings:navigationitem:name" />
-				</mvt:if>
-				<div class="x-flex-brands-tabs__tab  u-flex o-layout--align-center o-layout--justify-center &mvt:global:active;" data-brand-name="&mvte:navigationitem:name;" data-brand-action="&mvt:urls:ctgy:auto_sep;Category_Code=&mvte:navigationitem:link_dest;&Per_Page=12&Sort_By=disp_order&show=sfnt_brands">
-					<mvt:if expr="l.settings:navigationitem:logo">
-						<img class="x-img-lazy" data-src="&mvte:global:domain:image_root;&mvte:navigationitem:logo;">
-					<mvt:else>
-						<span class="u-font-tiny">&mvte:navigationitem:name;</span>
-					</mvt:if>
-				</div>
 			</mvt:foreach>
 		</div>
+
+		<mvt:comment>coded to sync with category tabs, update code to work with other link types!</mvt:comment>
 		<div class="x-featured-brands-prods x-product-list u-width-12">
 			<h4 id="x-featured-brand__cta" class="u-text-center">
 				<a href="&mvt:global:init_uri;" id="x-featured-brand__cta-link" class="u-text-bold u-text-underline">Shop All &mvt:global:init_name;</a>
