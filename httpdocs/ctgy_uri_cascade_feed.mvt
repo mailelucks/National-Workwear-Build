@@ -1,0 +1,12 @@
+
+<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_All( l.settings:categories )" />
+<mvt:foreach iterator="category" array="categories">
+	<mvt:do file="g.Module_Root $ '/modules/component/cmp-mv-prodctgy-meta.mvc'" name="l.settings:category:cascade_count" value="CategoryCascadeList_Load_Category( l.settings:category, l.settings:category:cascade )" />
+	<mvt:if expr="l.settings:category:cascade_count EQ 1">
+		<mvt:foreachcontinue />
+	</mvt:if>
+	<mvt:foreach iterator="cascade_item" array="category:cascade">
+	   <mvt:assign name="l.settings:category:uri" value="l.settings:category:uri $ '/' $ tolower( slugify( l.settings:cascade_item:name ) )" />
+	</mvt:foreach>
+	<uri_add category_code="&mvte:category:code;" status="301" uri="&mvte:category:uri;.html" />
+</mvt:foreach>

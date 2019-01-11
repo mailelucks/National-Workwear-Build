@@ -1,0 +1,25 @@
+
+<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductList_Load_All( l.settings:products )" />
+<mvt:foreach iterator="product" array="products">
+
+	<mvt:if expr="l.settings:product:concat_id">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Runtime_Category_Load_ID( l.settings:product:concat_id, l.settings:product:category )" />
+	</mvt:if>
+	<mvt:if expr="ISNULL l.settings:product:category:id">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned( l.settings:product:id, 0, '', '', 1, g.NextOffset, l.settings:product:categories )" />
+		<mvt:if expr="miva_array_elements( l.settings:product:categories )">
+			<mvt:assign name="l.settings:product:category" value="l.settings:product:categories[1]" />
+		</mvt:if>
+	</mvt:if>
+	<mvt:if expr="l.settings:product:category:id">
+		<mvt:do file="g.Module_Root $ '/modules/component/cmp-mv-prodctgy-meta.mvc'" name="l.success" value="CategoryCascadeList_Load_Category( l.settings:product:category, l.settings:product:category:cascade )" />
+		<mvt:foreach iterator="cascade_item" array="product:category:cascade">
+			<mvt:assign name="l.settings:product:uri" value="l.settings:product:uri $ '/' $ l.settings:cascade_item:code" />
+		</mvt:foreach>
+		&mvte:product:uri;/&mvte:product:code;.html
+	<mvt:else>
+		/&mvte:product:code;.html
+	</mvt:if>
+
+
+</mvt:foreach>
