@@ -1,3 +1,5 @@
+<mvt:item name="readytheme" param="contentsection( 'x_free_shipping' )" />
+
 <section class="x-mini-basket" data-hook="mini-basket" data-item-count="&mvt:global_minibasket:basket_count;" data-subtotal="&mvt:global_minibasket:formatted_total;">
 	<div class="x-mini-basket__content u-bg-white">
 		<header>
@@ -61,10 +63,14 @@
 						</div>
 					</mvt:foreach>
 				</div>
-				<div class="x-mini-basket__total">
+				<div class="x-mini-basket__total o-layout--wrap">
 					<span class="u-text-bold ">Total</span>
 					<span class="u-text-bold">&mvt:global_minibasket:formatted_total;</span>
+					<mvt:if expr="g.threshold">
+						<span class="u-text-bold u-font-tiny u-width-12 o-layout--justify-end u-flex">&mvt:global:threshold:msg;</span>
+					</mvt:if>
 				</div>
+				
 				<div class="x-mini-basket__cta c-control-group u-font-secondary">
 					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-secondary u-font-small u-text-bold u-color-white" href="&mvte:urls:BASK:auto;">Edit Cart</a>
 					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-small u-text-bold" href="&mvte:urls:OINF:secure;">Checkout</a>

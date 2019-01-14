@@ -229,14 +229,17 @@
 				</mvt:foreach>
 
 				<tr class="c-table-simple__row u-color-gray-30">
-					<td class="c-table-simple__cell c-table-simple__cell--standard u-flex o-layout--justify-between">
+					<td class="c-table-simple__cell c-table-simple__cell--standard u-flex o-layout--justify-between o-layout--wrap">
 						<span>Shipping</span>
 						<span>
 							<a class="u-color-gray-30" data-mini-modal data-mini-modal-type="inline" data-mini-modal-content="data-shipping-estimator" data-mini-modal-openCallback="estimateShipping" href="">Estimate</a>
 						</span>
+						<mvt:if expr="g.threshold">
+							<span class="u-text-bold u-font-tiny u-width-12">&mvt:global:threshold:msg;</span>
+						</mvt:if>
 					</td>
 				</tr>
-				
+
 				<mvt:foreach iterator="coupon" array="basket:coupons">
 					<tr class="c-table-simple__row">
 						<td class="c-table-simple__cell c-table-simple__cell--standard u-flex o-layout--justify-between">

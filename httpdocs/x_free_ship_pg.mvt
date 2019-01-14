@@ -1,0 +1,9 @@
+<mvt:do file="g.Module_Feature_PGR_DB" name="l.success" value="PriceGroup_Load_Name( 'Free Shipping >$74', g.freeship_settings )" />
+	
+<mvt:if expr="l.settings:global_minibasket:total LT g.freeship_settings:bmn_subtot">
+	<mvt:assign name="g.threshold" value="g.freeship_settings:bmn_subtot - l.settings:global_minibasket:total" />
+	<mvt:do file="g.Module_Store_Module_Currency" name="g.threshold:formatted" value="CurrencyModule_AddFormatting( g.Store:currncy_mod, g.threshold )" />
+	<mvt:assign name="g.threshold:msg" value="'Spend ' $ g.threshold:formatted $ ' more to get free shipping!'" />
+<mvt:else>
+	<mvt:assign name="g.threshold" value="''" />
+</mvt:if>

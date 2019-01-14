@@ -8,7 +8,7 @@
 
 <section class="o-layout o-layout--flush u-flex u-grids-2--l x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
 	<div class="x-product-layout--col-1 o-layout__item">
-		<figure class="o-layout__item u-text-center x-product-layout-images u-flex">
+		<figure class="o-layout__item u-text-center x-product-layout-images u-flex" data-aos="fade-right">
 			<ul id="thumbnails" class="o-layout x-product-layout-images__thumbnail-list"></ul>
 			<a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
 				<img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
@@ -21,7 +21,7 @@
 		</figure>
 		<!-- end .x-product-layout-images -->
 	</div>
-	<div class="x-product-layout--col-2 o-layout__item">
+	<div class="x-product-layout--col-2 o-layout__item" data-aos="fade-left">
 		<form class="o-layout__item x-product-layout-purchase u-cement-bg" data-hook="purchase" action="&mvte:urls:BASK:auto;" method="post" name="add">
 			<input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
 			<input type="hidden" name="Old_Search" value="&mvte:global:Search;" />

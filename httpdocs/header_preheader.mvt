@@ -35,7 +35,7 @@
 								<input class="c-button c-button--full c-button--large u-bg-gray-50 u-color-white u-text-bold u-text-uppercase" type="submit" value="Sign In">
 							</li>
 							<li class="c-form-list__item c-form-list__item--full">
-								<a class="c-button c-button--full c-button--hollow c-button--large u-bg-white  u-text-bold u-text-uppercase" href="&mvte:urls:LOGN:secure;">Register</a>
+								<a class="c-button c-button--full c-button--hollow c-button--large u-nww-bg-secondary u-bg-white  u-text-bold u-text-uppercase" href="&mvte:urls:LOGN:secure;">Register</a>
 							</li>
 							<li class="c-form-list__item c-form-list__item--full u-text-center">
 								<a class="u-color-gray-30 u-text-bold u-font-small u-text-uppercase" href="&mvte:urls:FPWD:secure;">Forgot Password?</a>
