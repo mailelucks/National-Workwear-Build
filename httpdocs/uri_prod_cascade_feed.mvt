@@ -16,9 +16,9 @@
 		<mvt:foreach iterator="cascade_item" array="product:category:cascade">
 			<mvt:assign name="l.settings:product:uri" value="l.settings:product:uri $ '/' $ l.settings:cascade_item:code" />
 		</mvt:foreach>
-		&mvte:product:uri;/&mvte:product:code;.html
+		<h2>&mvte:product:uri;/<mvt:eval expr="tolower( slugify( l.settings:product:name ) )" />.html &mvte:product:code;</h2>
 	<mvt:else>
-		/&mvte:product:code;.html
+		<h1>/<mvt:eval expr="tolower( slugify( l.settings:product:name ) )" />.html &mvte:product:code;</h1>
 	</mvt:if>
 
 

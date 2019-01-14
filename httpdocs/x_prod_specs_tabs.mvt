@@ -1,0 +1,103 @@
+<mvt:comment>Create structure populated with customfield group codes to pull for product specs and details</mvt:comment>
+<mvt:assign name="l.settings:groups_to_load" value="miva_array_deserialize( 'facets_specs,footwear_facets_specs,outerwear_facets_specs,uniform_facets_specs,workwear_facets_specs' )" />
+
+<mvt:comment>loop through each group</mvt:comment>
+<mvt:foreach iterator="group_to_load" array="groups_to_load">
+
+  <mvt:comment>load group database info to get its ID</mvt:comment>
+  <mvt:do file="g.Module_Root $ '/modules/util/customfld.mvc'" name="l.success" value="Group_Load_Code( l.settings:group_to_load, l.settings:info_group )" />
+
+  <mvt:comment>load group fields based on ID</mvt:comment>
+  <mvt:do file="g.Module_Root $ '/modules/util/customfld.mvc'" name="l.success" value="ProductFieldAndValueList_Load_Group( l.settings:product:id, l.settings:info_group:id, l.settings:info_group:fields )" />
+
+  <mvt:comment>loop through fields and filter out empty fields</mvt:comment>
+  <mvt:foreach iterator="field" array="info_group:fields">
+    
+    <mvt:if expr="len_var(l.settings:field:value) GT 0">
+      <mvt:assign name="l.success" value="miva_array_insert_var( l.settings:group_to_load:filtered_fields, l.settings:field, -1 )" />
+    </mvt:if>
+    
+  </mvt:foreach>
+  
+  <mvt:assign name="l.settings:info_group:field_count" value="miva_array_elements(l.settings:group_to_load:filtered_fields)" />
+
+  <mvt:if expr="l.settings:info_group:field_count GT 0">
+
+    <mvt:assign name="l.settings:info_group:fields" value="l.settings:group_to_load:filtered_fields" />
+
+    <mvt:comment>update info group structure with updated data</mvt:comment>
+    <mvt:assign name="l.success" value="miva_array_insert_var( l.settings:info_groups, l.settings:info_group, -1 )" />
+
+  </mvt:if>
+
+  <mvt:assign name="l.settings:info_group" value="''" />
+
+</mvt:foreach>
+
+<mvt:comment>seperate out all spec fields into their own array</mvt:comment>
+<mvt:foreach iterator="info_group" array="info_groups">
+  <mvt:if expr="'_specs' CIN l.settings:info_group:code">
+    <mvt:foreach iterator="field" array="info_group:fields">
+      <mvt:assign name="l.success" value="miva_array_insert( l.settings:info_group_specs, l.settings:field, -1 )" />
+    </mvt:foreach>
+  </mvt:if>
+</mvt:foreach>
+
+<section class="o-layout o-layout--flush x-product-description">
+  <div class="o-layout__item">
+    <div class="x-flex-tabs o-layout--justify-center">
+      <mvt:if expr="ISNULL l.settings:product:descrip">
+        <mvt:assign name="g.checked" value="'checked'" />
+      <mvt:else>
+        <input id="tab-description" data-flex-tab type="radio" name="flex-tab" checked>
+        <label class="x-flex-tabs__tab u-flex u-font-secondary" for="tab-description">Details</label>
+        <div class="x-flex-tabs__content" itemprop="description">
+          &mvt:product:descrip;
+        </div>
+      </mvt:if>
+      <input id="tab-return-policy" data-flex-tab type="radio" name="flex-tab" &mvt:global:checked;>
+      <label class="x-flex-tabs__tab u-font-secondary" for="tab-return-policy">Return Policy</label>
+      <div class="x-flex-tabs__content" itemprop="return-policy">
+         <mvt:item name="readytheme" param="contentsection( 'sarp_content' )" />
+      </div>
+      <mvt:foreach iterator="info_group" array="info_groups">
+
+        <mvt:if expr="miva_array_elements(l.settings:info_group:fields) GT 0">
+          
+          <mvt:comment>output specs, skip over all over spec groups, output any other customfield group</mvt:comment>
+          <mvt:if expr="l.settings:info_group:code EQ 'facets_specs'">
+            <mvt:assign name="l.settings:info_group:name" value="glosub( l.settings:info_group:name, 'Facets', 'Specs' )" />
+            <input id="tab-&mvte:info_group:slug_name;" data-flex-tab type="radio" name="flex-tab">
+            <label class="x-flex-tabs__tab u-font-secondary" for="tab-&mvte:info_group:slug_name;">&mvt:info_group:name;</label>
+            <div class="x-flex-tabs__content" itemprop="&mvte:info_group:slug_name;">
+               <mvt:foreach iterator="field" array="info_group_specs">
+                 <div class="u-flex o-layout--align-center o-layout--justify-start info__block">
+                   <span class="x-product-specs__label u-text-bold u-font-secondary u-text-underline">&mvte:field:name;</span>
+                   <span class="x-product-specs__value">&mvt:field:value;</span>
+                 </div>
+               </mvt:foreach>
+            </div>
+          <mvt:elseif expr="'_specs' CIN l.settings:info_group:code">
+            <mvt:foreachcontinue />
+          <mvt:else>
+            <mvt:assign name="l.settings:info_group:slug_name" value="tolower( slugify( l.settings:info_group:name ) )"/>
+            <input id="tab-&mvte:info_group:slug_name;" data-flex-tab type="radio" name="flex-tab">
+            <label class="x-flex-tabs__tab u-font-secondary" for="tab-&mvte:info_group:slug_name;">&mvt:info_group:name;</label>
+            <div class="x-flex-tabs__content" itemprop="&mvte:info_group:slug_name;">
+               <mvt:foreach iterator="field" array="info_group:fields">
+                 <div class="u-flex o-layout--align-center o-layout--justify-start info__block">
+                   <span class="x-product-specs__label u-text-bold u-font-secondary u-text-underline">&mvte:field:name;</span>
+                   <span class="x-product-specs__value">&mvt:field:value;</span>
+                 </div>
+               </mvt:foreach>
+            </div>
+
+          </mvt:if>
+
+        </mvt:if>
+
+      </mvt:foreach>
+      
+    </div>
+  </div>
+</section>

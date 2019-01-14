@@ -2,21 +2,21 @@ notes:
 
 GLOBAL
 
-finesse the transition on mobile drawer, shrinks into the middle, should fade back into the top
+finesse the transition on mobile drawer, shrinks into the middle, should fade back into the top - DONE
 
-theme inconsistently loads, page will be off on the margins (looks zoomed in, like it isnt resizing) or "zoomed in". also inconsistent footer loads
+theme inconsistently loads, page will be off on the margins (looks zoomed in, like it isnt resizing) or "zoomed in". also inconsistent footer loads - DONE
 
-go back and review z-indexs and padding: 0 items, maybe use an o-flush or o-full
+go back and review z-indexs and padding: 0 items, maybe use an o-flush or o-full - DONE
 
-change click loop to a foreach on featbrand ajax
+change click loop to a foreach on featbrand ajax - DONE
 
-SEARCH RESULTS ARE CONFLICTING 
+SEARCH RESULTS ARE CONFLICTING **REVISIT**
 
 SFNT
 
-quickview breaks on resize, why?
-custom tabs need the click triggered, why?
-add mix-blend-mode to overlays for better contrast
+quickview breaks on resize, why? - DONE
+custom tabs need the click triggered, why? - DONE
+add mix-blend-mode to overlays for better contrast - DONE
 
 PROD
 
@@ -26,12 +26,13 @@ add to cart button logic could be better, what if not in stock? TURN OFF WHEN DO
 Delete all images that are 360x360 and 300x300
 
 12/10/18
- see if logic on dectrims can be copied over. re: thumbnail hiding if empty
- possible hover update for cta boxes, they disappear too quickly, need mouseover logic
+ see if logic on dectrims can be copied over. re: thumbnail hiding if empty **REVISIT**
+
+ possible hover update for cta boxes, they disappear too quickly, need mouseover logic **REVISIT**
 
 
 12/19/18
-	estimate shipping is broken
+	estimate shipping is broken *REVISIT**
 
 12/20/18
 	see about different load image function for sfnt instead of all the readytheme image uri pulls
@@ -58,3 +59,6 @@ Delete all images that are 360x360 and 300x300
 
 01/08/19
 	Redo header section of CTGY, should follow same type of format as the service banners on SFNT. Chat with PM about getting these assets (nicer grain/pattern that can also be used on the text masks)
+
+01/09/19
+	see if PROD will accept .gif for modal/enlarge photo. **REVISIT**

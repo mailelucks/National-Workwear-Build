@@ -133,36 +133,7 @@
 			</fieldset>
 			</mvt:comment>
 		</form>
-		<section class="o-layout o-layout--flush x-product-description">
-			<div class="o-layout__item">
-				<div class="x-flex-tabs o-layout--justify-center">
-					<mvt:if expr="ISNULL l.settings:product:descrip">
-						<mvt:assign name="g.checked" value="'checked'" />
-					<mvt:else>
-						<input id="tab-description" data-flex-tab type="radio" name="flex-tab" checked>
-						<label class="x-flex-tabs__tab u-flex u-font-secondary" for="tab-description">Details</label>
-						<div class="x-flex-tabs__content" itemprop="description">
-							&mvt:product:descrip;
-						</div>
-					</mvt:if>
-					<input id="tab-return-policy" data-flex-tab type="radio" name="flex-tab" &mvt:global:checked;>
-					<label class="x-flex-tabs__tab u-font-secondary" for="tab-return-policy">Return Policy</label>
-					<div class="x-flex-tabs__content" itemprop="return-policy">
-						 <mvt:item name="readytheme" param="contentsection( 'sarp_content' )" />
-					</div>
-					<mvt:item name="customfields" param="Read_Product_ID(l.settings:product:id, '', l.settings:product:tabs)" />
-					<mvt:foreach iterator="tab" array="product:tabs">
-						<mvt:if expr="'tabs_' CIN l.settings:tab:code AND NOT ISNULL l.settings:tab:value">
-							<input id="tab-&mvte:tab:code;" data-flex-tab type="radio" name="flex-tab">
-							<label class="x-flex-tabs__tab u-text-uppercase" for="tab-&mvte:tab:code;">&mvte:tab:name;</label>
-							<div class="x-flex-tabs__content">
-								&mvt:tab:value;
-							</div>
-						</mvt:if>
-					</mvt:foreach>
-				</div>
-			</div>
-		</section>
+		<mvt:item name="readytheme" param="contentsection( 'x_prod_specs_tabs' )" />
 
 		<mvt:if expr="l.settings:related_product_count NE 0">
 			<mvt:item name="related_products" />

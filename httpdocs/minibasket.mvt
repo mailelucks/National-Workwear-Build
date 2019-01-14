@@ -17,7 +17,7 @@
 							<mvt:if expr="ISNULL l.settings:item:imagetypes:main AND l.settings:item:imagetypes:Addtl">
 								<mvt:assign name="l.settings:item:imagetypes:main" value="g.domain:image_root $ l.settings:item:imagetypes:Addtl" />
 							<mvt:elseif expr="ISNULL l.settings:item:imagetypes:main">
-								<mvt:assign name="l.settings:item:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+								<mvt:assign name="l.settings:item:imagetypes:main" value="g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 							</mvt:if>
 							<img src="&mvte:item:imagetypes:main;" alt="&mvt:item:name;" title="&mvt:item:name;">
 						</figure>
@@ -66,8 +66,8 @@
 					<span class="u-text-bold">&mvt:global_minibasket:formatted_total;</span>
 				</div>
 				<div class="x-mini-basket__cta c-control-group u-font-secondary">
-					<a class="c-button c-control-group__button c-button--full c-button--huge u-nww-bg-secondary u-font-small u-text-bold u-color-white" href="&mvte:urls:BASK:auto;">Edit Cart</a>
-					<a class="c-button c-control-group__button c-button--full c-button--huge u-nww-bg-primary u-nww-color-secondary u-font-small u-text-bold" href="&mvte:urls:OINF:secure;">Checkout</a>
+					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-secondary u-font-small u-text-bold u-color-white" href="&mvte:urls:BASK:auto;">Edit Cart</a>
+					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-small u-text-bold" href="&mvte:urls:OINF:secure;">Checkout</a>
 				</div>
 				<br>
 				<button class="c-button c-button--clear c-button--full u-font-tiny  u-bg-transparent u-color-gray-30" data-hook="close-mini-basket">Continue Shopping</button>

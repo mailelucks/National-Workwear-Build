@@ -51,7 +51,7 @@
 									<mvt:if expr="ISNULL l.settings:group:imagetypes:main AND l.settings:group:imagetypes:Addtl">
 										<mvt:assign name="l.settings:group:imagetypes:main" value="g.domain:image_root $ l.settings:group:imagetypes:Addtl" />
 									<mvt:elseif expr="ISNULL l.settings:group:imagetypes:main">
-										<mvt:assign name="l.settings:group:imagetypes:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+										<mvt:assign name="l.settings:group:imagetypes:main" value="g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 									</mvt:if>
 									<p><img src="&mvte:group:imagetypes:main;" alt="&mvt:group:name;" title="&mvt:group:name;"></p>
 								</div>
@@ -295,7 +295,7 @@
 				<tr>
 					<td>
 						<br>
-						<a class="c-button c-button--full c-button--huge u-bg-black u-color-white u-text-bold" href="&mvte:urls:OINF:auto;">Secure Checkout</a>
+						<a class="c-button c-button--full c-button--large u-bg-black u-color-white u-text-bold" href="&mvte:urls:OINF:auto;">Secure Checkout</a>
 						<br>
 						<hr class="c-keyline">
 					</td>
