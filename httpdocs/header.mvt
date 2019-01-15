@@ -152,15 +152,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 			</section>
 		<mvt:elseif expr="l.settings:page:code EQ 'ACLN'">
-			<section class="o-layout u-bg-gray-10">
+			<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
+			<mvt:item name="readytheme" param="Load_Image('ctgy_hero', g.ctgy_hero )" />
+			<section class="x-hero" style="background-image: url('&mvte:global:ctgy_hero:image;');">
 				<div class="o-layout__item">
-					<br>
-					<br>
-					<h1 class="c-heading-delta o-layout__item u-text-bold u-text-center">
-						&mvt:page:name;<br><br>
-						<a class="c-button c-button--hollow c-button--large c-heading--subheading u-bg-transparent u-color-gray-40 u-text-uppercase" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
+					<h1 class="c-heading-delta u-text-bold u-text-center u-color-white o-layout__item u-text-bold u-text-center ">&mvt:page:name;
 					</h1>
-					<br>
+					<a class="c-button c-button--large c-heading--subheading u-bg-transparent u-color-white u-text-uppercase u-font-secondary u-nww-button" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
 				</div>
 			</section>
 			<br>

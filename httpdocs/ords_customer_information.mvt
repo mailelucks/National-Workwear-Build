@@ -63,7 +63,11 @@
 			<p class="c-heading-echo u-text-bold ">Shipping Method</p>
 			<hr class="c-keyline">
 			<p class="u-font-small u-color-gray-40">
-				&mvt:order:ship_data;
+				<mvt:foreach iterator="charge" array="order:charges">
+					<mvt:if expr="l.settings:charge:type EQ 'SHIPPING'">
+						<mvt:eval expr="glosub(l.settings:charge:descrip, 'Shipping:', '')"/>
+					</mvt:if>
+				</mvt:foreach>
 			</p>
 			<br>
 		</li>
