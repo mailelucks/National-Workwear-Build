@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="&mvte:global:theme_path;/extensions/quick-order/quick-order.css">
+<div ng-app="quickOrder">
+	<ng-include src="'&mvte:global:theme_path;/extensions/quick-order/quick-order.html'"></ng-include>
+
+	<script>
+		var miva_data = {};
+		miva_data.urls = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( l.settings:urls )" />
+		miva_data.page = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( l.settings:page )" />
+		miva_data.domain = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.domain )" />
+	</script>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+<script src="&mvte:global:theme_path;/extensions/quick-order/quick-order.js"></script>

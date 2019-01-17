@@ -1,0 +1,208 @@
+<div class="qo-app o-layout o-layout--flush" ng-app="quickOrder" ng-controller="QuickOrderController">
+	<div class="cmp-processing bg--white" ng-class="{ 'is--active': adpr_is_in_process }">
+		<span class="cmp-processing__indicator"></span>
+	</div>
+	<div class="u-width-12 u-width-6--s u-width-8--l quick-search-left">
+		<div>
+			<h3 class="c-heading-charlie">Product Lookup</h3>
+			<div class="c-control-group">
+				<input
+					type="search"
+					id="qo-search"
+         			class="c-form-input c-control-group__field"
+					placeholder="Search by SKU or Product Name Here&hellip;"
+					ng-model="search.query"
+         			ng-model-options="{ debounce: 250 }"
+				>
+				<button class="c-button u-nww-bg-secondary u-color-white c-control-group__button" title="Search">
+					<span class="u-icon-search"><span>
+				</button>
+			</div>
+		</div>
+		<div class="search-results-wrapper">
+			<div ng-show="search.results.total_prod_count">
+				<p class="u-color-gray-40">Showing {{search.results.products_on_page_count}} out of {{search.results.total_prod_count}} items</p>
+				<div class="qo-results o-layout o-layout--flush">
+					<article class="qo-result o-layout o-layout--flush x-product-list u-width-12 o-layout__item" ng-repeat="product in search.results.products | update_products_data as searched_products track by product.id" ng-form name="productForm">
+						<div class="o-layout__item u-width-12 u-width-3--m">
+							<div ng-if="product.customfield_values.customfields.flags" class="x-product-list__flag u-text-center {{product.flag_bg}}">
+								<span class="u-text-uppercase u-text-bold">{{product.customfield_values.customfields.flags}}</span>
+							</div>
+							<img ng-if="product.src" ng-src="{{product.src}}" class="x-product-list__img" alt="{{product.name}}">
+							<img ng-if="!product.src" ng-src="{{product.no_img}}" class="x-product-list__img" alt="{{product.name}}">
+						</div>
+						<div class="o-layout__item u-width-12 u-width-6--m">
+							<img class="x-product-layout__logo" ng-if="product.ctgy_cfs.brands_logo" ng-src="{{product.ctgy_cfs.brands_logo}}" alt="{{product.brand_name}}">
+							<div class="x-product-list__code">{{product.display_code}}</div>
+							<a class="c-heading-delta x-product-list__name u-font-secondary u-text-bold" href="{{product.link}}">{{product.name}}</a>
+							<div class="o-layout__item u-width-12 u-flex o-layout--justify-start x-product-list__price">
+								<span class="x-product-layout-purchase__pricing-original u-text-bold"><s>{{product.formatted_retail}}</s></span>
+								<span class="u-text-bold x-product-layout-purchase__pricing-current">{{product.formatted_price}}</span>
+							</div>
+							<div class="x-product-sizechart">
+								<a ng-if="product.ctgy_cfs.sizechart" class="u-flex o-layout--align-center u-text-bold" data-mini-modal data-mini-modal-type="image" href="{{product.ctgy_cfs.sizechart}}">
+									<span class="u-nww-icon-ruler"></span><span>Size Chart</span>
+								</a>
+							</div>
+							<div ng-show="product.attributes.length">
+								<div ng-repeat="attribute in product.attributes track by attribute.id" submit-required="true">
+									<div class="qo-attribute" ng-if="attribute.type === 'select' || attribute.type === 'swatch-select'">
+										<!-- <div class="bold">{{attribute.prompt}}</div> -->
+										<div class="mm-cm-attr_item-wrap">
+											<div class="mm-select-ui" ng-class="{ 'is-open' : search.selectOpened == attribute.code }">
+												<span class="mm-validationerror" ng-if="attribute.required">Required</span>
+												<div ng-click="selectToggle(attribute.code)" class="mm-select-ui_selected"><i ng-if="attribute.selected.image" class="mm-select-ui_image"><img ng-src="{{attribute.selected.image}}" alt="">
+												</i><span>{{attribute.selected_option.prompt || 'No Selection'}}</span> <b ng-if="attribute.selected_option.price > 0">+ {{attribute.selected_option.formatted_price}}</b></div>	
+												<div class="mm-select-ui_options-container">
+													<ul ng-model="attribute.selected_option" class="mm-select-ui_options">
+														<li ng-if="attribute.is_parent" ng-click="updateSelection(attribute , '' )">No Selection </li>
+														<li ng-repeat="option in attribute.options track by option.id" ng-click="updateSelection(attribute , option )"><i ng-if="option.image" class="mm-select-ui_image"><img ng-if="option.image != ''" ng-src="{{option.image}}" alt=""></i><span>{{option.prompt}}</span> <b ng-if="option.price > 0">+ {{option.formatted_price}}</b></li>
+													</ul>
+												</div>
+												<input type="hidden" name=":attributes[{{attribute.index}}]:value" value="{{attribute.selected.code}}">
+											</div>
+										</div>
+									<!-- 	<div class="qo-select">
+											<select ng-model="attribute.selected_option" name="{{attribute.code}}" ng-required="attribute.required">
+												<option value="">-- Please Select a {{attribute.prompt}} --</option>
+												<option ng-repeat="option in attribute.options track by option.id" ng-value="option">{{option.prompt}}</option>
+											</select>
+										</div> -->
+									</div>
+									<div class="qo-attribute" ng-if="attribute.type === 'radio'">
+										<!-- <div class="bold">{{attribute.prompt}}</div> -->
+										<label ng-repeat="option in attribute.options track by option.id" class="o-layout__item">
+											<input type="radio" ng-model="attribute.selected_option" name="{{attribute.code}}" ng-value="option" ng-required="attribute.required">
+											{{option.prompt}}
+										</label>
+									</div>
+									<div class="qo-attribute" ng-if="attribute.type === 'memo'">
+										<label>
+											<!-- <div class="bold">{{attribute.prompt}}</div> -->
+											<textarea ng-model="attribute.selected_option" name="{{attribute.code}}" ng-required="attribute.required"></textarea>
+										</label>
+									</div>
+									<div class="qo-attribute" ng-if="attribute.type === 'text'">
+										<label>
+											<!-- <div class="bold">{{attribute.prompt}}</div> -->
+											<input type="text" ng-model="attribute.selected_option" name="{{attribute.code}}" ng-required="attribute.required">
+										</label>
+									</div>
+									<div class="qo-attribute" ng-if="attribute.type === 'checkbox'">
+										<label class="c-form-checkbox u-font-secondary">
+											<input class="c-form-checkbox__input" type="checkbox" ng-model="attribute.selected_option" name="{{attribute.code}}" ng-required="attribute.required">
+											<span class="c-form-checkbox__caption">{{attribute.prompt}}</span>
+											<div class="c-checkmark"></div>
+										</label>
+									</div>
+									<div ng-show="productForm[attribute.code].$invalid && (product.show_invalid || !productForm[attribute.code].$pristine)" class="x-messages x-messages--warn">This field is required. Please select/enter a valid option.</div>
+								</div>
+							</div>
+							<div class="qo-attribute" ng-show="product.subscription.enabled && product.subscription.term_count">
+								<!-- <b>Subscription:</b> -->
+								<div class="qo-select">
+									<select name="subscription_term" ng-model="product.subscription.selected_term" ng-required="product.subscription.mandatory">
+										<option value="">-- Select Subscription --</option>
+										<option ng-repeat="term in product.subscription.terms track by term.id" ng-value="term">{{term.descrip}}</option>
+									</select>
+								</div>
+								<div ng-show="productForm['subscription_term'].$invalid && (product.show_invalid || !productForm['subscription_term'].$pristine)">This field is required. Please select/enter a valid option.</div>
+							</div>
+						</div>
+						<div class="o-layout__item u-width-12 u-flex o-layout--align-center o-layout--wrap o-layout--justify-between qo-add-cart">
+							<!-- <p>Qty</p> -->
+							<div class="o-layout__item u-width-4">
+								<input class="c-form-input c-control-group__field u-text-center u-text-bold" type="number" name="Quantity" value="1" ng-model="product.quantity_add">
+							</div>
+							<div class="o-layout__item u-width-7 u-text-right">
+								<span class="u-text-bold"><span class="u-font-secondary u-text-bold qo-total-label">Total: </span>{{product.total_price_each | currency}}</span>
+								<button class="c-button u-nww-bg-primary u-nww-color-secondary u-icon-cart-empty qo-cart-button" ng-click="select_product(product, productForm.$valid)" ng-class="{ disabled: productForm.$invalid }" ng-disabled="product.inv_active == 1 && product.inv_level !== 'in'" title="Add to Selection"></button>
+							</div>
+							<div class="o-layout__item u-width-12 u-text-center">
+								<div class="text-muted u-text-right" ng-show="product.quantity">{{product.quantity}} in cart</div>
+								<div class="text-muted red" ng-show="product.inv_active == 1 && product.inv_level !== 'in'">out of stock</div>
+							</div>
+						</div>
+					</article>
+					<fieldset class="u-text-center" ng-show="search.results.page_links.pages.length > 1">
+						<button class="c-button c-button--small" ng-click="set_offset(0)" ng-disabled="search.results.page_links.is_first_page">
+							First
+						</button>
+						<button class="c-button c-button--small" ng-click="set_offset(search.results.page_links.prev_offset)" ng-disabled="search.results.page_links.prev_disabled">
+							Prev
+						</button>
+						<span ng-repeat="page in search.results.page_links.pages track by page.offset">
+							<button class="c-button c-button--small" ng-click="set_offset(page.offset)" ng-class="{ active: page.page_num === search.results.page_links.current_page }">
+								{{page.page_num}}
+							</button>
+						</span>
+						<button class="c-button c-button--small" ng-click="set_offset(search.results.page_links.next_offset)" ng-disabled="search.results.page_links.next_disabled">
+							Next
+						</button>
+						<button class="c-button c-button--small" ng-click="set_offset(search.results.page_links.last_offset)" ng-disabled="search.results.page_links.is_last_page" ng-show="search.results.page_links.last_offset">
+							Last
+						</button>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<aside class="u-width-12 u-width-6--s u-width-4--l qo-selections__container">
+		<h3 class="c-heading-charlie">Selected Products</h3>
+		<div ng-show="selected_products.length">
+			<div class="u-hidden--l u-hidden--xl">
+				<div class="u-flex c-heading-delta qo-selections-total">
+					<div class="o-layout__item half">Total</div>
+					<div class="o-layout__item u-width-6 u-text-right">{{total_price_selected() | currency}}</div>
+				</div>
+				<button class="c-button c-button--full u-nww-bg-primary" ng-click="adpr()" ng-disabled="adpr_is_in_process">
+					{{ adpr_is_in_process ? 'Processing...' : 'Add Selected to Cart' }}
+				</button>
+			</div>
+			<div class="qo-selections">
+				<article class="o-layout o-layout--flush qo-selection" ng-repeat="product in selected_products | update_products_data track by product.selection_id">
+					<div class="o-layout__item u-width-12">
+						<div class="qo-selection-bask">
+							<div class="o-layout__item u-width-3">
+								<img ng-if="product.src" ng-src="{{product.src}}" alt="{{product.name}}">
+							</div>
+							<div class="o-layout__item u-width-9">
+								<div><a class="c-heading-delta" href="{{product.link}}">{{product.name}}</a></div>
+								<div><span class="c-heading-foxtrot u-color-gray-40">Code: {{product.display_code}}</span></div>
+							</div>
+							<div class="o-layout__item u-width-6">
+								<label>Qty: <input class="c-form-input" ng-model="product.quantity_selected" type="number" value="1" step="1" min="1" size="3"></label>
+							</div>
+							<div class="o-layout__item u-width-6 u-text-right">{{product.total_price_each | currency}}<br><button class="c-button c-button--tiny u-icon-cross" ng-click="remove_product(product)" title="Remove"></button></div>
+						</div>
+					</div>
+					<div class="o-layout__item u-width-12">
+						<div ng-repeat="attribute in product.attributes track by attribute.id">
+							{{attribute.prompt}} <b>{{attribute.selected_option.prompt ? attribute.selected_option.prompt : attribute.selected_option}}</b>
+						</div>
+						<div ng-show="product.subscription.selected_term">
+							Subscription: <b>{{product.subscription.selected_term.descrip}}</b>
+						</div>
+						<div ng-show="product.message">
+							<b>{{product.message}}</b>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="o-layout__item u-flex c-heading-delta qo-selections-total">
+				<div class="o-layout__item half">Total</div>
+				<div class="o-layout__item u-width-6 u-text-right">{{total_price_selected() | currency}}</div>
+			</div>
+			<button class="c-button c-button--large c-button--full u-nww-bg-primary" ng-click="adpr()" ng-disabled="adpr_is_in_process">
+				{{ adpr_is_in_process ? 'Processing...' : 'Add Selected to Cart' }}
+			</button>
+		</div>
+	</aside>
+
+	<script>
+		var miva_data = {};
+		miva_data.page = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( l.settings:page )" />;
+	</script>
+
+</div>
+

@@ -1,0 +1,253 @@
+main{
+	min-height: 800px;
+}
+
+/*QUICK ORDER*/
+.qo-app{
+	min-height: 800px;
+	padding: 50px 0 100px;
+}
+.qo-app .c-button[disabled],
+.qo-disabled{
+	opacity: 0.5;
+}
+.qo-results{
+	margin-bottom: 50px;
+	border-bottom: 1px solid #ebebeb;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.qo-result {
+	border-top: 1px solid #ebebeb;
+	padding: 2rem 0;
+	position: relative;
+}
+.qo-img {
+	margin: 0 auto 40px;
+	max-height: 200px
+}
+.qo-logo {
+	mix-blend-mode: multiply;
+	max-height: 40px;
+	margin: 0;
+}
+.x-product-list__name,
+.x-product-layout-purchase__pricing-original, 
+.x-product-layout-purchase__pricing-current {
+	font-size: 1rem;
+}
+.qo-price {
+	margin: 1rem 0;
+}
+.x-product-layout-purchase__pricing-original {
+	padding-right: 0.25rem;
+}
+.qo-qty-input {
+	border-radius: 0;
+	border: 1px solid #ebebeb;;
+}
+
+/*ATTRIBUTES UI*/
+
+.qo-attribute {
+	margin-bottom: 0.5rem;
+}
+.c-form-input {
+	margin: 0;
+}
+
+/* SELECT UI */
+.mm-select-ui{
+	position: relative;
+}
+.mm-select-ui_options{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	width:100%;
+	border-top: 0;
+	background: #fff;
+	padding:0px;	
+}
+.mm-select-ui_options li{
+	position: relative;
+	cursor: pointer;
+	padding:10px 15px;
+	font-size: 0.95rem;
+}
+.mm-select-ui_options li:hover{
+	background: #c0c0c0;
+}
+.mm-select-ui_options li{
+	display: flex;
+}
+.mm-select-ui_options li b{
+	margin-left: auto;
+}
+.mm-select-ui_options-container{
+	max-height: 0;
+	position: absolute;
+	top: auto;
+	left: 0;
+	/*width: calc(100% + 1px);*/
+	width: 100%;
+	overflow: hidden;
+	z-index: 10;
+	border: 1px solid #d7d7d7;
+	border-top: 0;
+	opacity: 0;
+	transition: all 0.25s;
+	/*left: -1px;*/
+}
+.is-open .mm-select-ui_options-container{
+	max-height: 275px;
+	opacity: 1;
+	overflow-y: scroll;
+}
+.mm-select-ui_selected{
+	border:1px solid #d7d7d7;
+	display: block;
+	padding:5px 25px 5px 20px;
+	background: #ffffff;
+	cursor: pointer;
+	font-size: 13px;
+	position: relative;
+	display: flex;
+	font-weight: bold;
+	align-items: center;
+}
+.mm-select-ui_selected:after{
+	position: absolute;
+	font-family: "ReadyTheme Icons", sans-serif;
+	content: "\31";
+	right:10px;
+	top:50%;
+	transform: translateY(-50%);
+	font-size: 10px;
+	color:#959595;
+}
+.mm-select-ui_selected b{
+	margin-left: auto;
+	font-weight: bold;
+}
+.mm-select-quantity .mm-select-ui_selected{
+	border-left: 0;
+}
+.qo-select {
+	border: 1px solid #d7d7d7;
+    display: block;
+    padding: 0;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    z-index: 2;
+}
+.qo-select:after {
+    position: absolute;
+    font-family: "ReadyTheme Icons", sans-serif;
+    content: "\31";
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #959595;
+    z-index: 1;
+}
+select {
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	line-height: 3;
+	margin: 0 !important;
+    padding: 0 0 0 1rem;
+	top: 0;
+	width: 100%;
+}
+select:focus {
+	outline: none;
+}
+
+
+/*SELECTED PRODUCTS*/
+.c-form-checkbox {
+	font-size: 0.81rem;
+}
+.qo-add-cart {
+	align-items: baseline;
+}
+.qo-label  {
+	font-size: 0.85rem;
+    color: #797979;
+}
+.qo-cart-button {
+	border-radius: 0;
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	width: 100%;
+}
+.qo-selection{
+	border-bottom: 1px solid #ebebeb;
+	padding: 35px 0;
+	position: relative;
+}
+.qo-selection-remove {
+	position: absolute;
+	right: 0;
+	padding: 5px;
+}
+.qo-selection-bask-button {
+	padding: 1rem 0;
+}
+.qo-selections-total{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.qo-selection-header {
+	margin-top: 25px;
+}
+.qo-selection-img {
+	margin: 0 10px 0 0;
+	max-height: 70px;
+}
+.qo-selection-data {
+	margin-top: 10px;
+}
+.qo-selection .qo-price {
+	margin: 0;
+}
+
+/*PAGINATION*/
+.qo-page-links {
+	padding: 0 0.5rem;
+}
+.qo-page-links.active {
+	font-weight: 700;
+}
+.t-pagination-bookend {
+	margin: 20px 0;
+}
+
+/*TABLET*/
+@media screen and (min-width: 48em) {
+	.qo-result {
+		padding: 1rem 0;
+	}
+	.qo-img {
+		margin: 0;
+	}
+	.o-layout--flush .o-layout__item .qo-result-data {
+		padding: 0 2rem;
+	}
+}
+
+/*SMALL DESKTOP*/
+@media screen and (min-width: 60em) {
+	.qo-selections__container {
+		padding: 0 0 0 2rem;
+	}
+}
