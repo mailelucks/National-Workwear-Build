@@ -1,0 +1,204 @@
+
+<mvt:item name="customfields" param="Read_Category_Code( l.settings:product:customfield_values:customfields:brands_assignment, 'brands_logo,'$l.settings:product:customfield_values:customfields:sizechart_assignment, g.ctgy_cfs )" />
+<mvt:if expr="g.ctgy_cfs:sizechart_clothes">
+    <mvt:assign name="g.ctgy_cfs:sizechart" value="g.ctgy_cfs:sizechart_clothes" />
+<mvt:elseif expr="g.ctgy_cfs:sizechart_footwear">
+    <mvt:assign name="g.ctgy_cfs:sizechart" value="g.ctgy_cfs:sizechart_footwear" />
+</mvt:if>
+
+<mvt:comment>
+    DONT REMOVE
+</mvt:comment>
+<mvt:assign name="g.attribute_no_render" value="1" />
+<mvt:assign name="g.has_size" value="0" />
+<mvt:assign name="g.apply_ng" value="0" />
+<mvt:item name="product_attributes" param="product:id" />
+<mvt:assign name="g.attribute_no_render" value="0" />
+<mvt:if expr="g.has_size GT 0">
+    <mvt:assign name="g.apply_ng" value="1" />
+</mvt:if>
+
+<section class="o-layout o-layout--flush u-flex u-grids-2--l x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
+    <div class="x-product-layout--col-1 o-layout__item">
+        <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
+            <ul id="thumbnails" class="o-layout x-product-layout-images__thumbnail-list"></ul>
+            <a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
+                <img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+            </a>
+            <img id="closeup_image" class="u-hide-visually" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+            <span id="closeup_close" class="u-hidden">
+                <span id="closeup_div" class="u-hide-visually"></span>
+            </span>
+            <mvt:item name="product_display_imagemachine" param="body:product:id"/>
+        </figure>
+        <!-- end .x-product-layout-images -->
+    </div>
+    <div class="x-product-layout--col-2 o-layout__item">
+        <form 
+        <mvt:if expr="g.apply_ng GT 0">
+            ng-app="mmNgProd" ng-controller="mmNgProdController"
+        </mvt:if>
+        class="o-layout__item x-product-layout-purchase u-cement-bg" 
+        data-hook="purchase" 
+        action="&mvte:urls:BASK:auto;" 
+        method="post"
+        name="add">
+            <mvt:comment> 
+                REQUIRED BY ATTR MACHINE
+                - but not used by app
+            </mvt:comment>
+            <input type="hidden" name="Product_Code" value="&mvte:product:code;" />
+            <input type="hidden" name="Action" value="ADPR" />
+            <mvt:if expr="g.apply_ng GT 0">
+                <!-- nothing happens here -->
+                <script>
+                    (function (mivaPROD) {
+                        mivaPROD.price = &mvt:product:price;;
+                        mivaPROD.base_price = &mvt:product:base_price;;
+                    }(window.mivaPROD || (window.mivaPROD = {})));
+                    </script>
+            <mvt:else>
+                <input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
+                <input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
+                <input type="hidden" name="Category_Code" value="&mvte:global:category_code;" />
+                <input type="hidden" name="Offset" value="&mvte:global:Offset;" />
+                <input type="hidden" name="AllOffset" value="&mvte:global:AllOffset;" />
+                <input type="hidden" name="CatListingOffset" value="&mvte:global:CatListingOffset;" />
+                <input type="hidden" name="RelatedOffset" value="&mvte:global:RelatedOffset;" />
+                <input type="hidden" name="SearchOffset" value="&mvte:global:SearchOffset;" />     
+            </mvt:if>
+           
+        
+            <ul class="o-layout__item o-list-bare x-product-layout-purchase__details">
+                <li class="o-list-block__item">
+                    <mvt:if expr="g.ctgy_cfs:brands_logo">
+                        <img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:brands_logo;">
+                    </mvt:if>
+                    <span class="u-color-gray-20 c-heading--subheading x-product-layout-purchase__code">&mvt:product:code;</span>
+                    <h1 class="c-heading-delta u-text-bold x-product-layout-purchase__name">
+                        <span itemprop="name">&mvt:product:name;</span>
+                    </h1>
+                </li>
+                <li class="o-list-block__item">
+                    <p class="u-flex x-product-layout-purchase__pricing o-layout--align-center">
+                        <mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+                            <span class="c-heading-delta x-product-layout-purchase__pricing-original">
+                                <s id="price-value-additional">&mvt:product:formatted_base_price;</s>
+                            </span>
+                        </mvt:if>
+                        <span class="c-heading-delta x-product-layout-purchase__pricing-current">
+                            <span id="price-value" itemprop="price" content="&mvt:product:price;">&mvt:product:formatted_price;</span>
+                        </span>
+                    </p>
+                    <div id="product-discounts" class="x-product-layout-purchase__product-discounts u-font-small">
+                        <mvt:foreach iterator="discount" array="product:discounts">
+                            <p class="x-product-layout-purchase__product-discounts">
+                                &mvt:discount:descrip;: <strong>&mvt:discount:formatted_discount;</strong>
+                            </p>
+                        </mvt:foreach>
+                    </div>
+                    <mvt:if expr="g.ctgy_cfs:sizechart">
+                        <div class="x-product-sizechart">
+                            <a class="u-flex o-layout--align-center u-text-bold" data-mini-modal data-mini-modal-type="image" href="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:sizechart;">
+                                    <span class="u-nww-icon-ruler"></span><span>Size Chart</span>
+                            </a>
+                        </div>
+                    </mvt:if>
+                    <mvt:comment><mvt:if expr="l.settings:product:weight NE 0">
+                        <p class="x-product-layout-purchase__product-weight u-font-small">
+                            Shipping Weight: <strong>&mvt:product:weight;</strong> &mvt:store:wtunits;
+                        </p>
+                    </mvt:if></mvt:comment>
+                    <mvt:comment><mvt:if expr="l.settings:product:inv_active OR l.settings:attributemachine:product:inv_active">
+                        <div id="inventory-message" class="x-product-layout-purchase__inventory-message">
+                            <link itemprop="availability" href="http://schema.org/&mvt:product:inv_short;">
+                            <div class="x-messages x-messages--info">&mvt:product:inv_long;</div>
+                        </div>
+                    </mvt:if></mvt:comment>
+                </li>
+                <li class="o-layout o-layout--flush c-form-list__item x-product-layout-purchase__options u-width-7">
+                    <mvt:item name="product_attributes" param="product:id" />
+                </li>
+                <li class="c-form-list__item c-form-list__item--full x-product-layout-purchase__cta">
+                    <div class="x-product-layout-purchase__message" data-hook="purchase-message"></div>
+                    <mvt:if expr="g.apply_ng GT 0">
+                        <mvt:comment> PRICING UPDATES DONE HERE</mvt:comment>
+                        <mm-pricing app="app"></mm-pricing>
+                    </mvt:if>
+                    
+                    <div class="o-layout o-layout--flush x-product-layout-purchase_quantity-buttons"
+                    <mvt:if expr="g.apply_ng GT 0">ng-class="app.mmAttributes.sizes.length > 1 ? 'is-multiple-quantity' : 'is-single-quantity'"</mvt:if>
+                    >
+                        <mvt:if expr="l.settings:subscription:enabled AND l.settings:subscription:mandatory">
+                            <mvt:if expr="l.settings:product:inv_level NE 'out'">
+                                <div class="o-layout__item u-width-12 u-width-4--m x-product-layout-purchase__options-quantity">
+                                    <label class="c-form-label u-text-bold u-font-small is-required" for="l-quantity">Quantity</label>
+                                    <div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
+                                        <button class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
+                                        <input class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="1">
+                                        <button class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
+                                    </div>
+                                </div>
+                                <p class="o-layout__item u-width-12 u-width-8--m">
+                                    <br>
+                                    <mvt:item name="buttons" param="AddToBasket"/>
+                                </p>
+                            </mvt:if>
+                        <mvt:else>
+                            <div <mvt:if expr="g.has_size GT 0">ng-class="{ 'u-hide-visually' : app.mmAttributes.sizes.length > 1}"</mvt:if> class="o-layout__item u-width-5--l x-product-layout-purchase__options-quantity">
+                                <label class="c-form-label u-text-bold u-font-small u-color-gray-40 is-required" for="l-quantity">Quantity</label>
+                                <div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
+                                    <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('-')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
+                                    <input <mvt:if expr="g.has_size GT 0">ng-model="app.singleQuantity" ng-change="quantityChange()"</mvt:if> class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="<mvt:if expr="g.has_size GT 0">{{app.singleQuantity}}<mvt:else>1</mvt:if>">
+                                    <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('+')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
+                                </div>
+                            </div>
+                            <p class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between">
+                                <mvt:if expr="l.settings:product:inv_level NE 'out'">
+                                    <mvt:if expr="g.has_size GT 0">
+                                         <span class="o-layout__item x-product-layout__purchase-button">
+                                           <input onclick="return false;" ng-click="addTo('basket')" class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-text-bold u-font-small u-font-secondary" data-action="/basket-contents.html" data-hook="add-to-cart-ng" data-value="Add To Cart" type="submit" value="Add to Cart">
+                                        </span>
+                                        <span class="u-hidden" data-hook="add-to-cart"></span>
+                                    <mvt:else>
+                                        <span class="o-layout__item x-product-layout__purchase-button" onclick="document.forms.add.action = '&mvtj:urls:BASK:auto;'; document.forms.add.elements.Action.value = 'ADPR';">
+                                            <mvt:item name="buttons" param="AddToBasket"/>
+                                        </span>
+                                    </mvt:if>
+                                </mvt:if>
+                                <span class="o-layout__item x-wlst-button" data-mmnodisable="true">
+                                    <mvt:if expr="g.has_size GT 0">
+                                        <span onclick="return false;">
+                                            <mvt:comment><mvt:item name="buttons" param="AddToWishList"/></mvt:comment>
+                                             <button data-temp="&mvtj:urls:WISH:secure;" ng-click="addTo('wishlist')" type="submit" value="Add To Wish List" class="o-layout__item c-button u-text-bold u-nww-icon-wishlist u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" /></button>
+                                            <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
+                                        </span>
+                                    <mvt:else>
+                                        <span onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';">
+                                            <mvt:item name="buttons" param="AddToWishList"/>
+                                            <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
+                                        </span>
+                                    </mvt:if>
+                                </span>
+                            </p>
+                        </mvt:if>
+                    </div>
+                </li>
+            </ul>
+            <mvt:comment>
+            </fieldset>
+            </mvt:comment>
+        </form>
+        
+        <mvt:item name="readytheme" param="contentsection( 'x_prod_specs_tabs' )" />
+
+        <mvt:if expr="l.settings:related_product_count NE 0">
+            <mvt:item name="related_products" />
+        </mvt:if>
+
+        <mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
+
+        <mvt:item name="readytheme" param="contentsection( 'x_recently_viewed' )" />
+        
+    </div>
+</section>

@@ -117,10 +117,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</mvt:if>
 	<section class="o-layout u-flex">
 		<div class="o-layout__item">
-			<div class="x-hero" title="&mvte:global:parent_listing:name;" style="background-image: url('&mvte:global:ctgy_hero:image;');">
+			<div class="x-nww-subhero" title="&mvte:global:parent_listing:name;" style="background-image: url('&mvte:global:ctgy_hero:image;');">
 				<h1 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:global:parent_listing:name;</h1>
 			</div>
 		</div>
+	</section>
+<mvt:elseif expr="l.settings:page:code EQ 'ACLN'">
+	<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
+	<mvt:item name="readytheme" param="Load_Image('ctgy_hero', g.ctgy_hero )" />
+	<section class="x-nww-subhero u-text-center" style="background-image: url('&mvte:global:ctgy_hero:image;');">
+		<h1 class="c-heading-delta u-text-bold u-text-center u-color-white u-text-bold u-text-center ">&mvt:page:name;
+			</h1>
+		<a class="c-button c-button--large c-heading--subheading u-bg-transparent u-color-white u-text-uppercase u-font-secondary u-nww-button t-nww-cta-button" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
+	</section>
+	<br/>
+<mvt:elseif expr="l.settings:page:code EQ 'QODR'">
+	<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
+	<mvt:item name="readytheme" param="Load_Image('ctgy_hero', g.ctgy_hero )" />
+	<section class="x-nww-subhero" style="background-image: url('&mvte:global:ctgy_hero:image;');">
+		<h1 class="c-heading-delta u-text-bold u-text-center u-color-white u-text-bold u-text-center ">&mvt:page:name;
+			</h1>
 	</section>
 </mvt:if>
 
@@ -130,8 +146,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <mvt:if expr="l.settings:page:code EQ 'SFNT' or l.settings:page:code EQ 'SFNT_CL'">
 	<main>
-<mvt:elseif expr="l.settings:page:code EQ 'CTGY' OR l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
+<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
 	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--flush">
+<mvt:elseif expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
+	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--wide">
 <mvt:else>
 	<main class="o-wrapper t-main-content-element o-nww-wrapper">
 </mvt:if>
@@ -151,17 +169,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<br>
 				</div>
 			</section>
-		<mvt:elseif expr="l.settings:page:code EQ 'ACLN'">
-			<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
-			<mvt:item name="readytheme" param="Load_Image('ctgy_hero', g.ctgy_hero )" />
-			<section class="x-hero" style="background-image: url('&mvte:global:ctgy_hero:image;');">
-				<div class="o-layout__item">
-					<h1 class="c-heading-delta u-text-bold u-text-center u-color-white o-layout__item u-text-bold u-text-center ">&mvt:page:name;
-					</h1>
-					<a class="c-button c-button--large c-heading--subheading u-bg-transparent u-color-white u-text-uppercase u-font-secondary u-nww-button" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
-				</div>
-			</section>
-			<br>
 		<mvt:elseif expr="g.Customer_Temporary_Password">
 		<mvt:elseif expr="'CTGY' CIN l.settings:page:code">
 		<mvt:elseif expr="l.settings:page:code EQ 'LOGN'">
@@ -170,6 +177,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<mvt:elseif expr="l.settings:page:code EQ 'FPWD'">
 		<mvt:elseif expr="l.settings:page:code EQ 'CLTG'">
 		<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+		<mvt:elseif expr="l.settings:page:code EQ 'ACLN'">
+		<mvt:elseif expr="l.settings:page:code EQ 'QODR'">
 		<mvt:elseif expr="l.settings:page:code EQ 'CSBE'">
 			<section class="o-layout">
 				<div class="o-layout__item">
