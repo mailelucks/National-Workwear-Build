@@ -4,7 +4,7 @@
 	</div>
 	<div class="u-width-12 u-width-8--l quick-search-left">
 		<div>
-			<h3 class="c-heading-charlie">Product Lookup</h3>
+			<h3 class="c-heading-charlie u-nww-color-secondary">Product Lookup</h3>
 			<div class="c-control-group">
 				<input
 					type="search"
@@ -36,11 +36,11 @@
 								</div>
 							</div>
 							<div class="qo-price o-layout__item u-width-12 u-flex o-layout--justify-start u-hidden--m">
-								<span class="x-product-layout-purchase__pricing-original u-text-bold"><s>{{product.formatted_retail}}</s></span>
+								<span ng-show="product.formatted_retail" class="x-product-layout-purchase__pricing-original u-text-bold"><s>{{product.formatted_retail}}</s></span>
 								<span class="u-text-bold x-product-layout-purchase__pricing-current">{{product.formatted_price}}</span>
 							</div>
 							<div ng-show="product.attributes.length">
-								<div ng-repeat="attribute in product.attributes track by attribute.id" submit-required="true">
+								<div ng-show="attribute.code && !product.no_addcart" ng-repeat="attribute in product.attributes track by $index" submit-required="true">
 									<div class="qo-attribute" ng-if="attribute.type === 'select' || attribute.type === 'swatch-select'">
 										<!-- <div class="bold">{{attribute.prompt}}</div> -->
 										<div class="mm-cm-attr_item-wrap">
@@ -64,7 +64,7 @@
 										</div> -->
 									</div>
 									<div class="qo-attribute" ng-if="attribute.type === 'radio'">
-										<!-- <div class="bold">{{attribute.prompt}}</div> -->
+										<div class="u-text-bold u-font-secondary u-nww-color-secondary">{{attribute.prompt}}</div>
 										<label ng-repeat="option in attribute.options track by option.id" class="o-layout__item">
 											<input type="radio" ng-model="attribute.selected_option" name="{{attribute.code}}" ng-value="option" ng-required="attribute.required">
 											{{option.prompt}}
@@ -83,6 +83,7 @@
 										</label>
 									</div>
 									<div class="qo-attribute" ng-if="attribute.type === 'checkbox'">
+										<!-- <div ng-if="" class="u-font-small u-text-bold u-font-secondary">Optional: </div> -->
 										<label class="c-form-checkbox u-font-secondary">
 											<input class="c-form-checkbox__input" type="checkbox" ng-model="attribute.selected_option" name="{{attribute.code}}" ng-required="attribute.required">
 											<span class="c-form-checkbox__caption">{{attribute.prompt}}</span>
@@ -94,44 +95,69 @@
 							</div>
 							<div class="qo-attribute" ng-show="product.subscription.enabled && product.subscription.term_count">
 								<!-- <b>Subscription:</b> -->
-								<div class="qo-select">
+								<div class="mm-cm-attr_item-wrap">
+									<div class="mm-select-ui u-text-right" ng-class="{ 'is-open' : search.selectOpened == product.code }">
+										<div ng-click="selectToggle(product.code)" class="mm-select-ui_selected">
+											<span ng-show="!product.subscription.selected_term">One Time Purchase</span>
+											<span>{{ product.subscription.selected_term.descrip }}</span>
+										</div>	
+										<div class="mm-select-ui_options-container">
+											<ul ng-model="product.subscription.selected_term" class="mm-select-ui_options" ng-required="product.subscription.mandatory" name="subscription_term">
+												<li ng-if="!product.subscription.mandatory" ng-click="updateSelection(product, ''); product.subscription.selected_term = undefined">One Time Purchase</li>
+												<li ng-repeat="term in product.subscription.terms track by term.id" ng-click="updateSelection(product, term )">
+													<span>{{term.descrip}}</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="qo-select">
 									<select name="subscription_term" ng-model="product.subscription.selected_term" ng-required="product.subscription.mandatory">
 										<option value="">-- Select Subscription --</option>
 										<option ng-repeat="term in product.subscription.terms track by term.id" ng-value="term">{{term.descrip}}</option>
 									</select>
-								</div>
+								</div> -->
 								<div ng-show="productForm['subscription_term'].$invalid && (product.show_invalid || !productForm['subscription_term'].$pristine)">This field is required. Please select/enter a valid option.</div>
 							</div>
 						</div>
-						<div class="qo-add-cart o-layout__item u-width-12 u-width-5--m u-flex o-layout--wrap o-layout--justify-between">
+						<div class="qo-add-cart o-layout__item u-width-12 u-width-5--m u-flex o-layout--wrap o-layout--justify-between o-layout--align-top">
 							<div class="o-layout__item u-width-4--m u-hidden u-flex--m o-layout--wrap o-layout--align-bottom o-layout--justify-start">
 								<span class="u-font-secondary u-text-bold qo-label u-width-12">Price </span>
-								<span class="x-product-layout-purchase__pricing-original u-text-bold"><s>{{product.formatted_retail}}</s></span>
-								<span class="u-text-bold x-product-layout-purchase__pricing-current">{{product.formatted_price}}</span>
+								<div class="qo-pricing u-flex u-width-12">
+									<span ng-show="product.formatted_retail" class="x-product-layout-purchase__pricing-original u-text-bold u-flex o-layout--align-center"><s>{{product.formatted_retail}}</s></span>
+									<span class="u-text-bold x-product-layout-purchase__pricing-current u-flex o-layout--align-center">{{product.formatted_price}}</span>
+								</div>
 							</div>
 							<!-- <p>Qty</p> -->
-							<div class="o-layout__item u-width-4 u-width-3--m u-text-left">
+							<div ng-show="!product.no_addcart" class="o-layout__item u-width-4 u-width-3--m u-text-left u-flex o-layout--column o-layout-align-top">
 								<span class="u-font-secondary u-text-bold qo-label">Qty </span>
 								<input class="qo-qty-input c-form-input c-control-group__field u-text-center u-text-bold" type="number" name="Quantity" value="1" ng-model="product.quantity_add">
 							</div>
-							<div class="o-layout__item u-width-4 u-text-right">
+							<div ng-show="!product.no_addcart" class="o-layout__item u-flex o-layout--column o-layout-align-top u-width-4 u-text-right">
 								<span class="u-text-bold"><span class="u-font-secondary qo-label">Total </span>{{product.total_price_each | currency}}</span>
 								<button class="c-button u-nww-bg-primary u-nww-color-secondary u-icon-cart-add qo-cart-button" ng-click="select_product(product, productForm.$valid)" ng-class="{ disabled: productForm.$invalid }" ng-disabled="product.inv_active == 1 && product.inv_level !== 'in'" title="Add to Selection"></button>
 							</div>
-							<div class="o-layout__item u-width-12 u-text-center">
+							<div ng-show="!product.no_addcart" class="o-layout__item u-width-12 u-text-center">
 								<div class="text-muted u-text-right u-font-small u-text-bold" ng-show="product.quantity">{{product.quantity}} in cart</div>
 								<div class="text-muted red" ng-show="product.inv_active == 1 && product.inv_level !== 'in'">out of stock</div>
+							</div>
+							<!-- <p>Go To Product Page</p> -->
+							<div ng-show="product.no_addcart" class="o-layout__item u-width-8 u-text-left">
+								<a class="c-button u-nww-bg-primary u-nww-color-secondary qo-cta-customizer-button u-font-secondary t-nww-cta-button u-flex o-layout--align-center o-layout--justify-center" href="{{product.link}}" title="Go to Product Page" target="_blank">
+									<span>Customize</span>
+									<span class="u-nww-icon-arrow-long t-nww-cta-button__icon"></span>
+								</a>
 							</div>
 						</div>
 					</article>
 					<fieldset class="t-pagination u-text-center u-width-12" ng-show="search.results.page_links.pages.length > 1">
-						<button class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" ng-click="set_offset(search.results.page_links.prev_offset)" ng-disabled="search.results.page_links.prev_disabled"></button>
+						<button class="c-nww-button c-button--primary c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" ng-click="set_offset(search.results.page_links.prev_offset)" ng-disabled="search.results.page_links.prev_disabled"></button>
 						<span ng-repeat="page in search.results.page_links.pages track by page.offset">
 							<a class="qo-page-links o-page-links-inactive u-nww-color-secondary" ng-click="set_offset(page.offset)" ng-class="{ active: page.page_num === search.results.page_links.current_page }">
 								{{page.page_num}}
 							</a>
 						</span>
-						<button class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" ng-click="set_offset(search.results.page_links.next_offset)" ng-disabled="search.results.page_links.next_disabled"></button>
+						<button class="c-nww-button c-button--primary c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" ng-click="set_offset(search.results.page_links.next_offset)" ng-disabled="search.results.page_links.next_disabled"></button>
 					</fieldset>
 					<fieldset class="t-pagination-bookend u-text-center u-width-12" ng-show="search.results.page_links.pages.length > 1">
 						<button class="c-button c-button--small u-nww-bg-secondary u-color-white u-font-secondary" ng-click="set_offset(0)" ng-disabled="search.results.page_links.is_first_page">
@@ -146,9 +172,8 @@
 		</div>
 	</div>
 	<aside class="u-width-12 u-width-4--l qo-selections__container">
-		<h3 class="c-heading-charlie">Selected Products</h3>
-		<div ng-show="!selected_products.length">0 products selected.</div>
 		<div ng-show="selected_products.length">
+			<h3 class="c-heading-charlie u-nww-color-secondary">Selected Products</h3>
 			<div class="u-hidden--l u-hidden--xl">
 				<div class="u-flex c-heading-delta qo-selections-total u-text-bold">
 					<div class="o-layout__item half u-font-secondary qo-label">Total</div>
@@ -171,21 +196,26 @@
 									<a class="c-heading-delta x-product-list__name u-font-secondary u-text-bold" href="{{product.link}}">{{product.name}}</a>
 								</div>
 							</div>
-							<div class="qo-selection-data o-layout o-layout--flush u-width-12 u-flex o-layout--justify-between o-layout--align-top">
+							<div class="qo-selection-data o-layout o-layout--flush u-width-12 o-layout--justify-between o-layout--align-top">
 								<div class="qo-price u-flex o-layout--justify-start u-width-6 o-layout--wrap">
 									<span class="u-font-secondary u-text-bold qo-label u-width-12">Price </span>
 									<span class="x-product-layout-purchase__pricing-original u-text-bold"><s>{{product.formatted_retail}}</s></span>
 									<span class="u-text-bold x-product-layout-purchase__pricing-current">{{product.formatted_price}}</span>
 								</div>
 								<div class="o-layout__item u-width-4">
-									<label><span class="u-font-secondary u-text-bold qo-label">Qty </span><input class="qo-qty-input c-form-input" ng-model="product.quantity_selected" type="number" value="1" step="1" min="1" size="3"></label>
+									<label>
+										<span class="u-font-secondary u-text-bold qo-label">Qty </span>
+										<input class="qo-qty-input c-form-input" ng-model="product.quantity_selected" type="number" value="1" step="1" min="1" size="3">
+									</label>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="o-layout__item u-width-12">
-						<div ng-repeat="attribute in product.attributes track by attribute.id">
-							{{attribute.prompt}} <b>{{attribute.selected_option.prompt ? attribute.selected_option.prompt : attribute.selected_option}}</b>
+					<div ng-show="product.attributes.length" class="qo-selection-attributes o-layout__item u-width-12">
+						<div ng-repeat="attribute in product.attributes | filter:{type:select} track by attribute.id">
+							<span ng-show="attribute.selected_option">
+								{{attribute.prompt}} <span class="u-text-bold">{{attribute.selected_option.prompt}}</span>
+							</span>
 						</div>
 						<div ng-show="product.subscription.selected_term">
 							Subscription: <b>{{product.subscription.selected_term.descrip}}</b>

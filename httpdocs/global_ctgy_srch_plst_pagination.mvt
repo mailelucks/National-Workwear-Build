@@ -3,12 +3,12 @@
 		<ul class="o-list-inline">
 			<mvt:if expr="l.settings:page_iterator:page_links:current_page NE 1">
 				<li class="o-list-inline__item">
-					<a class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:prev_link_params;" title="Go to the previous page.">
+					<a class="c-nww-button c-button--primary c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:prev_link_params;" title="Go to the previous page.">
 					</a>
 				</li>
 			<mvt:else>
 				<li class="o-list-inline__item">
-					<span class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left inactive" title="You are on the first page.">
+					<span class="c-nww-button c-button--primary c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left inactive" title="You are on the first page.">
 					</span>
 				</li>
 			</mvt:if>
@@ -37,12 +37,12 @@
 			</li>
 			<mvt:if expr="l.settings:page_iterator:page_links:current_page NE l.settings:page_iterator:page_links:last_page">
 				<li class="o-list-inline__item">
-					<a class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:next_link_params;" title="Go to the next page.">
+					<a class="c-nww-button c-button--primary c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" href="&mvte:urls:_self:auto_sep;&mvte:page_iterator:page_links:next_link_params;" title="Go to the next page.">
 					</a>
 				</li>
 			<mvt:else>
 				<li class="o-list-inline__item">
-					<span class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right inactive" title="You are on the last page.">
+					<span class="c-nww-button c-button--primary ac-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right inactive" title="You are on the last page.">
 					</span>
 				</li>
 			</mvt:if>

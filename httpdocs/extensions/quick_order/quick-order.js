@@ -15,7 +15,7 @@ app.filter('update_products_data', function(){
 			product.selection_id = product.attributes.reduce(function(selection, attribute){
 				selection += ':' + attribute.code;
 
-				if (attribute.selected) {
+				if (attribute.selected ) {
 					attribute.selected_option = attribute.selected;
 					attribute.selected = '';
 				}
@@ -29,8 +29,9 @@ app.filter('update_products_data', function(){
 			}, product.selection_id);
 		}
 
-		if( product.subscription && product.subscription.selected_term )
+		if( product.subscription && product.selected )
 		{
+			product.subscription.selected_term = product.selected;
 			product.selection_id += ':subscription=' + product.subscription.selected_term.id;
 		}
 
@@ -88,7 +89,7 @@ app.controller('QuickOrderController', function($scope, $http) {
 
 	$scope.search = {};
 	// $scope.search.query = 'filter';
-	$scope.search.query = 'miva';
+	$scope.search.query = '';
 	$scope.search.offset = 0;
 	$scope.search.results = {};
 	$scope.search.sort_by = 'disp_order'
@@ -133,7 +134,25 @@ app.controller('QuickOrderController', function($scope, $http) {
 				product.quantity_selected = 0;
 				product.quantity_add = 1;
 				product.display_code = product.code;
+				product.no_addcart = false;
 				product.no_img = miva_data.domain.base_surl + 'themes/shadows/core/images/img_no_thumb.jpg';
+
+				if (product.attributes) {
+					var looping = true;
+					product.attributes.forEach(function(attribute, i){
+						if(looping) {
+							if(attribute.code.indexOf('cm_') != -1) {
+								product.no_addcart = true;
+								looping = false;
+							}
+							if('template_code' in attribute && attribute.template_code != ''){
+								product.no_addcart = true;
+								looping = false;
+							}
+						}
+					});
+				}
+				
 				return product;
 			});
 		}
@@ -166,28 +185,20 @@ app.controller('QuickOrderController', function($scope, $http) {
 		$scope.search.selectOpened = '';
 		$scope.search.selectOpened = (select == $scope.search.selectOpened) ? '' : select;
 	};
+
 	/*
 	* updates selection for radio + select
 	*/
-	$scope.updateSelection = function(attr,opt,fromDirective){
+	$scope.updateSelection = function(attr,opt){
+
 		if(attr.validationerror == 1 && opt != ''){
 			attr.validationerror = 0;
 		}
-		attr.selected = opt;
-		if(attr.code.search(/size/i) != -1){ $scope.search.selectOpened = '';}
-		$scope.search.selectOpened = '';	
 
-		if(fromDirective == true){
-			if(attr.line != 'linegroup_none' && attr.is_parent == 1){
-				$scope.search.mmAttributes.mmCustomize.map(function(o,i){
-					if( o.line == attr.line && o.is_parent == 0){
-						o.customclass = 'font_'+opt.code;
-						o.shown = (opt != '') ? 1 : 0;
-						o.required = o.shown;
-					}
-				});	
-			}
-		}
+		attr.selected = opt;
+
+		$scope.search.selectOpened = '';	
+		
 	};
 
 	$scope.fetch = function() {
@@ -213,12 +224,12 @@ app.controller('QuickOrderController', function($scope, $http) {
 		var is_already_selected = false;
 
 		$scope.selected_products = $scope.selected_products.map(function(selected_product){
-			console.log(selected_product);
 			var selections_match = selected_product.selection_id === new_product.selection_id;
 			if( selections_match ){
 				is_already_selected = true;
 				selected_product.quantity_selected += new_product.quantity_add;
 			}
+			console.log(selected_product);
 			return selected_product;
 		});
 
