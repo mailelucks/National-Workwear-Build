@@ -6,49 +6,8 @@
 	<link rel="canonical" href="&mvte:urls:_self:auto;" itemprop="url">
 </mvt:if>
 <mvt:item name="prodctgy_meta" param="combined" />
-
-<mvt:comment> PER PAGE STYLES | GROUPED STYLES -- START </mvt:comment>
 <mvt:assign name="g.theme_path" value="'themes/shadows'" />
-<mvt:assign name="g.currentPageCode" value="l.settings:page:code" />
-<mvt:if expr="'PROD' CIN l.settings:page:code">
-	<mvt:comment>
-		
-	</mvt:comment>
-</mvt:if>
-<mvt:if expr="l.settings:page:code CIN 'BASK,BSKE,OCST,OSEL,OPAY,INVC,OUSM,OUSL'">
-	<mvt:comment>
-		CHECKOUT STYLES
-	</mvt:comment>
-	<mvt:assign name="g.currentPageCode" value="'CHECKOUT-BASKET'" />
-</mvt:if>
-<mvt:assign name="g.currentPageCode" value="tolower( g.currentPageCode )" />
-<mvt:assign name="l.settings:custom_css:path" value="g.theme_path $'/ui/css/pages/'$ g.currentPageCode $ '.css'" />
-<mvt:assign name="l.settings:custom_css:path_mini" value="g.theme_path $'/ui/css/pages/mini/'$ g.currentPageCode $ '.min.css'" />
-<mvt:assign name="l.settings:custom_css:exists" value="sexists( '/mm5/' $ l.settings:custom_css:path )" />
-<mvt:assign name="l.settings:custom_css:exists_mini" value="sexists( '/mm5/' $ l.settings:custom_css:path_mini )" />
-<mvt:if expr="l.settings:custom_css:exists">
-	<mvt:assign name="l.settings:custom_css:time" value="stime( '/mm5/' $ l.settings:custom_css:path )" />
-	<mvt:if expr="l.settings:custom_css:exists_mini">
-		<mvt:assign name="l.settings:custom_css:time_mini" value="stime( '/mm5/' $ l.settings:custom_css:path_mini )" />
-		<mvt:if expr="l.settings:custom_css:time GT l.settings:custom_css:time_mini">
-			<mvt:comment>
-				trigger task to create mini
-			</mvt:comment>
-			<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path_mini" />?v=<mvt:eval expr="l.settings:custom_css:time_mini" />">
-		<mvt:else>
-			<mvt:comment>
-				serve minified version of css
-			</mvt:comment>
-			<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path_mini" />?v=<mvt:eval expr="l.settings:custom_css:time_mini" />">
-		</mvt:if>
-	<mvt:else>
-		2
-		<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path" />?v=<mvt:eval expr="l.settings:custom_css:time" />">
-	</mvt:if>
-<mvt:else>
-	<mvt:item name="readytheme" param="contentsection( 'readytheme_styles' )" />
-</mvt:if>
-<mvt:comment> PER PAGE STYLES | GROUPED STYLES -- END </mvt:comment>
+
 <script>
 	dataLayer = [];
 <mvt:comment>Google Tag Manager - Data Layer </mvt:comment>

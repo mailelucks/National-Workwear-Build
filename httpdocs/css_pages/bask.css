@@ -1,0 +1,11 @@
+/* ==========================================================================
+   =BASK
+   ========================================================================== */
+
+   /*--- CHECKOUT SUMMARY ---*/
+
+   .t-checkout-basket-summary__promo-form, 
+   .t-checkout-basket-summary__promo-form:first-child, 
+   .t-checkout-basket-summary__promo-form:last-child {
+    width: auto;
+  }

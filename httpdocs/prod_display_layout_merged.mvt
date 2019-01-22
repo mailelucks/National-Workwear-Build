@@ -55,6 +55,12 @@
                     (function (mivaPROD) {
                         mivaPROD.price = &mvt:product:price;;
                         mivaPROD.base_price = &mvt:product:base_price;;
+                        mivaPROD.customer = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.customer )" />;
+                        mivaPROD.logn = '&mvte:urls:LOGN:secure;';
+                        mivaPROD.wlgn = '&mvte:urls:WLGN:secure;';
+                        mivaPROD.wlst = '&mvte:urls:WLST:secure;';
+                        mivaPROD.wish = '&mvte:urls:WISH:secure;';
+                        mivaPROD.acln = '&mvte:urls:ACLN:secure;';
                     }(window.mivaPROD || (window.mivaPROD = {})));
                     </script>
             <mvt:else>
@@ -153,35 +159,68 @@
                                     <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('+')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
                                 </div>
                             </div>
-                            <p class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between">
+                            <div class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between o-layout--wrap">
+                                <mvt:if expr="ISNULL g.customer:id AND g.has_size GT 0">
+                                    <div class="ang-login-form u-hidden" ng-if="app.wishlistloginshow">
+                                        <div class="u-shown u-text-uppercase is--heading">Sign In to add to your wishlist</div>
+                                        <div class="u-shown">
+                                            <input class="c-form-input c-form-input--large" placeholder="Email" type="email" ng-model="app.customer.Customer_LoginEmail" name="Customer_LoginEmail">
+                                    <input class="c-form-input c-form-input--large" placeholder="Password" type="password" ng-model="app.customer.Customer_Password" name="Customer_Password">  
+                                        </div>
+                                        <div class="u-shown customer-login-message" ng-class="app.loginMessageCss" ng-show="app.showLoginMessage">{{app.loginMessage}}</div>
+                                        <div class="u-shown u-text-center">
+                                            <a ng-click="customerLogin()" class="c-button c-button--full c-button--large u-bg-gray-50 u-color-white u-text-bold u-text-uppercase">Login</a>
+                                            <a href="&mvte:urls:LOGN:secure;" target="_blank" class="c-button c-button--full c-button--large">Create an Account</a>
+                                            <a class="u-shown u-color-gray-30 u-text-bold u-font-small u-text-uppercase u-forgot-password" target="_blank" href="&mvte:urls:FPWD:secure;">FORGOT PASSWORD?</a>
+                                        </div>
+                                    </div>
+                                </mvt:if>
+                                <mvt:if expr="g.has_size GT 0">
+                                    <div class="ang-wishlist-pick u-hide-visually" ng-if="app.wishlistpick">
+                                        <div class="u-shown">
+                                            <strong class="is--heading u-shown">Add To Wishlist</strong>
+                                            <b class="u-shown" ng-click="addTo('wishlist' , wishitem.id)" ng-repeat="wishitem in app.wishlistitems"><div>{{wishitem.title}}</div><i class="u-icon-add"></i></b>
+                                        </div>
+                                    </div>
+                                </mvt:if>
                                 <mvt:if expr="l.settings:product:inv_level NE 'out'">
                                     <mvt:if expr="g.has_size GT 0">
-                                         <span class="o-layout__item x-product-layout__purchase-button">
+                                         <div class="o-layout__item x-product-layout__purchase-button">
                                            <input onclick="return false;" ng-click="addTo('basket')" class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-text-bold u-font-small u-font-secondary" data-action="/basket-contents.html" data-hook="add-to-cart-ng" data-value="Add To Cart" type="submit" value="Add to Cart">
-                                        </span>
-                                        <span class="u-hidden" data-hook="add-to-cart"></span>
+                                        </div>
+                                        <div class="u-hidden" data-hook="add-to-cart"></div>
                                     <mvt:else>
-                                        <span class="o-layout__item x-product-layout__purchase-button" onclick="document.forms.add.action = '&mvtj:urls:BASK:auto;'; document.forms.add.elements.Action.value = 'ADPR';">
+                                        <div class="o-layout__item x-product-layout__purchase-button" onclick="document.forms.add.action = '&mvtj:urls:BASK:auto;'; document.forms.add.elements.Action.value = 'ADPR';">
                                             <mvt:item name="buttons" param="AddToBasket"/>
-                                        </span>
+                                        </div>
                                     </mvt:if>
+                                <mvt:else>
+                                     <div class="o-layout__item x-product-layout__purchase-button">
+                                       <input onclick="return false;" ng-click="addTo('basket')" class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-text-bold u-font-small u-font-secondary" data-action="/basket-contents.html" data-hook="add-to-cart-ng" data-value="Add To Cart" type="submit" value="Add to Cart">
+                                    </div>
                                 </mvt:if>
-                                <span class="o-layout__item x-wlst-button" data-mmnodisable="true">
+                                <div class="o-layout__item x-wlst-button" data-mmnodisable="true">
                                     <mvt:if expr="g.has_size GT 0">
-                                        <span onclick="return false;">
+                                        <div onclick="return false;">
                                             <mvt:comment><mvt:item name="buttons" param="AddToWishList"/></mvt:comment>
-                                             <button data-temp="&mvtj:urls:WISH:secure;" ng-click="addTo('wishlist')" type="submit" value="Add To Wish List" class="o-layout__item c-button u-text-bold u-nww-icon-wishlist u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" /></button>
+                                             <button data-temp="&mvtj:urls:WISH:secure;" ng-click="addTo('wishlist', 0)" type="submit" value="Add To Wish List" class="o-layout__item c-button u-text-bold u-nww-icon-wishlist u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" /></button>
                                             <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
-                                        </span>
+                                        </div>
                                     <mvt:else>
-                                        <span onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';">
+                                        <div onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';">
                                             <mvt:item name="buttons" param="AddToWishList"/>
                                             <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
-                                        </span>
+                                        </div>
                                     </mvt:if>
-                                </span>
-                            </p>
+                                </div>
+                                <div class="x-product-layout--social o-layout__item u-width-12 u-hidden u-flex--m">
+                                    <mvt:item name="readytheme" param="contentsection( 'x-prod-social' )" />
+                                </div>
+                            </div>
                         </mvt:if>
+                    </div>
+                    <div class="x-product-layout--social o-layout__item u-width-12 u-flex u-hidden--m">
+                        <mvt:item name="readytheme" param="contentsection( 'x-prod-social' )" />
                     </div>
                 </li>
             </ul>

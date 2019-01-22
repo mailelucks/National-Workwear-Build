@@ -1,0 +1,37 @@
+/* ==========================================================================
+   =WISH
+   ========================================================================== */
+
+   .t-page-wish .x-pagination {
+     max-width: none;
+   }
+   .t-page-wish .t-pagination {
+    justify-content: space-between;
+  }
+  .t-page-wish .t-pagination.x-pagination--centered {
+  	width: 100%;
+  }
+  .wish-add-to-cart-button {
+    margin-bottom: 1rem;
+  }
+  .c-wish-button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all .25s;
+  }
+  .c-wish-button:hover {
+    background-color: #4d4d4d;
+  }
+  .c-wish-button.wish-prev-button .t-nww-cta-button__icon {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    transform: rotateZ(180deg);
+  }
+
+  /* ==========================================================================
+   =ACCOUNT NAV
+   ========================================================================== */
+
+   .t-account-landing-section__content .x-category-tree__link {
+     line-height: 1.5;
+   }

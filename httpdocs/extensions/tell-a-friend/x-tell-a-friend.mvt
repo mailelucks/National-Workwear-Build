@@ -1,0 +1,44 @@
+
+<div id="js-tell-a-friend-wrap" class="tell-a-friend o-layout">
+    <span class="close">&times;</span>
+    <form id="js-tell-a-friend" method="post" action="&mvt:global:theme_path;/extensions/tell-a-friend/x-tell-a-friend.php" class="o-layout__item u-flex o-layout--align-center o-layout--justify-center u-nww-bg-secondary u-color-white o-layout--column">
+        <h3>Tell A Friend</h3>
+        <div id="tell-a-friend-validation-errors" class="message message-error u-hidden"></div>
+        <div id="tell-a-friend-success" class="message message-success u-hidden">Your message has been sent. Thank you for sharing!</div>
+        <div id="js-error" class="message message-error  u-hidden">An error has occurred. Please try your request again.</div>
+        <fieldset class="nm">
+            <legend>Tell a Friend</legend>
+            <div class="c-form-list__item">
+                <label for="js-tafName" title="Your Name" class="c-form-label">Your Name:</label>
+                <input class="c-form-input" type="text" name="tafName" value="" id="js-tafName" />
+            </div>
+            <div class="c-form-list__item">
+                <label for="js-tafEmail" title="Your Email" class="c-form-label">Your Email:</label>
+                <input class="c-form-input" type="email" name="tafEmail" value="" id="js-tafEmail" />
+            </div>
+            <div class="c-form-list__item">
+                <label for="js-tafFriendEmail" title="Friend's Email" class="c-form-label">Friend's Email:</label>
+                <input class="c-form-input" type="email" name="tafFriendEmail" value="" id="js-tafFriendEmail" />
+            </div>
+            <div class="c-form-list__item">
+                <label for="l-tafComment" title="Your Message" class="c-form-label">Your Message:</label>
+                <textarea class="c-form-input c-form-input--long" name="tafComment"  rows="5" cols="40" id="l-tafComment"></textarea>
+            </div>
+            <div class="o-layout">
+                <div class="o-layout__item u-width-6 u-text-center">
+                    <input type="reset" value="Cancel" class="c-button u-font-secondary c-button u-nww-bg-secondary u-color-white" />
+                </div>
+                <div class="o-layout__item u-width-6 u-text-center">
+                    <input type="submit" value="Send" class="c-button u-font-secondary c-button u-nww-bg-primary u-nww-color-secondary" />
+                </div>
+            </div>
+
+            <input type="hidden" name="prodName" value="&mvt:global:product:name;" />
+            <input type="hidden" name="prodURL" value="&mvte:global:product:link;" />
+            <input type="hidden" name="storeName" value="&mvte:global:store:name;" />
+            <input type="hidden" name="storeURL" value="https://&mvte:global:domain:name;/" />
+            <input type="hidden" name="storeEmail" value="&mvte:global:storeEmailB64;" />
+        </fieldset>
+    </form>
+</div>
+<!-- end tell-a-friend -->

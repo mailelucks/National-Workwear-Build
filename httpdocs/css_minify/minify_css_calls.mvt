@@ -1,0 +1,46 @@
+<mvt:comment>
+	= Generate Minified CSS files
+</mvt:comment>
+
+<mvt:comment>
+	= Storefront
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=storefront'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+<mvt:comment>
+	= Product Listing
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=listing'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+<mvt:comment>
+	= Product Display Layout
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=product'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+<mvt:comment>
+	= Checkout Pages
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=checkout'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+<mvt:comment>
+	= Regular Pages
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=page'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+
+<mvt:eval expr="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=checkout'" />

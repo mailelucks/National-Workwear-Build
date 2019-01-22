@@ -3,11 +3,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-
 <mvt:comment>CALL ALL TRANSIENTS</mvt:comment>
-
-<mvt:comment>static elements of the preheader</mvt:comment>
-<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_static_preheader" value="Transient_ReadyTheme_ContentSection( 'header_static_preheader', 24*60*60, l.settings )" />
 
 <mvt:comment>logo</mvt:comment>
 <mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_logo" value="Transient_ReadyTheme_ContentSection( 'header_logo', 24*60*60, l.settings )" />

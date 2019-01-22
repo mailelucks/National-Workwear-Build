@@ -1,0 +1,174 @@
+/**
+ * CONTENTS
+ *
+ * \\ =CTGY
+ * \\ =PROD/SUBCAST LISTING
+ * \\ =CATTREE
+ * \\ =FACETS     
+ */
+
+/* ==========================================================================
+   =CTGY
+   ========================================================================== */
+
+   .t-page-ctgy main {
+    color: #2e2e2e !important;
+    padding: 0;
+  }
+  main .t-page-ctgy-wrapper {
+    max-width: 1750px;
+    margin: 0;
+    padding: 0;
+  }
+  .x-product-list--ctgy-name {
+    font-size: 1.88rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+/* ==========================================================================
+   =PROD/SUBCAST LISTING
+   ========================================================================== */
+
+  @media screen and (min-width: 48em) {
+    .x-product-list {
+      padding: 36px 16px;
+    }
+    .x-product-list {
+      margin: 0;
+    }
+    .x-product-list:not([class="x-carousel"]) .x-product-list__image__container {
+      min-height: 350px;
+    }
+  }
+  @media screen and (max-width: 59.94em) {
+    .x-product-list .o-layout__item.x-product-list__item {
+      flex-basis: 47.9%;
+      max-width: 47.9%;
+    }
+    .x-product-list .x-product-list__item:nth-of-type(2n){
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: 60em) {
+    .x-product-list {
+      padding-left: 0;
+    }
+    .x-product-list .x-product-list__item {
+      margin-bottom: 25px;
+      margin-right: 2.2%;
+    }
+    .x-product-list .o-layout__item.x-product-list__item {
+      flex-basis: 31.8%;
+      max-width: 31.8%;
+    }
+    .x-product-list .x-product-list__item:nth-of-type(3n){
+      margin-right: 0;
+    }
+    .x-product-list__image__container.x-product-list__outfit-image {
+      height: auto;
+    }
+    .x-product-list__outfit-image .x-product-list__image {
+      height: auto;
+      max-height: none;
+    }
+  }
+  @media screen and (min-width: 75em) {
+    .x-product-list .x-product-list__image__container {
+      min-height: 400px;
+    }
+  }
+  @media screen and (min-width: 113.5em) {
+   .x-product-list {
+      padding: 36px 0;
+    }
+  }
+
+/* ==========================================================================
+   =CATTREE
+   ========================================================================== */
+
+   .x-category-tree {
+    padding: 0 1rem;
+  }
+  @media screen and (min-width: 60em) {
+   body.t-page-ctgy .x-category-tree,
+   body.t-page-srch .x-category-tree,
+   body.t-page-plst .x-category-tree   {
+    margin-bottom: 5rem;
+    padding-right: 40%;
+  }
+}
+.x-category-tree__heading {
+  font-size: 1.13rem;
+  padding: 0;
+}
+.x-category-tree__link {
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.x-category-tree__list--level-1 {
+  padding-top: 1rem;
+  padding-left: 0 !important;
+}
+.x-category-tree__list--level-1:first-of-type {
+  padding-top: 0;
+}
+.x-category-tree__list--level-2 .x-category-tree__link,
+.x-category-tree__list--level-3 .x-category-tree__link,
+.x-category-tree__list--level-4 .x-category-tree__link,
+.x-category-tree__list--level-5 .x-category-tree__link  {
+  font-size: .75rem;
+}
+.x-category-tree__list--level-2 .x-category-tree__link,
+.x-category-tree__list--level-3 .x-category-tree__link  {
+  padding-left: .75rem;
+}
+.x-category-tree__list--level-4 .x-category-tree__link  {
+  padding-left: 1.75rem;
+}
+.x-category-tree__list--level-5 .x-category-tree__link  {
+  padding-left: 2.5rem;
+}
+.x-category-tree__link--current, 
+.x-category-tree__list--level-2 .x-category-tree__link--current, 
+.x-category-tree__list--level-3 .x-category-tree__link--current {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   =FACETS
+   ========================================================================== */
+
+   .x-facet-set__label {
+    text-transform: capitalize;
+  }
+  .x-facets .c-form-checkbox__caption {
+    font-size: 0.81rem;
+  }
+  .c-clear-list {
+    color: #7b7b7b;
+    font-size: .88rem;
+    position: relative;
+  }
+  .c-clear-list__icon {
+    border-radius: 50%;
+    border: 1px solid #747474;
+    font-size: 7px;
+    font-weight: 700;
+    padding: 4px;
+  }
+  .c-clear-list__text:after {
+    content: '';
+    background: #747474;
+    padding-bottom: 1px;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 100%;
+    max-width: 86px;
+  }
+  .x-facets .c-form-checkbox__input:checked + .c-form-checkbox__caption::after {
+    background-color: #7b7b7b;
+  }
