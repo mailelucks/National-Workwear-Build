@@ -75,6 +75,9 @@
 					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-secondary u-font-small u-text-bold u-color-white" href="&mvte:urls:BASK:auto;">Edit Cart</a>
 					<a class="c-button c-control-group__button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-small u-text-bold" href="&mvte:urls:OINF:secure;">Checkout</a>
 				</div>
+				<div class="c-applepay-button u-flex u-width-12">
+					<mvt:item name="applepay" />
+				</div>
 				<br>
 				<button class="c-button c-button--clear c-button--full u-font-tiny  u-bg-transparent u-color-gray-30" data-hook="close-mini-basket">Continue Shopping</button>
 			</footer>

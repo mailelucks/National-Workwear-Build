@@ -122,8 +122,10 @@
 
 										<mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
 									</span>
-
 								</span>
+								<div class="o-layout__item c-applepay-button u-flex u-width-12">
+									<mvt:item name="applepay" param="product" />
+								</div>
 							</p>
 						</mvt:if>
 					</div>
