@@ -213,6 +213,9 @@
                                         </div>
                                     </mvt:if>
                                 </div>
+                                <div class="c-applepay-button u-flex u-width-12">
+                                    <mvt:item name="applepay" param="product" />
+                                </div>
                                 <div class="x-product-layout--social o-layout__item u-width-12 u-hidden u-flex--m">
                                     <mvt:item name="readytheme" param="contentsection( 'x-prod-social' )" />
                                 </div>

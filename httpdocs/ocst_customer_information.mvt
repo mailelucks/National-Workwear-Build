@@ -12,7 +12,9 @@
 				<input type="hidden" name="Order" value="&mvte:global:Order;">
 				<div class="o-layout o-layout--wide">
 					<div class="o-layout__item">
-						<input class="c-form-input c-form-input--large c-control-group__field" type="email" name="register_email" value="&mvte:global:register_email;" autocomplete="email" placeholder="Email" required>
+						<div class="c-control-group">
+							<input class="c-form-input c-form-input--large c-control-group__field" type="email" name="register_email" value="&mvte:global:register_email;" autocomplete="email" placeholder="Email" required>
+						</div>
 					</div>
 					<div class="o-layout__item">
 						<div class="c-control-group">

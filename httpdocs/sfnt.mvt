@@ -1,7 +1,3 @@
-
-<mvt:comment><mvt:assign name="g.debug_hide" value="'style=\"display: none;\"'" /></mvt:comment>
-
-
 <mvt:item name="html_profile" />
 <head itemscope itemtype="http://schema.org/WebSite">
 	<meta charset="utf-8">
@@ -15,6 +11,7 @@
 	</mvt:if>
 	<mvt:item name="head" param="css_list" />
 	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="readytheme" param="contentsection( 'css_check' )" />
 </head>
 <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
 	<mvt:item name="hdft" param="global_header" />
@@ -31,6 +28,31 @@
 		<mvt:else>
 			<mvt:comment> <!-- Failsafe! --> </mvt:comment>
 			<mvt:item name="readytheme" param="contentsection( 'sfnt_template' )" />
+
+			<section class="t-container x-sfnt--instagram-feed__container u-flex o-layout--flush u-cement-bg">
+				<div class="o-layout__item" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top">
+					<h2 class="u-sfnt-header u-sfnt-header--instagram u-text-center">Instagram</h2>
+					 <mvt:assign name="l.instagram_feed" value="''" />
+					 <mvt:call action="'https://api.instagram.com/v1/users/self/media/recent/?access_token=8526456497.1677ed0.1747937b90344012ad5d091f72b46910'" method="'GET'">
+					 	<mvt:assign name="l.instagram_feed" value="l.instagram_feed $ s.callvalue" />
+					 </mvt:call>
+
+					 <mvt:comment> Decode API JSON </mvt:comment>
+					 <mvt:assign name="l.success" value="miva_json_decode( l.instagram_feed, l.settings:instagram )" />
+
+					 <mvt:if expr="NOT miva_array_elements( l.settings:instagram:data )">
+					 	<mvt:exit />
+					 </mvt:if>
+
+					 <mvt:foreach iterator="post" array="instagram:data">
+					 	<a href="&mvte:post:link;" target="_blank">
+					 		<img src="&mvte:post:images:standard_resolution:url;" alt="&mvte:post:caption:text;" title="&mvte:post:caption:text;" />
+					 	</a>
+					 </mvt:foreach>
+				</div>
+			</section>
+			<!-- end instagram_feed -->
+			
 		</mvt:if>
 	</section>
 
