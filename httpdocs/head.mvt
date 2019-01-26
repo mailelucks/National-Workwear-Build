@@ -7,6 +7,7 @@
 </mvt:if>
 <mvt:item name="prodctgy_meta" param="combined" />
 <mvt:assign name="g.theme_path" value="'themes/shadows'" />
+<mvt:item name="readytheme" param="contentsection( 'css_check' )" />
 
 <script>
 	dataLayer = [];
@@ -200,3 +201,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TB83HPG');</script>
 <!-- End Google Tag Manager -->
+

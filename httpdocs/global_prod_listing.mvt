@@ -1,4 +1,4 @@
-<div class="u-text-center x-product-list__contents u-flex o-layout--column" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
+<div class="u-text-center x-product-list__contents" &mvt:global:aos_animate; &mvt:global:aos_animate_settings;>
 	<mvt:comment>reassign product entity to avoid system conflicts</mvt:comment>
 	<mvt:assign name="l.settings:product_list" value="l.settings:product" />
 	<mvt:comment>Get product pricing</mvt:comment>
@@ -22,7 +22,7 @@
 			<span class="u-text-uppercase u-text-bold">&mvte:product_list:customfield_values:customfields:flags;</span>
 		</div>
 	</mvt:if>
-	<a class="u-block x-product-list__link u-flex o-layout--column" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
+	<a class="x-product-list__link u-flex o-layout--column" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
 		<figure class="x-product-list__figure u-flex o-layout--column o-layout__item">
 			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />

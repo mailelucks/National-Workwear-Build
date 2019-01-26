@@ -1,11 +1,11 @@
 <mvt:item name="readytheme" param="contentsection( 'sfnt_data' )" />
 
-<section class="x-sfnt--hero__container u-flex o-layout--flush" &mvt:global:debug_hide;>
+<section class="x-sfnt--hero__container u-flex o-layout--flush">
 	<picture class="x-sfnt--overlay x-hero--bg" data-responsive-background-image>
 		<source media="(max-width: 767px)" srcset="&mvt:global:sfnt_hero_mobile:image;">
 		<source media="(min-width: 768px)" srcset="&mvt:global:sfnt_hero_tablet:image;">
 		<source media="(min-width: 1200px)" srcset="&mvt:global:sfnt_hero:image;">
-		<img src="&mvt:global:sfnt_hero_mobile:image;" alt="&mvt:global:store:name;">
+		<img src="&mvt:global:sfnt_hero:image;" alt="&mvt:global:store:name;">
 	</picture>
 	<div class="o-layout__item">
 		<div class="x-hero">
@@ -28,14 +28,14 @@
 </section>
 <!-- end hero banner -->
 
-<section class="t-container x-sfnt--featured-ctgys__container" data-aos="fade-up" data-aos-delay="500" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top" &mvt:global:debug_hide;> 
+<section class="t-container x-sfnt--featured-ctgys__container" data-aos="fade-up" data-aos-delay="500" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top"> 
 	<mvt:item name="readytheme" param="navigationset( 'sfnt_featured_ctgy' )" />
 </section>
 <!-- end featured categories -->
 
-<section class="x-sfnt--customization__container t-container o-layout u-cement-bg o-layout--flush o-layout--justify-start u-grids-2--l" &mvt:global:debug_hide;>
+<section class="x-sfnt--customization__container t-container o-layout u-cement-bg o-layout--flush o-layout--justify-start u-grids-2--l">
 	<div class="o-layout__item">
-		<div class="x-sfnt--customization--col-1 o-layout__item u-flex o-layout--align-top o-layout--justify-center o-layout--column" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
+		<div class="x-sfnt--customization--col-1" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
 			<h2 class="u-sfnt-header--customization u-sfnt-header u-font-secondary u-text-bold u-nww-color-secondary">Use Our In House Customization</h2>
 			<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
 				<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">
@@ -70,7 +70,7 @@
 <!-- end in house customization -->
 
 <mvt:if expr="g.sfnt_featured_service_alpha:image AND g.sfnt_featured_service_alpha_mobile:image">
-	<section class="x-featured-service x-sfnt--featured-service-alpha__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
+	<section class="x-featured-service x-sfnt--featured-service-alpha__container x-bg-lazy t-container u-flex o-layout--flush">
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
 			<source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_mobile:image;">
 			<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_alpha_tablet:image;">
@@ -95,7 +95,7 @@
 </mvt:if>
 <!-- end featured service alpha -->
 
-<section class="x-sfnt--featured-prods__container t-container" data-aos="fade-down" data-aos-once="true" data-aos-duration="1000" &mvt:global:debug_hide;>
+<section class="x-sfnt--featured-prods__container t-container">
 	<h2 class="u-sfnt-header u-text-center">Featured Products</h2>
 	<mvt:item name="readytheme" param="Load_ProductListing('sfnt_featured_prods', g.sfnt_featured_prods_data )" />
 	<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_prods_data:code, g.sfnt_featured_prods_data )" />
@@ -113,7 +113,7 @@
 <!-- end featured products -->
 
 <mvt:if expr="g.sfnt_featured_service_bravo:image AND g.sfnt_featured_service_bravo_mobile:image">
-	<section class="x-featured-service x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush" &mvt:global:debug_hide;>
+	<section class="x-featured-service x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush">
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
 			 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_mobile:image;">
 			 	<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_tablet:image;">
@@ -154,7 +154,7 @@
 </mvt:if>
 <!-- end featured service bravo -->
 
-<section class="t-container x-sfnt--featured-brands__container u-flex o-layout--flush u-cement-bg" &mvt:global:debug_hide_0;>
+<section class="t-container x-sfnt--featured-brands__container u-flex o-layout--flush u-cement-bg">
 	<div class="o-layout__item" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top">
 		<h2 class="u-sfnt-header u-sfnt-header--featured-brands u-text-center">Featured Brands</h2>
 		 <mvt:item name="readytheme" param="navigationset( 'sfnt_featured_brands' )" />
@@ -163,7 +163,7 @@
 <!-- end featured brands -->
 
 <mvt:if expr="g.sfnt_featured_service_charlie:image AND g.sfnt_featured_service_charlie_mobile:image">
-	<section class="x-sfnt--featured-service-charlie__container x-bg-lazy t-container u-flex" &mvt:global:debug_hide;>
+	<section class="x-sfnt--featured-service-charlie__container x-bg-lazy t-container u-flex">
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
 			<source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_mobile:image;">
 			<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_charlie_tablet:image;">
@@ -174,14 +174,17 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="o-layout__item">
 			<div class="x-featured-service-charlie--content x-sfnt--overlay-content o-layout o-layout--justify-start" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
-					<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-charlie u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_charlie:image_alt;</h2>
-					<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_charlie' )" />
-					<a class="x-featured-service-charlie__cta-button t-nww-cta-text-button t-nww-cta-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_featured_service_charlie:uri;" target="&mvt:global:sfnt_featured_service_charlie:link_targ;">
-						<span class="t-nww-cta-button__text">Read More About Us</span>
-						<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
-					</a>
-				</div>
+				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-charlie u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_charlie:image_alt;</h2>
+				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_charlie' )" />
+				<a class="x-featured-service-charlie__cta-button t-nww-cta-text-button t-nww-cta-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_featured_service_charlie:uri;" target="&mvt:global:sfnt_featured_service_charlie:link_targ;">
+					<span class="t-nww-cta-button__text">Read More About Us</span>
+					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
+				</a>
+			</div>
 		</div>
 	</section>
 </mvt:if>
 <!-- end featured service charlie -->
+
+<mvt:item name="readytheme" param="contentsection( 'x-instagram-feed' )" />
+<!-- end instagram_feed -->

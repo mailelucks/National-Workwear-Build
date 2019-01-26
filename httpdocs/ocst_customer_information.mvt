@@ -306,8 +306,8 @@
 				</mvt:if>
 			</mvt:foreach>
 			<mvt:if expr="g.Basket:cust_id">
-				<ul class="c-form-list ">
-					<li class="c-form-list__item c-form-list__item--full u-font-small">
+				<ul class="c-form-list o-layout o-layout--wide">
+					<li class="c-form-list__item o-layout__item c-form-list__item--full u-font-small">
 						<mvt:if expr="g.Update_Customer">
 							<label class="c-form-checkbox">
 								<input class="c-form-checkbox__input" type="checkbox" name="Update_Customer" value="Yes" checked>
