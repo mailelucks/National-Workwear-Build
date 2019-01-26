@@ -4,7 +4,7 @@
 <mvt:if expr="l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY'">
 	<footer class="t-site-footer o-wrapper--full u-color-white">
 		<div class="o-wrapper o-nww-wrapper o-layout--flush">
-			<div class="t-site-footer__social-content u-flex o-layout--column">
+			<div class="t-site-footer__social-content">
 				<section class="o-layout__item">
 					<mvt:item name="readytheme" param="contentsection( 'newsletter_form' )" />
 				</section>
@@ -14,7 +14,7 @@
 							<mvt:comment><input id="social_active" class="c-collapsible-menu__trigger" type="checkbox"></mvt:comment>
 							<mvt:comment><label class="c-collapsible-menu__label u-text-uppercase" for="social_active">Connect With Us</label></mvt:comment>
 							<ul class="c-menu__list o-list-inline--narrow u-text-uppercase u-width-8--m u-flex o-layout--align-center o-layout--justify-around" itemscope itemtype="http://schema.org/Organization">
-								<link itemprop="url" href="//&mvt:global:domain:name;/">
+								<link class="u-hidden" itemprop="url" href="//&mvt:global:domain:name;/">
 								<mvt:if expr="l.settings:readytheme:logo_type EQ 'image'">
 									<link itemprop="logo" href="&mvte:readytheme:logo_image;" />
 								</mvt:if>
