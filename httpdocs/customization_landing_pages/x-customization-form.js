@@ -4,11 +4,11 @@ $(document).ready( function(){
 		'use strict';
 		
 
-		var contactForm = document.querySelector('[data-hook="customization-contact-form"]');
+		var contactForm = document.querySelector('[data-hook="cstm-contact-form"]');
 
 		if (contactForm) {
 			var contactFormAction = contactForm.getAttribute('data-action');
-			var contactFormButton = document.querySelector('[data-hook="customization-contact-form__submit"]');
+			var contactFormButton = document.querySelector('[data-hook="cstm-contact-form__submit"]');
 
 			contactForm.classList.remove('u-hidden');
 
@@ -30,11 +30,26 @@ $(document).ready( function(){
 				window.removeEventListener('mouseover', mouseForm, false);
 			}, false);
 
+			function isEmail(email) {
+			  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			  return regex.test(email);
+			}
+
 			$(contactForm).submit(function(e) {
 
 				e.preventDefault(); // avoid to execute the actual submit of the form.
 
-			    var url = $(contactForm).attr('action');
+				$('label').removeClass('x-cstm-error');
+				$('.x-messages--error').addClass('u-hidden');
+				$('.x-messages--success').addClass('u-hidden');
+
+			    var url = $(contactForm).attr('action'),
+			    	verify = $('#verify').val(),
+			    	decode = window.atob(verify),
+			    	human = $('#contactHuman').val(),
+			    	email = $('#contactEmail').val();
+
+			    	email = isEmail(email);
 
 			    $.ajax({
 		            type: "POST",
@@ -42,13 +57,22 @@ $(document).ready( function(){
 		            data:$(contactForm).serialize(), // serializes the form's elements.
 		            success: function(data)
 		            {
-		                $('.x-messages--success').removeClass('u-hidden');
-		            },
-		            fail: function(data) {
-		           		$('.x-messages--error').removeClass('u-hidden');
+		            	if( human != decode) {
+		            		$('.x-messages--error').removeClass('u-hidden');
+		            		$('label[for="contactHuman"]').addClass('x-cstm-error');
+		            	} 
+
+		            	if(!email) {
+		            		$('.x-messages--error').removeClass('u-hidden');
+		            		$('label[for="contactEmail"]').addClass('x-cstm-error');
+		            	}
+
+		            	if( human == decode && email) {
+		            		$('.x-messages--success').removeClass('u-hidden');
+		            	}
+		                
 		            }
 			    });
-
 			    
 			});
 

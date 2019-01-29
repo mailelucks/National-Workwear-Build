@@ -1,12 +1,14 @@
 <div class="o-layout">
-	<div class="x-customization-content__wrapper">
-		<h2 class="u-cstm-header u-font-secondary u-nww-color-secondary u-text-left"><mvt:item name="readytheme" param="banner( 'customization_header_main' )" /></h2>
-		<div class="x-customization-description">
-			
+	<div class="x-cstm-content__wrapper">
+		<h2 class="u-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
+			<mvt:item name="readytheme" param="banner( 'cstm_header_main' )" />
+		</h2>
+		<div class="x-cstm-description">
+			<mvt:item name="readytheme" param="banner( 'cstm_main_desc' )" />
 		</div>
-		<div class="x-customization-nav">
-			     
+		<div class="x-cstm-nav">
+			  <mvt:item name="readytheme" param="navigationset( 'cstm_main_nav' )" />    
 		</div>
 	</div>
-	<mvt:item name="readytheme" param="contentsection( 'customization_form' )" />
+	<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
 </div>

@@ -1,8 +1,8 @@
 <noscript>
 	<p class="x-messages x-messages--error" data-hook="contact-us__warning">You must javascript enabled to use this form.</p>
 </noscript>
-<h3 class="x-customization-form__header u-text-center">Have Customization Questions?</h3>
-<form class="x-customization-form" data-hook="customization-contact-form" data-action="&mvte:urls:CSFM:auto;" action="#" method="post" accept-charset="UTF-8">
+<h3 class="x-cstm-form__header u-text-center">Have Customization Questions?</h3>
+<form class="x-cstm-form" data-hook="cstm-contact-form" data-action="&mvte:urls:CSFM:auto;" action="#" method="post" accept-charset="UTF-8">
 	<fieldset>
 		<legend>Customization Inquiry &mvte:global:store:name; Form</legend>
 		<mvt:comment>
@@ -13,7 +13,7 @@
 		<input class="u-hide-visually" type="text" name="website">
 		<ul class="c-form-list">
 			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--success">Thank you for your inquiry. A &mvte:global:store:name; representative will contact you shortly.</li>
-			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--error">We're sorry, there was a problem processing your request.</li>
+			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--error">We're sorry, there was a problem processing your request. Please check errors.</li>
 			<li class="c-form-list__item c-form-list__item--full">
 				<label class="c-form-label is-required u-text-uppercase u-text-bold" for="contactFirstName">First Name</label>
 				<input id="contactFirstName" class="c-form-input" tabindex="1" type="text" name="contactFirstName" value="&mvte:global:contactFirstName;" required>
@@ -40,7 +40,25 @@
 				<textarea id="contactMessage" class="c-form-input c-form-input--long" tabindex="5" name="contactMessage" placeholder="" required>&mvte:global:contactMessage;</textarea>
 			</li>
 			<li class="c-form-list__item c-form-list__item--full">
-				<button class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary" data-hook="customization-contact-form__submit" type="submit" name="submit" disabled>Submit Form</button>
+				<label class="c-form-label is-required u-text-uppercase u-text-bold" for="contactHuman">Are you human?</label>
+				<div class="c-control-group">
+					<mvt:comment>
+						<!--
+						This is a basic math challenge to confirm there is a person
+						entering the information. The numbers are random and the
+						answer key is passed to the process in Base64 for comparison.
+						-->
+					</mvt:comment>
+					<mvt:assign name="l.settings:humanOne" value="random('25')" />
+					<mvt:assign name="l.settings:humanTwo" value="random('25')" />
+					<mvt:assign name="l.settings:verify" value="crypto_base64_encode(l.settings:humanOne + l.settings:humanTwo)" />
+					<input class="c-form-input c-control-group__field u-text-center u-width-6" type="text" value="&mvte:humanOne; + &mvte:humanTwo; =" disabled>
+					<input id="contactHuman" class="c-form-input c-control-group__field u-width-6" tabindex="6" type="tel" name="human" value="" required>
+					<input id="verify" type="hidden" name="verify" value="&mvte:verify;">
+				</div>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<button class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary" data-hook="cstm-contact-form__submit" type="submit" name="submit" disabled>Submit Form</button>
 			</li>
 		</ul>
 	</fieldset>

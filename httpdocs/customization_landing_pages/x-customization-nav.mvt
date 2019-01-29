@@ -1,0 +1,27 @@
+<mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
+<ul class="x-cstm-navigation x-navigation-set &mvte:readytheme:layout;">
+<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+
+	<mvt:if expr="'EMBROIDERY' CIN l.settings:navigationitem:link_dest">
+		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_embroidery.svg'" />
+	<mvt:elseif expr="'HEATPRESS' CIN l.settings:navigationitem:link_dest">
+		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_heatpress.svg'" />
+	<mvt:elseif expr="'SCREENPRINTING' CIN l.settings:navigationitem:link_dest">
+		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_screenprinting.svg'" />
+	</mvt:if>
+
+	<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:navigationitem ), ',', asciichar( 10 ) )" />
+	<!--
+	@@navigationitem
+	============================
+	&mvt:global:mvt_debug;
+	-->
+
+	<li class="x-cstm-navigation-item level-1">
+		<span class="x-cstm-nav-icon"></span>
+		<img src="&mvte:navigationitem:icon;">
+		&mvt:navigationitem:link;
+	</li>
+</mvt:foreach>
+</ul>
+</mvt:if>
