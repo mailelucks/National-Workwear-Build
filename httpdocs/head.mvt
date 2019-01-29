@@ -9,7 +9,6 @@
 <mvt:assign name="g.theme_path" value="'themes/shadows'" />
 
 <mvt:comment> PER PAGE STYLES | GROUPED STYLES -- START </mvt:comment>
-
 <mvt:if expr="'SFNT' CIN l.settings:page:code">
 	<mvt:assign name="l.settings:css_path" value="'sfnt'" />
 <mvt:elseif expr="'PROD' CIN l.settings:page:code">
@@ -18,6 +17,8 @@
 	<mvt:assign name="l.settings:css_path" value="'ctgy_srch_plst'" />
 <mvt:elseif expr="l.settings:page:code EQ 'BASK' OR l.settings:page:code EQ 'BSKE' OR l.settings:page:code EQ 'ORDL' OR l.settings:page:code EQ 'OCST' OR l.settings:page:code EQ 'OPAY' OR l.settings:page:code EQ 'OUS1' OR l.settings:page:code EQ 'OUSM' OR l.settings:page:code EQ 'UATM' OR l.settings:page:code EQ 'UATR' OR l.settings:page:code EQ 'OSEL' OR l.settings:page:code EQ 'OPAY'">
 	<mvt:assign name="l.settings:css_path" value="'bask'" />
+<mvt:elseif expr="'CSTM' CIN l.settings:page:code">
+	<mvt:assign name="l.settings:css_path" value="'customization'" />
 <mvt:else>
 	<mvt:assign name="l.settings:css_path" value="'pages'" />
 </mvt:if>
@@ -42,6 +43,7 @@
 	<mvt:item name="readytheme" param="contentsection( 'readytheme_styles' )" />
 </mvt:if>
 <mvt:comment> PER PAGE STYLES | GROUPED STYLES -- END </mvt:comment>
+
 
 <script>
 	dataLayer = [];

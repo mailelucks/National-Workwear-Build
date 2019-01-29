@@ -1,0 +1,12 @@
+<div class="o-layout">
+	<div class="x-customization-content__wrapper">
+		<h2 class="u-cstm-header u-font-secondary u-nww-color-secondary u-text-left"><mvt:item name="readytheme" param="banner( 'customization_header_main' )" /></h2>
+		<div class="x-customization-description">
+			
+		</div>
+		<div class="x-customization-nav">
+			     
+		</div>
+	</div>
+	<mvt:item name="readytheme" param="contentsection( 'customization_form' )" />
+</div>

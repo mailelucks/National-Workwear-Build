@@ -24,62 +24,62 @@ $page = $_GET['pageType'];
 
 // Core CSS Files
 $file_paths = array(
-	'core/css/base/normalize.css',
-	'core/css/base/resets.css',
-	'core/css/elements/forms.css',
-	'core/css/elements/links.css',
-	'core/css/elements/media.css',
-	'core/css/elements/page.css',
-	'core/css/elements/tables.css',
-	'core/css/elements/typography.css',
-	'core/css/objects/layout.css',
-	'core/css/objects/lists.css',
-	'core/css/objects/tables.css',
-	'core/css/objects/wrapper.css',
-	'core/css/components/buttons.css',
-	'core/css/components/control-groups.css',
-	'core/css/components/divider.css',
-	'core/css/components/forms.css',
-	'core/css/components/keyline.css',
-	'core/css/components/menu.css',
-	'core/css/components/mini-modal.css',
-	'core/css/components/navigation.css',
-	'core/css/components/tables.css',
-	'core/css/components/typography.css',
-	'core/css/utilities/borders.css',
-	'core/css/utilities/clear-fix.css',
-	'core/css/utilities/colors.css',
-	'core/css/utilities/display.css',
-	'core/css/utilities/grids.css',
-	'core/css/utilities/icons.css',
-	'core/css/utilities/print.css',
-	'core/css/utilities/typography.css',
-	'core/css/utilities/vertical-align.css',
-	'core/css/utilities/widths.css',
-	'core/css/utilities/z-index.css',
-	'extensions/breadcrumbs/collapsing-breadcrumbs.css',
-	'extensions/category-tree/category-tree.css',
-	'extensions/display-list-filtering/display-list-filtering.css',
-	'extensions/hero/hero.css',
-	'extensions/messages/messages.css',
-	'extensions/pagination/pagination.css',
-	//'extensions/product-layout/product-layout.css',
-	//'extensions/product-lists/product-lists.css',
-	'extensions/search-preview/search-preview.css',
-	'extensions/subscriptions/subscriptions.css',
-	'extensions/mini-basket/mini-basket.css',
-	'extensions/quantify/quantify.css',
-	'extensions/tabs/flex-tabs.css',
-	'extensions/navigation/transfigure-navigation.css',
+	// 'core/css/base/normalize.css',
+	// 'core/css/base/resets.css',
+	// 'core/css/elements/forms.css',
+	// 'core/css/elements/links.css',
+	// 'core/css/elements/media.css',
+	// 'core/css/elements/page.css',
+	// 'core/css/elements/tables.css',
+	// 'core/css/elements/typography.css',
+	// 'core/css/objects/layout.css',
+	// 'core/css/objects/lists.css',
+	// 'core/css/objects/tables.css',
+	// 'core/css/objects/wrapper.css',
+	// 'core/css/components/buttons.css',
+	// 'core/css/components/control-groups.css',
+	// 'core/css/components/divider.css',
+	// 'core/css/components/forms.css',
+	// 'core/css/components/keyline.css',
+	// 'core/css/components/menu.css',
+	// 'core/css/components/mini-modal.css',
+	// 'core/css/components/navigation.css',
+	// 'core/css/components/tables.css',
+	// 'core/css/components/typography.css',
+	// 'core/css/utilities/borders.css',
+	// 'core/css/utilities/clear-fix.css',
+	// 'core/css/utilities/colors.css',
+	// 'core/css/utilities/display.css',
+	// 'core/css/utilities/grids.css',
+	// 'core/css/utilities/icons.css',
+	// 'core/css/utilities/print.css',
+	// 'core/css/utilities/typography.css',
+	// 'core/css/utilities/vertical-align.css',
+	// 'core/css/utilities/widths.css',
+	// 'core/css/utilities/z-index.css',
+	// 'extensions/breadcrumbs/collapsing-breadcrumbs.css',
+	// 'extensions/category-tree/category-tree.css',
+	// 'extensions/display-list-filtering/display-list-filtering.css',
+	//'extensions/hero/hero.css',
+	// 'extensions/messages/messages.css',
+	// 'extensions/pagination/pagination.css',
+	// 'extensions/product-layout/product-layout.css',
+	// 'extensions/product-lists/product-lists.css',
+	// 'extensions/search-preview/search-preview.css',
+	// 'extensions/subscriptions/subscriptions.css',
+	// 'extensions/mini-basket/mini-basket.css',
+	//'extensions/quantify/quantify.css',
+	//'extensions/tabs/flex-tabs.css',
+	//'extensions/navigation/transfigure-navigation.css',
 	//'extensions/carousel/roundabout.css',
-	//'extensions/facets/facets.css',
-	'extensions/fasten-header/fasten-header.css',
-	'extensions/responsive-tabs/responsive-tabs.css',
-	'extensions/responsive-tabs/responsive-style.css',
-	'extensions/tabs/flex-tabs-custom.css',
+	// 'extensions/facets/facets.css',
+	 'extensions/fasten-header/fasten-header.css',
+	// 'extensions/responsive-tabs/responsive-tabs.css',
+	// 'extensions/responsive-tabs/responsive-style.css',
+	//'extensions/tabs/flex-tabs-custom.css',
 	//'extensions/slick-theme/slick-theme.css',
-	'extensions/slickjs/slick.css',
-	'extensions/aos/aos.css'
+	//'extensions/slickjs/slick.css',
+	//'extensions/aos/aos.css'
 );
 
 // Page Specific CSS
@@ -87,6 +87,9 @@ switch($page) {
 	case 'storefront': 
 		array_push($file_paths, 
 			'site-styles.css',
+			'extensions/hero/hero.css',
+			'extensions/slickjs/slick.css',
+			'extensions/aos/aos.css',
 			'ui/css/pages/sfnt.css'
 		);
 		$minifiedPath = 'ui/css/pages/mini/sfnt.min.css';
@@ -95,7 +98,6 @@ switch($page) {
 	case 'listing':
 		array_push($file_paths,
 			'extensions/product-lists/product-lists.css',
-			'extensions/facets/facets.css',
 			'site-styles.css',
 			'ui/css/pages/ctgy_srch_plst.css'
 		);
@@ -105,6 +107,8 @@ switch($page) {
 		array_push($file_paths,
 			'extensions/product-layout/product-layout.css',
 			'extensions/product-lists/product-lists.css',
+			'extensions/slickjs/slick.css',
+			'extensions/aos/aos.css',
 			'site-styles.css',
 			'ui/css/pages/prod.css'
 		);
@@ -116,6 +120,13 @@ switch($page) {
 			'ui/css/pages/bask.css'
 		);
 		$minifiedPath = 'ui/css/pages/mini/bask.min.css';
+		break;
+	case 'customization':
+		array_push($file_paths, 
+			'site-styles.css',
+			'ui/css/pages/customization.css'
+		);
+		$minifiedPath = 'ui/css/pages/mini/customization.min.css';
 		break;
 	case 'page':
 		array_push($file_paths,

@@ -35,12 +35,17 @@
 <!-- @@ &mvt:global:MvCALL_Error; -->
 
 <mvt:comment>
+	= Customization Pages
+</mvt:comment>
+<mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=customization'" method="'GET'">
+	<mvt:eval expr="s.callvalue" />
+</mvt:call>
+<!-- @@ &mvt:global:MvCALL_Error; -->
+
+<mvt:comment>
 	= Regular Pages
 </mvt:comment>
 <mvt:call action="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=page'" method="'GET'">
 	<mvt:eval expr="s.callvalue" />
 </mvt:call>
 <!-- @@ &mvt:global:MvCALL_Error; -->
-
-
-<mvt:eval expr="'https://' $ g.domain:name $ '/mm5/themes/shadows/minify_css.php?pageType=checkout'" />
