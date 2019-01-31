@@ -1,12 +1,12 @@
 <mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
-<ul class="x-cstm-navigation x-navigation-set &mvte:readytheme:layout;">
+<ul class="x-cstm-navigation x-navigation-set c-form-list &mvte:readytheme:layout;">
 <mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
 
 	<mvt:if expr="'EMBROIDERY' CIN l.settings:navigationitem:link_dest">
 		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_embroidery.svg'" />
 	<mvt:elseif expr="'HEATPRESS' CIN l.settings:navigationitem:link_dest">
 		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_heatpress.svg'" />
-	<mvt:elseif expr="'SCREENPRINTING' CIN l.settings:navigationitem:link_dest">
+	<mvt:elseif expr="'SCREENPRINT' CIN l.settings:navigationitem:link_dest">
 		<mvt:assign name="l.settings:navigationitem:icon" value="g.theme_path $ '/core/images/cstm_screenprinting.svg'" />
 	</mvt:if>
 
@@ -17,10 +17,19 @@
 	&mvt:global:mvt_debug;
 	-->
 
-	<li class="x-cstm-navigation-item level-1">
-		<span class="x-cstm-nav-icon"></span>
-		<img src="&mvte:navigationitem:icon;">
-		&mvt:navigationitem:link;
+	<li class="x-cstm-navigation-item u-block level-1">
+		<a class="x-cstm-navigation-link u-flex o-layout--align-center o-layout--justify-start" href="&mvte:navigationitem:url;">
+			<div class="x-cstm-nav-icon__wrapper o-layout__item u-nww-bg-secondary">
+				<img class="x-cstm-nav-icon" src="&mvte:navigationitem:icon;" />
+			</div>
+			<div class="x-cstm-nav-cta o-layout__item u-nww-color-secondary">
+				<h3 class="x-cstm-nav__text u-font-secondary">&mvt:navigationitem:name;</h3>
+				<div class="x-cstm-nav-caption t-nww-cta-button t-nww-cta-text-button u-flex o-layout--align-center o-layout--justify-start">
+					<span class="t-nww-cta-button__text u-text-bold u-text-uppercase u-text-underline">Learn More</span>
+					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
+				</div>
+			</div>
+		</a>
 	</li>
 </mvt:foreach>
 </ul>

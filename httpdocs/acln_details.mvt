@@ -11,10 +11,11 @@
 	</mvt:if>
 	<mvt:item name="head" param="css_list" />
 	<mvt:item name="head" param="head_tag" />
+
 </head>
 <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
 	<mvt:item name="hdft" param="global_header" />
-
+	<br/>
 	<section class="o-layout">
 		<div class="o-layout__item">
 			<mvt:item name="hdft" param="header" />
@@ -31,7 +32,7 @@
 							<div class="o-layout o-layout--align-center o-layout--justify-between">
 								<span class="o-layout__item c-heading-echo">Personal Information</span>
 								<span class="o-layout__item u-text-right">
-									<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary u-text-bold u-font-small" href="&mvte:urls:ACED:auto;" title="Update Your Information">Edit</a>
+									<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-text-bold u-font-small" href="&mvte:urls:ACED:auto;" title="Update Your Information">Edit</a>
 								</span>
 							</div>
 						</div>
@@ -63,7 +64,7 @@
 								<div class="o-layout o-layout--align-center o-layout--justify-between">
 									<span class="o-layout__item c-heading-echo">Payment Options</span>
 									<span class="o-layout__item u-text-right">
-										<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary u-text-bold u-font-small" href="&mvte:urls:CPCD:auto;" title="Manage Saved Cards">View All</a>
+										<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-text-bold u-font-small" href="&mvte:urls:CPCD:auto;" title="Manage Saved Cards">View All</a>
 									</span>
 								</div>
 							</div>
@@ -80,7 +81,7 @@
 					<div class="o-layout o-layout--align-center o-layout--justify-between">
 						<span class="o-layout__item c-heading-echo">Order History</span>
 						<span class="o-layout__item u-text-right">
-							<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary PIP u-color-white u-font-small" href="&mvte:urls:ORDH:auto;" title="View All Orders">View All</a>
+							<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary PIP u-color-white u-font-small" href="&mvte:urls:ORDH:auto;" title="View All Orders">View All</a>
 						</span>
 					</div>
 				</div>
@@ -94,7 +95,7 @@
 					<div class="o-layout o-layout--align-center o-layout--justify-between">
 						<span class="o-layout__item c-heading-echo">Customer Credit</span>
 						<span class="o-layout__item u-text-right">
-							<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary u-text-bold u-font-small" href="&mvte:urls:ABAL:auto;" title="Manage Account Balance">Manage</a>
+							<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-text-bold u-font-small" href="&mvte:urls:ABAL:auto;" title="Manage Account Balance">Manage</a>
 						</span>
 					</div>
 				</div>
@@ -110,7 +111,7 @@
 											<span class="u-color-gray-30 u-font-tiny u-text-bold ">Current Credit Amount</span><br>
 										</li>
 										<li class="c-form-list__item c-control-group u-flex">
-											<a class="c-button c-button--full c-button--small u-nww-bg-primary u-nww-color-secondary u-font-secondary PIP u-font-large u-text-bold" href="&mvte:urls:ABAL:auto;" title="Manage Account Balance">&mvt:customer:formatted_credit;</a>
+											<a class="c-button c-button--full c-button--small u-nww-bg-secondary u-color-white u-font-secondary PIP u-font-large u-text-bold" href="&mvte:urls:ABAL:auto;" title="Manage Account Balance">&mvt:customer:formatted_credit;</a>
 										</li>
 									</ul>
 								</div>
@@ -121,7 +122,7 @@
 										</li>
 										<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
 											<input id="l-GiftCertificate_Code" class="c-form-input c-form-input--large c-control-group__field u-bg-gray-10 u-border-none" type="text" name="GiftCertificate_Code" placeholder="Enter Code Here" value="&mvte:global:GiftCertificate_Code;" required>
-											<input class="c-button c-button--large c-control-group__button u-nww-bg-primary u-nww-color-secondary u-font-secondary u-border-none u-font-small " type="submit" value="Apply">
+											<input class="c-button c-button--large c-control-group__button u-nww-bg-secondary u-color-white u-font-secondary u-border-none u-font-small " type="submit" value="Apply">
 										</li>
 									</ul>
 								</div>
@@ -136,7 +137,7 @@
 					<div class="o-layout o-layout--align-center o-layout--justify-between">
 						<span class="o-layout__item c-heading-echo">Address Book</span>
 						<span class="o-layout__item u-text-right">
-							<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary u-font-small" href="&mvte:urls:CABK:auto;" title="View All Addresses">View All</a>
+							<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-font-small" href="&mvte:urls:CABK:auto;" title="View All Addresses">View All</a>
 						</span>
 					</div>
 				</div>
@@ -150,7 +151,7 @@
 					<div class="o-layout o-layout--align-center o-layout--justify-between">
 						<span class="o-layout__item c-heading-echo">Wish Lists</span>
 						<span class="o-layout__item u-text-right">
-							<a class="c-button c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary u-font-small" href="&mvte:urls:WLST:auto;" title="View All Wish Lists">View All</a>
+							<a class="c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-font-small" href="&mvte:urls:WLST:auto;" title="View All Wish Lists">View All</a>
 						</span>
 					</div>
 				</div>

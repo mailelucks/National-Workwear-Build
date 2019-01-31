@@ -1,4 +1,4 @@
-<h2 class="u-cstm-header u-font-secondary u-nww-color-secondary u-text-left">Custom Examples</h2>
+<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">Custom Examples</h2>
 <div class="x-cstm-examples o-layout o-layout--flush o-layout--justify-between u-width-12">
 	<div class="o-layout__item x-cstm-example__img">
 		<mvt:item name="readytheme" param="image( 'cstm_example_1' )" />

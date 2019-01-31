@@ -1,0 +1,131 @@
+<div class="x-cstm-embroidery-steps o-layout o-layout-column o-layout--justify-between">
+	<div class="x-cstm-steps-header__wrapper">
+		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary">Text Embroidery or Text with Stock Design Embroidery</h2>
+		<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Customizing Your Garment is Easy. Just Follow the Steps Below:</h3>
+	</div>
+	<div class="x-cstm-steps o-layout o-layout-column o-layout--justify-between">
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m u-cstm-width-4--m">
+				<div class="x-cstm-step-header">
+					<div class="x-cstm-step-number u-font-secondary">01</div>
+					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Placement on a Shirt or Jacket</div>
+				</div>
+				<div class="x-cstm-step-details">
+					<ul>
+						<li>Front chest embroider size is approximately 2" tall x 4" wide</li>
+						<li>On garments with a pocket, all embroidery will be placed above the pocket.</li>
+						<li>Brand logo will dictate placement of embroidery</li>
+						<li>Please call for back embroidery options.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
+				<figure>
+					
+				</figure>
+			</div>
+		</div>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
+			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+				<div class="x-cstm-step-header">
+					<div class="x-cstm-step-number u-font-secondary">02</div>
+					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Font & Color Option</div>
+				</div>
+				<div class="x-cstm-step-details">
+					<p>We will size the font to fit embroidered area</p>
+				</div>
+			</div>
+			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
+				<figure>
+					
+				</figure>
+			</div>
+		</div>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+				<span class="x-cstm-table__label x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
+				<div class="x-cstm-step-header">
+					<div class="x-cstm-step-number u-font-secondary">03</div>
+					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Stock Logo Design</div>
+				</div>
+				<div class="x-cstm-step-details">
+					<p>Stock designs are approximately 2" to 3"</p>
+				</div>
+			</div>
+			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
+				<figure>
+					
+				</figure>
+			</div>
+		</div>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
+			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+				<span class="x-cstm-table__label x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
+				<div class="x-cstm-step-header">
+					<div class="x-cstm-step-number u-font-secondary">04</div>
+					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose Placement of Text if Ordering Stock Design</div>
+				</div>
+				<div class="x-cstm-step-details">
+					<p>Text can be placed on top of logo, below the logo or around the logo.</p>
+				</div>
+			</div>
+			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
+				<figure>
+					
+				</figure>
+			</div>
+		</div>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+				<div class="x-cstm-step-header">
+					<div class="x-cstm-step-number u-font-secondary">05</div>
+					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Thread Option</div>
+				</div>
+				<div class="x-cstm-step-details">
+					<p>We have 18 colors available.</p>
+				</div>
+			</div>
+			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
+				<figure>
+					
+				</figure>
+			</div>
+		</div>
+		<div class="x-cstm-step x-cstm-step-row x-cstm-upload__wrapper u-bg-transparent u-flex o-layout--justify-between o-layout--align-top o-layout--column o-layout--row--l">
+			<div class="x-cstm-step-upload-instructions x-cstm-step-col u-cstm-width-10 u-cstm-width-5--l">
+				<div class="x-cstm-step-header">
+					<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary">Uploading Custom File</h2>
+					<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">All custom embroidery charges will be quoted to you based on the size and stitch count of your custom logo.</h3>
+				</div>
+				<div class="x-cstm-step-details">
+					<p>To have your garment custom embroidered, we'll need to have your digitized logo in one of the following file formats: DST, ERF, or XXX. If you do not have a digitized logo in one of these formats, you can send us a high or low-resolution file.</p>
+					<ul>
+						<li>For high-resolution files, there will be a <span class="u-text-bold">minimum $50 fee</span> to have your logo digitized to the digitized formats listed above.</li>
+						<li>For low resolution files, there will be an <span class="u-text-bold">additional service fee of $25 per hour</span> to convert it to a hi-resolution file (vector file).</li>
+						<li>Set up fees do not apply for digitized logos already on file.</li>
+					</ul>
+					<p class="u-text-bold">Also, for business accounts, we will keep your logo on file for up to 3 years making reordering easy.</p>
+				</div>
+				<div class="x-cstm-step-cta__wrapper">
+					<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Start Customizing</h3>
+					<div class="x-cstm-steps-button__wrapper u-flex o-layout--justify-between u-cstm-width-10">
+						<mvt:item name="readytheme" param="navigationset( 'cstm_cta' )" />
+						<div class="x-cstm-step-cta-postscript u-inline-block">
+							<span class="x-cstm-step-cta__label u-text-uppercase u-text-bold">Or Call For Assistance</span>
+							<div class="x-cstm-step-cta__phone u-nww-color-secondary x-cstm-subheader u-font-secondary">&mvte:store:phone;</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="x-cstm-step-col u-cstm-width-1 u-hidden u-shown--l"></div>
+			<div class="x-cstm-filetypes__wrapper u-bg-light-blue x-cstm-step-col u-text-center u-cstm-width-10 u-cstm-width-4--l">
+				<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Acceptable File Types</h3>
+				<ul class="x-cstm-filetypes-list">
+					<li class="x-cstm-filetype u-text-bold u-inline-block">.DST</li>
+					<li class="x-cstm-filetype u-text-bold u-inline-block">.ERF</li>
+					<li class="x-cstm-filetype u-text-bold u-inline-block">.XXX</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+.x-show-toggle-content {
+	height: 0;
+	overflow: hidden;
+}
+.x-show-toggle-content.open {
+	height: auto;
+	overflow: visible;
+}
+.x-show-toggle__text {
+	font-size: 0.94rem;
+	position: relative;
+}
+.x-show-toggle__text:after {
+	content: 'More';
+}
+.x-show-toggle__text.active:after {
+	content: 'Les';
+}

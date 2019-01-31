@@ -1,6 +1,6 @@
 <div class="o-layout">
-	<div class="x-cstm-content__wrapper">
-		<h2 class="u-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
+	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
+		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
 			<mvt:item name="readytheme" param="banner( 'cstm_header_main' )" />
 		</h2>
 		<div class="x-cstm-description">
@@ -9,6 +9,9 @@
 		<div class="x-cstm-nav">
 			  <mvt:item name="readytheme" param="navigationset( 'cstm_main_nav' )" />    
 		</div>
+		<p class="x-cstm-description">For more details about available options, call <span class="u-text-bold">&mvte:store:phone;</span> or contact us through our website by filling out the form at right.</p>
 	</div>
-	<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
+	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
+			<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
+		</div>
 </div>

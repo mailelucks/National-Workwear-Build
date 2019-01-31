@@ -1,0 +1,30 @@
+<p class="x-cstm-desc">
+	Give your crew the great look and the soft feel that screenprinting offers. This versatile ink-based process lets you display your message and design in rich, sharp detail. Plus, screenprinting is an efficient and affordable way to outfit a large number of people.
+</p>
+<p class="x-cstm-desc u-text-bold">For more details on screenprinting options and pricing, please scroll down below. If you still have questions, then email us or call us at &mvte:store:phone;.</p>
+
+<div class="x-csmt-desc x-show-toggle-content" data-hook="x-show-toggle-content">
+	<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">What You Need to Know About Screenprinting</h3>
+	<ul class="x-cstm-embroidery__list">
+		<li class="x-cstm-embroidery__list-item">We have a minimum 24 piece order per similar color block (e.g. light versus dark colored shirts).</li>
+		<li class="x-cstm-embroidery__list-item">Extra charges apply per each additional color.</li>
+		<li class="x-cstm-embroidery__list-item">There is a setup fee for each job, and each placement including each side printed (ex: front would be one setup fee, and the back would be a second setup fee).</li>
+		<li class="x-cstm-embroidery__list-item">A high resolution vector file is necessary for Screenprinting.</li>
+		<li class="x-cstm-embroidery__list-item">For specific color request, there maybe additional charge.</li>
+		<li class="x-cstm-embroidery__list-item">Please provide us with your daytime phone # so that we can contact you for any additional information.</li>
+		<li class="x-cstm-embroidery__list-item u-text-bold">After the final approval of art work and payment has been received, please allow an additional two weeks for orders with Screenprinting.</li>
+		<li class="x-cstm-embroidery__list-item u-cstm-color-red u-text-bold">All Screenprinted items are not returnable</li>
+	</ul>
+</div>
+
+<div class="x-show-toggle__wrapper">
+	<div class="x-show-toggle u-inline" data-hook="x-show-toggle" data-target="x-show-toggle-content">
+		<span class="x-show-toggle__text u-font-secondary u-text-underline">Read </span>
+		<span class="x-show-toggle__icon u-nww-icon-arrow-down u-inline-block"></span>
+	</div>
+</div>
+
+<div class="x-cstm-banner u-color-white u-text-center u-nww-bg-secondary">
+	<span class="u-text-bold u-text-uppercase">Please scroll down to see price chart for screenprinting</span>
+</div>
+
