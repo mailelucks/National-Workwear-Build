@@ -6,40 +6,40 @@
 		<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Fees for Embroidery</h3>
 		<div class="x-cstm-table u-flex o-layout--column">
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex u-cstm-width-7">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">First line of text</span>
+				<div class="x-cstm-table__label x-cstm-table-column">
+					<span class="u-text-bold u-text-uppercase">First line of text</span>
 				</div>
-				<div class="x-cstm-table-column u-text-center u-cstm-width-3">
+				<div class="x-cstm-table__value x-cstm-table-column u-text-center">
 					<span class="u-text-bold u-cstm-color-red">
 						+$6.50
 					</span>
 				</div>
 			</div>
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex u-cstm-width-7">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">Each additional line</span>
+				<div class="x-cstm-table__label x-cstm-table-column">
+					<span class="u-text-bold u-text-uppercase">Each additional line</span>
 				</div>
-				<div class="x-cstm-table-column u-text-center u-cstm-width-3">
+				<div class="x-cstm-table__value x-cstm-table-column u-text-center">
 					<span class="u-text-bold u-cstm-color-red">
 						+$3.00
 					</span>
 				</div>
 			</div>
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex u-cstm-width-7">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">Each Stock Logo Design</span>
+				<div class="x-cstm-table__label x-cstm-table-column">
+					<span class="u-text-bold u-text-uppercase">Each Stock Logo Design</span>
 				</div>
-				<div class="x-cstm-table-column u-text-center u-cstm-width-3">
+				<div class="x-cstm-table__value x-cstm-table-column u-text-center">
 					<span class="u-text-bold u-cstm-color-red">
 						+$8.00
 					</span>
 				</div>
 			</div>
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex u-cstm-width-7">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">Waterproof Spray</span>
+				<div class="x-cstm-table__label x-cstm-table-column">
+					<span class="u-text-bold u-text-uppercase">Waterproof Spray</span>
 				</div>
-				<div class="x-cstm-table-column u-text-center u-cstm-width-3">
+				<div class="x-cstm-table__value x-cstm-table-column u-text-center">
 					<span class="u-text-bold u-cstm-color-red">
 						+$10.00
 					</span>
@@ -51,22 +51,22 @@
 		<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Call for Pricing</h3>
 		<div class="x-cstm-table u-flex o-layout--column">
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex o-layout--column">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">Back Embroidery</span>
+				<div class="x-cstm-table-column o-layout--column">
+					<span class="u-text-bold u-text-uppercase">Back Embroidery</span>
 					<span>Based on size and stitch count</span>
 				</div>
 			</div>
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column u-flex">
-					<span class="x-cstm-table__label u-text-bold u-text-uppercase">Flame Resistant Nomex Thread</span>
+				<div class="x-cstm-table-column">
+					<span class="u-text-bold u-text-uppercase">Flame Resistant Nomex Thread</span>
 				</div>
 			</div>
 			<div class="x-cstm-table-row u-flex">
-				<div class="x-cstm-table-column x-cstm-skinny-column u-cstm-width-7 o-layout--column">
-					<span class="x-cstm-table__label x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
+				<div class="x-cstm-table-column x-cstm-skinny-column x-cstm-table__label o-layout--column">
+					<span class="x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
 					<span class="u-block">To bag individual employee uniforms by name</span>
 				</div>
-				<div class="x-cstm-table-column x-cstm-skinny-column u-text-center u-cstm-width-3">
+				<div class="x-cstm-table-column x-cstm-skinny-column u-text-center x-cstm-table__value">
 					<span class="u-force-center u-text-bold u-cstm-color-red">+$0.52</span>
 				</div>
 			</div>

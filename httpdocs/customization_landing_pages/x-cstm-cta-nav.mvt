@@ -1,5 +1,5 @@
 <mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
-	<button class="c-button t-nww-cta-button x-cstm-button-cta u-bg-white">
+	<button class="c-button t-nww-cta-button x-cstm-button-cta u-bg-transparent">
 		<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:navigationitem:url;">
 			<span class="t-nww-cta-button__text">&mvte:navigationitem:name;</span>
 		</a>

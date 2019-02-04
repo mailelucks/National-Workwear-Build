@@ -1,0 +1,28 @@
+<p class="x-cstm-desc">
+	Heatpress is a great option when you only need to customize a few items as it has a low minimum. Heatpress can be applied to a variety of fabrics including hi-vis apparel. Plus, you can identify yourself with just text or your business logo along with your choice of sizes.
+</p>
+<p class="x-cstm-desc u-text-bold">For more details on heatpress options and pricing, please scroll down below. If you still have questions, then email us or call us at &mvte:store:phone;.</p>
+
+<div class="x-csmt-desc x-show-toggle-content" data-hook="x-show-toggle-content">
+	<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">What You Need to Know About Screenprinting</h3>
+	<ul class="x-cstm-embroidery__list">
+		<li class="x-cstm-embroidery__list-item">For each job and placement there is a setup fee of <span class="u-cstm-color-red">$25</span>.</li>
+		<li class="x-cstm-embroidery__list-item">A high resolution vector, JPEG, PDF files are necessary for custom heatpress.</li>
+		<li class="x-cstm-embroidery__list-item">Please provide us with your daytime phone # so that we can contact you for any additional information.</li>
+		<li class="x-cstm-embroidery__list-item">For specific color request, there may be an additional charge.</li>
+		<li class="x-cstm-embroidery__list-item u-text-bold">After the final approval of art work and payment has been received, please allow an additional two weeks for completion of orders.</li>
+		<li class="x-cstm-embroidery__list-item u-cstm-color-red u-text-bold">All Heatpress items are not returnable.</li>
+	</ul>
+</div>
+
+<div class="x-show-toggle__wrapper">
+	<div class="x-show-toggle u-inline" data-hook="x-show-toggle" data-target="x-show-toggle-content">
+		<span class="x-show-toggle__text u-font-secondary u-text-underline">Read </span>
+		<span class="x-show-toggle__icon u-nww-icon-arrow-down u-inline-block"></span>
+	</div>
+</div>
+
+<div class="x-cstm-banner u-color-white u-text-center u-nww-bg-secondary">
+	<span class="u-text-bold u-text-uppercase">Please scroll down to see price chart for heatpress</span>
+</div>
+

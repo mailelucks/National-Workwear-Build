@@ -13,6 +13,7 @@
 </div>
 <div class="o-layout">
 	<div class="x-cstm-steps__wrapper  o-layout__item">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_steps' )" />
+		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_tables' )" />
+		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_heatpress_steps' )" />
 	</div>
 </div>

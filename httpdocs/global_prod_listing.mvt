@@ -32,7 +32,7 @@
 			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value=" g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 			</mvt:if>
-			<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center &mvte:product_list:tall_class;">
+			<div class="x-product-list__image__container &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
 					<img class="x-product-list__image x-product-list__hover-image x-img-lazy" data-src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
@@ -40,10 +40,10 @@
 				</mvt:if>
 				<img class="x-product-list__image x-img-lazy &mvte:product_list:hover_class;" data-src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
 			</div>
-			<figcaption class="u-text-left u-width-12 o-layout--column o-layout__item o-layout--justify-around u-flex">
-				<div class="x-product-labels u-flex o-layout--column u-text-left">
-					<strong class="x-product-list__code u-text-bold">&mvte:product_list:code;</strong>
-					<strong class="x-product-list__name">&mvte:product_list:name;</strong>
+			<figcaption class="u-text-left u-block">
+				<div class="x-product-labels u-block o-layout--column u-text-left">
+					<strong class="x-product-list__code u-block u-text-bold">&mvte:product_list:code;</strong>
+					<strong class="x-product-list__name u-block">&mvte:product_list:name;</strong>
 				</div>
 				<div class="x-product-price__container u-flex o-layout--row">
 					<mvt:if expr="l.settings:product_list:base_price GT l.settings:product_list:price">

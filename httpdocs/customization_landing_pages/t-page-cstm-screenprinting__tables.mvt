@@ -1,0 +1,952 @@
+<div class="x-cstm-table__wrapper o-layout o-layout--justify-between o-layout--align-top">
+	<h2 class="x-cstm-header u-width-12 u-font-secondary u-nww-color-secondary">Basic Options & Pricing</h2>
+	<div class="x-cstm-tabs__wrapper u-shown u-hidden--l">
+		<div class="x-cstm-screenprinting-light--tabs x-flex-tabs o-layout--justify-center">
+			<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
+				<span class="x-cstm-color-dot x-cstm-color-dot-light"></span>
+				<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Light/Neutral T-Shirts</h3>
+			</div>
+			<input id="tab-lt-qty-24-50" data-flex-tab type="radio" name="cstm-pricing" checked>
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-24-50">Quantity: 24-50</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-lt-qty-51-100" data-flex-tab type="radio" name="cstm-pricing">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-51-100">Quantity: 51-100</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-lt-qty-101-150" data-flex-tab type="radio" name="cstm-pricing">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-101-150">Quantity: 101-150</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.32</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.64</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.17</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.60</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-lt-qty-151-200" data-flex-tab type="radio" name="cstm-pricing">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-151-200">Quantity: 151-200</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.87</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.95</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-lt-qty-201-400" data-flex-tab type="radio" name="cstm-pricing">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-201-400">Quantity: 201-400</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.49</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.49</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.94</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.48</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-lt-qty-401-500" data-flex-tab type="radio" name="cstm-pricing">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-lt-qty-401-500">Quantity: 401-500</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.40</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.79</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.19</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.55</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.38</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="x-cstm-screenprinting-dark--tabs x-flex-tabs o-layout--justify-center">
+			<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
+				<span class="x-cstm-color-dot x-cstm-color-dot-dark"></span>
+				<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Dark T-Shirts</h3>
+			</div>
+			<input id="tab-dark-qty-24-50" data-flex-tab type="radio" name="cstm-pricing-dark" checked>
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-24-50">Quantity: 24-50</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-dark-qty-51-100" data-flex-tab type="radio" name="cstm-pricing-dark">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-51-100">Quantity: 51-100</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">6 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-dark-qty-101-150" data-flex-tab type="radio" name="cstm-pricing-dark">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-101-150">Quantity: 101-150</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.64</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.17</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.60</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-dark-qty-151-200" data-flex-tab type="radio" name="cstm-pricing-dark">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-151-200">Quantity: 151-200</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.87</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.95</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-dark-qty-201-400" data-flex-tab type="radio" name="cstm-pricing-dark">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-201-400">Quantity: 201-400</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.49</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.94</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.48</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input id="tab-dark-qty-401-500" data-flex-tab type="radio" name="cstm-pricing-dark">
+			<label class="x-flex-tabs__tab u-font-secondary" for="tab-dark-qty-401-500">Quantity: 401-500</label>
+			<div class="x-flex-tabs__content x-cstm-screenprinting--tabs-content">
+				<div class="x-cstm-table u-flex o-layout--column u-text-center">
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">1 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.79</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">2 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.19</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">3 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.55</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">4 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+						</div>
+					</div>
+					<div class="x-cstm-table-row u-flex">
+						<div class="x-cstm-table-column x-cstm-bg-dark-grey u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">5 Color</span>
+						</div>
+						<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+							<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.38</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="x-cstm-table__wrapper-column o-layout__item u-hidden u-block--l">
+		<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
+			<span class="x-cstm-color-dot x-cstm-color-dot-light"></span>
+			<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Light/Neutral T-Shirts</h3>
+		</div>
+		<div class="x-cstm-table__label-headers u-flex u-text-center">
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">Quantity</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">1 Color</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">2 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">3 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">4 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">5 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">6 Colors</span>
+			</div>
+		</div>
+		<div class="x-cstm-table u-flex o-layout--column u-text-center">
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">24-50</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">51-100</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.75</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">101-150</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.32</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.64</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.17</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.60</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">151-200</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.87</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.95</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">201-400</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.49</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.49</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.94</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.48</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">401-500</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.40</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.79</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.19</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.55</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.38</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="x-cstm-table__wrapper-column o-layout__item u-hidden u-block--l">
+		<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
+			<span class="x-cstm-color-dot x-cstm-color-dot-dark"></span>
+			<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Dark T-Shirts</h3>
+		</div>
+		<div class="x-cstm-table__label-headers u-flex u-text-center">
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">Quantity</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">1 Color</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">2 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">3 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">4 Colors</span>
+			</div>
+			<div class="x-cstm-table-label-headers__column u-width-2">
+				<span class="x-cstm-table__label u-text-bold u-text-uppercase">5 Colors</span>
+			</div>
+		</div>
+		<div class="x-cstm-table u-flex o-layout--column u-text-center">
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">25-50</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$11.88</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">51-100</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.75</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-table-strikeout__wrapper u-width-2">
+					<img class="x-cstm-table-strikeout" src="/mm5/graphics/00000001/customization/backslash.jpg" />
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">101-150</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.64</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.96</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.17</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.60</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$7.92</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">151-200</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.87</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.95</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$5.94</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">201-400</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.99</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.49</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.94</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.48</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.97</span>
+				</div>
+			</div>
+			<div class="x-cstm-table-row u-flex">
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">401-500</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$0.79</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.19</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.55</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$1.98</span>
+				</div>
+				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center u-width-2">
+					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.38</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

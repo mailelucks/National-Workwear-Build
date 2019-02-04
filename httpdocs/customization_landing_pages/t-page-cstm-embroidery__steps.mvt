@@ -4,8 +4,8 @@
 		<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Customizing Your Garment is Easy. Just Follow the Steps Below:</h3>
 	</div>
 	<div class="x-cstm-steps o-layout o-layout-column o-layout--justify-between">
-		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
-			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m u-cstm-width-4--m">
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col">
 				<div class="x-cstm-step-header">
 					<div class="x-cstm-step-number u-font-secondary">01</div>
 					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Placement on a Shirt or Jacket</div>
@@ -19,14 +19,14 @@
 					</ul>
 				</div>
 			</div>
-			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
-				<figure>
-					
+			<div class="x-cstm-step-infographic x-cstm-step-col">
+				<figure class="x-cstm-step-img__wrapper u-text-right--m">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/customization/jacket_placement.png" alt="Embroidery Placement" class="x-cstm-step-img u-inline-block">
 				</figure>
 			</div>
 		</div>
-		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
-			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
+			<div class="x-cstm-step-instructions x-cstm-step-col">
 				<div class="x-cstm-step-header">
 					<div class="x-cstm-step-number u-font-secondary">02</div>
 					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Font & Color Option</div>
@@ -35,15 +35,15 @@
 					<p>We will size the font to fit embroidered area</p>
 				</div>
 			</div>
-			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
-				<figure>
-					
+			<div class="x-cstm-step-infographic x-cstm-step-col">
+				<figure class="x-cstm-step-img__wrapper u-text-left--m">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/customization/font_selection.png" alt="Embroidery Logo Options" class="x-cstm-step-img u-inline-block">
 				</figure>
 			</div>
 		</div>
-		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
-			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
-				<span class="x-cstm-table__label x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col">
+				<span class="x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
 				<div class="x-cstm-step-header">
 					<div class="x-cstm-step-number u-font-secondary">03</div>
 					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Stock Logo Design</div>
@@ -52,15 +52,15 @@
 					<p>Stock designs are approximately 2" to 3"</p>
 				</div>
 			</div>
-			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
-				<figure>
-					
+			<div class="x-cstm-step-infographic x-cstm-step-col">
+				<figure class="x-cstm-step-img__wrapper u-text-right--m">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/customization/logo_selection.png" alt="Embroidery Font Options" class="x-cstm-step-img u-inline-block">
 				</figure>
 			</div>
 		</div>
-		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
-			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
-				<span class="x-cstm-table__label x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap o-layout--row-reverse--m">
+			<div class="x-cstm-step-instructions x-cstm-step-col">
+				<span class="x-cstm-flag u-nww-bg-secondary u-color-white u-text-bold u-text-uppercase u-inline-block">Optional</span>
 				<div class="x-cstm-step-header">
 					<div class="x-cstm-step-number u-font-secondary">04</div>
 					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose Placement of Text if Ordering Stock Design</div>
@@ -69,14 +69,14 @@
 					<p>Text can be placed on top of logo, below the logo or around the logo.</p>
 				</div>
 			</div>
-			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
-				<figure>
-					
+			<div class="x-cstm-step-infographic x-cstm-step-col">
+				<figure class="x-cstm-step-img__wrapper u-text-left--m">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/customization/logo_placement.png" alt="Embroidery Logo Placement" class="x-cstm-step-img u-inline-block">
 				</figure>
 			</div>
 		</div>
-		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--justify-between o-layout--align-center o-layout--wrap">
-			<div class="x-cstm-step-instructions x-cstm-step-col u-cstm-width-4--m">
+		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap">
+			<div class="x-cstm-step-instructions x-cstm-step-col">
 				<div class="x-cstm-step-header">
 					<div class="x-cstm-step-number u-font-secondary">05</div>
 					<div class="x-cstm-step-subheader x-cstm-subheader u-font-secondary">Choose a Thread Option</div>
@@ -85,9 +85,9 @@
 					<p>We have 18 colors available.</p>
 				</div>
 			</div>
-			<div class="x-cstm-step-infographic x-cstm-step-col u-cstm-width-6--m">
-				<figure>
-					
+			<div class="x-cstm-step-infographic x-cstm-step-col">
+				<figure class="x-cstm-step-img__wrapper u-text-right--m">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/customization/colors.png" alt="Embroidery Color Options" class="x-cstm-step-img u-inline-block">
 				</figure>
 			</div>
 		</div>
@@ -117,7 +117,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="x-cstm-step-col u-cstm-width-1 u-hidden u-shown--l"></div>
 			<div class="x-cstm-filetypes__wrapper u-bg-light-blue x-cstm-step-col u-text-center u-cstm-width-10 u-cstm-width-4--l">
 				<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Acceptable File Types</h3>
 				<ul class="x-cstm-filetypes-list">

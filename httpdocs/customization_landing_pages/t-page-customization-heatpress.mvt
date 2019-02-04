@@ -1,0 +1,19 @@
+<div class="o-layout">
+	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
+		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
+			<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />
+		</h2>
+		<div class="x-cstm-description">
+			<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_desc' )" />
+		</div>
+	</div>
+	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
+		<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
+	</div>
+</div>
+<div class="o-layout">
+	<div class="x-cstm-steps__wrapper  o-layout__item">
+		<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_tables' )" />
+		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_heatpress_steps' )" />
+	</div>
+</div>

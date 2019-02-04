@@ -45,7 +45,7 @@
 			</div>
 			<mvt:item name="readytheme" param="contentsection( 'sfnt_customization_tabs' )" />
 			<button class="c-button t-nww-cta-button u-bg-white">
-				<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:storefront_hero_image:uri;" target="&mvt:global:storefront_hero_image:link_targ;">
+				<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:urls:cstm_main:secure;" target="_self">
 					<span class="t-nww-cta-button__text">Start Customizing</span>
 					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 				</a>
