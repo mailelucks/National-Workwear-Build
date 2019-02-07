@@ -108,7 +108,7 @@
 				</div>
 				<div class="x-cstm-step-cta__wrapper">
 					<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Start Customizing</h3>
-					<div class="x-cstm-steps-button__wrapper u-flex o-layout--justify-between u-cstm-width-10">
+					<div class="x-cstm-steps-button__wrapper u-flex o-layout--wrap o-layout--justify-between u-cstm-width-10">
 						<mvt:item name="readytheme" param="navigationset( 'cstm_cta' )" />
 						<div class="x-cstm-step-cta-postscript u-inline-block">
 							<span class="x-cstm-step-cta__label u-text-uppercase u-text-bold">Or Call For Assistance</span>

@@ -13,8 +13,12 @@
 	<mvt:assign name="l.settings:css_path" value="'sfnt'" />
 <mvt:elseif expr="'PROD' CIN l.settings:page:code">
 	<mvt:assign name="l.settings:css_path" value="'prod'" />
-<mvt:elseif expr="'CTGY' CIN l.settings:page:code OR 'SRCH' CIN l.settings:page:code OR 'PLST' CIN l.settings:page:code">
-	<mvt:assign name="l.settings:css_path" value="'ctgy_srch_plst'" />
+<mvt:elseif expr="'CTGY' CIN l.settings:page:code OR 'SRCH' CIN l.settings:page:code OR 'PLST' CIN l.settings:page:code OR 'shop' CIN l.settings:page:code">
+	<mvt:if expr="'CSTM' CIN l.settings:category:code">
+		<mvt:assign name="l.settings:css_path" value="'customization'" />
+	<mvt:else>
+		<mvt:assign name="l.settings:css_path" value="'ctgy_srch_plst'" />
+	</mvt:if>
 <mvt:elseif expr="l.settings:page:code EQ 'BASK' OR l.settings:page:code EQ 'BSKE' OR l.settings:page:code EQ 'ORDL' OR l.settings:page:code EQ 'OCST' OR l.settings:page:code EQ 'OPAY' OR l.settings:page:code EQ 'OUS1' OR l.settings:page:code EQ 'OUSM' OR l.settings:page:code EQ 'UATM' OR l.settings:page:code EQ 'UATR' OR l.settings:page:code EQ 'OSEL' OR l.settings:page:code EQ 'OPAY'">
 	<mvt:assign name="l.settings:css_path" value="'bask'" />
 <mvt:elseif expr="'CSTM' CIN l.settings:page:code">
@@ -238,3 +242,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TB83HPG');</script>
 <!-- End Google Tag Manager -->
 
+<mvt:comment>SearchSpring Integration</mvt:comment>
+ 
+<mvt:if expr="l.settings:page:code EQ 'CTGY' AND l.settings:category_listing:total_prod_count GT 0">
+    <!-- generate background filter -->
+    <mvt:assign name="g.ss_hierarchy" value="''" />
+      
+    <mvt:foreach iterator="cats" array="breadcrumbs:links">
+        <mvt:if expr="POS1 EQ 1">
+            <mvt:assign name="g.ss_hierarchy" value="l.settings:cats:name" />
+        <mvt:else>
+            <mvt:assign name="g.ss_hierarchy" value="g.ss_hierarchy $ '>' $ l.settings:cats:name" />
+        </mvt:if>
+    </mvt:foreach>
+ 
+    <mvt:assign name="g.ss_encoded" value="encodeattribute(g.ss_hierarchy)" />
+      
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" catcode="&mvte:category:code" breadcrumbs="&mvt:global:ss_encoded"></script>
+<mvt:elseif expr="l.settings:page:code EQ 'shop'">
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" search="Search"></script>	
+<mvt:else>
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" search="Search" defer></script>
+</mvt:if>
+ 
+<mvt:comment>END: SearchSpring Integration</mvt:comment>

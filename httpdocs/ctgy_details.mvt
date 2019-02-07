@@ -33,6 +33,7 @@
 	</mvt:if>
 	<mvt:item name="head" param="css_list" />
 	<mvt:item name="head" param="head_tag" />
+
 </head>
 
 <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass; &mvt:category:code;">
@@ -88,11 +89,15 @@
 				</section>
 			</mvt:if>	
 			<mvt:item name="readytheme" param="contentsection( 'global_ctgy_srch_plst_filters' )" />
-			<section class="x-product-list__container">
-				<mvt:item name="category_listing" />
-			</section>
-			<!-- end .x-product-list -->
-			<mvt:item name="readytheme" param="contentsection( 'global_ctgy_srch_plst_pagination' )" />
+			
+			<div id="searchspring-content">
+				<section class="x-product-list__container">
+					<mvt:item name="category_listing" />
+				</section>
+			
+				<!-- end .x-product-list -->
+				<mvt:item name="readytheme" param="contentsection( 'global_ctgy_srch_plst_pagination' )" />
+			</div>
 			
 			<section class="o-layout">
 				<div class="o-layout__item">
@@ -118,8 +123,8 @@
 					</mvt:if>
 				</div>
 			</section>
-			<mvt:item name="category_tree" />
 			<mvt:item name="facets" />
+			<mvt:item name="category_tree" />
 		</aside>
 		
 	</section>

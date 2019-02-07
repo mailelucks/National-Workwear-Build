@@ -60,19 +60,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 			<div class="t-site-header__search-container u-hidden u-flex--l u-over-everything o-layout__item &mvt:global:checkout_hidden;" itemscope itemtype="http://schema.org/WebSite" id="desktop-search-form">
 				<meta itemprop="url" content="//&mvt:global:domain:name;/"/>
-				<form class="t-site-header__search-form u-over-everything" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+				<form class="t-site-header__search-form u-over-everything" method="get" action="&mvte:urls:shop:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 					<fieldset>
 						<legend>Product Search</legend>
 						<ul class="c-form-list">
 							<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
-								<meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+								<meta itemprop="target" content="&mvte:urls:shop:auto;?Search={Search}"/>
 								<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview__desktop" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search by name or code" autocomplete="off" required itemprop="query-input">
 								<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
 							</li>
 						</ul>
 					</fieldset>
-					<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview__desktop"></span>
-				</form>
+				</form>				
+				<mvt:comment>
+					<form class="t-site-header__search-form u-over-everything" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+						<fieldset>
+							<legend>Product Search</legend>
+							<ul class="c-form-list">
+								<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+									<meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+									<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview__desktop" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search by name or code" autocomplete="off" required itemprop="query-input">
+									<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
+								</li>
+							</ul>
+						</fieldset>
+						<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview__desktop"></span>
+					</form>
+				</mvt:comment>
 			</div>
 		</div>
 	</section>
@@ -82,20 +96,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="t-site-header__search-container u-hidden--l o-layout__item &mvt:global:checkout_hidden;" itemscope itemtype="http://schema.org/WebSite" id="mobile-search-form">
 	<div class="t-site-header__search-inner">
 		<meta itemprop="url" content="//&mvt:global:domain:name;/"/>
-		<form class="t-site-header__search-form u-over-everything" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+		<form class="t-site-header__search-form u-over-everything" method="get" action="&mvte:urls:shop:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 			<fieldset>
 				<legend>Product Search</legend>
 				<ul class="c-form-list">
 					<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
-						<meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+						<meta itemprop="target" content="&mvte:urls:shop:auto;?Search={Search}"/>
 						<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search by name or code" autocomplete="off" required itemprop="query-input">
 						<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
 					</li>
 				</ul>
 			</fieldset>
-
-			<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview"></span>
 		</form>
+		<mvt:comment>
+			<form class="t-site-header__search-form u-over-everything" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+				<fieldset>
+					<legend>Product Search</legend>
+					<ul class="c-form-list">
+						<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+							<meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+							<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search by name or code" autocomplete="off" required itemprop="query-input">
+							<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
+						</li>
+					</ul>
+				</fieldset>
+
+				<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview"></span>
+			</form>
+		</mvt:comment>	
 	</div>
 </section>
 <!-- end t-site-header__search -->
@@ -113,33 +141,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <mvt:if expr="(l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK' AND l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY' AND l.settings:page:code NE 'PROD' AND l.settings:page:code NE 'PATR') AND (ISNULL g.Customer_Temporary_Password) ">
 	<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
 	<mvt:item name="readytheme" param="Load_Image('inside_pages_hero', g.inside_pages_hero )" />
-	<mvt:if expr="l.settings:page:code EQ 'CTGY'">
-		<mvt:comment>load in parent name of categories</mvt:comment>
-		<mvt:if expr="l.settings:category:parent_id NE 0">
-			<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_ID( l.settings:category:parent_id, g.parent_listing )" />
-		<mvt:else>
-			<mvt:assign name="g.parent_listing:name" value="l.settings:category:name" />
-		</mvt:if>
-		<section class="t-page-ctgy-header">
-			<div class="x-nww-subhero" title="&mvte:global:parent_listing:name;" style="background-image: url('&mvte:global:inside_pages_hero:image;');">
-				<h1 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:global:parent_listing:name;</h1>
-			</div>
-		</section>
-	<mvt:else>
-		<section class="x-nww-subhero u-text-center" style="background-image: url('&mvte:global:inside_pages_hero:image;');">
-			<h1 class="c-heading-delta u-text-bold u-text-center u-color-white u-text-bold u-text-center ">&mvt:page:name;</h1>
-			<mvt:if expr="l.settings:page:code EQ 'ACLN'">
-				<a class="c-button c-button--large c-heading--subheading u-bg-transparent u-color-white u-text-uppercase u-font-secondary u-nww-button t-nww-cta-button" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
-				<br/>
+	<section class="x-nww-subhero u-text-center" style="background-image: url('&mvte:global:inside_pages_hero:image;');">
+		<mvt:comment>is this a normal category page or an alt display?</mvt:comment>
+		<mvt:if expr="'CTGY' CIN l.settings:page:code">
+			<mvt:if expr="l.settings:page:code EQ 'CTGY'">
+				<mvt:comment>load in parent name of categories</mvt:comment>
+				<mvt:if expr="l.settings:category:parent_id NE 0">
+					<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_ID( l.settings:category:parent_id, g.parent_listing )" />
+				<mvt:else>
+					<mvt:assign name="g.parent_listing:name" value="l.settings:category:name" />
+				</mvt:if>
+					<h1 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:global:parent_listing:name;</h1>
+			<mvt:else>
+				<h1 class="c-heading-delta u-text-bold u-text-center u-color-white">&mvte:category:name;</h1>
 			</mvt:if>
-		</section>
-	</mvt:if>
-
+		<mvt:else>
+				<h1 class="c-heading-delta u-text-bold u-text-center u-color-white u-text-bold u-text-center ">&mvt:page:name;</h1>
+				<mvt:if expr="l.settings:page:code EQ 'ACLN'">
+					<a class="c-button c-button--large c-heading--subheading u-bg-transparent u-color-white u-text-uppercase u-font-secondary u-nww-button t-nww-cta-button" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
+					<br/>
+				</mvt:if>
+		</mvt:if>
+	</section>
 	<mvt:if expr="l.settings:page:code NE 'ACLN'">
 		
 		<mvt:item name="breadcrumbs" />
 	</mvt:if>
 </mvt:if>
+
 
 <mvt:if expr="l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK'">
 	<mvt:if expr="l.settings:page:code EQ 'ORDL' OR l.settings:page:code EQ 'OCST' OR l.settings:page:code EQ 'OUS1' OR l.settings:page:code EQ 'OUSM' OR l.settings:page:code EQ 'UATM' OR l.settings:page:code EQ 'UATR' OR l.settings:page:code EQ 'OSEL' OR l.settings:page:code EQ 'OPAY'">
@@ -161,6 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<mvt:elseif expr="l.settings:page:code EQ 'LOGN'">
 	<mvt:elseif expr="l.settings:page:code EQ 'PLST'">
 	<mvt:elseif expr="l.settings:page:code EQ 'SRCH'">
+	<mvt:elseif expr="l.settings:page:code EQ 'shop'">
 	<mvt:elseif expr="l.settings:page:code EQ 'FPWD'">
 	<mvt:elseif expr="l.settings:page:code EQ 'CLTG'">
 	<mvt:elseif expr="l.settings:page:code EQ 'PROD'">

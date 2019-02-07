@@ -159,3 +159,72 @@
 <mvt:item name="readytheme" param="contentsection('elements-core')" />
 
 <mvt:item name="ups" />
+
+<mvt:if expr="g.Screen EQ 'PROD'">
+
+	<script type="text/javascript" src="//cdn.searchspring.net/intellisuggest/is.min.js"></script>
+
+	<script type="text/javascript">
+	try{
+		var product_code = "&mvte:global:Product_Code;";
+		IntelliSuggest.init({siteId:'h2qztb',context:'Product/' + product_code,seed:product_code});
+		IntelliSuggest.viewItem({sku:product_code});
+	} catch(err) {}
+	</script>
+
+<mvt:elseif expr="g.Screen EQ 'BASK' AND NOT l.settings:basket:empty">
+
+	<script type="text/javascript" src="//cdn.searchspring.net/intellisuggest/is.min.js"></script>
+
+	<script type="text/javascript">
+	try{
+		IntelliSuggest.init({siteId:'h2qztb',context:'Basket',seed:'<mvt:foreach iterator="item" array="basket:items">&mvt:item:code; </mvt:foreach>'});
+		<mvt:foreach iterator="item" array="basket:items">
+			IntelliSuggest.haveItem({sku:"&mvt:item:code;", qty:"&mvt:item:quantity;", price:"&mvt:item:price;"});
+		</mvt:foreach>
+		IntelliSuggest.inBasket();
+	} catch(err) {}
+	</script>
+
+<mvt:elseif expr="g.Screen EQ 'INVC'">
+
+	<script type="text/javascript" src="//cdn.searchspring.net/intellisuggest/is.min.js"></script>
+
+	<script type="text/javascript">
+	try{
+		IntelliSuggest.init({siteId:'h2qztb'});
+		<mvt:foreach iterator="item" array="order:items">
+			IntelliSuggest.haveItem({sku:"&mvt:item:code;", qty:"&mvt:item:quantity;", price:"&mvt:item:price;"});
+		</mvt:foreach>
+		IntelliSuggest.inSale({
+			orderId:"&mvt:order:id;",
+			total:"&mvt:order:total;",
+			<mvt:if expr="l.settings:order:charges">
+				<mvt:foreach iterator="charge" array="order:charges">
+					<mvt:if expr="l.settings:charge:type EQ 'SHIPPING'">
+						shipping:"&mvt:charge:amount;",
+					</mvt:if>
+				</mvt:foreach>
+			</mvt:if>
+			<mvt:if expr="l.settings:order:charges">
+				<mvt:foreach iterator="charge" array="order:charges">
+					<mvt:if expr="l.settings:charge:type EQ 'TAX'">
+						tax:"&mvt:charge:amount;",
+					</mvt:if>
+				</mvt:foreach>
+			</mvt:if>
+			<mvt:if expr="l.settings:order:charges">
+				<mvt:foreach iterator="charge" array="order:charges">
+					<mvt:if expr="l.settings:charge:type EQ 'COUPON'">
+						discount:"&mvt:charge:amount;",
+					</mvt:if>
+				</mvt:foreach>
+			</mvt:if>
+			city:"&mvt:order:ship_city;",
+			state:"&mvt:order:ship_state;",
+			country:"&mvt:order:ship_cntry;"
+		});
+	} catch(err) {}
+	</script>
+
+</mvt:if>

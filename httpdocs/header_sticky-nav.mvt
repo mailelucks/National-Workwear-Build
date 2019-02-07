@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="o-layout__item u-flex t-site-header__masthead-links">
-			<form class="t-site-header__search-form o-layout--align-center u-hidden u-flex--xl" method="post" action="&mvte:urls:SRCH:rr;">
+			<form class="t-site-header__search-form o-layout--align-center u-hidden u-flex--xl" method="get" action="&mvte:urls:shop:rr;">
 				<fieldset>
 					<legend>Product Search</legend>
 					<ul class="c-form-list">
@@ -37,8 +37,21 @@
 						</li>
 					</ul>
 				</fieldset>
-				<span class="x-search-preview " data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview--fasten"></span>
 			</form>
+			<mvt:comment>
+				<form class="t-site-header__search-form o-layout--align-center u-hidden u-flex--xl" method="post" action="&mvte:urls:SRCH:rr;">
+					<fieldset>
+						<legend>Product Search</legend>
+						<ul class="c-form-list">
+							<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+								<input class="c-form-input c-control-group__field u-bg-transparent u-border-none" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview--fasten" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required>
+								<button class="c-button c-button--large c-control-group__button u-bg-transparent  u-icon-search u-border-none" type="submit"></button>
+							</li>
+						</ul>
+					</fieldset>
+					<span class="x-search-preview " data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview--fasten"></span>
+				</form>
+			</mvt:comment>
 			<div class="o-layout__item u-nww-bg-primary nww-color-secondary t-site-header__cart u-flex-static">
 				<a class="t-site-header__basket-link u-flex o-layout--align-center o-layout--justify-center u-nww-color-secondary" data-hook="open-mini-basket" href="&mvte:urls:BASK:auto;">
 					<span class="u-icon-cart-empty u-hidden--m u-flex o-layout--align-center" data-hook="open-mini-basket"></span>
