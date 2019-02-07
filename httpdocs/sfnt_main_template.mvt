@@ -97,9 +97,11 @@
 
 <section class="x-sfnt--featured-prods__container t-container">
 	<h2 class="u-sfnt-header u-text-center">Featured Products</h2>
-	<mvt:item name="readytheme" param="Load_ProductListing('sfnt_featured_prods', g.sfnt_featured_prods_data )" />
+	<mvt:item name="readytheme" param="Load_ProductListing('featured_prods', g.sfnt_featured_prods_data )" />
 	<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_prods_data:code, g.sfnt_featured_prods_data )" />
+
 	<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_prods_data:uri" value="Store_Category_URL(g.sfnt_featured_prods_data, NULL)" />
+
 	<div class="x-featured-brands-prods u-width-12 u-text-center">
 		<button class="c-button t-nww-cta-button u-bg-white">
 			<a class="u-nww-color-secondary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
@@ -108,12 +110,12 @@
 			</a>
 		</button>
 	</div>
-	<mvt:item name="readytheme" param="productlisting( 'sfnt_featured_prods' )" />
+	<mvt:item name="readytheme" param="productlisting( 'featured_prods' )" />
 </section>
 <!-- end featured products -->
 
 <mvt:if expr="g.sfnt_featured_service_bravo:image AND g.sfnt_featured_service_bravo_mobile:image">
-	<section class="x-featured-service x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush">
+	<section class="x-featured-services x-sfnt--featured-service-bravo__container x-bg-lazy t-container u-flex o-layout--flush">
 		<picture class="x-sfnt--overlay x-featured-service--bg x-hero--bg" data-responsive-background-image>
 			 <source media="(max-width: 767px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_mobile:image;">
 			 	<source media="(min-width: 768px)" data-srcset="&mvt:global:sfnt_featured_service_bravo_tablet:image;">

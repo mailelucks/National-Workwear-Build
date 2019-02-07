@@ -1,30 +1,34 @@
 <section class="t-container x-sfnt--instagram-feed__container u-flex o-layout--flush">
 	<div class="o-layout__item" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-anchor="top">
-		<h2 class="u-sfnt-header u-sfnt-header--instagram u-text-center">Follow Us @nationalworkwearofficial</h2>
-		<div id="x-instagram-slider" class="x-sfnt--instagram-feed--content x-featured-brands-prods x-product-list u-width-12 o-layout o-layout--flush x-nww-slider">
-			<mvt:assign name="l.instagram_feed" value="''" />
-			<mvt:call action="'https://api.instagram.com/v1/users/self/media/recent/?access_token=8526456497.1677ed0.1747937b90344012ad5d091f72b46910'" method="'GET'">
-				<mvt:assign name="l.instagram_feed" value="l.instagram_feed $ s.callvalue" />
-			</mvt:call>
+		<div class="o-layout o-layout--justify-between o-layout--align-center">
+			<h2 class="u-sfnt-header u-sfnt-header--instagram u-text-center o-layout__item u-width-12 u-width-3--xl u-width-2--w">Connect With Us <span class="u-block u-font-small">@nationalworkwearofficial</span></h2>
+			<div class="o-layout__item u-width-12 u-width-9--xl u-width-10--w">
+				<div id="x-instagram-slider" class="x-sfnt--instagram-feed--content x-featured-brands-prods x-product-list u-width-12 o-layout o-layout--flush x-nww-slider">
+				<mvt:assign name="l.instagram_feed" value="''" />
+				<mvt:call action="'https://api.instagram.com/v1/users/self/media/recent/?access_token=8526456497.1677ed0.1747937b90344012ad5d091f72b46910'" method="'GET'">
+					<mvt:assign name="l.instagram_feed" value="l.instagram_feed $ s.callvalue" />
+				</mvt:call>
 
-			<mvt:comment> Decode API JSON </mvt:comment>
-			<mvt:assign name="l.success" value="miva_json_decode( l.instagram_feed, l.settings:instagram )" />
+				<mvt:comment> Decode API JSON </mvt:comment>
+				<mvt:assign name="l.success" value="miva_json_decode( l.instagram_feed, l.settings:instagram )" />
 
-			<mvt:if expr="NOT miva_array_elements( l.settings:instagram:data )">
-				<mvt:exit />
-			</mvt:if>
-
-			<mvt:foreach iterator="post" array="instagram:data">
-				<mvt:if expr="l.pos1 EQ 7">
-					<mvt:foreachstop />
+				<mvt:if expr="NOT miva_array_elements( l.settings:instagram:data )">
+					<mvt:exit />
 				</mvt:if>
 
-				<a class="x-sfnt--instagram-post o-layout-_item" href="&mvte:post:link;" target="_blank">
-					<img class="x-sfnt--instagram-img x-img-lazy" data-src="&mvte:post:images:standard_resolution:url;" alt="&mvte:post:caption:text;" title="&mvte:post:caption:text;" />
-				</a>
-			</mvt:foreach>
-		</div>
+				<mvt:foreach iterator="post" array="instagram:data">
+					<mvt:if expr="l.pos1 EQ 7">
+						<mvt:foreachstop />
+					</mvt:if>
 
+					<a class="x-sfnt--instagram-post o-layout-_item" href="&mvte:post:link;" target="_blank">
+						<img class="x-sfnt--instagram-img x-img-lazy" data-src="&mvte:post:images:standard_resolution:url;" alt="&mvte:post:caption:text;" title="&mvte:post:caption:text;" />
+					</a>
+				</mvt:foreach>
+			</div>
+			</div>
+			
+		</div>
 	</div>
 </section>
 				

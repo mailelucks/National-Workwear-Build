@@ -66,4 +66,11 @@ Delete all images that are 360x360 and 300x300
 
 01/14/19
 	OPAY displaying UPS shipping options as numbers in the customer Shipping Method **REVISIT**
+
+
+02/05/19
+	dbl check browser usage in google analytics
+	dbl check that shipping rules are working, $74+ free shipping/ otherwise 11.99 flat
+
+
 	

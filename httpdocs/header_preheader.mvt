@@ -10,7 +10,7 @@
 			<mvt:item name="readytheme" param="banner( 'header_message' )" />
 		</div>
 		<div class="t-site-header__customer-links o-layout__item u-flex-static u-hidden u-flex--l">
-			<span class="t-site-header__store-locator u-flex o-layout__item o-layout--align-center flex-static">Store Locator</span>
+			<mvt:comment><span class="t-site-header__store-locator u-flex o-layout__item o-layout--align-center flex-static">Store Locator</span></mvt:comment>
 			<mvt:item name="customerlink" />
 			<div class="u-over-everything t-global-account o-layout__item u-flex-static u-hidden u-flex--l" data-hook="global-account">
 				<form class="t-global-account__form" method="post" action="&mvte:urls:_self:secure;" autocomplete="off">

@@ -10,6 +10,7 @@
 			</a>
 			<meta itemprop="position" content="1" />
 		</li>
+		<mvt:comment>START CUSTOMIZATION CONTENT UPDATE</mvt:comment>
 		<mvt:if expr="'CSTM_' CIN l.settings:page:code AND l.settings:page:code NE 'CSTM_MAIN'">
 			<li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				<a class="u-color-black" href="	&mvt:urls:cstm_main:secure;" title="Customization" itemprop="item">
@@ -22,6 +23,7 @@
 			<mvt:assign name="l.settings:breadcrumb:position" value="l.settings:breadcrumb:position + 1" />
 
 		</mvt:if>
+		<mvt:comment>END CUSTOMIZATION CONTENT UPDATE</mvt:comment>
 		<mvt:assign name="l.settings:breadcrumb:position" value="1"/>
 		<mvt:foreach iterator="cats" array="breadcrumbs:links">
 			<mvt:assign name="l.settings:breadcrumb:position" value="l.settings:breadcrumb:position + 1"/>

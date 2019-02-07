@@ -32,7 +32,7 @@
 			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value=" g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 			</mvt:if>
-			<div class="x-product-list__image__container &mvte:product_list:tall_class;">
+			<div class="x-product-list__image__container u-flex o-layout--align-center &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
 					<img class="x-product-list__image x-product-list__hover-image x-img-lazy" data-src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
