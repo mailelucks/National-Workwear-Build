@@ -12,12 +12,6 @@
 		</li>
 		<mvt:assign name="l.settings:breadcrumb:position" value="1"/>
 		<mvt:foreach iterator="cats" array="breadcrumbs:links">
-			<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:cats ), ',', asciichar( 10 ) )" />
-			<!--
-			@@cats
-			==================
-			&mvt:global:mvt_debug;
-			-->
 			<mvt:assign name="l.settings:breadcrumb:position" value="l.settings:breadcrumb:position + 1"/>
 			<mvt:if expr="l.settings:cats:name EQ '...'">
 				<li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
