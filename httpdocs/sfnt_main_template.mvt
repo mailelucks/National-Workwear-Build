@@ -35,7 +35,7 @@
 
 <section class="x-sfnt--customization__container t-container o-layout u-cement-bg o-layout--flush o-layout--justify-start u-grids-2--l">
 	<div class="o-layout__item">
-		<div class="x-sfnt--customization--col-1" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
+		<div class="x-sfnt--customization--col-1">
 			<h2 class="u-sfnt-header--customization u-sfnt-header u-font-secondary u-text-bold u-nww-color-secondary">Use Our In House Customization</h2>
 			<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
 				<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<div class="o-layout__item">
-		<div class="x-sfnt--customization--col-2 o-layout__item o-layout--justify-center u-hidden u-flex--l" data-aos="fade-left" data-aos-once="true" data-anchor-placement="center">
+		<div class="x-sfnt--customization--col-2 o-layout__item o-layout--justify-center u-hidden u-flex--l">
 			<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
 				<video id="x-sfnt-customization-video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/customization-placeholder.jpg">
 				  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
@@ -80,10 +80,10 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="x-featured-service-alpha--content x-sfnt--overlay-content o-layout o-layout--justify-center o-layout--align-center">
-			<div class="o-layout__item x-featured-service-alpha--col-1" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
+			<div class="o-layout__item x-featured-service-alpha--col-1">
 				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-alpha u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_alpha:image_alt;</h2>
 			</div>
-			<div class="o-layout__item x-featured-service-alpha--col-2" data-aos="fade-left" data-aos-once="true" data-anchor-placement="center">
+			<div class="o-layout__item x-featured-service-alpha--col-2">
 				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_alpha' )" />
 				<a class="t-nww-cta-button t-nww-cta-text-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-start" href="&mvt:global:sfnt_featured_service_alpha:uri;" target="&mvt:global:sfnt_featured_service_alpha:link_targ;">
 					<span class="t-nww-cta-button__text">Learn More</span>
@@ -125,7 +125,7 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--align-top">
-			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
+			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center">
 				<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
 					<video id="x-featured-service-bravo__video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
 					  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
@@ -137,7 +137,7 @@
 					</button>
 				</div>
 			</div>
-			<div class="o-layout__item x-featured-service-bravo--col-2" data-aos="fade-left" data-aos-once="true" data-anchor-placement="center">
+			<div class="o-layout__item x-featured-service-bravo--col-2">
 				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-bravo u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_bravo:image_alt;</h2>
 				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_bravo' )" />
 				<button class="x-featured-service-bravo__cta-button c-button t-nww-cta-button u-bg-white">
@@ -175,7 +175,7 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="o-layout__item">
-			<div class="x-featured-service-charlie--content x-sfnt--overlay-content o-layout o-layout--justify-start" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center">
+			<div class="x-featured-service-charlie--content x-sfnt--overlay-content o-layout o-layout--justify-start">
 				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-charlie u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_charlie:image_alt;</h2>
 				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_charlie' )" />
 				<a class="x-featured-service-charlie__cta-button t-nww-cta-text-button t-nww-cta-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_featured_service_charlie:uri;" target="&mvt:global:sfnt_featured_service_charlie:link_targ;">

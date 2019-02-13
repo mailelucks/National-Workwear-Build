@@ -42,11 +42,11 @@
 		</div>
 
 		<mvt:comment>coded to sync with category tabs, update code to work with other link types!</mvt:comment>
-		<div class="x-featured-brands-prods x-product-list u-width-12">
+		<div class="u-width-12">
 			<h4 id="x-featured-brand__cta" class="u-text-center">
 				<a href="&mvt:global:init_uri;" id="x-featured-brand__cta-link" class="u-text-bold u-text-underline">Shop All &mvt:global:init_name;</a>
 			</h4>
-			<div id="x-carousel-featured-brand" class="x-nww-slider">
+			<div id="x-carousel-featured-brand" class="x-featured-brands-prods x-product-list x-nww-slider">
 				 <mvt:item name="readytheme" param="productlisting( 'sfnt_featured_brand' )" />
 			</div>
 		</div>

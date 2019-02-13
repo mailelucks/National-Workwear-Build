@@ -1,19 +1,19 @@
 <div class="o-layout">
-	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
+	<div class="x-cstm-content__wrapper o-layout__item">
 		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
 			<mvt:item name="readytheme" param="banner( 'cstm_header_screenprinting' )" />
 		</h2>
 		<div class="x-cstm-description">
-			<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_desc' )" />
+			<mvt:item name="readytheme" param="contentsection( 'cstm_desc_screenprinting' )" />
 		</div>
 	</div>
-	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
+	<div class="x-cstm-form__wrapper o-layout__item">
 		<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
 	</div>
 </div>
 <div class="o-layout">
 	<div class="x-cstm-steps__wrapper  o-layout__item">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_tables' )" />
-		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_heatpress_steps' )" />
+		<mvt:item name="readytheme" param="contentsection( 'cstm_tables_screenprinting' )" />
+		<mvt:item name="readytheme" param="contentsection( 'cstm_steps_screenprinting_heatpress' )" />
 	</div>
 </div>

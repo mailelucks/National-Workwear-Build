@@ -4,19 +4,17 @@
 	<mvt:comment>Get product pricing</mvt:comment>
 	<mvt:if expr="NOT ISNULL l.settings:product_list:customfield_values:customfields:flags">
 		<mvt:if expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Sale'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
-		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Clearance'">
 			<mvt:assign name="g.flag_bg" value="'u-bg-red'" />
-		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'New'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-yellow'" />
+		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Clearance'">
+			<mvt:assign name="g.flag_bg" value="'u-bg-black'" />
 		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Limited Stock'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-blue'" />
+			<mvt:assign name="g.flag_bg" value="'u-bg-black'" />
 		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Best Seller'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-purple'" />
-		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Featured'">
 			<mvt:assign name="g.flag_bg" value="'u-bg-orange'" />
+		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Featured'">
+			<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
 		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Coming Soon'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-pink'" />
+			<mvt:assign name="g.flag_bg" value="'u-bg-yellow'" />
 		</mvt:if>
 		<div class="x-product-list__flag &mvt:global:flag_bg;">
 			<span class="u-text-uppercase u-text-bold">&mvte:product_list:customfield_values:customfields:flags;</span>
@@ -35,10 +33,19 @@
 			<div class="x-product-list__image__container u-flex o-layout--align-center &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
-					<img class="x-product-list__image x-product-list__hover-image x-img-lazy" data-src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;">
+					<mvt:if expr="l.pos1 LT 4">
+						<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
+					<mvt:else>
+						<img class="x-product-list__image x-product-list__hover-image" data-lazy="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
+					</mvt:if>
 					<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 				</mvt:if>
-				<img class="x-product-list__image x-img-lazy &mvte:product_list:hover_class;" data-src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
+				<mvt:if expr="l.pos1 LT 4">
+					<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
+				<mvt:else>
+					<img class="x-product-list__image &mvte:product_list:hover_class;" data-lazy="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
+				</mvt:if>
+				
 			</div>
 			<figcaption class="u-text-left u-block">
 				<div class="x-product-labels u-block o-layout--column u-text-left">

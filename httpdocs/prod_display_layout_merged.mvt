@@ -18,8 +18,8 @@
     <mvt:assign name="g.apply_ng" value="1" />
 </mvt:if>
 
-<section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
-    <div class="x-product-layout--col-1 o-layout__item" data-aos="fade-right">
+<section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html" data-aos="fade-up">
+    <div class="x-product-layout--col-1 o-layout__item">
         <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
             <ul id="thumbnails" class="o-layout x-product-layout-images__thumbnail-list"></ul>
             <a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
@@ -33,7 +33,7 @@
         </figure>
         <!-- end .x-product-layout-images -->
     </div>
-    <div class="x-product-layout--col-2 o-layout__item" data-aos="fade-left">
+    <div class="x-product-layout--col-2 o-layout__item">
         <form 
         <mvt:if expr="g.apply_ng GT 0">
             ng-app="mmNgProd" ng-controller="mmNgProdController"
@@ -122,7 +122,7 @@
                         </div>
                     </mvt:if></mvt:comment>
                 </li>
-                <li class="o-layout o-layout--flush c-form-list__item x-product-layout-purchase__options u-width-7">
+                <li class="o-layout c-form-list__item x-product-layout-purchase__options u-width-7">
                     <mvt:item name="product_attributes" param="product:id" />
                 </li>
                 <li class="c-form-list__item c-form-list__item--full x-product-layout-purchase__cta">

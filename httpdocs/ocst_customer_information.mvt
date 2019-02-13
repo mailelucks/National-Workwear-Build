@@ -10,7 +10,7 @@
 				<legend>&mvt:page:name;</legend>
 				<input type="hidden" name="current_location" value="&mvte:urls:OINF:secure_sep;">
 				<input type="hidden" name="Order" value="&mvte:global:Order;">
-				<div class="o-layout o-layout--wide">
+				<div class="o-layout ">
 					<div class="o-layout__item">
 						<div class="c-control-group">
 							<input class="c-form-input c-form-input--large c-control-group__field" type="email" name="register_email" value="&mvte:global:register_email;" autocomplete="email" placeholder="Email" required>
@@ -83,7 +83,7 @@
 			<input type="hidden" name="BasketPaymentGateway" value="1" />
 			<mvt:item name="customfields" param="Write_Basket('BasketPaymentGateway', '1')" />
 		</mvt:if>
-		<ul class="c-form-list o-layout o-layout--wide ">
+		<ul class="c-form-list o-layout  ">
 			<li class="c-form-list__item c-form-list__item--full o-layout__item c-heading-echo u-text-bold ">Shipping Information</li>
 			<li class="c-form-list__item o-layout__item u-width-12 u-hidden" id="shipping_controls">
 				<label class="c-form-checkbox">
@@ -111,7 +111,7 @@
 		</ul>
 		
 		<section id="shipping_fields">
-			<ul class="c-form-list o-layout o-layout--wide ">
+			<ul class="c-form-list o-layout  ">
 				<li class="c-form-list__item o-layout__item u-width-4--m &mvte:global:ShipFirstName_Row;">
 					<label class="c-form-label u-text-medium u-color-gray-40 is-required u-font-tiny" for="l-ShipFirstName">First Name</label>
 					<input id="l-ShipFirstName" class="c-form-input c-form-input--large" type="text" name="ShipFirstName" value="&mvte:global:ShipFirstName;" &mvt:shipping_required;>
@@ -184,7 +184,7 @@
 			<hr class="c-keyline">
 		</section>
 		
-		<ul class="c-form-list o-layout o-layout--wide ">
+		<ul class="c-form-list o-layout  ">
 			<li class="c-form-list__item c-form-list__item--full o-layout__item c-heading-echo u-text-bold ">Billing Information</li>
 			<li class="c-form-list__item o-layout__item u-width-12 u-font-small" id="billing_controls">
 				<label class="c-form-checkbox">
@@ -196,7 +196,7 @@
 		
 		<section id="billing_fields">
 			<mvt:if expr="g.Basket:cust_id AND g.Customer_Session_Verified">
-				<ul class="c-form-list o-layout o-layout--wide ">
+				<ul class="c-form-list o-layout  ">
 					<li class="c-form-list__item o-layout__item &mvte:global:BillID_Row;">
 						<label class="c-form-label u-text-bold is-required u-font-tiny" for="billing_selector">Saved Address</label>
 						<div class="c-form-select">
@@ -214,7 +214,7 @@
 					</li>
 				</ul>
 			</mvt:if>
-			<ul class="c-form-list o-layout o-layout--wide ">
+			<ul class="c-form-list o-layout  ">
 				<li class="c-form-list__item o-layout__item u-width-4--m &mvte:global:BillFirstName_Row;">
 					<label class="c-form-label u-text-medium u-color-gray-40 is-required u-font-tiny" for="l-BillFirstName">First Name</label>
 					<input id="l-BillFirstName" class="c-form-input c-form-input--large" type="text" name="BillFirstName" value="&mvte:global:BillFirstName;" &mvt:billing_required;>
@@ -306,7 +306,7 @@
 				</mvt:if>
 			</mvt:foreach>
 			<mvt:if expr="g.Basket:cust_id">
-				<ul class="c-form-list o-layout o-layout--wide">
+				<ul class="c-form-list o-layout ">
 					<li class="c-form-list__item o-layout__item c-form-list__item--full u-font-small">
 						<mvt:if expr="g.Update_Customer">
 							<label class="c-form-checkbox">

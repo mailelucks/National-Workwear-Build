@@ -4,63 +4,69 @@ This is a guide for creating custom pages within the Miva Admin. We will be usin
  **Please note:** These pages are connected to the CTGY_CSTM alternative display page and pull from the customize.css file found under themes/shadows/ui/css/pages/customize.css. Refer to main doc for instructions on how to add a new line of minified css for any additional alternative display pages.
 
  **Please review the following before reading this guide**
- https://docs.miva.com/videos/dev-items
- https://docs.miva.com/videos/readytheme
- https://docs.miva.com/reference-guide/css-resources
+- https://docs.miva.com/videos/dev-items
+ - https://docs.miva.com/videos/readytheme
+ - https://docs.miva.com/reference-guide/css-resources
 
 First, gather the following:
-1. Template for page structure.
+
+1. The Content Template 
+
+### Content Template:
 
 ```html
 
-<div class="o-layout">
-	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
-		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
-			<mvt:item name="readytheme" param="banner( 'cstm_header_embroidery' )" />
-		</h2>
-		<div class="x-cstm-description">
-			<mvt:item name="readytheme" param="contentsection( 'cstm_embroidery_desc' )" />
+	<div class="o-layout">
+		<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
+			<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
+				<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />
+			</h2>
+			<div class="x-cstm-description">
+				<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_desc' )" />
+			</div>
+		</div>
+		<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
+			<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
 		</div>
 	</div>
-	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
+	<div class="o-layout">
+		<div class="x-cstm-steps__wrapper  o-layout__item">
+			<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_tables' )" />
+			<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_heatpress_steps' )" />
+		</div>
 	</div>
-</div>
-<div class="o-layout">
-	<div class="x-cstm-steps__wrapper  o-layout__item">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_embroidery_steps' )" />
-	</div>
-</div>
 
 ```
 
 2. Know which special elements you will want on this page. This will help to determine which pre-existing content to pull from.
 
-###Show Toggle (Read More) 
+### Show Toggle (Read More) 
+
 ```html
 
-<div class="x-csmt-desc x-show-toggle-content" data-hook="x-show-toggle-content">
-	<h3>What You Need to Know About Stock & Custom Embroidery</h3>
-	<ul class="x-cstm-embroidery__list">
-		<li class="x-cstm-embroidery__list-item">Waterproof garments will no longer be waterproof after the embroidery. We do offer to spray the embroidery with a water repellant spray to help this issue (for an additional fee), but the waterproof spray will have to be reapplied every few months. Ask us about the waterproof spray.</li>
-		<li class="x-cstm-embroidery__list-item">For Flame-Resistant apparel, we use flame resistant Nomex thread, bobbin, and backing. Please contact us for current market pricing.</li>
-		<li class="x-cstm-embroidery__list-item">Please provide us with your daytime phone # so that we can contact you for any additional information.</li>
-		<li class="x-cstm-embroidery__list-item u-text-bold">After the final approval of art work and payment has been received, please allow an additional two weeks for orders with embroidery.</li>
-		<li class="x-cstm-embroidery__list-item u-cstm-color-red u-text-bold">All embroidered items are not returnable</li>
-		<li class="x-cstm-embroidery__list-item u-text-bold">There is no minimum order!</li>
-	</ul>
-</div>
-
-<div class="x-show-toggle__wrapper">
-	<div class="x-show-toggle u-inline" data-hook="x-show-toggle" data-target="x-show-toggle-content">
-		<span class="x-show-toggle__text u-font-secondary u-text-underline">Read </span>
-		<span class="x-show-toggle__icon u-nww-icon-arrow-down u-inline-block"></span>
+	<div class="x-csmt-desc x-show-toggle-content" data-hook="x-show-toggle-content">
+		<h3>What You Need to Know About Stock & Custom Embroidery</h3>
+		<ul class="x-cstm-embroidery__list">
+			<li class="x-cstm-embroidery__list-item">Waterproof garments will no longer be waterproof after the embroidery. We do offer to spray the embroidery with a water repellant spray to help this issue (for an additional fee), but the waterproof spray will have to be reapplied every few months. Ask us about the waterproof spray.</li>
+			<li class="x-cstm-embroidery__list-item">For Flame-Resistant apparel, we use flame resistant Nomex thread, bobbin, and backing. Please contact us for current market pricing.</li>
+			<li class="x-cstm-embroidery__list-item">Please provide us with your daytime phone # so that we can contact you for any additional information.</li>
+			<li class="x-cstm-embroidery__list-item u-text-bold">After the final approval of art work and payment has been received, please allow an additional two weeks for orders with embroidery.</li>
+			<li class="x-cstm-embroidery__list-item u-cstm-color-red u-text-bold">All embroidered items are not returnable</li>
+			<li class="x-cstm-embroidery__list-item u-text-bold">There is no minimum order!</li>
+		</ul>
 	</div>
-</div>
+
+	<div class="x-show-toggle__wrapper">
+		<div class="x-show-toggle u-inline" data-hook="x-show-toggle" data-target="x-show-toggle-content">
+			<span class="x-show-toggle__text u-font-secondary u-text-underline">Read </span>
+			<span class="x-show-toggle__icon u-nww-icon-arrow-down u-inline-block"></span>
+		</div>
+	</div>
 
 ```
 
-###Form
+### Form
+
 ```html
 	
 	This has already been coded, you should not need to change this unless adjusting the form template itself. If you do this, make sure to double check the form action which is found under page code CSFM. The CSS and JS can be found under theme/shadows/extensions/customization
@@ -70,7 +76,8 @@ First, gather the following:
 	<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
 
 ```
-###Tables
+### Tables
+
 ```html
 	
 	Each table has been slightly modified for the page it is on. Update yours as needed with CSS.
@@ -150,7 +157,7 @@ First, gather the following:
 
 ```
 
-###Steps
+### Steps
 
 ```html
 	
@@ -183,7 +190,7 @@ First, gather the following:
 
 ```
 
-###Navigation
+### Navigation
 
 ```html
 	
@@ -195,31 +202,6 @@ First, gather the following:
 
 ```
 
-Content Template:
-```html
-
-<div class="o-layout">
-	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
-		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
-			<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />
-		</h2>
-		<div class="x-cstm-description">
-			<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_desc' )" />
-		</div>
-	</div>
-	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
-	</div>
-</div>
-<div class="o-layout">
-	<div class="x-cstm-steps__wrapper  o-layout__item">
-		<mvt:item name="readytheme" param="contentsection( 'cstm_heatpress_tables' )" />
-		<mvt:item name="readytheme" param="contentsection( 'cstm_screenprinting_heatpress_steps' )" />
-	</div>
-</div>
-
-```
-
 It is important to note that what you will be pasting is merely for structure. Structure can change based on the layout. You can create the Readytheme items at anytime. We prefer to create them after the structure is in place for ease of editing. It is easier to see what you are working on when the structure is in place, as opposed to separate pieces. 
 
 ## Page Setup
@@ -227,26 +209,82 @@ It is important to note that what you will be pasting is merely for structure. S
 2. Click "+" to create a new category and add a code and category title. We recommend using a common delimiter to group together custom page types (ex: CSTM_).
 3. Assign the Alternative Display Page "CTGY_CSTM".
 4. Click the "+ Add" button to create the Category Page
-5. Paste the content template code into the Category header (within "Header & Footer").
-	- We will be replacing the Readytheme items from top down. For example:
-	```html
-		<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />
-	```
-6. If the structure of the page will be changing (i.e. a 3 column layout vs 1.  More rows? etc), do this first.
-7. Go to Readytheme > Banner > Create new banner - this will be the header of your page.
+5. Paste the [Content Template](#user-content-content-template) code into the Category header (within "Header & Footer").
+6. If the structure of the page will be changing (i.e. a 3 column layout vs 1.  More rows? etc), do this first. This will be done via HTML. The classes of "x-cstm-content__wrapper" and "x-cstm-form__wrapper" have custom widths assigned to them and should be updated or not used if changing the structure. 
+
+```html
+
+	3 COLUMNS ON TOP 2 ROWS
+
+	<div class="o-layout">
+		<div class="o-layout__item ">
+			...
+		</div>
+		<div class="o-layout__item">
+			...
+		</div>
+		<div class="o-layout__item">
+			...
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item">
+			...
+		</div>
+	</div>
+
+
+	3 COLUMNS ON TOP 3 ROWS
+
+	<div class="o-layout">
+		<div class="o-layout__item ">
+			...
+		</div>
+		<div class="o-layout__item">
+			...
+		</div>
+		<div class="o-layout__item">
+			...
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item">
+			...
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item">
+			...
+		</div>
+	</div>
+
+```
+7. Go to Readytheme > Banner > Create new banner - this will be the header of your page. We recommend using codes that describe what is being created (ex: cstm_header_newtopic, cstm_desc_newtopic, etc)
 	- Keep track of the new codes for the items. We find it best to work out of two tabs and copy and paste over updated items as they are created.
 		- The full item mvt tag can be found under the Readytheme Item code. This is what you will want to paste into your template.
+
+		![alt text]( cstm_item_screenshot.jpg "Readytheme MVT Items")
+
+```html
+	
+	<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />
+
+	CHANGE TO:
+
+	<mvt:item name="readytheme" param="banner( 'cstm_header_newtopic' )" />
+
+```
+
 8. Create new Readytheme elements based on the needs of the page.
 	- It is recommended to get all extensions/elements from pre existing templates and then pinpointing what needs to change about the data, this way you are not writing code from scratch.
 9. The following extensions require that you go into User Interface > CSS Resources and add their css to the page. This is a simplified way of adding additional CSS to a page, it is already connected to the store and will work as long as it is assigned to the page.
 	- Show Toggle
-10. Check your work. Load the category in your browser and double check that everything is there and working correctly. (View On Live Store)
-11. We will assume you are adding on to the Customization template. Assign CSTM_MAIN are the Parent Category.
-12. Go to CTGY_CSTM > Content
+10. Check your work. Load the category in your browser and double check that everything is there(Form? Tables? etc.) and working correctly. (View On Live Store)
+11. We will assume you are adding on to the Customization template. Assign CSTM_MAIN as the Parent Category.
+12. Go to CTGY_CSTM > Content. We will be updating the logic for icons.
+	- Miva will not allow for SVG icon uploads through the admin. We recommend SVG as the preferred icon format, but you can use a PNG. Do not use any other format. Upload the icon to themes/shadows/core/images and assign the icon to its category/page.
 
 ```html
-	
-	Miva will not allow for SVG icon uploads through the admin. We recommend SVG as the preferred icon format, but you can use a PNG. Do not use any other format. Upload the icon to themes/shadows/core/images and assign the icon to its category/page.
 
 	<mvt:if expr="'EMBROIDERY' CIN l.settings:subcategory:code">
 		<mvt:assign name="l.settings:subcategory:icon" value="g.theme_path $ '/core/images/cstm_embroidery.svg'" />
@@ -254,10 +292,11 @@ It is important to note that what you will be pasting is merely for structure. S
 		<mvt:assign name="l.settings:subcategory:icon" value="g.theme_path $ '/core/images/cstm_heatpress.svg'" />
 	<mvt:elseif expr="'SCREENPRINT' CIN l.settings:subcategory:code">
 		<mvt:assign name="l.settings:subcategory:icon" value="g.theme_path $ '/core/images/cstm_screenprinting.svg'" />
+	<mvt:elseif expr="'YOUR NEW CODE' CIN l.settings:subcategory:code">
+		<mvt:assign name="l.settings:subcategory:icon" value="g.theme_path $ '/core/images/newicon.svg'" />
 	</mvt:if>
 
 ```
-
 
 
 

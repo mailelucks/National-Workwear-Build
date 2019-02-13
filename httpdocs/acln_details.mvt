@@ -23,10 +23,10 @@
 		</div>
 	</section>
 
-	<section class="o-layout o-layout--column-reverse o-layout--row-reverse--l">
+	<section class="o-layout o-layout--column-reverse o-layout--row-reverse--l o-nww-main-content-element">
 		<div class="o-layout__item u-width-12 u-width-9--l">
 			<div class="o-layout">
-				<div class="o-layout__item u-width-12 u-width-6--m">
+				<div class="o-layout__item u-width-12 u-width-6--m u-no-padding">
 					<section class="t-account-landing-section">
 						<div class="o-layout__item u-width-12 u-bg-gray-10 u-text-bold ">
 							<div class="o-layout o-layout--align-center o-layout--justify-between">
@@ -58,9 +58,9 @@
 				</div>
 				
 				<mvt:if expr="l.settings:paymentsettings:mivapay:enabled">
-					<div class="o-layout__item u-width-12 u-width-6--m">
+					<div class="o-layout__item u-width-12 u-width-6--m u-no-padding">
 						<section class="t-account-landing-section">
-							<div class="o-layout__item u-width-12 u-bg-gray-10 u-text-bold ">
+							<div class="o-layout__item u-width-12 u-bg-gray-10 u-text-bold">
 								<div class="o-layout o-layout--align-center o-layout--justify-between">
 									<span class="o-layout__item c-heading-echo">Payment Options</span>
 									<span class="o-layout__item u-text-right">
@@ -105,7 +105,7 @@
 							<legend>&mvt:page:name;</legend>
 							<input type="hidden" name="Action" value="RDGC" />
 							<div class="o-layout o-layout--align-bottom o-layout--justify-around">
-								<div class="o-layout__item u-width-12 u-width-3--l">
+								<div class="o-layout__item u-width-12 u-width-3--l u-no-padding">
 									<ul class="c-form-list">
 										<li class="c-form-list__item u-text-center">
 											<span class="u-color-gray-30 u-font-tiny u-text-bold ">Current Credit Amount</span><br>
@@ -115,7 +115,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="o-layout__item u-width-12 u-width-5--l">
+								<div class="o-layout__item u-width-12 u-width-5--l u-no-padding">
 									<ul class="c-form-list">
 										<li class="c-form-list__item">
 											<label class="c-form-label u-color-gray-30 u-font-small u-invisible u-text-bold " for="l-GiftCertificate_Code">Enter Gift Certificate Code</label>

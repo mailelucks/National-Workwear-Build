@@ -128,15 +128,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <!-- end t-site-header__search -->
 
-<mvt:if expr="l.settings:page:code EQ 'SFNT' or l.settings:page:code EQ 'SFNT_CL'">
-	<main>
-<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
-	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--flush">
-<mvt:elseif expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
-	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--wide">
-<mvt:else>
-	<main class="o-wrapper t-main-content-element o-nww-wrapper">
-</mvt:if>
 
 <mvt:if expr="(l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK' AND l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY' AND l.settings:page:code NE 'PROD' AND l.settings:page:code NE 'PATR') AND (ISNULL g.Customer_Temporary_Password) ">
 	<mvt:comment>Load in hero banners from readytheme, allowing for client access</mvt:comment>
@@ -168,6 +159,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<mvt:item name="breadcrumbs" />
 	</mvt:if>
 </mvt:if>
+
+<mvt:if expr="l.settings:page:code EQ 'SFNT' or l.settings:page:code EQ 'SFNT_CL'">
+	<main>
+<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
+	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--flush">
+<mvt:elseif expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
+	<main class="o-wrapper t-main-content-element o-nww-wrapper o-layout--wide">
+<mvt:else>
+	<main class="o-wrapper o-nww-wrapper">
+</mvt:if>
+
 
 
 <mvt:if expr="l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK'">
