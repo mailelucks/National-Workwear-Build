@@ -21,7 +21,7 @@
 <section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html" data-aos="fade-up">
     <div class="x-product-layout--col-1 o-layout__item">
         <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
-            <ul id="thumbnails" class="o-layout x-product-layout-images__thumbnail-list"></ul>
+            <ul id="thumbnails"></ul>
             <a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
                 <img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
             </a>

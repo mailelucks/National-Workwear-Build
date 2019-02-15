@@ -15,12 +15,12 @@
 			<div class="x-hero--content x-sfnt--overlay-content u-flex o-layout--column o-layout--align-flex-start o-layout--justify-center" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center"">
 				<h2 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white">&mvt:global:sfnt_hero:image_alt;</h2>
 				<mvt:if expr="g.sfnt_hero:uri">
-					<button class="c-button t-nww-cta-button u-bg-white">
+					<div class="c-button t-nww-cta-button u-bg-white">
 						<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_hero:uri;" target="&mvt:global:sfnt_hero:link_targ;">
 							<span class="t-nww-cta-button__text">Shop &mvt:global:sfnt_hero:name;</span>
 							<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 						</a>
-					</button>
+					</div>
 				</mvt:if>
 			</div>
 		</div>
@@ -44,12 +44,12 @@
 				<span class="c-sfnt__video-button-text u-nww-color-secondary u-text-underline u-font-secondary" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">Play Video</span>
 			</div>
 			<mvt:item name="readytheme" param="contentsection( 'sfnt_customization_tabs' )" />
-			<button class="c-button t-nww-cta-button u-bg-white">
-				<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:urls:cstm_main:secure;" target="_self">
+			<div class="c-button t-nww-cta-button u-bg-white">
+				<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="/customization.html" target="_self">
 					<span class="t-nww-cta-button__text">Start Customizing</span>
 					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 				</a>
-			</button>
+			</div>
 		</div>
 	</div>
 	<div class="o-layout__item">
@@ -103,12 +103,12 @@
 	<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_prods_data:uri" value="Store_Category_URL(g.sfnt_featured_prods_data, NULL)" />
 
 	<div class="x-featured-brands-prods u-width-12 u-text-center">
-		<button class="c-button t-nww-cta-button u-bg-white">
+		<div class="c-button t-nww-cta-button u-bg-white">
 			<a class="u-nww-color-secondary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
 				<span class="t-nww-cta-button__text">Shop All</span>
 				<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 			</a>
-		</button>
+		</div>
 	</div>
 	<mvt:item name="readytheme" param="productlisting( 'featured_prods' )" />
 </section>
@@ -140,12 +140,12 @@
 			<div class="o-layout__item x-featured-service-bravo--col-2">
 				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-bravo u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_bravo:image_alt;</h2>
 				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_bravo' )" />
-				<button class="x-featured-service-bravo__cta-button c-button t-nww-cta-button u-bg-white">
+				<div class="x-featured-service-bravo__cta-button c-button t-nww-cta-button u-bg-white">
 					<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_featured_service_bravo:uri;" target="&mvt:global:sfnt_featured_service_bravo:link_targ;">
 						<span class="t-nww-cta-button__text">Get Started</span>
 						<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 					</a>
-				</button>
+				</div>
 				<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden--l" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">
 					<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
 					<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>

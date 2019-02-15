@@ -101,14 +101,14 @@
 	<!-- end t-site-footer -->
 	<mvt:item name="readytheme" param="contentsection( 'disclaimers' )" />
 <mvt:else>
-	<footer class="t-site-footer">
+	<div class="t-site-footer">
 		<div class="o-wrapper">
 			<mvt:if expr="g.session:cache:readytheme:lookandfeel:lookandfeel:trs_active">
 				<h5 class="c-menu__title u-text-uppercase">Safe &amp; Secure</h5>
 				<mvt:item name="readytheme" param="trustsymbol" />
 			</mvt:if>
 		</div>
-	</footer>
+	</div>
 	<!-- end t-site-footer -->
 	<mvt:item name="readytheme" param="contentsection( 'disclaimers' )" />
 </mvt:if>

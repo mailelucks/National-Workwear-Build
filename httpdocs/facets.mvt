@@ -170,11 +170,13 @@
 													<label class="c-form-checkbox c-form-checkbox--radio">
 														<input class="c-form-checkbox__input" type="radio" name="&mvte:facet:code;" onclick="MMProdList_UpdateQuery( this ); return true;" checked value="&mvte:facet_value:value;">
 														<span class="c-form-checkbox__caption">&mvt:facet_value:prompt; (&mvte:facet_value:count;)</span>
+														<div class="c-checkmark"></div>
 													</label>
 												<mvt:else>
 													<label class="c-form-checkbox c-form-checkbox--radio">
 														<input class="c-form-checkbox__input" type="radio" name="&mvte:facet:code;" onclick="MMProdList_UpdateQuery( this ); return true;" value="&mvte:facet_value:value;">
 														<span class="c-form-checkbox__caption">&mvt:facet_value:prompt; (&mvte:facet_value:count;)</span>
+														<div class="c-checkmark"></div>
 													</label>
 												</mvt:if>
 											</mvt:foreach>
@@ -184,11 +186,13 @@
 													<label class="c-form-checkbox">
 														<input class="c-form-checkbox__input" type="checkbox" name="&mvte:facet:code;" onclick="MMProdList_UpdateQuery( this ); return true;" checked value="&mvte:facet_value:value;">
 														<span class="c-form-checkbox__caption">&mvt:facet_value:prompt; (&mvte:facet_value:count;)</span>
+														<div class="c-checkmark"></div>
 													</label>
 												<mvt:else>
 													<label class="c-form-checkbox">
 														<input class="c-form-checkbox__input" type="checkbox" name="&mvte:facet:code;" onclick="MMProdList_UpdateQuery( this ); return true;" value="&mvte:facet_value:value;">
 														<span class="c-form-checkbox__caption">&mvt:facet_value:prompt; (&mvte:facet_value:count;)</span>
+														<div class="c-checkmark"></div>
 													</label>
 												</mvt:if>
 											</mvt:foreach>

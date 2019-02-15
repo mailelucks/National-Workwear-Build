@@ -11,6 +11,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <mvt:comment>main navigation</mvt:comment>
 <mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:header_main_nav" value="Transient_ReadyTheme_ContentSection( 'header_main_nav', 24*60*60, l.settings )" />
 
+<mvt:comment>footer navigation</mvt:comment>
+<mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:transient_footer" value="Transient_ReadyTheme_ContentSection( 'global_footer', 24*60*60, l.settings )" />
+
 
 <mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />
 <header class="o-wrapper o-wrapper--full o-wrapper--flush t-site-header u-nww-bg-secondary u-color-white" data-hook="site-header">
