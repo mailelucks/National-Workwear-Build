@@ -298,7 +298,7 @@
 					'u-bg-orange':result.flags == 'Best Seller',
 					'u-bg-red': result.flags == 'Sale',
 					'u-bg-black': result.flags == 'Clearance',
-					'u-bg-yellow': result.flags == 'Coming Soon',
+					'u-bg-yellow u-color-black': result.flags == 'Coming Soon',
 					'u-bg-green': result.flags == 'Featured',
 					'u-bg-black': result.flags == 'Limited Stock'}">
 				<span class="u-text-uppercase u-text-bold">{{result.flags}}</span>
@@ -306,7 +306,7 @@
 			<a class="u-block x-product-list__link" ng-href="{{ result.url }}" intellisuggest title="{{ result.name }}">
 				<figure class="x-product-list__figure o-layout--column">
 					<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center">
-						<img class="x-product-list__image x-product-list__hover-image" ng-show="{{result.thumbnail_hover}}" ng-src="{{ result.thumbnail_hover}}" alt="{{ result.name }}" title="{{ result.name }}" />
+						<img class="x-product-list__image x-product-list__hover-image" ng-show="{{result.thumbnail_hover != null}}" ng-src="{{ result.thumbnail_hover}}" alt="{{ result.name }}" title="{{ result.name }}" />
 						<img class="x-product-list__image" ng-class="result.thumbnail_hover ? 'hover-active' : '' " ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '/mm5/themes/shadows/core/images/img_no_thumb.jpg' }}" onerror="this.src='/mm5/themes/shadows/core/images/img_no_thumb.jpg';" alt="{{ result.name }}" title="{{ result.name }}">
 					</div>
 					<figcaption class="u-text-left u-width-12">

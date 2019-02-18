@@ -1,0 +1,52 @@
+/* ==========================================================================
+   =BASK
+   ========================================================================== */
+  
+  .c-table-simple {
+    margin: 0;
+  }
+  .t-checkout-basket-summary__image {
+    min-width: 70px
+  }
+  .t-checkout-basket-summary__promo-form, 
+  .t-checkout-basket-summary__promo-form:first-child, 
+  .t-checkout-basket-summary__promo-form:last-child {
+    width: auto;
+  }
+  .t-basket__product-remove {
+  	border-color: #9f9f9f;
+  }
+  .c-applepay-button div[class^='apple'] {
+    height: 42px;
+  }
+  .c-nww-cart-button {
+  	margin-top: 20px;
+  	width: 100%;
+  }
+  #billing_controls {
+    position: relative;
+    left: -2px;
+  }
+
+  @media screen and (max-width: 47.94em) {
+    .o-layout--wide>.o-layout__item {
+      padding-left: 16px;
+    }
+    .t-page-ocst .c-form-list__item {
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 59.94em) {
+    .t-checkout-customer-summary {
+      margin-right: 16px;
+    }
+  }
+
+  @media (min-width: 90em) {
+    .t-checkout-basket-summary .c-table-simple {
+      width: 100%;
+    }
+  }
+
+ 
