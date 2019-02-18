@@ -17,12 +17,12 @@
 <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass; t-ctgy-&mvte:category:code;">
 	<mvt:item name="hdft" param="global_header" />
 
-	<div class="o-layout o-layout--flush o-cstm-wrapper u-width-12">
-		<section class="t-cstm-header">
+	<div class="o-layout o-layout--flush o-cstm-wrapper">
+		<section class="t-cstm-header o-layout__item">
 			<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
 		</section>
 
-		<section class="t-cstm-footer">
+		<section class="t-cstm-footer o-layout__item">
 			<mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
 		</section>
 	</div>

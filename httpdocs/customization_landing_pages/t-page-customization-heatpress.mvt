@@ -1,4 +1,4 @@
-<div class="o-layout">
+<div class="o-layout o-layout--nowrap--l u-grids-2--l">
 	<div class="x-cstm-content__wrapper o-layout__item">
 		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
 			<mvt:item name="readytheme" param="banner( 'cstm_header_heatpress' )" />

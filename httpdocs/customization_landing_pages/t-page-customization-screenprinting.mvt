@@ -1,4 +1,4 @@
-<div class="o-layout">
+<div class="o-layout u-grids-2--l o-layout--nowrap--l">
 	<div class="x-cstm-content__wrapper o-layout__item">
 		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
 			<mvt:item name="readytheme" param="banner( 'cstm_header_screenprinting' )" />

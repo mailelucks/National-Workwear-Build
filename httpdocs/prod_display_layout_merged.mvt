@@ -18,7 +18,7 @@
     <mvt:assign name="g.apply_ng" value="1" />
 </mvt:if>
 
-<section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html" data-aos="fade-up">
+<section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
     <div class="x-product-layout--col-1 o-layout__item">
         <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
             <ul id="thumbnails"></ul>

@@ -30,17 +30,26 @@
 <mvt:assign name="l.settings:custom_css:path" value="g.theme_path $'/ui/css/pages/'$ l.settings:css_path $ '.css'" />
 <mvt:assign name="l.settings:custom_css:path_mini" value="g.theme_path $'/ui/css/mini/'$ l.settings:css_path $ '.min.css'" />
 <mvt:assign name="l.settings:custom_css:exists_mini" value="sexists( '/mm5/' $ l.settings:custom_css:path_mini )" />
-<mvt:if expr="l.settings:custom_css:exists_mini">
+
+<mvt:assign name="l.settings:global_css:path" value="g.theme_path $'/site-styles.css'" />
+<mvt:assign name="l.settings:global_css:path_mini" value="g.theme_path $'/ui/css/mini/site-styles.min.css'" />
+<mvt:assign name="l.settings:global_css:exists_mini" value="sexists( '/mm5/' $ l.settings:global_css:path_mini )" />
+
+<mvt:if expr="l.settings:custom_css:exists_mini AND l.settings:global_css:exists:mini">
 	<mvt:assign name="l.settings:custom_css:time" value="stime( '/mm5/' $ l.settings:custom_css:path )" />
 	<mvt:assign name="l.settings:custom_css:time_mini" value="stime( '/mm5/' $ l.settings:custom_css:path_mini )" />
-
-	<mvt:if expr="l.settings:custom_css:time GT l.settings:custom_css:time_mini">
+	<mvt:assign name="l.settings:global_css:time" value="stime( '/mm5/' $ l.settings:global_css:path )" />
+	<mvt:assign name="l.settings:global_css:time_mini" value="stime( '/mm5/' $ l.settings:global_css:path_mini )" />
+	
+	<mvt:if expr="(l.settings:custom_css:time GT l.settings:custom_css:time_mini) OR (l.settings:global_css:time GT l.settings:global_css:time_mini)">
 		<mvt:comment>
 			trigger task to create mini
 		</mvt:comment>
 		<mvt:call action="'https://' $ g.domain:name $ '/mini.html?Feed_AccessKey=nwwCSS'" method="'GET'"></mvt:call>
+		<link rel="stylesheet" href="<mvt:eval expr="l.settings:global_css:path_mini" />?v=<mvt:eval expr="l.settings:global_css:time_mini" />">
 		<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path_mini" />?v=<mvt:eval expr="l.settings:custom_css:time_mini" />">
 	<mvt:else>
+		<link rel="stylesheet" href="<mvt:eval expr="l.settings:global_css:path_mini" />?v=<mvt:eval expr="l.settings:global_css:time_mini" />">
 		<link rel="stylesheet" href="<mvt:eval expr="l.settings:custom_css:path_mini" />?v=<mvt:eval expr="l.settings:custom_css:time_mini" />">
 	</mvt:if>
 <mvt:else>

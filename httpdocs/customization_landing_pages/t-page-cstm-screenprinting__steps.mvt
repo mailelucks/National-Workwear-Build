@@ -1,4 +1,4 @@
-<div class="x-cstm-steps o-layout o-layout-column o-layout--justify-between">
+<div class="x-cstm-steps o-layout__item u-width-12">
 	<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap">
 		<div class="x-cstm-step-instructions x-cstm-step-col">
 			<div class="x-cstm-step-header">

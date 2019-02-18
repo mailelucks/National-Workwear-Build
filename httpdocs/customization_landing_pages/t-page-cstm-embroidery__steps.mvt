@@ -1,9 +1,9 @@
 <div class="x-cstm-embroidery-steps o-layout o-layout-column o-layout--justify-between">
-	<div class="x-cstm-steps-header__wrapper">
+	<div class="x-cstm-steps-header__wrapper o-layout__item u-width-12">
 		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary">Text Embroidery or Text with Stock Design Embroidery</h2>
 		<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Customizing Your Garment is Easy. Just Follow the Steps Below:</h3>
 	</div>
-	<div class="x-cstm-steps o-layout o-layout-column o-layout--justify-between">
+	<div class="x-cstm-steps o-layout__item u-width-12">
 		<div class="x-cstm-step x-cstm-step-row u-flex o-layout--align-center o-layout--wrap">
 			<div class="x-cstm-step-instructions x-cstm-step-col">
 				<div class="x-cstm-step-header">
@@ -92,7 +92,7 @@
 			</div>
 		</div>
 		<div class="x-cstm-step x-cstm-step-row x-cstm-upload__wrapper u-bg-transparent u-flex o-layout--justify-between o-layout--align-top o-layout--column o-layout--row--l">
-			<div class="x-cstm-step-upload-instructions x-cstm-step-col u-cstm-width-10 u-cstm-width-5--l">
+			<div class="x-cstm-step-upload-instructions x-cstm-step-col">
 				<div class="x-cstm-step-header">
 					<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary">Uploading Custom File</h2>
 					<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">All custom embroidery charges will be quoted to you based on the size and stitch count of your custom logo.</h3>
@@ -108,7 +108,7 @@
 				</div>
 				<div class="x-cstm-step-cta__wrapper">
 					<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Start Customizing</h3>
-					<div class="x-cstm-steps-button__wrapper u-flex o-layout--wrap o-layout--justify-between u-cstm-width-10">
+					<div class="x-cstm-steps-button__wrapper u-flex o-layout--wrap o-layout--justify-between">
 						<mvt:item name="readytheme" param="navigationset( 'cstm_cta' )" />
 						<div class="x-cstm-step-cta-postscript u-inline-block">
 							<span class="x-cstm-step-cta__label u-text-uppercase u-text-bold">Or Call For Assistance</span>
@@ -117,7 +117,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="x-cstm-filetypes__wrapper u-bg-light-blue x-cstm-step-col u-text-center u-cstm-width-10 u-cstm-width-4--l">
+			<div class="x-cstm-filetypes__wrapper u-bg-light-blue x-cstm-step-col u-text-center">
 				<h3 class="x-cstm-subheader u-font-secondary u-nww-color-secondary">Acceptable File Types</h3>
 				<ul class="x-cstm-filetypes-list">
 					<li class="x-cstm-filetype u-text-bold u-inline-block">.DST</li>

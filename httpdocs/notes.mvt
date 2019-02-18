@@ -10,7 +10,7 @@ go back and review z-indexs and padding: 0 items, maybe use an o-flush or o-full
 
 change click loop to a foreach on featbrand ajax - DONE
 
-SEARCH RESULTS ARE CONFLICTING **REVISIT**
+SEARCH RESULTS ARE CONFLICTING **REVISIT** DONE? SEARCHSPRING!
 
 SFNT
 
@@ -26,9 +26,9 @@ add to cart button logic could be better, what if not in stock? TURN OFF WHEN DO
 Delete all images that are 360x360 and 300x300
 
 12/10/18
- see if logic on dectrims can be copied over. re: thumbnail hiding if empty **REVISIT**
+ see if logic on dectrims can be copied over. re: thumbnail hiding if empty **REVISIT** DONE
 
- possible hover update for cta boxes, they disappear too quickly, need mouseover logic **REVISIT**
+ possible hover update for cta boxes, they disappear too quickly, need mouseover logic **REVISIT** DONE
 
 
 12/19/18
@@ -56,21 +56,24 @@ Delete all images that are 360x360 and 300x300
 
 	/mm5/themes/shadows/ for css
 
-
 01/08/19
 	Redo header section of CTGY, should follow same type of format as the service banners on SFNT. Chat with PM about getting these assets (nicer grain/pattern that can also be used on the text masks)
 
 01/09/19
 	see if PROD will accept .gif for modal/enlarge photo. **REVISIT**
 
-
 01/14/19
-	OPAY displaying UPS shipping options as numbers in the customer Shipping Method **REVISIT**
+	OPAY displaying UPS shipping options as numbers in the customer Shipping Method **REVISIT** NO LONG IMPORTANT
 
 
 02/05/19
 	dbl check browser usage in google analytics
-	dbl check that shipping rules are working, $74+ free shipping/ otherwise 11.99 flat
+	dbl check that shipping rules are working, $74+ free shipping/ otherwise 11.99 flat - DONE
+
+02/13/19
+	GO UPDATE ALL CHECKBOXES SITEWIDE
+
+	
 
 
 	

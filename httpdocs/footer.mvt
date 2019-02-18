@@ -2,102 +2,12 @@
 <!-- end t-site-content -->
 
 <mvt:if expr="l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY'">
-	<footer class="t-site-footer o-wrapper--full u-color-white">
-		<div class="o-wrapper o-nww-wrapper o-layout--flush">
-			<div class="t-site-footer__social-content">
-				<section class="o-layout__item">
-					<mvt:item name="readytheme" param="contentsection( 'newsletter_form' )" />
-				</section>
-				<section class="o-layout__item">
-					<mvt:if expr="l.settings:readytheme:social_active">
-						<nav class="c-menu t-global-footer-social-links">
-							<mvt:comment><input id="social_active" class="c-collapsible-menu__trigger" type="checkbox"></mvt:comment>
-							<mvt:comment><label class="c-collapsible-menu__label u-text-uppercase" for="social_active">Connect With Us</label></mvt:comment>
-							<ul class="c-menu__list o-list-inline--narrow u-text-uppercase u-width-8--m u-flex o-layout--align-center o-layout--justify-around" itemscope itemtype="http://schema.org/Organization">
-								<link class="u-hidden" itemprop="url" href="//&mvt:global:domain:name;/">
-								<mvt:if expr="l.settings:readytheme:logo_type EQ 'image'">
-									<link itemprop="logo" href="&mvte:readytheme:logo_image;" />
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_facebook">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-facebook u-color-white" href="&mvt:readytheme:social_facebook;" title="Facebook" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_twitter">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-twitter u-color-white" href="&mvt:readytheme:social_twitter;" title="Twitter" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_googleplus">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-google u-color-white" href="&mvt:readytheme:social_googleplus;" title="Google+" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_pinterest">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-pinterest u-color-white" href="&mvt:readytheme:social_pinterest;" title="Pinterest" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_instagram">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-instagram u-color-white" href="&mvt:readytheme:social_instagram;" title="Instagram" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_youtube">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-youtube u-color-white" href="&mvt:readytheme:social_youtube;" title="YouTube" target="_blank" itemprop="sameAs"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_vimeo">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-vimeo u-color-white" href="&mvt:readytheme:social_vimeo;" title="Vimeo" target="_blank"></a>
-									</li>
-								</mvt:if>
-								<mvt:if expr="l.settings:readytheme:social_flickr">
-									<li class="o-list-inline__item">
-										<a class="c-menu__link u-icon-flickr u-color-white" href="&mvt:readytheme:social_flickr;" title="Flickr" target="_blank"></a>
-									</li>
-								</mvt:if>
-							</ul>
-						</nav>
-					</mvt:if>
-				</section>
-			</div>
-			<div class="t-site-footer__content u-flex o-layout--column o-layout--row--m">
-				<section class="t-site-footer__menu o-layout__item">
-					<mvt:item name="readytheme" param="navigationset( 'footer_resources' )" />
-				</section>
-				<section class="t-site-footer__menu o-layout__item">
-					<mvt:item name="readytheme" param="navigationset( 'footer_services' )" />
-				</section>
-				<section class="t-site-footer__menu o-layout__item">
-					<mvt:item name="readytheme" param="navigationset( 'footer_information' )" />
-				</section>
-				<section class="t-site-footer__menu o-layout__item">
-					<mvt:item name="readytheme" param="navigationset( 'footer_company' )" />
-				</section>
-				<section class="t-site-footer__menu o-layout__item">
-					<nav class="c-menu c-collapsible-menu">
-						<input id="footer_support" class="c-collapsible-menu__trigger" type="checkbox">
-						<label class="c-collapsible-menu__label" for="footer_support"><span class="u-font-secondary u-text-bold">Support</span></label>
-						<h5 class="c-menu__title u-text-bold">Support</h5>
-						<ul class="c-menu__list">
-							<li>
-								Need Help? &mvte:store:phone;
-							</li>
-							<li class="store-email">
-								&mvte:store:email;
-							</li>
-						</ul>
-					</nav>
-				</section>
-			</div>
-			<mvt:if expr="g.session:cache:readytheme:lookandfeel:lookandfeel:trs_active">
-				<h5 class="c-menu__title u-text-uppercase">Safe &amp; Secure</h5>
-				<mvt:item name="readytheme" param="trustsymbol" />
-			</mvt:if>
-		</div>
-	</footer>
+	<mvt:if expr="l.settings:transient_footer">
+		&mvt:transient_footer;
+	<mvt:else>
+		<mvt:comment> <!-- Failsafe! --> </mvt:comment>
+	<mvt:item name="readytheme" param="contentsection( 'global_footer' )" />
+	</mvt:if>
 	<!-- end t-site-footer -->
 	<mvt:item name="readytheme" param="contentsection( 'disclaimers' )" />
 <mvt:else>

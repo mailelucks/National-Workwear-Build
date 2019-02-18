@@ -92,7 +92,7 @@ switch($page) {
 			'extensions/aos/aos.css',
 			'ui/css/pages/sfnt.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/sfnt.min.css';
+		$minifiedPath = 'ui/css/mini/sfnt.min.css';
 
 		break;
 	case 'listing':
@@ -101,7 +101,7 @@ switch($page) {
 			'site-styles.css',
 			'ui/css/pages/ctgy_srch_plst.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/ctgy_srch_plst.min.css';
+		$minifiedPath = 'ui/css/mini/ctgy_srch_plst.min.css';
 		break;
 	case 'product':
 		array_push($file_paths,
@@ -112,28 +112,28 @@ switch($page) {
 			'site-styles.css',
 			'ui/css/pages/prod.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/prod.min.css';
+		$minifiedPath = 'ui/css/mini/prod.min.css';
 		break;
 	case 'checkout':
 		array_push($file_paths, 
 			'site-styles.css',
 			'ui/css/pages/bask.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/bask.min.css';
+		$minifiedPath = 'ui/css/mini/bask.min.css';
 		break;
 	case 'customization':
 		array_push($file_paths, 
 			'site-styles.css',
 			'ui/css/pages/customization.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/customization.min.css';
+		$minifiedPath = 'ui/css/mini/customization.min.css';
 		break;
 	case 'page':
 		array_push($file_paths,
 			'site-styles.css',
 			'ui/css/pages/pages.css'
 		);
-		$minifiedPath = 'ui/css/pages/mini/pages.min.css';
+		$minifiedPath = 'ui/css/mini/pages.min.css';
 		break;
 	default:
 		break;

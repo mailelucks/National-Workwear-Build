@@ -1,0 +1,375 @@
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="//cdn.searchspring.net/ajax_search/sites/h2qztb/css/h2qztb.css">
+
+	<!-- AutoComplete -->
+	<script type="text/ss-template" name="AutoComplete" target="[ss-autocomplete]">
+		<div class="ss-ac-container" ng-show="ac.visible" ng-class="{'no-terms': ac.terms.length == 0}">
+			<div id="ss-ac-terms" ng-show="ac.terms">
+				<ul class="ss-list">
+					<li ng-repeat="term in ac.terms | limitTo:4" class="ss-list-option" ng-class="{'ss-active': term.active}">
+						<a ng-bind-html="term.label | trusted" ss-no-ps ss-nav-selectable ng-focus="term.preview()" href="{{ term.url }}" class="ss-list-link"></a>
+					</li>
+				</ul>
+			</div>
+			<div id="ss-ac-content">
+				<div id="ss-ac-facets" ng-show="ac.facets">
+					<div ng-repeat="facet in ac.facets | filter:{ type: '!slider' } | limitTo:3" ng-switch="facet.type" ng-if="facet.values.length" id="ss-ac-{{ facet.field }}" class="ss-ac-facet-container" ng-class="{'ss-ac-facet-container-list': (facet.type != 'grid' || facet.type != 'palette' || !facet.type), 'ss-ac-facet-container-palette': facet.type == 'palette', 'ss-ac-facet-container-grid': facet.type == 'grid'}">
+						<h4 class="ss-title">{{ facet.label }}</h4>
+						<ul ng-switch-when="grid" class="ss-grid">
+							<li ng-repeat="value in facet.values | limitTo:8" class="ss-grid-option">
+								<a href="{{ value.url }}" ss-no-ps ss-nav-selectable ng-focus="value.preview()" class="ss-grid-link" ng-class="{'ss-active': value.active}">
+									<div class="ss-grid-block">
+										<div class="ss-grid-value">
+											<div class="ss-grid-label">{{ value.label }}</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul ng-switch-when="palette" class="ss-palette">
+							<li ng-repeat="value in facet.values | limitTo:8" class="ss-palette-option">
+								<a href="{{ value.url }}" ss-no-ps ss-nav-selectable ng-focus="value.preview()" class="ss-palette-link" ng-class="{'ss-active': value.active}" alt="{{ value.label }}">
+									<div class="ss-palette-block">
+										<div ng-style="{'background-color': value.label.toLowerCase() }" class="ss-palette-color ss-palette-color-{{ value.paletteClass }}"></div>
+									</div>
+									<div class="ss-palette-label">{{ value.label }}</div>
+								</a>
+							</li>
+						</ul>
+						<ul ng-switch-default class="ss-list">
+							<li ng-repeat="value in facet.values | limitTo:5" class="ss-list-option">
+								<a href="{{ value.url }}" ss-no-ps ss-nav-selectable ng-focus="value.preview()" class="ss-list-link" ng-class="{'ss-active': value.active}">{{ value.label }}</a>
+							</li>
+						</ul>
+					</div>
+					<div ng-if="ac.merchandising.content.left.length > 0" id="ss-ac-merch-left" class="ss-ac-merchandising" ss-merchandising="ac.left"></div>
+				</div>
+				<div id="ss-ac-results">
+					<h4 class="ss-title">Product Suggestions</h4>
+					<div ng-if="ac.merchandising.content.header.length > 0" id="ss-ac-merch-header" class="ss-ac-merchandising" ss-merchandising="ac.header"></div>
+					<div ng-if="ac.merchandising.content.banner.length > 0" id="ss-ac-merch-banner" class="ss-ac-merchandising" ss-merchandising="ac.banner"></div>
+					<!-- Items -->
+					<ul class="ss-ac-item-container">
+						<li class="ss-ac-item" ng-repeat="result in ac.results | limitTo:ac.pagination.perPage">
+							<a ng-href="{{ result.url }}" ss-no-ps ss-nav-selectable>
+								<div class="ss-ac-item-image">
+									<div class="ss-image-wrapper">
+										<img ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '/mm5/themes/shadows/core/images/img_no_thumb.jpg' }}" onerror="this.src='/mm5/themes/shadows/core/images/img_no_thumb.jpg';" alt="{{ result.name }}" title="{{ result.name }}" />
+									</div>
+								</div>
+								<div class="ss-ac-item-details">
+									<p class="ss-ac-item-name">
+										{{ result.name.length > 40 ? (result.name.substring(0, 37) + '...') : result.name }}
+									</p>
+									<p class="ss-ac-item-price">
+										<span ng-if="result.msrp && (result.msrp * 1) > (result.price * 1)" class="ss-ac-item-msrp">${{ result.msrp | number:2 }}</span>
+										<span class="ss-ac-item-regular" ng-class="{'ss-ac-item-on-sale': result.msrp && (result.msrp * 1) > (result.price * 1)}">${{ result.price | number:2 }}</span>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div ng-if="ac.merchandising.content.footer.length > 0" id="ss-ac-merch-footer" class="ss-ac-merchandising" ss-merchandising="ac.footer"></div>
+				</div>
+				<div id="ss-ac-see-more" ng-class="{'ss-ac-see-more-padding': ac.facets.length}">
+					<a ng-click="ac.location.remove('perpage').go(); ac.visible = false;" class="ss-ac-see-more-link" ss-nav-selectable>
+						See {{ ac.pagination.totalResults }} {{ ac.breadcrumbs.length > 1 ? 'filtered' : '' }} result{{ ac.pagination.totalResults > 1 ? 's' : '' }} for "{{ ac.q }}"
+					</a>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<!-- SearchSpring Sidebar -->
+	<script type="text/ss-template" name="SearchSpring Sidebar" module="search" target="#searchspring-sidebar">
+		<div class="ss-sidebar-container">
+			<div ng-if="!slideout.triggered" class="x-category-tree__title">
+				<h3 class="x-category-tree__heading c-heading-charlie u-text-bold">Filters</h3>
+				<hr class="c-keyline">
+			</div>
+			<div class="x-category-tree__row">
+				<section ng-if="slideout.triggered && pagination.totalResults">
+					<div class="x-display-list-filtering t-display-list-filtering"></div>
+					<hr class="c-keyline">
+				</section>
+				<form ng-if="!slideout.triggered">
+					<fieldset>
+						<legend>Search Facets</legend>
+						<ul ng-if="filterSummary.length" class="ss-summary c-form-list x-facets"></ul>
+						<ul ng-if="facets.length" class="ss-facets c-form-list x-facets"></ul>
+						<div ng-if="facets.length === 0" class="ss-filter-messages"></div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</script>
+
+	<!-- Filter Messages -->
+	<script type="text/ss-template" name="Filter Messages" target=".ss-filter-messages">
+		<p ng-if="pagination.totalResults === 0 && filterSummary.length === 0" class="ss-filter-message-content">
+			There are no results to refine! If you need additional help, please try our "<strong>Suggestions</strong>" to the right.
+		</p>
+		<p ng-if="pagination.totalResults === 0 && filterSummary.length" class="ss-filter-message-content">
+			If you are not seeing any results, try removing some of your selected filters above.
+		</p>
+		<p ng-if="pagination.totalResults && filterSummary.length === 0" class="ss-filter-message-content">
+			There are no filters to refine by! Perhaps try a new search?
+		</p>
+	</script>
+
+	<!-- Facets -->
+	<script type="text/ss-template" name="Facets" target=".ss-facets">
+		<li ng-repeat="facet in facets" ng-switch="facet.type" ng-if="facet.showFacet" id="ss-{{ facet.field }}" class="ss-facet-container ss-facet-container-{{ facet.type ? facet.type : 'list' }} c-form-list__item x-facet-set" ng-class="{'ss-expanded': !facet.collapse, 'ss-collapsed': facet.collapse}">
+			<input class="x-facet-set__trigger" type="checkbox" ng-checked="!facet.collapse">
+			<label class="x-facet-set__label" ng-click="facet.collapse = !facet.collapse">{{ facet.label }}</label>
+
+			<ul ng-switch-when="hierarchy" class="ss-hierarchy c-form-list__item x-facet-set__list">
+				<li ng-repeat="value in facet.values | limitTo:facet.overflow.limit" class="ss-hierarchy-option" ng-class="{'ss-hierarchy-current': value.active, 'ss-hierarchy-return': value.history && !value.active}">
+					<a ng-if="!value.active" ng-href="{{ value.url }}" class="ss-hierarchy-link">
+						{{ value.label }} <span ng-if="!value.history" class="ss-facet-count">({{ value.count }})</span>
+					</a>
+					<span ng-if="value.active">{{ value.label }}</span>
+				</li>
+			</ul>
+
+			<div ng-switch-default ng-class="{'ss-show-overflow': facet.overflow.remaining != facet.overflow.count}" class="ss-list c-form-list__item x-facet-set__list">
+				<label ng-repeat="value in facet.values | filter:facet.search | limitTo:facet.overflow.limit" class="ss-list-option c-form-checkbox" ng-click="value.go()">
+					<input class="c-form-checkbox__input" type="checkbox" name="{{ value.label }}" value="{{ value.label }}" ng-checked="value.active">
+					<span class="c-form-checkbox__caption">{{ value.label }} <span class="ss-facet-count">({{ value.count }})</span></span>
+					<div class="c-checkmark"></div>
+				</label>
+			</div>
+
+			<div ng-if="facet.overflow.set(facet.limitCount).count" class="ss-show-more" ng-class="{'ss-expanded': facet.overflow.remaining, 'ss-collapsed': !facet.overflow.remaining}" ng-style="{'display': !facet.collapse ? 'block':'none'}">
+				<a ng-click="facet.overflow.toggle()" class="ss-show-more-link">
+					Show {{ facet.overflow.remaining ? 'More' : 'Less' }}
+				</a>
+			</div>
+
+			<hr class="c-keyline">
+		</li>
+		<div ng-if="merchandising.content.left.length > 0" id="ss-merch-left" class="ss-merchandising" ss-merchandising="left"></div>
+	</script>
+
+	<!-- Filter Summary -->
+	<script type="text/ss-template" name="Filter Summary" target=".ss-summary">
+		<li ng-repeat="filter in filterSummary" class="c-form-list__item">
+			<a class="c-clear-list u-text-bold" href="{{ filter.remove.url }}">
+				<span class="u-icon-cross c-clear-list__icon"></span>
+				<span class="c-clear-list__text">
+					{{ filter.filterLabel }}: {{ filter.filterValue }}
+				</span>
+			</a>
+		</li>
+		<li class="c-form-list__item c-form-list__item-clear">
+			<a class="c-clear-list u-text-bold" href="{{ location().remove('filter').remove('rq').url() }}">
+				<span class="u-icon-cross c-clear-list__icon"></span>
+				<span class="c-clear-list__text">Clear Facets</span>
+			</a>
+		</li>
+	</script>
+
+	<!-- Search Title -->
+	<script type="text/ss-template" name="Search Title" target="#js-shop .x-product-list__title">
+		<h1 ng-if="pagination.totalResults && pagination.totalResults > pagination.perPage" class="x-product-list--ctgy-name u-font-secondary u-text-bold ss-has-pages"></h1>
+		<h1 ng-if="pagination.totalResults && pagination.totalResults <= pagination.perPage" class="x-product-list--ctgy-name u-font-secondary u-text-bold ss-no-pages"></h1>
+	</script>
+
+	<!-- Mobile Search Title -->
+	<script type="text/ss-template" name="Mobile Search Title" target="#js-shop .ss-mobile-title-summary">
+		<span ng-if="pagination.totalResults && pagination.totalResults > pagination.perPage" class="u-text-bold ss-has-pages"></span>
+		<span ng-if="pagination.totalResults && pagination.totalResults <= pagination.perPage" class="u-text-bold ss-no-pages"></span>
+	</script>
+
+	<!-- Page Range -->
+	<script type="text/ss-template" name="Page Range" target=".ss-has-pages">
+		Showing {{ pagination.begin }} - {{ pagination.end }} of {{ pagination.totalResults }} results {{ q ? ('for \u0022' + q + '\u0022') : '' }}
+	</script>
+
+	<!-- No Page Range -->
+	<script type="text/ss-template" name="No Page Range" target=".ss-no-pages">
+		Showing {{ pagination.totalResults }} result{{ pagination.totalResults > 1 ? 's' : '' }} {{ q ? (' for \u0022' + q + '\u0022') : '' }}
+	</script>
+
+	<!-- Sort & Per Page -->
+	<script type="text/ss-template" name="Sort &amp; Per Page" target="#js-CTGY .x-display-list-filtering, #js-shop .x-display-list-filtering">
+		<form ng-if="pagination.totalResults" class="x-display-list-filtering__per-page">
+			<fieldset>
+				<legend>Number of Products to Show</legend>
+				<ul class="c-form-list">
+					<li class="c-form-list__item">
+						<label class="c-form-label u-text-uppercase u-font-tiny u-text-normal" for="l-per_page">View</label>
+						<div class="c-form-select">
+							<select id="l-per_page" class="c-form-select__dropdown u-font-small u-text-bold" ng-model="pagination.perPage" ng-options="value as label for (label, value) in { '12 items/Page': 12, '24 items/Page': 24, '48 items/Page': 48 }"></select>
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+		<form ng-if="pagination.totalResults" class="x-display-list-filtering__sort-by">
+			<fieldset>
+				<legend>Sort Products By</legend>
+				<ul class="c-form-list">
+					<li class="c-form-list__item">
+						<label class="c-form-label u-text-uppercase u-font-tiny u-text-normal" for="l-sort_by">Sort</label>
+						<div class="c-form-select">
+							<select id="l-sort_by" class="c-form-select__dropdown u-font-small u-text-bold" ng-model="sorting.current" ng-options="option.label for option in sorting.options"></select>
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</script>
+
+	<!-- Results & No Results -->
+	<script type="text/ss-template" name="Results &amp; No Results" module="search" target="#searchspring-content">
+		<div ng-if="pagination.totalResults" class="ss-results">
+			<div ng-if="merchandising.content.header.length > 0" id="ss-merch-header" class="ss-merchandising" ss-merchandising="header"></div>
+
+			<div ng-if="filterSummary.length && slideout.triggered" class="ss-mobile-summary">
+				<div class="ss-summary c-form-list x-facets"></div>
+			</div>
+
+			<div class="ss-slideout-container">
+				<div ng-if="facets.length > 0" class="ss-slideout-button" slideout></div>
+			</div>
+
+			<div ng-if="merchandising.content.banner.length > 0" id="ss-merch-banner" class="ss-merchandising" ss-merchandising="banner"></div>
+
+			<section class="x-product-list__container">
+				<div class="o-layout u-grids-2 u-grids-3--l x-product-list ss-item-container"></div>
+			</section>
+
+			<div ng-if="merchandising.content.footer.length > 0" id="ss-merch-footer" class="ss-merchandising" ss-merchandising="footer"></div>
+
+			<div ng-if="pagination.totalPages > 1" id="global_ctgy_srch_plst_pagination" class="readytheme-contentsection"></div>
+		</div>
+		<div ng-if="pagination.totalResults === 0" class="ss-no-results"></div>
+	</script>
+
+	<!-- Pagination -->
+	<script type="text/ss-template" name="Pagination" target=".ss-results #global_ctgy_srch_plst_pagination">
+		<nav ng-if="pagination.totalPages > 1" class="x-pagination x-pagination--centered t-pagination">
+			<ul class="o-list-inline">
+				<li class="o-list-inline__item">
+					<a ng-if="pagination.previous" class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left" ng-href="{{ pagination.previous.url }}" title="Go to the previous page."></a>
+					<span ng-if="!pagination.previous" class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-left inactive" title="You are on the first page."></span>
+				</li>
+				<li class="o-list-inline__item o-layout--grow">
+					<span class="o-page-links-container u-flex o-layout--align-center o-layout--justify-around">
+						<a ng-if="pagination.totalPages > 2 && pagination.currentPage > 1" ng-href="{{ pagination.first.url }}" class="o-page-links-inactive u-nww-color-secondary">0{{ pagination.first.number }}</a>
+						<a ng-if="pagination.totalPages > 2 && pagination.currentPage > 1 && pagination.previous" ng-href="{{ pagination.first.url }}" class="o-page-links-inactive hellip u-nww-color-secondary">...</a>
+						<span ng-repeat="page in pagination.getPages(2)">
+							<span ng-if="page.active" class="o-page-links-active u-text-bold">{{ page.number.toString().length > 1 ? "": "0" }}{{ page.number }}</span>
+							<a ng-if="!page.active" ng-href="{{ page.url }}" class="o-page-links-inactive u-nww-color-secondary">{{ page.number.toString().length > 1 ? "": "0" }}{{ page.number }}</a>
+						</span>
+						<a ng-if="pagination.totalPages > 2 && pagination.currentPage < (pagination.totalPages - 2) && pagination.next" ng-href="{{ pagination.last.url }}" class="o-page-links-inactive hellip u-nww-color-secondary">...</a>
+						<a ng-if="pagination.totalPages > 2 && pagination.currentPage < (pagination.totalPages - 2)" ng-href="{{ pagination.last.url }}" class="o-page-links-inactive u-nww-color-secondary">{{ pagination.last.number.toString().length > 1 ? "": "0" }}{{ pagination.last.number }}</a>
+					</span>
+				</li>
+				<li class="o-list-inline__item">
+					<a ng-if="pagination.next" class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right" ng-href="{{ pagination.next.url }}" title="Go to the next page."></a>
+					<span ng-if="!pagination.next" class="c-nww-button c-button c-button--hollow u-border-rounded u-color-gray-40 u-nww-icon-arrow-right inactive" title="You are on the last page."></span>
+				</li>
+			</ul>
+		</nav>
+	</script>
+
+	<!-- Results - Items -->
+	<script type="text/ss-template" name="Results - Items" target=".ss-results .ss-item-container">
+		<!-- PLACE RESULTS HTML HERE - ng-repeat="result in results" -->
+		<div ng-repeat="result in results" id="global_product_list_display" class="o-layout__item u-text-center x-product-list__item">
+			<div ng-if="result.flags" class="x-product-list__flag" ng-class="{
+					'u-bg-orange':result.flags == 'Best Seller',
+					'u-bg-red': result.flags == 'Sale',
+					'u-bg-black': result.flags == 'Clearance',
+					'u-bg-yellow u-color-black': result.flags == 'Coming Soon',
+					'u-bg-green': result.flags == 'Featured',
+					'u-bg-black': result.flags == 'Limited Stock'}">
+				<span class="u-text-uppercase u-text-bold">{{result.flags}}</span>
+			</div>
+			<a class="u-block x-product-list__link" ng-href="{{ result.url }}" intellisuggest title="{{ result.name }}">
+				<figure class="x-product-list__figure o-layout--column">
+					<div class="x-product-list__image__container u-flex o-layout--align-center o-layout--justify-center">
+						<img class="x-product-list__image x-product-list__hover-image" ng-show="{{result.thumbnail_hover}}" ng-src="{{ result.thumbnail_hover}}" alt="{{ result.name }}" title="{{ result.name }}" />
+						<img class="x-product-list__image" ng-class="result.thumbnail_hover > 0 ? 'hover-active' : '' " ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '/mm5/themes/shadows/core/images/img_no_thumb.jpg' }}" onerror="this.src='/mm5/themes/shadows/core/images/img_no_thumb.jpg';" alt="{{ result.name }}" title="{{ result.name }}">
+					</div>
+					<figcaption class="u-text-left u-width-12">
+						<strong class="x-product-list__code u-text-bold">{{ result.sku }}</strong>
+						<strong class="x-product-list__name">{{ result.name }}</strong>
+						<span ng-if="result.msrp && (result.msrp * 1) > (result.price * 1)" class="x-product-list__price--base">
+							<s>${{ result.msrp | number:2 }}</s>
+						</span>
+						<span class="x-product-list__price">
+							${{ result.price | number:2 }}
+						</span>
+					</figcaption>
+				</figure>
+			</a>
+			<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
+				<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" ng-href="{{ result.url }}" intellisuggest title="{{ result.name }}">Shop Now</a>
+				<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal="" data-mini-modal-type="iframe" ng-href="{{ result.url }}?show=quickview" intellisuggest></a>
+			</div>
+		</div>
+	</script>
+
+	<!-- No Results -->
+	<script type="text/ss-template" name="No Results" target=".ss-no-results">
+		<div class="ss-no-results-container">
+			<h3 ng-if="!q" class="ss-title">No results found.</h3>
+			<h3 ng-if="q" class="ss-title">Your search for "{{ q }}" returned no results.</h3>
+
+			<p ng-if="didYouMean.query.length" class="ss-did-you-mean">
+				Did you mean <a href="{{ location().remove(context.search).add(context.search, didYouMean.query).url() }}">{{ didYouMean.query }}</a>?
+			</p>
+		</div>
+		<div ng-if="filterSummary.length && slideout.triggered" class="ss-mobile-summary">
+			<div class="ss-summary c-form-list x-facets"></div>
+			<div ng-if="facets.length === 0" class="ss-filter-messages"></div>
+		</div>
+		<div class="ss-no-results-container">
+			<h4 class="ss-title">Suggestions</h4>
+			<ul class="ss-suggestion-list">
+				<li>Check for misspellings.</li>
+				<li>Remove possible redundant keywords (ie. "products").</li>
+				<li>Use other words to describe what you are searching for.</li>
+			</ul>
+
+			<p>Still can't find what you're looking for? <a href="/contact-us.html">Contact us</a>.</p>
+
+			<div class="ss-contact ss-location">
+				<h4 class="ss-title">Address</h4>
+				<p>
+					510 New Circle Road NE<br/>
+					Lexington, KY 40505 US
+				</p>
+			</div>
+			<div class="ss-contact ss-phone">
+				<h4 class="ss-title">Call Us</h4>
+				<p>
+					<strong>Customer Service:</strong> (800) 566-4298<br />
+				</p>
+			</div>
+			<div class="ss-contact ss-email">
+				<h4 class="ss-title">Email</h4>
+				<p><a href="mailto:info@nationalworkwear.com">info@nationalworkwear.com</a></p>
+			</div>
+		</div>
+	</script>
+
+	<!-- Slideout Button -->
+	<script type="text/ss-template" name="Slideout Button" target=".ss-slideout-button">
+		<span class="ss-slideout-button-icon"></span>
+		<span class="ss-slideout-button-label">Filter Options</span>
+	</script>
+
+	<!-- Slideout Menu -->
+	<script type="text/ss-template" name="Slideout Menu" slideout="">
+		<div ng-if="facets.length > 0" class="ss-slideout-header">
+			<h4 class="ss-title">Filter Options</h4><a class="ss-close" slideout></a>
+		</div>
+		<div ng-if="facets.length > 0 && slideout.triggered" class="ss-slideout-facets" ng-swipe-left="slideout.toggleSlideout()">
+			<div class="ss-facets"></div>
+		</div>
+	</script>
