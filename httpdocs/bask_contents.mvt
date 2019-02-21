@@ -298,7 +298,7 @@
 				<tr>
 					<td>
 						<br>
-						<a class="c-button c-button--full c-button--large u-bg-black u-color-white u-text-bold" href="&mvte:urls:OINF:auto;">Secure Checkout</a>
+						<a class="c-button c-button--full c-button--large u-font-secondary u-nww-bg-primary u-nww-color-secondary u-text-bold" href="&mvte:urls:OINF:auto;">Secure Checkout</a>
 						<div class="c-applepay-button">
 							<mvt:item name="applepay" />
 						</div>

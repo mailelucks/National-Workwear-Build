@@ -54,16 +54,22 @@
 	</div>
 	<div class="o-layout__item">
 		<div class="x-sfnt--customization--col-2 o-layout__item o-layout--justify-center u-hidden u-flex--l">
-			<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
-				<video id="x-sfnt-customization-video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/customization-placeholder.jpg">
-				  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
-				  <p>Your browser doesn't support HTML5 video. Here is
-				     a <a href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">link to the video</a> instead.</p>
-				</video>
-				<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-bg-white">
-				  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
-				</button>
-			</div>
+			<mvt:if expr="g.customization:video_url:active">
+				<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
+					<video id="x-sfnt-customization-video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.jpg">
+					  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.mp4" type="video/mp4">
+					  <p>Your browser doesn't support HTML5 video. Here is
+					     a <a href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">link to the video</a> instead.</p>
+					</video>
+					<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-bg-white">
+					  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+					</button>
+				</div>
+			<mvt:else>
+				<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center">
+					<img src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.jpg">
+				</div>
+			</mvt:if>
 		</div>
 	</div>
 </section>
@@ -99,16 +105,13 @@
 	<h2 class="u-sfnt-header u-text-center">Featured Products</h2>
 	<mvt:item name="readytheme" param="Load_ProductListing('featured_prods', g.sfnt_featured_prods_data )" />
 	<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_prods_data:code, g.sfnt_featured_prods_data )" />
-
 	<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_prods_data:uri" value="Store_Category_URL(g.sfnt_featured_prods_data, NULL)" />
 
 	<div class="x-featured-brands-prods u-width-12 u-text-center">
-		<div class="c-button t-nww-cta-button u-bg-white">
-			<a class="u-nww-color-secondary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
-				<span class="t-nww-cta-button__text">Shop All</span>
-				<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
-			</a>
-		</div>
+		<a class="c-button t-nww-cta-button u-bg-white u-nww-color-secondary u-font-secondary u-bg-transparent u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
+			<span class="t-nww-cta-button__text">Shop All</span>
+			<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
+		</a>
 	</div>
 	<mvt:item name="readytheme" param="productlisting( 'featured_prods' )" />
 </section>
@@ -126,16 +129,22 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--align-top">
 			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center">
-				<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
-					<video id="x-featured-service-bravo__video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/services-bravo-placeholder.jpg">
-					  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4" type="video/mp4">
-					  <p>Your browser doesn't support HTML5 video. Here is
-					     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
-					</video>
-					<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-nww-bg-primary">
-					  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
-					</button>
-				</div>
+				<mvt:if expr="g.featured_service_bravo:video_url:active">
+					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
+						<video id="x-featured-service-bravo__video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.jpg">
+						  	<source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.mp4" type="video/mp4">
+						  	<p>Your browser doesn't support HTML5 video. Here is
+						     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
+						</video>
+						<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-nww-bg-primary">
+						  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
+						</button>
+					</div>
+				<mvt:else>
+					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center">
+						<img src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.jpg">
+					</div>
+				</mvt:if>
 			</div>
 			<div class="o-layout__item x-featured-service-bravo--col-2">
 				<h2 class="u-font-secondary u-text-bold u-nww-color-primary u-sfnt-header u-sfnt-header--yellow-grain u-sfnt-header--featured--service-bravo u-sfnt-header--featured-service">&mvt:global:sfnt_featured_service_bravo:image_alt;</h2>
@@ -146,10 +155,12 @@
 						<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 					</a>
 				</div>
-				<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden--l" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">
-					<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
-					<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
-				</a>
+				<mvt:if expr="g.featured_service_bravo:video_url:active">
+					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">
+						<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+						<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
+					</a>
+				</mvt:if>
 			</div>
 		</div>
 	</section>

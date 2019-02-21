@@ -1,86 +1,98 @@
 <div class="x-cstm-table__wrapper o-layout o-layout--justify-between o-layout--align-top">
 	<h2 class="x-cstm-header u-width-12 u-font-secondary u-nww-color-secondary">Basic Options & Pricing</h2>
-
-	<div class="x-cstm-table__wrapper-column o-layout__item">
-		<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
-			<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Cotton and Polyester</h3>
-		</div>
-		<div class="x-cstm-table u-flex o-layout--column--m u-text-center">
-			<div class="x-cstm-table-row u-flex o-layout--column o-layout--row--m">
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">Size</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">2" x 4"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">3" x 6"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">5" x 7"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">10" x 6"</span>
-				</div>
-			</div>
-			<div class="x-cstm-table-row u-flex o-layout--column o-layout--row--m">
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">Price</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$12.00</span>
-				</div>
-			</div>
-		</div>
+	<div class="x-cstm-table__column o-layout__item">
+		<table class="c-table-simple x-cstm-table u-flex o-layout--column">
+			<thead>
+				<tr class="c-table-simple__row">
+					<th class="c-table-simple__cell">
+						<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Cotton and Polyester</h3>
+					</th>
+				</tr>
+			</thead>
+			<tbody class="u-flex u-block--m">
+				<tr class="x-cstm-table-row u-flex o-layout--column o-layout--row--m c-table-simple__row">
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">Size</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">2" x 4"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">3" x 6"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">5" x 7"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">10" x 6"</span>
+					</td>
+				</tr>
+				<tr class="x-cstm-table-row u-flex o-layout--column o-layout--row--m c-table-simple__row">
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">Price</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$2.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$4.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$12.00</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	<div class="x-cstm-table__wrapper-column o-layout__item">
-		<div class="x-cstm-table-header__wrapper u-flex o-layout--align-center">
-			<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Nylon Blends</h3>
-		</div>
-		<div class="x-cstm-table u-flex o-layout--column--m u-text-center">
-			<div class="x-cstm-table-row u-flex o-layout--column o-layout--row--m">
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">Size</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">2" x 4"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">3" x 6"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">5" x 7"</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">10" x 6"</span>
-				</div>
-			</div>
-			<div class="x-cstm-table-row u-flex o-layout--column o-layout--row--m">
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">Price</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$13.00</span>
-				</div>
-				<div class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center">
-					<span class="x-cstm-table__value u-text-bold u-text-uppercase">$15.00</span>
-				</div>
-			</div>
-		</div>
+	<div class="x-cstm-table__column o-layout__item">
+		<table class="c-table-simple x-cstm-table u-flex o-layout--column">
+			<thead>
+				<tr class="c-table-simple__row">
+					<th class="c-table-simple__cell">
+						<h3 class="x-cstm-header u-font-secondary u-nww-color-secondary">Price Per Shirt for Nylon Blends</h3>
+					</th>
+				</tr>
+			</thead>
+			<tbody class="u-flex u-block--m">
+				<tr class="x-cstm-table-row u-flex o-layout--column o-layout--row--m c-table-simple__row">
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">Size</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">2" x 4"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">3" x 6"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">5" x 7"</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">10" x 6"</span>
+					</td>
+				</tr>
+				<tr class="x-cstm-table-row u-flex o-layout--column o-layout--row--m c-table-simple__row">
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center x-cstm-bg-dark-grey c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">Price</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$3.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$6.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$13.00</span>
+					</td>
+					<td class="x-cstm-table-column u-flex o-layout--align-center o-layout--justify-center c-table-simple__cell">
+						<span class="x-cstm-table__value u-text-bold u-text-uppercase">$15.00</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
+	

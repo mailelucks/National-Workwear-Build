@@ -19,7 +19,7 @@
 					<div class="o-layout__item">
 						<div class="c-control-group">
 							<input class="c-form-input c-form-input--large c-control-group__field" type="password" name="register_password" autocomplete="current-password" placeholder="Password" required>
-							<input class="c-button c-button--large c-control-group__button u-bg-gray-50 u-font-small u-text-bold " type="submit" value="Log In">
+							<input class="c-button c-button--large c-control-group__button u-nww-bg-secondary u-font-secondary u-font-small u-text-bold " type="submit" value="Log In">
 						</div>
 					</div>
 				</div>
@@ -89,6 +89,7 @@
 				<label class="c-form-checkbox">
 					<input id="shipping_to_show" class="c-form-checkbox__input" type="checkbox" name="shipping_to_show" value="1" checked>
 					<span class="c-form-checkbox__caption u-font-tiny">Shipping Information Same as Billing</span>
+					<span class="c-checkmark"></span>
 				</label>
 			</li>
 			<mvt:if expr="g.Basket:cust_id AND g.Customer_Session_Verified">
@@ -190,6 +191,7 @@
 				<label class="c-form-checkbox">
 					<input id="billing_to_show" class="c-form-checkbox__input" type="checkbox" name="billing_to_show" value="1" checked>
 					<span class="c-form-checkbox__caption u-font-small ">Billing Information Same as Shipping</span>
+					<span class="c-checkmark"></span>
 				</label>
 			</li>
 		</ul>
@@ -312,11 +314,13 @@
 							<label class="c-form-checkbox">
 								<input class="c-form-checkbox__input" type="checkbox" name="Update_Customer" value="Yes" checked>
 								<span class="c-form-checkbox__caption u-font-tiny">Update Customer Record With This Information</span>
+								<span class="c-checkmark"></span>
 							</label>
 						<mvt:else>
 							<label class="c-form-checkbox">
 								<input class="c-form-checkbox__input" type="checkbox" name="Update_Customer" value="Yes">
 								<span class="c-form-checkbox__caption u-font-tiny">Update Customer Record With This Information</span>
+								<span class="c-checkmark"></span>
 							</label>
 						</mvt:if>
 					</li>

@@ -1,13 +1,25 @@
 <mvt:comment>READYTHEME ASSET PULL</mvt:comment>
+
+<mvt:comment>HERO</mvt:comment>
 <mvt:item name="readytheme" param="Load_Image('sfnt_hero', g.sfnt_hero)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_hero_tablet', g.sfnt_hero_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_hero_mobile', g.sfnt_hero_mobile)" />
+
+<mvt:comment>CUSTOMIZATION</mvt:comment>
+<mvt:item name="readytheme" param="Load_Banner('sfnt_customization_video', g.customization:video_url )" />
+
+<mvt:comment>FEATURED SERVICE ALPHA</mvt:comment>
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha', g.sfnt_featured_service_alpha)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha_tablet', g.sfnt_featured_service_alpha_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_alpha_mobile', g.sfnt_featured_service_alpha_mobile)" />
+
+<mvt:comment>FEATURED SERVICE BRAVO</mvt:comment>
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_tablet', g.sfnt_featured_service_bravo_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_mobile', g.sfnt_featured_service_bravo_mobile)" />
+<mvt:item name="readytheme" param="Load_Banner('sfnt_featured_service_bravo_video', g.featured_service_bravo:video_url )" />
+
+<mvt:comment>FEATURED SERVICE CHARLIE</mvt:comment>
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie', g.sfnt_featured_service_charlie)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie_tablet', g.sfnt_featured_service_charlie_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_charlie_mobile', g.sfnt_featured_service_charlie_mobile)" />

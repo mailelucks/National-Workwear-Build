@@ -14,7 +14,7 @@
 		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Featured'">
 			<mvt:assign name="g.flag_bg" value="'u-bg-green'" />
 		<mvt:elseif expr="l.settings:product_list:customfield_values:customfields:flags EQ 'Coming Soon'">
-			<mvt:assign name="g.flag_bg" value="'u-bg-yellow'" />
+			<mvt:assign name="g.flag_bg" value="'u-bg-yellow u-color-black'" />
 		</mvt:if>
 		<div class="x-product-list__flag &mvt:global:flag_bg;">
 			<span class="u-text-uppercase u-text-bold">&mvte:product_list:customfield_values:customfields:flags;</span>
@@ -22,25 +22,65 @@
 	</mvt:if>
 	<a class="x-product-list__link u-flex-stretch u-flex o-layout--column" href="&mvte:product_list:link;" title="&mvte:product_list:name;">
 		<figure class="x-product-list__figure u-flex o-layout--column o-layout__item">
-			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
+
+			<mvt:comment>image assignments for outfit images, backup for mislabelled main image and no image</mvt:comment>
+			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1 AND l.pos1 EQ 5">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
 				<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
-			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main AND l.settings:product_list:imagetypes:Addtl">
-				<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ l.settings:product_list:imagetypes:Addtl" />
 			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value=" g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+			<mvt:else>
+				<mvt:if expr="ISNULL l.settings:product_list:imagetypes:main AND l.settings:product_list:imagetypes:Addtl">
+					<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ l.settings:product_list:imagetypes:Addtl" />
+				</mvt:if>
+
+				<mvt:comment>regenerate images incase they are too big</mvt:comment>
+				<mvt:assign name="l.constraints[1]:height" value="280" />
+				<mvt:assign name="l.constraints[1]:width" value="280" />
+				<mvt:assign name="l.imagetype_codes[1]" value="'main'" />
+				<mvt:assign name="l.imagetype_codes[2]" value="'product_hover'" />
+				<mvt:assign name="l.settings:productimagedatalist" value="''" />
+				<mvt:assign name="l.settings:generatedimage" value="''" />
+				<mvt:assign name="l.constraints_count" value="miva_array_elements( l.constraints )" />
+				<mvt:assign name="l.imagetypecode_count" value="miva_array_elements( l.imagetype_codes )" />
+
+				<mvt:do file="g.Module_Library_DB" name="l.imagedata_count" value="ProductImageDataList_Load_Product_TypeCodes_Constrained(l.settings:product_list:id, l.imagetype_codes, l.imagetypecode_count , l.constraints,l.constraints_count,l.settings:productimagedatalist)" />
+
+				<mvt:if expr="ISNULL l.settings:productimagedatalist[1]:generatedimages[1]:image">
+				    <mvt:do file="g.Module_Library_DB" name="l.success" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:productimagedatalist[1]:image, l.constraints[1]:width, l.constraints[1]:height, l.settings:generatedimage )" />
+				    <mvt:if expr="ISNULL l.settings:generatedimage:image">
+				        <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:productimagedatalist[1]:image:image" />
+				    <mvt:else>
+				        <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:generatedimage:image" />
+				    </mvt:if>
+				<mvt:else>
+				    <mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:productimagedatalist[1]:generatedimages[1]:image" />
+				</mvt:if>
+
 			</mvt:if>
+
 			<div class="x-product-list__image__container u-flex o-layout--align-center &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
-					<mvt:if expr="l.pos1 LT 4">
+
+					<mvt:if expr="ISNULL l.settings:productimagedatalist[2]:generatedimages[1]:image">
+					    <mvt:do file="g.Module_Library_DB" name="l.success" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:productimagedatalist[2]:image, l.constraints[1]:width, l.constraints[1]:height, l.settings:generatedimage )" />
+					    <mvt:if expr="ISNULL l.settings:generatedimage:image AND NOT ISNULL l.settings:productimagedatalist[2]:image:image">
+					        <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:productimagedatalist[2]:image:image" />
+					    </mvt:if>
+					<mvt:else>
+					    <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:productimagedatalist[2]:generatedimages[1]:image" />
+					</mvt:if>
+
+					<mvt:if expr="l.settings:pos1 LT 5">
 						<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
 					<mvt:else>
 						<img class="x-product-list__image x-product-list__hover-image" data-lazy="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
 					</mvt:if>
 					<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 				</mvt:if>
-				<mvt:if expr="l.pos1 LT 4">
+
+				<mvt:if expr="l.settings:pos1 LT 5">
 					<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
 				<mvt:else>
 					<img class="x-product-list__image &mvte:product_list:hover_class;" data-lazy="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">

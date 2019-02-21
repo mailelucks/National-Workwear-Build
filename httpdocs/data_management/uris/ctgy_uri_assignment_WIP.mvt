@@ -1,0 +1,54 @@
+<mvt:comment>
+<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_All( l.settings:categories )" />
+<mvt:foreach iterator="category" array="categories">
+
+	<mvt:do file="g.Module_Root $ '/modules/component/cmp-mv-prodctgy-meta.mvc'" name="l.settings:category:cascade_count" value="CategoryCascadeList_Load_Category( l.settings:category, l.settings:category:cascade )" />
+	
+	
+	<mvt:if expr="NOT ISNULL l.settings:category:page_title">
+		<mvt:assign name="l.settings:category:uri" value="tolower( slugify( l.settings:category:page_title ) )" />
+	<mvt:else>
+		<mvt:assign name="l.settings:category:uri" value="tolower( slugify( l.settings:category:name ) )" />
+	</mvt:if>
+
+	<mvt:if expr="l.settings:category:cascade_count EQ 1">
+		<uri_add category_code="&mvte:category:code;" canonical="Yes" uri="/&mvte:category:uri;.html" />
+		<mvt:foreachcontinue/>
+	</mvt:if>
+
+	<mvt:foreach iterator="cascade_item" array="category:cascade">
+
+		<mvt:if expr="l.pos2 EQ 1">
+			<mvt:assign name="l.settings:category_parent:uri" value="tolower( slugify( l.settings:cascade_item:name ) )" />
+			<mvt:foreachcontinue />
+		</mvt:if>
+
+		<mvt:if expr="NOT ISNULL l.settings:cascade_item:page_title">
+			<mvt:assign name="l.settings:cascade_item:name" value="tolower( slugify( l.settings:cascade_item:page_title ) )" />
+		<mvt:else>
+			<mvt:assign name="l.settings:cascade_item:name" value="tolower( slugify( l.settings:cascade_item:name ) )" />
+		</mvt:if>
+		
+	   	<mvt:assign name="l.settings:cascade_item:uri" value="l.settings:category_parent:uri $ '/' $ l.settings:cascade_item:name" />
+
+	  <uri_add category_code="&mvte:category:code;" status="301" uri="&mvte:cascade_item:uri;.html" />
+
+	</mvt:foreach>
+
+	<mvt:assign name="l.settings:category_parent" value="''" />
+
+	<uri_add category_code="&mvte:category:code;" canonical="Yes" uri="/&mvte:category:uri;.html" />
+
+</mvt:foreach>
+</mvt:comment>
+<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_All( l.settings:categories )" />
+<mvt:foreach iterator="category" array="categories">
+	<mvt:do file="g.Module_Root $ '/modules/component/cmp-mv-prodctgy-meta.mvc'" name="l.settings:category:cascade_count" value="CategoryCascadeList_Load_Category( l.settings:category, l.settings:category:cascade )" />
+	<mvt:if expr="l.settings:category:cascade_count EQ 1">
+		<mvt:foreachcontinue />
+	</mvt:if>
+	<mvt:foreach iterator="cascade_item" array="category:cascade">
+	   <mvt:assign name="l.settings:category:uri" value="l.settings:category:uri $ '/' $ tolower( slugify( l.settings:cascade_item:name ) )" />
+	</mvt:foreach>
+	<uri_add category_code="&mvte:category:code;" status="301" uri="&mvte:category:uri;.html" />
+</mvt:foreach>

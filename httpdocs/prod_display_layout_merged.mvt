@@ -36,7 +36,7 @@
     <div class="x-product-layout--col-2 o-layout__item">
         <form 
         <mvt:if expr="g.apply_ng GT 0">
-            ng-app="mmNgProd" ng-controller="mmNgProdController"
+            ng-module="mmNgProd" ng-controller="mmNgProdController"
         </mvt:if>
         class="o-layout__item x-product-layout-purchase u-cement-bg" 
         data-hook="purchase" 
@@ -49,20 +49,28 @@
             </mvt:comment>
             <input type="hidden" name="Product_Code" value="&mvte:product:code;" />
             <input type="hidden" name="Action" value="ADPR" />
+            <mvt:do file="g.Module_Feature_URI_UT" name="g.customizationlink1" value="Store_Category_Code_URL( 'cstm_heatpress', null )" />
+            <mvt:do file="g.Module_Feature_URI_UT" name="g.customizationlink2" value="Store_Category_Code_URL( 'cstm_embroidery', null )" />
+            <mvt:do file="g.Module_Feature_URI_UT" name="g.customizationlink3" value="Store_Category_Code_URL( 'cstm_screenprinting', null )" />
+            <script>
+            (function (mivaPROD) {
+                mivaPROD.price = &mvt:product:price;;
+                mivaPROD.base_price = &mvt:product:base_price;;
+                mivaPROD.customer = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.customer )" />;
+                mivaPROD.logn = '&mvte:urls:LOGN:secure;';
+                mivaPROD.wlgn = '&mvte:urls:WLGN:secure;';
+                mivaPROD.wlst = '&mvte:urls:WLST:secure;';
+                mivaPROD.wish = '&mvte:urls:WISH:secure;';
+                mivaPROD.acln = '&mvte:urls:ACLN:secure;';
+                mivaPROD.customizationpages = {
+                    heatpress : '&mvte:global:customizationlink1;',
+                    embroidery : '&mvte:global:customizationlink2;',
+                    screenprinting : '&mvte:global:customizationlink3;',
+                };
+            }(window.mivaPROD || (window.mivaPROD = {})));
+            </script>
             <mvt:if expr="g.apply_ng GT 0">
                 <!-- nothing happens here -->
-                <script>
-                    (function (mivaPROD) {
-                        mivaPROD.price = &mvt:product:price;;
-                        mivaPROD.base_price = &mvt:product:base_price;;
-                        mivaPROD.customer = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.customer )" />;
-                        mivaPROD.logn = '&mvte:urls:LOGN:secure;';
-                        mivaPROD.wlgn = '&mvte:urls:WLGN:secure;';
-                        mivaPROD.wlst = '&mvte:urls:WLST:secure;';
-                        mivaPROD.wish = '&mvte:urls:WISH:secure;';
-                        mivaPROD.acln = '&mvte:urls:ACLN:secure;';
-                    }(window.mivaPROD || (window.mivaPROD = {})));
-                    </script>
             <mvt:else>
                 <input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
                 <input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
@@ -155,13 +163,14 @@
                                 <label class="c-form-label u-text-bold u-font-small u-color-gray-40 is-required" for="l-quantity">Quantity</label>
                                 <div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
                                     <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('-')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
-                                    <input <mvt:if expr="g.has_size GT 0">ng-model="app.singleQuantity" ng-change="quantityChange()"</mvt:if> class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="<mvt:if expr="g.has_size GT 0">{{app.singleQuantity}}<mvt:else>1</mvt:if>">
+                                    <input <mvt:if expr="g.has_size GT 0">ng-model="app.singleQuantity" ng-change="quantityChange()" ng-cloak</mvt:if> class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="<mvt:if expr="g.has_size GT 0">{{app.singleQuantity}}<mvt:else>1</mvt:if>">
                                     <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('+')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
                                 </div>
                             </div>
                             <div class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between o-layout--wrap">
                                 <mvt:if expr="ISNULL g.customer:id AND g.has_size GT 0">
                                     <div class="ang-login-form u-hidden" ng-if="app.wishlistloginshow">
+                                        <div class="u-shown is-close-button"><a ng-click="app.customer.close();"><i class="u-icon-cross"></i></a></div>
                                         <div class="u-shown u-text-uppercase is--heading">Sign In to add to your wishlist</div>
                                         <div class="u-shown">
                                             <input class="c-form-input c-form-input--large" placeholder="Email" type="email" ng-model="app.customer.Customer_LoginEmail" name="Customer_LoginEmail">
@@ -175,6 +184,22 @@
                                         </div>
                                     </div>
                                 </mvt:if>
+                                 <mvt:if expr="ISNULL g.customer:id AND g.has_size EQ 0">
+                                    <div class="ang-login-form ang-login-form-native u-hidden">
+                                        <div class="u-shown is-close-button"><a data-hook="customer-wishlist-close"><i class="u-icon-cross"></i></a></div>
+                                        <div class="u-shown u-text-uppercase is--heading">Sign In to add to your wishlist</div>
+                                        <div class="u-shown">
+                                            <input class="c-form-input c-form-input--large" placeholder="Email" type="email" name="Customer_LoginEmail">
+                                            <input class="c-form-input c-form-input--large" placeholder="Password" type="password" name="Customer_Password">  
+                                        </div>
+                                        <div class="u-shown customer-login-message"></div>
+                                        <div class="u-shown u-text-center">
+                                            <a data-hook="login-form-native" class="c-button c-button--full c-button--large u-bg-gray-50 u-color-white u-text-bold u-text-uppercase">Login</a>
+                                            <a href="&mvte:urls:LOGN:secure;" target="_blank" class="c-button c-button--full c-button--large">Create an Account</a>
+                                            <a class="u-shown u-color-gray-30 u-text-bold u-font-small u-text-uppercase u-forgot-password" target="_blank" href="&mvte:urls:FPWD:secure;">FORGOT PASSWORD?</a>
+                                        </div>
+                                    </div>
+                                </mvt:if>
                                 <mvt:if expr="g.has_size GT 0">
                                     <div class="ang-wishlist-pick u-hide-visually" ng-if="app.wishlistpick">
                                         <div class="u-shown">
@@ -183,6 +208,15 @@
                                         </div>
                                     </div>
                                 </mvt:if>
+                                <div class="ang-wishlist-pick ang-wishlist-pick-native u-hide-visually">
+                                    <div class="u-shown">
+                                        <strong class="is--heading u-shown">Add To Wishlist</strong>
+                                        <div class="ang-wishlist-pick-native-list">
+                                           <mvt:comment><b class="u-shown" ng-click="addTo('wishlist' , wishitem.id)" ng-repeat="wishitem in app.wishlistitems"><div>{{wishitem.title}}</div><i class="u-icon-add"></i></b> </mvt:comment>
+                                           <b><div>Some Wishlist</div><i class="u-icon-add"></i></b>
+                                        </div>
+                                    </div>
+                                </div>
                                 <mvt:if expr="l.settings:product:inv_level NE 'out'">
                                     <mvt:if expr="g.has_size GT 0">
                                          <div class="o-layout__item x-product-layout__purchase-button">
@@ -207,7 +241,8 @@
                                             <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
                                         </div>
                                     <mvt:else>
-                                        <div onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';">
+                                        <mvt:comment><div onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';"></mvt:comment>
+                                        <div onclick="document.forms.add.action = '&mvtj:urls:WISH:secure;'; document.forms.add.elements.Action.value = 'ATWL';"class="my-wishlist-custom" data-hook="wishlist-native-app">
                                             <mvt:item name="buttons" param="AddToWishList"/>
                                             <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
                                         </div>

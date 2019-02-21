@@ -2,6 +2,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB83HPG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<noscript>
+	<br/>
+	<h1 class="u-text-center">To view this website, please enable Javascript</h1>
+</noscript>
 
 <mvt:comment>CALL ALL TRANSIENTS</mvt:comment>
 
@@ -161,6 +165,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 		<mvt:item name="breadcrumbs" />
 	</mvt:if>
+</mvt:if>
+<mvt:if expr="'PROD' CIN l.settings:page:code">
+	
+	<mvt:item name="breadcrumbs" />
 </mvt:if>
 
 <mvt:if expr="l.settings:page:code EQ 'SFNT' or l.settings:page:code EQ 'SFNT_CL'">

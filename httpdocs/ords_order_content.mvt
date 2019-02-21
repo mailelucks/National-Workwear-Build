@@ -147,6 +147,9 @@
 						<span>Refund: &mvt:payment:desc;</span>
 						<span>&mvt:payment:formatted_amount;</span>
 					<mvt:else>
+						<mvt:if expr="l.settings:payment:desc EQ 'Check'">
+							<mvt:assign name="l.settings:payment:desc" value="'Purchase Order'" />
+						</mvt:if>
 						<span>Payment: &mvt:payment:desc;</span>
 						<span>&mvt:payment:formatted_amount_negative;</span>
 					</mvt:if>
