@@ -1,0 +1,14 @@
+<mvt:do file="g.Module_Feature_AGR_DB" name="l.success" value="AvailabilityGroupList_Load_All( l.settings:availability_groups )" />
+<mvt:foreach iterator="availability_group" array="availability_groups">
+	<mvt:do file="g.Module_Feature_AGR_DB" name="l.success" value="AvailGroupXProduct_Load( l.settings:availability_group:id, l.settings:product:id, l.settings:availability_group_assigned)" />
+	<mvt:if expr="l.settings:availability_group_assigned">
+		
+		<mvt:assign name="l.settings:availability_group_assigned:name" value="l.settings:availability_group:name" />
+		<mvt:assign name="g.mvt_debug" value="glosub( miva_array_serialize( l.settings:availability_group_assigned ), ',', asciichar( 10 ) )" />
+		<!--
+		@@availability_group_ass
+		====================================
+		&mvt:global:mvt_debug;
+		-->
+	</mvt:if>
+</mvt:foreach>

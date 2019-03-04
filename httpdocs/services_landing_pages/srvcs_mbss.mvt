@@ -1,0 +1,13 @@
+<div class="o-layout">
+	<div class="x-cstm-content__wrapper o-layout__item u-cstm-width-10 u-cstm-width-6--l">
+		<h2 class="x-cstm-header u-font-secondary u-nww-color-secondary u-text-left">
+			<mvt:item name="readytheme" param="banner( 'srvc_header_mbss' )" />
+		</h2>
+		<div class="x-cstm-description">
+			<mvt:item name="readytheme" param="contentsection( 'srvc_mbss_desc' )" />
+		</div>
+	</div>
+	<div class="x-cstm-form__wrapper o-layout__item u-cstm-width-10 u-cstm-width-4--l">
+		<mvt:item name="readytheme" param="contentsection( 'cstm_form' )" />
+	</div>
+</div>

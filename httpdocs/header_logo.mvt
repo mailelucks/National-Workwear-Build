@@ -1,23 +1,10 @@
-<mvt:if expr="l.settings:page:code EQ 'SFNT'">
-	<h1 class="o-layout__item u-text-center u-text-left--l t-site-header__logo u-flex-static">
-		<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
-			<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
-				<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
-				<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
-			<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
-				<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
-			</mvt:if>
-		</a>
-	</h1>
-<mvt:else>
-	<div class="o-layout__item u-text-center u-text-left--l t-site-header__logo u-flex-static">
-		<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
-			<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
-				<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
-				<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
-			<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
-				<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
-			</mvt:if>
-		</a>
-	</div>
-</mvt:if>
+<div class="o-layout__item u-text-center u-text-left--l t-site-header__logo u-flex-static">
+	<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
+		<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+			<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
+			<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
+		<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
+			<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
+		</mvt:if>
+	</a>
+</div>

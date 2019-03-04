@@ -1,9 +1,10 @@
 <mvt:if expr="g.Action EQ 'RGRP'">
+	
 	<mvt:assign name="g.Quantity" value="miva_variable_value('Quantity' $ g.Restore_Counter)" />
 	<mvt:assign name="g.Restore_Name" value="miva_variable_value('Restore_Name' $ g.Restore_Counter)" />
 	<mvt:assign name="g.Restore_Link" value="miva_variable_value('Restore_Link' $ g.Restore_Counter)" />
 	<div class="x-messages x-messages--info">
-		<strong>&mvte:global:Restore_Name;</strong> has been removed from your cart. <a href="&mvte:global:Restore_Link;">Undo?</a>
+		<strong>&mvte:global:Restore_Name;</strong> has been removed from your cart. <a id="c-undo-button" href="&mvte:global:Restore_Link;">Undo?</a>
 	</div>
 	<mvt:assign name="g.Restore_Counter" value="g.Restore_Counter + 1" />
 </mvt:if>

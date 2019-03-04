@@ -30,41 +30,7 @@
     }
 </script>
 
-<mvt:comment>  PER PAGE JS | GROUPED JS -- START </mvt:comment>
-<mvt:assign name="g.currentPageCode" value="l.settings:page:code" />
-<mvt:if expr="'PROD' CIN l.settings:page:code">
-	<mvt:comment>
-		
-	</mvt:comment>
-</mvt:if>
-<mvt:if expr="l.settings:page:code CIN 'BASK,BSKE,OCST,OSEL,OPAY,INVC,OUSM,OUSL'">
-	<mvt:comment>
-		CHECKOUT STYLES
-	</mvt:comment>
-	<mvt:assign name="g.currentPageCode" value="'CHECKOUT-BASKET'" />
-</mvt:if>
-<mvt:assign name="g.currentPageCode" value="tolower( g.currentPageCode )" />
-<mvt:assign name="l.settings:custom_js:path" value="'/mm5/' $ g.theme_path $'/ui/js/pages/'$ g.currentPageCode $ '.js'" />
-<mvt:assign name="l.settings:custom_js:path_mini" value="'/mm5/' $ g.theme_path $'/ui/js/pages/mini/'$ g.currentPageCode $ '.js'" />
-<mvt:assign name="l.settings:custom_js:exists" value="sexists(l.settings:custom_js:path )" />
-<mvt:assign name="l.settings:custom_js:exists_mini" value="sexists(l.settings:custom_js:path_mini )" />
-<mvt:if expr="l.settings:custom_js:exists">
-	<mvt:assign name="l.settings:custom_js:time" value="stime(l.settings:custom_js:path )" />
-	<mvt:if expr="l.settings:custom_js:exists_mini">
-		<mvt:assign name="l.settings:custom_js:time_mini" value="stime(l.settings:custom_js:path )" />
-		<mvt:if expr="l.settings:custom_js:time GT l.settings:custom_js:time_mini">
-			<mvt:comment>
-				trigger task to create mini
-			</mvt:comment>
-		<mvt:else>
-			<mvt:comment>
-				serve minified version of js
-			</mvt:comment>
-		</mvt:if>
-	</mvt:if>
-	<script src="<mvt:eval expr="l.settings:custom_js:path" />?v=<mvt:eval expr="l.settings:custom_js:time" />" type="text/javascript" defer></script>
-</mvt:if>
-<mvt:comment>  PER PAGE JS | GROUPED JS -- END </mvt:comment>
+
 
 <mvt:item name="readytheme" param="contentsection('elements-core')" />
 

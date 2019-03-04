@@ -300,6 +300,7 @@
 					'u-bg-black': result.flags == 'Clearance',
 					'u-bg-yellow u-color-black': result.flags == 'Coming Soon',
 					'u-bg-green': result.flags == 'Featured',
+					'u-bg-green': result.flags == 'New',
 					'u-bg-black': result.flags == 'Limited Stock'}">
 				<span class="u-text-uppercase u-text-bold">{{result.flags}}</span>
 			</div>

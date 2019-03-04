@@ -69,7 +69,7 @@
 			This will create the store message from user input.
 			-->
 		</mvt:comment>
-		<mvt:assign name="l.mail:message" value="'Message from: ' $ g.contactName $ g.eol $ g.eol $ 'Email Address: ' $ g.contactEmail $ g.eol $ g.eol $ 'Message:' $ g.eol $ g.contactMessage" />
+		<mvt:assign name="l.mail:message" value="'Message from: ' $ g.contactName $ g.eol $ g.eol $ 'Email Address: ' $ g.contactEmail $ g.eol $ g.eol $ 'Message:' $ g.eol $ g.contactMessage $ g.eol $ g.eol $ 'Business Name: ' $ g.eol $ g.contactBusiness" />
 
 		<mvt:comment>
 			<!--

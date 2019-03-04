@@ -1,10 +1,17 @@
 <noscript>
 	<p class="x-messages x-messages--error" data-hook="contact-us__warning">You must javascript enabled to use this form.</p>
 </noscript>
-<h3 class="x-cstm-form__header u-text-center">Have Customization Questions?</h3>
+<mvt:if expr="'Mobile Shoe Store' CIN l.settings:category:name">
+	<mvt:assign name="l.settings:form:name" value="'Mobile Shoe Store'" />
+<mvt:elseif expr="'Business to Business' CIN l.settings:category:name OR 'Uniform Program' CIN l.settings:category:name">
+	<mvt:assign name="l.settings:form:name" value="l.settings:category:name" />
+<mvt:else>
+	<mvt:assign name="l.settings:form:name" value="'Customization'" />
+</mvt:if>
+<h3 class="x-cstm-form__header u-text-center">Have &mvte:form:name; Questions?</h3>
 <form class="x-cstm-form" data-hook="cstm-contact-form" data-action="&mvte:urls:CSFM:auto;" action="#" method="post" accept-charset="UTF-8">
 	<fieldset>
-		<legend>Customization Inquiry &mvte:global:store:name; Form</legend>
+		<legend>&mvte:form:name; Inquiry &mvte:global:store:name; Form</legend>
 		<mvt:comment>
 			<!--
 			This field is a spam-bot honeypot, it should not have a value!
@@ -29,6 +36,10 @@
 			<li class="c-form-list__item c-form-list__item--full">
 				<label class="c-form-label is-required u-text-uppercase u-text-bold" for="contactEmail">Email</label>
 				<input id="contactEmail" class="c-form-input" tabindex="4" type="email" name="contactEmail" value="&mvte:global:contactEmail;" placeholder="" required>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label u-text-uppercase u-text-bold" for="contactBusiness">Business Name</label>
+				<input id="contactBusiness" class="c-form-input" tabindex="4" type="text" name="contactBusiness" value="&mvte:global:contactBusiness;" placeholder="">
 			</li>
 			<mvt:comment>
 				<!--

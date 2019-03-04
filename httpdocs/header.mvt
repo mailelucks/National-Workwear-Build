@@ -221,7 +221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<hr class="c-keyline">
 			</div>
 		</section>
-	<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP'">
+	<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP' AND l.settings:page:code NE 'TERMS'">
 		<section class="o-layout">
 			<div class="o-layout__item">
 				<h1 class="c-heading-delta u-text-bold">&mvt:page:name;</h1>

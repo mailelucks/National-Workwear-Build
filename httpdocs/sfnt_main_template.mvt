@@ -12,8 +12,8 @@
 			<div class="x-sfnt--overlay x-sfnt--overlay--black-gradient"></div>
 			<div class="x-sfnt--overlay x-sfnt--overlay--grey"></div>
 			<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
-			<div class="x-hero--content x-sfnt--overlay-content u-flex o-layout--column o-layout--align-flex-start o-layout--justify-center" data-aos="fade-right" data-aos-once="true" data-anchor-placement="center"">
-				<h2 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white">&mvt:global:sfnt_hero:image_alt;</h2>
+			<div class="x-hero--content x-sfnt--overlay-content u-flex o-layout--column o-layout--align-flex-start o-layout--justify-center"">
+				<h1 class="u-sfnt-header--hero u-sfnt-header--white-grain u-sfnt-header u-font-secondary u-text-bold u-color-white">&mvt:global:sfnt_hero:image_alt;</h1>
 				<mvt:if expr="g.sfnt_hero:uri">
 					<div class="c-button t-nww-cta-button u-bg-white">
 						<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="&mvt:global:sfnt_hero:uri;" target="&mvt:global:sfnt_hero:link_targ;">
@@ -53,8 +53,10 @@
 		</div>
 	</div>
 	<div class="o-layout__item">
-		<div class="x-sfnt--customization--col-2 o-layout__item o-layout--justify-center u-hidden u-flex--l">
-			<mvt:if expr="g.customization:video_url:active">
+		<div class="x-sfnt--customization--col-2 o-layout__item o-layout--justify-center o-layout--align-center u-hidden u-flex--l">
+			<mvt:if expr="'youtube' CIN g.customization:video_url:message">
+				<iframe width="100%" height="600" class="x-iframe-video-lazy" data-src="&mvt:global:customization:video_url:message;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<mvt:elseif expr="g.customization:video_url:active">
 				<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
 					<video id="x-sfnt-customization-video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.jpg">
 					  <source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.mp4" type="video/mp4">
@@ -128,8 +130,12 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--align-top">
-			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center">
-				<mvt:if expr="g.featured_service_bravo:video_url:active">
+			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center o-layout--align-center">
+				<mvt:if expr="'youtube' CIN g.featured_service_bravo:video_url:message">
+					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center">
+						<iframe width="100%" height="560" class="x-iframe-video-lazy" data-src="&mvte:global:featured_service_bravo:video_url:message;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				<mvt:elseif expr="g.featured_service_bravo:video_url:active">
 					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
 						<video id="x-featured-service-bravo__video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.jpg">
 						  	<source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.mp4" type="video/mp4">
