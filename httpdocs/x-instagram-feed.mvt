@@ -22,7 +22,7 @@
 					</mvt:if>
 
 					<a class="x-sfnt--instagram-post o-layout-_item" href="&mvte:post:link;" target="_blank">
-						<img class="x-sfnt--instagram-img x-img-lazy" data-src="&mvte:post:images:standard_resolution:url;" alt="&mvte:post:caption:text;" title="&mvte:post:caption:text;" />
+						<img class="x-sfnt--instagram-img" data-lazy="&mvte:post:images:standard_resolution:url;" alt="&mvte:post:caption:text;" title="&mvte:post:caption:text;" />
 					</a>
 				</mvt:foreach>
 			</div>

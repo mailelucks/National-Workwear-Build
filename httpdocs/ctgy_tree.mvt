@@ -7,6 +7,11 @@
 	</div>
 	<ul class="x-category-tree__row">
 		<mvt:foreach array="cattree_categories" iterator="cattree_category">
+			
+			<mvt:comment>skip all categories assigned to ctgy_cstm alt display page</mvt:comment>
+			<mvt:if expr="l.settings:cattree_category:page_id EQ 99">
+				<mvt:foreachcontinue />
+			</mvt:if>
 			<li class="x-category-tree__list x-category-tree__list--level-&mvte:cattree_category:level;">
 				<mvt:if expr="NOT ISNULL l.settings:category:id AND l.settings:category:id EQ l.settings:cattree_category:id AND l.settings:page:code NE 'CTLG'">
 					<a class="x-category-tree__link x-category-tree__link--current" href="&mvte:cattree_category:link;" title="&mvte:cattree_category:name;">&mvte:cattree_category:name;</a>

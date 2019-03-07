@@ -37,12 +37,19 @@
 	<div class="o-layout__item">
 		<div class="x-sfnt--customization--col-1">
 			<h2 class="u-sfnt-header--customization u-sfnt-header u-font-secondary u-text-bold u-nww-color-secondary">Use Our In House Customization</h2>
-			<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
-				<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">
+			<mvt:if expr="'youtube' CIN g.customization:video_url:message">
+				<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:customization:video_url:message;">
 					<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
-				</span>
-				<span class="c-sfnt__video-button-text u-nww-color-secondary u-text-underline u-font-secondary" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/in-house-customization.mp4">Play Video</span>
-			</div>
+					<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
+				</a>
+			<mvt:elseif expr="g.customization:video_url:active">
+				<div class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-flex u-hidden--l">
+					<span class="x-sfnt--customization-video-placeholder u-flex o-layout--align-center o-layout--justify-center" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.mp4">
+						<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+					</span>
+					<span class="c-sfnt__video-button-text u-nww-color-secondary u-text-underline u-font-secondary" data-mini-modal data-mini-modal-type="iframe" href="/mm5/graphics/00000001/video_assets/&mvte:global:customization:video_url:message;.mp4">Play Video</span>
+				</div>
+			</mvt:if>
 			<mvt:item name="readytheme" param="contentsection( 'sfnt_customization_tabs' )" />
 			<div class="c-button t-nww-cta-button u-bg-white">
 				<a class="u-nww-color-secondary u-nww-bg-primary u-font-secondary u-flex o-layout--align-center o-layout--justify-center" href="/customization.html" target="_self">
@@ -105,10 +112,6 @@
 
 <section class="x-sfnt--featured-prods__container t-container">
 	<h2 class="u-sfnt-header u-text-center">Featured Products</h2>
-	<mvt:item name="readytheme" param="Load_ProductListing('featured_prods', g.sfnt_featured_prods_data )" />
-	<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.sfnt_featured_prods_data:code, g.sfnt_featured_prods_data )" />
-	<mvt:do file="g.Module_Feature_URI_UT" name="g.sfnt_featured_prods_data:uri" value="Store_Category_URL(g.sfnt_featured_prods_data, NULL)" />
-
 	<div class="x-featured-brands-prods u-width-12 u-text-center">
 		<a class="c-button t-nww-cta-button u-bg-white u-nww-color-secondary u-font-secondary u-bg-transparent u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
 			<span class="t-nww-cta-button__text">Shop All</span>
@@ -161,8 +164,13 @@
 						<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 					</a>
 				</div>
-				<mvt:if expr="g.featured_service_bravo:video_url:active">
-					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/in-house-customization.mp4">
+				<mvt:if expr="'youtube' CIN g.featured_service_bravo:video_url:message">
+					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:featured_service_bravo:video_url:message;">
+						<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
+						<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
+					</a>
+				<mvt:elseif expr="g.featured_service_bravo:video_url:active">
+					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;">
 						<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
 						<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
 					</a>

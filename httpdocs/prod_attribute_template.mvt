@@ -1,3 +1,4 @@
+
 <mvt:if expr="g.has_size GT 0">
     <ng-include src="app.mainTemplatePath"></ng-include>
     <mvt:foreach iterator="attribute" array="attributes">
@@ -58,6 +59,9 @@
     - Check in shadows/extensions/product-layout-ng/templates/
 </mvt:comment>
 <mvt:foreach iterator="attribute" array="attributes">
+    <mvt:if expr="g.quickview AND 'cm' CIN l.settings:attribute:code">
+        <mvt:foreachcontinue />
+    </mvt:if>
     <mvt:assign name="l.settings:attribute_ID" value="'l-' $ tolower(l.settings:attribute:code)" />
     <input data-attribute-type="&mvte:attribute:type;" type="hidden" name="Product_Attributes[&mvte:attribute:index;]:code" value="&mvte:attribute:code;">
     <mvt:if expr="l.settings:attribute:template_code NE 0">

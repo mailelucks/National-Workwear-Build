@@ -40,7 +40,7 @@
 	<mvt:item name="hdft" param="global_header" />
 
 	<section class="o-layout--column-reverse o-layout--row-reverse--l t-page-ctgy-wrapper u-flex">
-		<div class="o-layout__item u-width-12 u-width-9--l">
+		<div class="o-layout__item u-width-12 u-width-9--l u-width-10--xl">
 			<mvt:comment><mvt:if expr="NOT ISNULL l.settings:category_title:image">
 				<section class="o-layout u-hidden u-flex--l">
 					<div class="o-layout__item">
@@ -111,10 +111,10 @@
 				</div>
 			</section>
 		</div>
-		<aside class="o-layout__item u-width-12 u-width-3--l ">
+		<aside class="o-layout__item u-width-12 u-width-3--l u-width-2--xl">
 			<section class="o-layout u-hidden--l">
 				<div class="o-layout__item">
-					<p class="u-text-bold u-text-center">&mvte:category:name;</p>
+					<p class="u-text-bold u-text-center u-font-secondary c-category-mobile-header">&mvte:category:name;</p>
 					<mvt:if expr="NOT ISNULL l.settings:category_title:image">
 						<div class="x-hero" title="&mvte:category:name;">
 							<img src="&mvte:category_title:image;" alt="&mvte:category:name;">

@@ -38,6 +38,7 @@
 	<meta name="twitter:image:alt" content="&mvte:product:name;">
 </head>
 
+<mvt:assign name="g.quickview" value="1" />
 <mvt:item name="customfields" param="Read_Product_ID( l.settings:product:id, 'brands_assignment', l.settings:product:brand_assignment )" />
 <mvt:item name="customfields" param="Read_Category_Code( l.settings:product:brand_assignment, 'brands_logo', l.settings:product:brand_logo )" />
 
@@ -45,7 +46,7 @@
 	
 	<section class="o-layout--wide u-flex u-grids-2 x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
 		<figure class="o-layout__item u-text-center x-product-layout-images u-flex o-layout--align-center o-layout--column">
-			<img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+			<img id="main_image" class="x-product-layout-images__image-qv" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
 			<ul id="thumbnails" class="o-layout o-layout--flush x-product-layout-images__thumbnail-list"></ul>
 			<mvt:item name="product_display_imagemachine" param="body:product:id"/>
 		</figure>
@@ -108,7 +109,7 @@
 				</li>
 				<li class="c-form-list__item c-form-list__item--full x-product-layout-purchase__cta">
 					<div class="x-product-layout-purchase__message" data-hook="purchase-message"></div>
-					<div class="o-layout">
+					<div class="o-layout o-layout--align-bottom">
 						<mvt:if expr="l.settings:subscription:enabled AND l.settings:subscription:mandatory">
 							<mvt:if expr="l.settings:product:inv_level NE 'out'">
 								<div class="o-layout__item u-width-12 u-width-4--m x-product-layout-purchase__options-quantity">
@@ -133,7 +134,7 @@
 									<button class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
 								</div>
 							</div>
-							<p class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between">
+							<p class="x-product-layout-purchase__cta-buttons o-layout__item u-width-7 u-flex o-layout--align-center o-layout--justify-between">
 								<mvt:if expr="l.settings:product:inv_level NE 'out'">
 									<span class="o-layout__item x-product-layout__purchase-button" onclick="document.forms.add.action = '&mvtj:urls:BASK:auto;'; document.forms.add.elements.Action.value = 'ADPR';">
 										<mvt:item name="buttons" param="AddToBasket"/>

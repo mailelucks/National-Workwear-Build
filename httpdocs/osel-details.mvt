@@ -172,7 +172,7 @@
 					</ul>
 					<ul class="c-form-list">
 						<li class="c-form-list__item c-form-list__item--full u-text-right">
-							<input class="c-nww-cart-button c-button c-button--large u-bg-gray-50 u-font-small u-text-medium " type="submit" value="Continue to Payment">
+							<input class="c-nww-cart-button c-button c-button--large u-nww-bg-secondary u-color-white u-font-secondary u-font-small u-text-medium" type="submit" value="Continue to Payment">
 						</li>
 					</ul>
 				</fieldset>
