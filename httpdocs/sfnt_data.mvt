@@ -17,6 +17,7 @@
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_tablet', g.sfnt_featured_service_bravo_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_mobile', g.sfnt_featured_service_bravo_mobile)" />
+<mvt:item name="readytheme" param="Load_Banner('sfnt_featured_service_bravo_youtube', g.featured_service_bravo:yt_video )" />
 <mvt:item name="readytheme" param="Load_Banner('sfnt_featured_service_bravo_video', g.featured_service_bravo:video_url )" />
 
 <mvt:comment>FEATURED SERVICE CHARLIE</mvt:comment>

@@ -145,7 +145,8 @@ app.controller('QuickOrderController', function($scope, $http) {
 								product.no_addcart = true;
 								looping = false;
 							}
-							if('template_code' in attribute && attribute.template_code != ''){
+							console.log(attribute);
+							if('template_code' in attribute && attribute.template_code.indexOf('cm_') != -1 ){
 								product.no_addcart = true;
 								looping = false;
 							}
@@ -229,7 +230,7 @@ app.controller('QuickOrderController', function($scope, $http) {
 				is_already_selected = true;
 				selected_product.quantity_selected += new_product.quantity_add;
 			}
-			console.log(selected_product);
+			// console.log(selected_product);
 			return selected_product;
 		});
 
@@ -375,6 +376,9 @@ app.controller('QuickOrderController', function($scope, $http) {
 				}
 
 			});
+			/*.catch(function( error ) {
+				console.error( error );
+			});*/
 		});
 	};
 
