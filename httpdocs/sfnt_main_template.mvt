@@ -101,8 +101,8 @@
 			<div class="o-layout__item x-featured-service-alpha--col-2">
 				<mvt:item name="readytheme" param="contentsection( 'sfnt_featured_services_alpha' )" />
 				<a class="t-nww-cta-button t-nww-cta-text-button u-color-white u-font-secondary u-flex o-layout--align-center o-layout--justify-start" href="&mvt:global:sfnt_featured_service_alpha:uri;" target="&mvt:global:sfnt_featured_service_alpha:link_targ;">
-					<span class="t-nww-cta-button__text">Learn More</span>
-					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
+					<span class="t-nww-cta-button__text u-nww-color-primary">Learn More</span>
+					<span class="t-nww-cta-button__icon u-nww-icon-arrow-long u-nww-color-primary"></span>
 				</a>
 			</div>
 		</div>
@@ -111,7 +111,7 @@
 <!-- end featured service alpha -->
 
 <section class="x-sfnt--featured-prods__container t-container">
-	<h2 class="u-sfnt-header u-text-center">Featured Products</h2>
+	<h2 class="u-sfnt-header u-sfnt-header--featured-products u-text-center">Featured Products</h2>
 	<div class="x-featured-brands-prods u-width-12 u-text-center">
 		<a class="c-button t-nww-cta-button u-bg-white u-nww-color-secondary u-font-secondary u-bg-transparent u-flex o-layout--align-center o-layout--justify-center" href="&mvte:global:sfnt_featured_prods_data:uri;">
 			<span class="t-nww-cta-button__text">Shop All</span>
@@ -133,20 +133,17 @@
 		<div class="x-sfnt--overlay x-sfnt--overlay--black"></div>
 		<div class="x-sfnt--overlay x-sfnt--overlay--grain"></div>
 		<div class="x-featured-service-bravo--content x-sfnt--overlay-content o-layout o-layout--align-top">
-			<div class="o-layout__item x-featured-service-bravo--col-1 u-hidden u-flex--l o-layout--justify-center o-layout--align-center">
-				<mvt:if expr="g.featured_service_bravo:yt_video:active">
-					<div id="service_video" class="x-nww-video" data-hook="x-video--yt__target"></div>
-					<div class="x-video--yt__preloader" data-hook="x-video--yt__preloader" data-youtube-id="&mvte:global:featured_service_bravo:yt_video:message;" data-bg="url(//img.youtube.com/vi/&mvte:global:featured_service_bravo:yt_video:message;/hqdefault.jpg)">
-						<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-nww-bg-primary">
-						  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
-						</button>
+			<div class="o-layout__item x-featured-service-bravo--col-1 &mvt:global:featured_service_bravo:class; u-hidden u-flex--l o-layout--justify-center o-layout--align-center">
+				<mvt:if expr="'youtube' CIN g.featured_service_bravo:video_url:message">
+					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center">
+						<iframe width="100%" height="560" class="x-iframe-video-lazy" data-src="&mvte:global:featured_service_bravo:video_url:message;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				<mvt:elseif expr="g.featured_service_bravo:video_url:active">
 					<div class="x-nww-video u-flex o-layout--align-center o-layout--justify-center" data-hook="nww-video">
 						<video id="x-featured-service-bravo__video" class="c-sfnt__video x-img-lazy" poster="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.jpg">
 						  	<source src="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.mp4" type="video/mp4">
 						  	<p>Your browser doesn't support HTML5 video. Here is
-						     a <a href="&mvt:global:domain:image_root;graphics/00000001/video_assets/&mvte:global:featured_service_bravo:video_url:message;.mp4">link to the video</a> instead.</p>
+						     a <a href="mobile_shoe_service.mp4">link to the video</a> instead.</p>
 						</video>
 						<button type="button" class="c-sfnt__video-button c-video-button c-video-button--play c-nww-play-pause__button u-flex o-layout--justify-center o-layout--align-center u-nww-bg-primary">
 						  	<span class="c-sfnt__video-button-icon u-nww-play-pause--icon u-nww-icon-arrow-play u-nww-bg-primary u-nww-color-secondary"></span>
@@ -167,8 +164,8 @@
 						<span class="t-nww-cta-button__icon u-nww-icon-arrow-long"></span>
 					</a>
 				</div>
-				<mvt:if expr="g.featured_service_bravo:yt_video:active">
-					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="https://www.youtube.com/embed/&mvte:global:featured_service_bravo:yt_video:message;">
+				<mvt:if expr="'youtube' CIN g.featured_service_bravo:video_url:message">
+					<a class="c-sfnt__video-button c-sfnt__video-button--mobile u-flex o-layout--justify-start o-layout--align-center u-hidden" data-mini-modal data-mini-modal-type="iframe" href="&mvt:global:featured_service_bravo:video_url:message;">
 						<span class="c-sfnt__video-button-icon c-video-button u-nww-icon-arrow-play u-bg-white u-nww-color-secondary"></span>
 						<span class="c-sfnt__video-button-text u-color-white u-text-underline u-font-secondary">Play Video</span>
 					</a>

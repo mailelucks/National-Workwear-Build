@@ -26,11 +26,11 @@
 		<figure class="x-product-list__figure u-flex o-layout--column o-layout__item">
 
 			<mvt:comment>image assignments for outfit images, backup for mislabelled main image and no image</mvt:comment>
-			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1 AND l.pos1 EQ 5">
+			<mvt:if expr="l.settings:page:code EQ 'SFNT' AND NOT ISNULL l.settings:product_list:imagetypes:prod_outfit AND g.tall_outfit EQ 1">
 				<mvt:assign name="l.settings:product_list:imagetypes:main" value="l.settings:product_list:imagetypes:prod_outfit" />
 				<mvt:assign name="l.settings:product_list:tall_class" value="'x-product-list__outfit-image'" />
-			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main">
-				<mvt:assign name="l.settings:product_list:imagetypes:main" value=" g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+			<mvt:elseif expr="ISNULL l.settings:product_list:imagetypes:main OR NOT sexists( '/mm5/' $ l.settings:product_list:imagetypes:main )">
+				<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.theme_path $ '/core/images/img_no_thumb.jpg'" />
 			<mvt:else>
 				<mvt:if expr="ISNULL l.settings:product_list:imagetypes:main AND l.settings:product_list:imagetypes:Addtl">
 					<mvt:assign name="l.settings:product_list:imagetypes:main" value="g.domain:image_root $ l.settings:product_list:imagetypes:Addtl" />
@@ -64,7 +64,6 @@
 			<div class="x-product-list__image__container u-flex o-layout--align-center &mvte:product_list:tall_class;">
 				<mvt:assign name="l.settings:product_list:tall_class" value="''" />
 				<mvt:if expr="l.settings:product_list:imagetypes:product_hover">
-
 					<mvt:if expr="ISNULL l.settings:productimagedatalist[2]:generatedimages[1]:image">
 					    <mvt:do file="g.Module_Library_DB" name="l.success" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:productimagedatalist[2]:image, l.constraints[1]:width, l.constraints[1]:height, l.settings:generatedimage )" />
 					    <mvt:if expr="ISNULL l.settings:generatedimage:image AND NOT ISNULL l.settings:productimagedatalist[2]:image:image">
@@ -74,19 +73,11 @@
 					    <mvt:assign name="l.settings:product_list:imagetypes:product_hover" value="l.settings:productimagedatalist[2]:generatedimages[1]:image" />
 					</mvt:if>
 
-					<mvt:if expr="l.settings:pos1 LT 5">
-						<img class="x-product-list__image x-product-list__hover-image" src="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
-					<mvt:else>
-						<img class="x-product-list__image x-product-list__hover-image" data-lazy="&mvte:product_list:imagetypes:product_hover;" alt="&mvte:product_list:name;" />
-					</mvt:if>
+					<img class="x-product-list__image x-product-list__hover-image" data-lazy="&mvte:product_list:imagetypes:product_hover;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="&mvte:product_list:name;" />
 					<mvt:assign name="l.settings:product_list:hover_class" value="'hover-active'" />
 				</mvt:if>
-
-				<mvt:if expr="l.settings:pos1 LT 5">
-					<img class="x-product-list__image &mvte:product_list:hover_class;" src="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
-				<mvt:else>
-					<img class="x-product-list__image &mvte:product_list:hover_class;" data-lazy="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
-				</mvt:if>
+				
+				<img class="x-product-list__image &mvte:product_list:hover_class;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-lazy="&mvte:product_list:imagetypes:main;" alt="&mvte:product_list:name;">
 				
 			</div>
 			<figcaption class="u-text-left u-block">

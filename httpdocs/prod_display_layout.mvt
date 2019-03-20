@@ -18,6 +18,11 @@
     <mvt:assign name="g.apply_ng" value="1" />
 </mvt:if>
 
+<mvt:if expr="ISNULL l.settings:product:customfield_values:productimagecustomfields:main OR NOT sexists( g.domain:image_root $ l.settings:product:customfield_values:productimagecustomfields:main )">
+    <mvt:assign name="l.settings:product:customfield_values:productimagecustomfields:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
+    <mvt:assign name="l.settings:product:show_backup" value="1" />
+</mvt:if>
+
 <section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
     <div class="x-product-layout--col-1 o-layout__item">
         <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
@@ -28,7 +33,11 @@
                 </a>
             </noscript>
             <a id="x-product-layout-images__container" data-mini-modal data-mini-modal-type="inline" class="u-flex o-layout--justify-center o-layout--align-center" href="#closeup_image" title="&mvte:product:name;">
-                <img id="main_image" class="x-product-layout-images__image" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+                <mvt:if expr="l.settings:product:show_backup">
+                    <img id="no_main_image" class="x-product-layout-images__image" src="&mvte:product:customfield_values:productimagecustomfields:main;" alt="&mvte:product:name;" title="&mvte:product:name;">
+                <mvt:else>
+                     <img id="main_image" class="x-product-layout-images__image" src="&mvte:product:customfield_values:productimagecustomfields:main;" alt="&mvte:product:name;" title="&mvte:product:name;">
+                </mvt:if>
             </a>
             <img id="closeup_image" class="u-hide-visually" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
             <span id="closeup_close" class="u-hidden">
@@ -63,6 +72,7 @@
                 mivaPROD.base_price = &mvt:product:base_price;;
                 mivaPROD.customer = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.customer )" />;
                 mivaPROD.logn = '&mvte:urls:LOGN:secure;';
+                mivaPROD.bask = '&mvte:urls:BASK:secure;';
                 mivaPROD.wlgn = '&mvte:urls:WLGN:secure;';
                 mivaPROD.wlst = '&mvte:urls:WLST:secure;';
                 mivaPROD.wish = '&mvte:urls:WISH:secure;';
@@ -240,7 +250,7 @@
                                 </mvt:if>
                                 <div class="o-layout__item x-wlst-button" data-mmnodisable="true">
                                     <mvt:if expr="g.has_size GT 0">
-                                        <div onclick="return false;">
+                                        <div onclick="return false;" ng-class="{'was--added' : app.wishlistSuccess}">
                                             <mvt:comment><mvt:item name="buttons" param="AddToWishList"/></mvt:comment>
                                              <button data-temp="&mvtj:urls:WISH:secure;" ng-click="addTo('wishlist', 0)" type="submit" value="Add To Wish List" class="o-layout__item c-button u-text-bold u-nww-icon-wishlist u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" /></button>
                                             <mvt:comment><mvt:item name="readytheme" param="thirdpartysharing" /></mvt:comment>
@@ -272,13 +282,30 @@
             </mvt:comment>
         </form>
         
+        <mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:x_prod_specs_tabs" value="Transient_ReadyTheme_ContentSection_Lowlevel( l.settings:product:code $ '__tabs', 'x_prod_specs_tabs', 24*60*60, l.settings )" />
+        <mvt:do file="g.Module_Root $ '/modules/util/transients.mvc'" name="l.settings:x_customers_also_bought" value="Transient_ReadyTheme_ContentSection_Lowlevel( l.settings:product:code $ '__alsobought', 'x_customers_also_bought', 24*60*60, l.settings )" />
+        
+        <mvt:if expr="l.settings:x_customers_also_bought">
+            <div id="x_prod_specs_tabs">
+                &mvt:x_prod_specs_tabs;
+            </div>
+        <mvt:else>
+            <mvt:comment> <!-- Failsafe! --> </mvt:comment>
         <mvt:item name="readytheme" param="contentsection( 'x_prod_specs_tabs' )" />
+        </mvt:if>
 
         <mvt:if expr="l.settings:related_product_count NE 0">
             <mvt:item name="related_products" />
         </mvt:if>
 
-        <mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
+        <mvt:if expr="l.settings:x_customers_also_bought">
+            <div id="x_customers_also_bought">
+                &mvt:x_customers_also_bought;
+            </div>
+        <mvt:else>
+            <mvt:comment> <!-- Failsafe! --> </mvt:comment>
+            <mvt:item name="readytheme" param="contentsection( 'x_customers_also_bought' )" />
+        </mvt:if>
 
         <mvt:item name="readytheme" param="contentsection( 'x_recently_viewed' )" />
         

@@ -17,7 +17,6 @@
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo', g.sfnt_featured_service_bravo)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_tablet', g.sfnt_featured_service_bravo_tablet)" />
 <mvt:item name="readytheme" param="Load_Image('sfnt_featured_service_bravo_mobile', g.sfnt_featured_service_bravo_mobile)" />
-<mvt:item name="readytheme" param="Load_Banner('sfnt_featured_service_bravo_youtube', g.featured_service_bravo:yt_video )" />
 <mvt:item name="readytheme" param="Load_Banner('sfnt_featured_service_bravo_video', g.featured_service_bravo:video_url )" />
 
 <mvt:comment>FEATURED SERVICE CHARLIE</mvt:comment>
@@ -44,10 +43,10 @@
 	<mvt:elseif expr="g.sfnt_hero:link_type EQ 'U'">
 		<mvt:assign name="g.sfnt_hero:uri" value="g.sfnt_hero:link_dest" />
 	<mvt:else>
-		<mvt:assign name="g.sfnt_hero:uri" value="NULL" />
+		<mvt:assign name="g.sfnt_hero:uri" value="''" />
 	</mvt:if>
 <mvt:else>
-	<mvt:assign name="g.sfnt_hero:uri" value="NULL" />
+	<mvt:assign name="g.sfnt_hero:uri" value="''" />
 </mvt:if>
 
 <mvt:if expr="g.sfnt_featured_service_alpha:link_type NE 'N'">
@@ -64,10 +63,10 @@
 	<mvt:elseif expr="g.sfnt_featured_service_alpha:link_type EQ 'U'">
 		<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="g.sfnt_featured_service_alpha:link_dest" />
 	<mvt:else>
-		<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="NULL" />
+		<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="''" />
 	</mvt:if>
 <mvt:else>
-	<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="NULL" />
+	<mvt:assign name="g.sfnt_featured_service_alpha:uri" value="''" />
 </mvt:if>
 
 <mvt:if expr="g.sfnt_featured_service_bravo:link_type NE 'N'">
@@ -84,10 +83,10 @@
 	<mvt:elseif expr="g.sfnt_featured_service_bravo:link_type EQ 'U'">
 		<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="g.sfnt_featured_service_bravo:link_dest" />
 	<mvt:else>
-		<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="NULL" />
+		<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="''" />
 	</mvt:if>
 <mvt:else>
-	<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="NULL" />
+	<mvt:assign name="g.sfnt_featured_service_bravo:uri" value="''" />
 </mvt:if>
 
 <mvt:if expr="g.sfnt_featured_service_charlie:link_type NE 'N'">
@@ -104,8 +103,8 @@
 	<mvt:elseif expr="g.sfnt_featured_service_charlie:link_type EQ 'U'">
 		<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="g.sfnt_featured_service_charlie:link_dest" />
 	<mvt:else>
-		<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="NULL" />
+		<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="''" />
 	</mvt:if>
 <mvt:else>
-	<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="NULL" />
+	<mvt:assign name="g.sfnt_featured_service_charlie:uri" value="''" />
 </mvt:if>

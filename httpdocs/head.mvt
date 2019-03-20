@@ -272,3 +272,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </mvt:if>
  
 <mvt:comment>END: SearchSpring Integration</mvt:comment>
+
+<mvt:comment>applepay</mvt:comment>
+<mvt:item name="applepay" param="head" />
