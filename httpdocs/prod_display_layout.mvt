@@ -25,6 +25,15 @@
 
 <section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
     <div class="x-product-layout--col-1 o-layout__item">
+        <div class="u-shown u-hidden--l">
+            <mvt:if expr="g.ctgy_cfs:brands_logo">
+                <img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:brands_logo;">
+            </mvt:if>
+            <span class="u-color-gray-20 c-heading--subheading x-product-layout-purchase__code u-text-bold">&mvt:product:code;</span>
+            <h1 class="c-heading-delta u-text-bold x-product-layout-purchase__name">
+                <span itemprop="name">&mvt:product:name;</span>
+            </h1>
+        </div>
         <figure class="o-layout__item u-text-center x-product-layout-images u-flex">
             <ul id="thumbnails"></ul>
             <noscript>
@@ -99,7 +108,7 @@
            
         
             <ul class="o-layout__item o-list-bare x-product-layout-purchase__details">
-                <li class="o-list-block__item">
+                <li class="o-list-block__item u-hidden u-shown--l">
                     <mvt:if expr="g.ctgy_cfs:brands_logo">
                         <img class="x-product-layout__logo" src="&mvte:global:domain:image_root;&mvt:global:ctgy_cfs:brands_logo;">
                     </mvt:if>
@@ -174,13 +183,21 @@
                                 </p>
                             </mvt:if>
                         <mvt:else>
-                            <div <mvt:if expr="g.has_size GT 0">ng-class="{ 'u-hide-visually' : app.mmAttributes.sizes.length > 1}"</mvt:if> class="o-layout__item u-width-5--l x-product-layout-purchase__options-quantity">
+                            <div <mvt:if expr="g.has_size GT 0">ng-class="{'no--customizer' : app.mmAttributes.mmCustomize.length==0}" ng-class="{ 'u-hide-visually' : app.mmAttributes.sizes.length > 1}"</mvt:if> class="o-layout__item u-width-5--l x-product-layout-purchase__options-quantity">
                                 <label class="c-form-label u-text-bold u-font-small u-color-gray-40 is-required" for="l-quantity">Quantity</label>
                                 <div class="x-quantify c-control-group t-quantify u-font-small" data-hook="quantify">
                                     <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('-')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-minus" data-action="decrement"></button>
                                     <input <mvt:if expr="g.has_size GT 0">ng-model="app.singleQuantity" ng-change="quantityChange()" ng-cloak</mvt:if> class="c-form-input c-control-group__field u-text-center u-text-bold" type="tel" name="Quantity" value="<mvt:if expr="g.has_size GT 0">{{app.singleQuantity}}<mvt:else>1</mvt:if>">
                                     <button <mvt:if expr="g.has_size GT 0">ng-click="quantityChange('+')"</mvt:if> class="c-button c-control-group__button u-bg-white u-nww-icon-plus" data-action="increment"></button>
                                 </div>
+                                <mvt:if expr="g.has_size GT 0">
+                                    <div class="mobile-customize-it" ng-if="app.mmAttributes.mmCustomize.length > 0" >
+                                        <label for="mm_customize_parts_mobile" ng-class="{ 'is-customizing' : app.show_customizer == 1}">
+                                            <input id="mm_customize_parts_mobile" type="checkbox" ng-model="app.show_customizer">
+                                            <span class="u-nww-icon-customizeit"></span> <b>Customize</b>
+                                        </label>
+                                    </div>  
+                                </mvt:if>
                             </div>
                             <div class="x-product-layout-purchase__cta-buttons o-layout__item u-width-12 u-flex o-layout--align-center o-layout--justify-between o-layout--wrap">
                                 <mvt:if expr="ISNULL g.customer:id AND g.has_size GT 0">

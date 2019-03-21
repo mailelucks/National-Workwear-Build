@@ -98,7 +98,7 @@
 	</a>
 	<mvt:if expr="l.settings:page:code NE 'PROD'">
 		<div class="x-product-list__cta-container u-flex o-layout--align-center o-layout--justify-between">
-			<a class="o-layout__item c-button x-product-list__button u-text-bold u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product_list:link;" title="&mvte:product_list:name;">Shop Now</a>
+			<a class="o-layout__item c-button x-product-list__button u-nww-bg-primary u-nww-color-secondary u-flex o-layout--align-center o-layout--justify-center u-font-secondary" href="&mvte:product_list:link;" title="&mvte:product_list:name;">Shop Now</a>
 			<a class="o-layout__item c-button x-product-list__quickview u-text-bold u-nww-icon-zoom u-nww-bg-secondary u-flex o-layout--align-center o-layout--justify-center u-text-bold" data-mini-modal data-mini-modal-type="iframe" href="&mvte:product_list:link;?show=quickview"></a>
 		</div>
 	</mvt:if>

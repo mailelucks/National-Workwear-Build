@@ -1,5 +1,5 @@
 <form class="t-newsletter-form">
-	<h5 class="c-menu__title u-text-center">Sign Up to Receive News About Discounts and Sales!</h5>
+	<h5 class="c-menu__title u-text-center">Receive News About Products and Sales!</h5>
 	<mvt:comment>Might add in later?</mvt:comment>
 	<mvt:comment>
 		<input name="FNAME" value="First Name" data-mailchimp-identifier="global-mailchimp-merge-fields" />
@@ -7,8 +7,8 @@
 	</mvt:comment>
 	<fieldset>
 		<div class="c-form-list u-flex">
-			<input class="c-form-input c-control-group__field u-bg-white u-border-none t-newsletter-form__input" data-mailchimp-identifier="global-mailchimp-email" type="text" name="Email_Address" placeholder="Email Address" />
-			<input class="c-button c-control-group__button nww-bg-primary u-font-secondary u-color-black u-border-none u-text-bold u-nww-bg-primary" type="button t-nww-cta-button" title="Sign Up" value="Sign Up" onclick="MailChimp_NewsLetter_Signup_Submit( 'global-mailchimp' );" />
+			<input class="c-form-input c-control-group__field u-bg-white u-border-none t-newsletter-form__input u-width-7 u-width-9--m" data-mailchimp-identifier="global-mailchimp-email" type="text" name="Email_Address" placeholder="Email Address" />
+			<input class="c-button c-control-group__button nww-bg-primary u-font-secondary u-color-black u-border-none u-text-bold u-nww-bg-primary u-width-5 u-width-3--m" type="button t-nww-cta-button" title="Sign Up" value="Sign Up" onclick="MailChimp_NewsLetter_Signup_Submit( 'global-mailchimp' );" />
 		</div>
 		<div class="mailchimp_message u-text-bold u-text-center" data-mailchimp-identifier="global-mailchimp-message"></div>
 	</fieldset>

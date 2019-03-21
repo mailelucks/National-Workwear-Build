@@ -65,7 +65,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			
 			<span class="o-layout__item u-nww-icon-search t-search-icon-header u-text-right u-flex-static u-hidden--l" data-hook="mobile-search"></span>
 
-			<div class="t-site-header__search-container u-hidden u-flex--l u-over-everything o-layout__item &mvt:global:checkout_hidden;" itemscope itemtype="http://schema.org/WebSite" id="desktop-search-form">
+			<div class="t-site-header__search-container u-hidden u-flex--l o-layout--justify-end u-over-everything o-layout__item &mvt:global:checkout_hidden;" itemscope itemtype="http://schema.org/WebSite" id="desktop-search-form">
 				<meta itemprop="url" content="//&mvt:global:domain:name;/"/>
 				<form class="t-site-header__search-form u-over-everything" method="get" action="&mvte:urls:shop:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 					<fieldset>

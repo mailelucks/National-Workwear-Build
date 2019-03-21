@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5dcc0k');
+  src:  url('fonts/icomoon.eot?5dcc0k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5dcc0k') format('truetype'),
+    url('fonts/icomoon.woff?5dcc0k') format('woff'),
+    url('fonts/icomoon.svg?5dcc0k#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-customize:before {
+  content: "\e914";
+}
+.icon-NW_Icons_Replay:before {
+  content: "\e912";
+}
+.icon-NW_Icons_Pause:before {
+  content: "\e913";
+}
+.icon-iconmonstr-zoom-in-thin:before {
+  content: "\e900";
+}
+.icon-Close:before {
+  content: "\e901";
+}
+.icon-Open:before {
+  content: "\e902";
+}
+.icon-Check:before {
+  content: "\e903";
+}
+.icon-Down_Arrow:before {
+  content: "\e904";
+}
+.icon-Facebook:before {
+  content: "\e905";
+}
+.icon-Google:before {
+  content: "\e906";
+}
+.icon-Icons-06:before {
+  content: "\e907";
+}
+.icon-Pinterest:before {
+  content: "\e908";
+}
+.icon-Size:before {
+  content: "\e909";
+}
+.icon-Twitter:before {
+  content: "\e90a";
+}
+.icon-Wishlist:before {
+  content: "\e90b";
+}
+.icon-Arrow_Left:before {
+  content: "\e90c";
+}
+.icon-Arrow_Long:before {
+  content: "\e90d";
+}
+.icon-Arrow_Play:before {
+  content: "\e90e";
+}
+.icon-Phone:before {
+  content: "\e90f";
+}
+.icon-Search:before {
+  content: "\e910";
+}
+.icon-Arrow_Right:before {
+  content: "\e911";
+}
