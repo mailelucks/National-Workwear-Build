@@ -167,7 +167,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</mvt:if>
 </mvt:if>
 <mvt:if expr="'PROD' CIN l.settings:page:code">
-	
 	<mvt:item name="breadcrumbs" />
 </mvt:if>
 

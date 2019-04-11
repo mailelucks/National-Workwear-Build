@@ -19,8 +19,6 @@
 		</mvt:comment>
 		<input class="u-hide-visually" type="text" name="website">
 		<ul class="c-form-list">
-			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--success">Thank you for your inquiry. A &mvte:global:store:name; representative will contact you shortly.</li>
-			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--error">We're sorry, there was a problem processing your request. Please check errors.</li>
 			<li class="c-form-list__item c-form-list__item--full">
 				<label class="c-form-label is-required u-text-uppercase u-text-bold" for="contactFirstName">First Name</label>
 				<input id="contactFirstName" class="c-form-input" tabindex="1" type="text" name="contactFirstName" value="&mvte:global:contactFirstName;" required>
@@ -71,6 +69,8 @@
 			<li class="c-form-list__item c-form-list__item--full">
 				<button class="c-button c-button--full c-button--large u-nww-bg-primary u-nww-color-secondary u-font-secondary" data-hook="cstm-contact-form__submit" type="submit" name="submit" disabled>Submit Form</button>
 			</li>
+			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--success">Thank you for your inquiry. A &mvte:global:store:name; representative will contact you shortly.</li>
+			<li class="c-form-list__item u-hidden c-form-list__item--full x-messages x-messages--error">We're sorry, there was a problem processing your request. Please check errors.</li>
 		</ul>
 	</fieldset>
 </form>

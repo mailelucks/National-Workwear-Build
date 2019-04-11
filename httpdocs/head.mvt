@@ -1,3 +1,4 @@
+<link rel="icon" href="/favicon.png?v=1.1"> 
 <mvt:if expr="'CTGY' CIN l.settings:page:code">
 	<link rel="canonical" href="&mvte:category:link;" itemprop="url">
 <mvt:elseif expr="'PROD' CIN l.settings:page:code OR l.settings:page:code EQ 'PATR'">
@@ -98,9 +99,27 @@
 	dataLayer.push({
 		"pageCode": "&mvtj:page:code;",
 		<mvt:if expr="g.Screen EQ 'NTFD'">
-		  "canonicalUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
-		  "event": "NTFD",
-		</mvt:if>
+			"canonicalUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
+		  	"event": "NTFD",
+		<mvt:elseif expr="g.Screen EQ 'SRCH' OR g.Screen EQ 'SHOP'">
+			"canonicalUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
+         	"searchTerm": "&mvte:global:Search;",
+          	"event": "SRCH",
+        <mvt:elseif expr="g.Screen EQ 'OCST'">
+        	"canonicalUri": "/CHECKOUT",
+        <mvt:elseif expr="g.Screen EQ 'OSEL'">
+        	"canonicalUri": "/SHIPPING",
+        <mvt:elseif expr="g.Screen EQ 'OPAY'">
+        	"canonicalUri": "/PAYMENT",
+        <mvt:elseif expr="g.Screen EQ 'INVC' OR l.settings:page:code EQ 'INVC'">
+        	"canonicalUri": "/INVOICE",
+        <mvt:elseif expr="g.Screen EQ 'OUS1' OR g.Screen EQ 'OUSM' OR g.Screen EQ 'UATR' OR g.Screen EQ 'UATM'">
+        	"canonicalUri": "/UPSELL",
+        <mvt:else>
+        	"canonicalUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
+      	</mvt:if>
+      	"requestUri": "<mvt:eval expr="encodejavascriptstring( s.request_uri )" />",
+      	"refererUri": "<mvt:eval expr="encodejavascriptstring( s.http_referer )" />",
 		"pageType": "&mvtj:datalayer:pageType;",
 		"pageName": "&mvtj:datalayer:pageName;",
 		"userId": "&mvtj:global:basket:cust_id;",
@@ -133,26 +152,26 @@
 		});
 	</mvt:if>
 	<mvt:if expr="l.settings:page:code EQ 'INVC'">
-	<mvt:foreach iterator="charge" array="order:charges">
-		<mvt:if expr="l.settings:charge:type EQ 'TAX'">
-			<mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
-		<mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
-			<mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
+		<mvt:foreach iterator="charge" array="order:charges">
+			<mvt:if expr="l.settings:charge:type EQ 'TAX'">
+				<mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
+			<mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
+				<mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="'['" />
 		</mvt:if>
-	</mvt:foreach>
-	<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
-		<mvt:assign name="l.settings:content_ids" value="'['" />
-	</mvt:if>
-	<mvt:foreach iterator="item" array="order:items">
-		<mvt:if expr="POS1 GT 1">
-			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
-		<mvt:else>
-			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+		<mvt:foreach iterator="item" array="order:items">
+			<mvt:if expr="POS1 GT 1">
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			<mvt:else>
+				<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+			</mvt:if>
+		</mvt:foreach>
+		<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
+			<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
 		</mvt:if>
-	</mvt:foreach>
-	<mvt:if expr="miva_array_elements(l.settings:order:items) GT 1">
-		<mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
-	</mvt:if>
 		dataLayer.push({
 		'ecommerce': {
 			'purchase': {
@@ -249,7 +268,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <mvt:comment>SearchSpring Integration</mvt:comment>
- 
+
+<mvt:comment>Customer Availability Groups</mvt:comment>
+<mvt:assign name="ss_agroup" value="''" />
+<mvt:do file="g.Module_Feature_AGR_DB" name="l.success" value="AvailabilityGroupList_Load_All( l.settings:availability_groups )" />
+<mvt:foreach iterator="availability_group" array="availability_groups">
+    <mvt:do file="g.Module_Feature_AGR_DB" name="l.success" value="AvailGroupXCustomer_Load(l.settings:availability_group:id, g.customer:id, l.settings:availgroupxcustomer)" />
+    <mvt:if expr="l.settings:availgroupxcustomer">
+        <mvt:assign name="l.index" value="miva_array_insert_var( l.settings:ss_agroup, l.settings:availability_group:name, 1 )" />
+    </mvt:if>
+</mvt:foreach>
+
 <mvt:if expr="l.settings:page:code EQ 'CTGY' AND l.settings:category_listing:total_prod_count GT 0">
     <!-- generate background filter -->
     <mvt:assign name="g.ss_hierarchy" value="''" />
@@ -264,11 +293,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  
     <mvt:assign name="g.ss_encoded" value="encodeattribute(g.ss_hierarchy)" />
       
-    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" catcode="&mvte:category:code" breadcrumbs="&mvt:global:ss_encoded"></script>
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb"<mvt:if expr="l.settings:ss_agroup"> group="&mvt:ss_agroup"</mvt:if> catcode="&mvte:category:code" breadcrumbs="&mvt:global:ss_encoded"></script>
 <mvt:elseif expr="l.settings:page:code EQ 'shop'">
-    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" search="Search"></script>	
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb"<mvt:if expr="l.settings:ss_agroup"> group="&mvt:ss_agroup"</mvt:if> search="Search"></script>	
 <mvt:else>
-    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb" search="Search" defer></script>
+    <script src="//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?h2qztb"<mvt:if expr="l.settings:ss_agroup"> group="&mvt:ss_agroup"</mvt:if> search="Search" defer></script>
 </mvt:if>
  
 <mvt:comment>END: SearchSpring Integration</mvt:comment>

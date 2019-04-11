@@ -22,7 +22,9 @@
     <mvt:assign name="l.settings:product:customfield_values:productimagecustomfields:main" value="g.domain:image_root $ g.theme_path $ '/core/images/img_no_thumb.jpg'" />
     <mvt:assign name="l.settings:product:show_backup" value="1" />
 </mvt:if>
-
+<section class="x-prod-previous" style="display: none;">
+    <a class="u-color-black u-flex o-layout--align-center u-text-uppercase u-text-bold" href="#" data-hook="prevScreen" title="Continue Shopping"><span class="u-icon-arrow-left"></span>&nbsp;Back to Previous</a>
+</section>
 <section class="o-layout o-layout--flush u-flexa x-product-layout" xmlns:mvt="http://www.w3.org/1999/html">
     <div class="x-product-layout--col-1 o-layout__item">
         <div class="u-shown u-hidden--l">
@@ -65,7 +67,8 @@
         data-hook="purchase" 
         action="&mvte:urls:BASK:auto;" 
         method="post"
-        name="add">
+        name="add"
+        style="background-image:url('&mvt:global:theme_path;/ui/images/texture-2.jpg')">
             <mvt:comment> 
                 REQUIRED BY ATTR MACHINE
                 - but not used by app
@@ -77,20 +80,22 @@
             <mvt:do file="g.Module_Feature_URI_UT" name="g.customizationlink3" value="Store_Category_Code_URL( 'cstm_screenprinting', null )" />
             <script>
             (function (mivaPROD) {
-                mivaPROD.price = &mvt:product:price;;
-                mivaPROD.base_price = &mvt:product:base_price;;
+                mivaPROD.price = &mvtj:product:price;;
+                mivaPROD.base_price = &mvtj:product:base_price;;
                 mivaPROD.customer = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output( g.customer )" />;
-                mivaPROD.logn = '&mvte:urls:LOGN:secure;';
-                mivaPROD.bask = '&mvte:urls:BASK:secure;';
-                mivaPROD.wlgn = '&mvte:urls:WLGN:secure;';
-                mivaPROD.wlst = '&mvte:urls:WLST:secure;';
-                mivaPROD.wish = '&mvte:urls:WISH:secure;';
-                mivaPROD.acln = '&mvte:urls:ACLN:secure;';
+                mivaPROD.logn = '&mvtj:urls:LOGN:secure;';
+                mivaPROD.bask = '&mvtj:urls:BASK:secure;';
+                mivaPROD.wlgn = '&mvtj:urls:WLGN:secure;';
+                mivaPROD.wlst = '&mvtj:urls:WLST:secure;';
+                mivaPROD.wish = '&mvtj:urls:WISH:secure;';
+                mivaPROD.acln = '&mvtj:urls:ACLN:secure;';
+                mivaPROD.sfnt = '&mvtj:urls:SFNT:secure;';
                 mivaPROD.customizationpages = {
-                    heatpress : '&mvte:global:customizationlink1;',
-                    embroidery : '&mvte:global:customizationlink2;',
-                    screenprinting : '&mvte:global:customizationlink3;',
+                    heatpress : '&mvtj:global:customizationlink1;',
+                    embroidery : '&mvtj:global:customizationlink2;',
+                    screenprinting : '&mvtj:global:customizationlink3;',
                 };
+                mivaPROD.prev_screen = '<mvt:eval expr="encodejavascriptstring( s.http_referer )" />';
             }(window.mivaPROD || (window.mivaPROD = {})));
             </script>
             <mvt:if expr="g.apply_ng GT 0">
