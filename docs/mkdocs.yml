@@ -1,5 +1,5 @@
 site_name: National Workwear
-repo_url: https://mailelucks.github.io/National-Workwear-Build/docs
+repo_url: https://github.com/mailelucks/National-Workwear-Build
 nav:
     - Home: index.md
     - 3rd Party Locations: 3rdparty.md
