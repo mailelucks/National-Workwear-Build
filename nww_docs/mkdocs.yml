@@ -1,0 +1,19 @@
+site_name: National Workwear
+nav:
+    - Home: index.md
+    - 3rd Party Locations: 3rdparty.md
+    - Custom Fields: customfields.md
+    - CSS Minify: css_minify.md
+    - Storefront: 
+      - General Overview: sfnt_overview.md
+      - Readytheme Items and Customfields: sfnt_readytheme.md
+    - Category: ctgy.md
+    - Product: prod.md
+    - Product Customizer: prod_customizer.md
+    - Business Rules: business_rules.md
+    - Service Pages:
+      - General Overview: cstm_overview.md
+      - Components: cstm_components.md
+theme:
+  name: material
+extra_css: [extra.css]

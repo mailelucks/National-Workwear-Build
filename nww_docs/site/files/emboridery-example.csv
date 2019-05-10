@@ -1,0 +1,112 @@
+Code,Prompt,Image,Type,Price,Cost,Weight,D,R,I
+cm_application_style,Application Style,,select,0.00,0.00,0.00,No,No,No
+embroidery,Embroidery,,,0.00,0.00,0.00,No,No,No
+cm_1_text_font,Option 01,,select,0.00,0.00,0.00,No,No,No
+cooper,Cooper,graphics/00000001/Cooper.jpg,,6.50,0.00,0.00,No,No,No
+block_large,Block Large,graphics/00000001/lg_block-large.jpg,,6.50,0.00,0.00,No,No,No
+athletic_swoosh,Athletic Swoosh,graphics/00000001/lg_Athletic-swoosh.jpg,,6.50,0.00,0.00,No,No,No
+curly,Curly,graphics/00000001/lg_Curly.jpg,,6.50,0.00,0.00,No,No,No
+times_large,Times Large,graphics/00000001/times-large.jpg,,6.50,0.00,0.00,No,No,No
+image_only,Image Only,,,0.00,0.00,0.00,No,No,No
+cm_1_text,Text 01,,text,0.00,0.00,0.00,No,No,No
+cm_1_stock_logo,Stock Logo Option,,select,0.00,0.00,0.00,No,No,No
+SL1,SL1,graphics/00000001/SL1.jpg,,8.00,0.00,0.00,No,No,No
+SL2,SL2,graphics/00000001/SL2.jpg,,8.00,0.00,0.00,No,No,No
+SL3_2,SL3_2,graphics/00000001/SL3_2.jpg,,8.00,0.00,0.00,No,No,No
+SL4,SL4,graphics/00000001/SL4.jpg,,8.00,0.00,0.00,No,No,No
+SL5,SL5,graphics/00000001/SL5.jpg,,8.00,0.00,0.00,No,No,No
+SL6,SL6,graphics/00000001/SL6.jpg,,8.00,0.00,0.00,No,No,No
+SL7,SL7,graphics/00000001/SL7.jpg,,8.00,0.00,0.00,No,No,No
+SL8,SL8,graphics/00000001/SL8.jpg,,8.00,0.00,0.00,No,No,No
+SL9,SL9,graphics/00000001/SL9.jpg,,8.00,0.00,0.00,No,No,No
+SL10,SL10,graphics/00000001/SL10.jpg,,8.00,0.00,0.00,No,No,No
+SL11,SL11,graphics/00000001/SL11.jpg,,8.00,0.00,0.00,No,No,No
+SL12,SL12,graphics/00000001/SL12.jpg,,8.00,0.00,0.00,No,No,No
+SL13,SL13,graphics/00000001/SL13.jpg,,8.00,0.00,0.00,No,No,No
+SL14,SL14,graphics/00000001/SL14.jpg,,8.00,0.00,0.00,No,No,No
+SL15,SL15,graphics/00000001/SL15.jpg,,8.00,0.00,0.00,No,No,No
+SL16,SL16,graphics/00000001/SL16.jpg,,8.00,0.00,0.00,No,No,No
+SL17,SL17,graphics/00000001/SL17.jpg,,8.00,0.00,0.00,No,No,No
+SL18,SL18,graphics/00000001/SL18.jpg,,8.00,0.00,0.00,No,No,No
+SL19,SL19,graphics/00000001/SL19.jpg,,8.00,0.00,0.00,No,No,No
+cm_1_text_color,Thread Color 01,,select,0.00,0.00,0.00,No,No,No
+black,Black,,,0.00,0.00,0.00,No,No,No
+brown,Brown,,,0.00,0.00,0.00,No,No,No
+dk_green,Dark Green,,,0.00,0.00,0.00,No,No,No
+gold,Gold,,,0.00,0.00,0.00,No,No,No
+gray,Gray,,,0.00,0.00,0.00,No,No,No
+irish_green,Irish Green,,,0.00,0.00,0.00,No,No,No
+khaki,Khaki,,,0.00,0.00,0.00,No,No,No
+lt_gray,Lite Gray,,,0.00,0.00,0.00,No,No,No
+maroon,Maroon,,,0.00,0.00,0.00,No,No,No
+navy,Navy,,,0.00,0.00,0.00,No,No,No
+red,Red,,,0.00,0.00,0.00,No,No,No
+orange,Orange,,,0.00,0.00,0.00,No,No,No
+royal_blue,Royal Blue,,,0.00,0.00,0.00,No,No,No
+rust,Rust,,,0.00,0.00,0.00,No,No,No
+tan,Tan,,,0.00,0.00,0.00,No,No,No
+teal,Teal,,,0.00,0.00,0.00,No,No,No
+white,White,,,0.00,0.00,0.00,No,No,No
+yellow,Yellow,,,0.00,0.00,0.00,No,No,No
+cm_1_text_placement,Text Placement 01,,radio,0.00,0.00,0.00,No,No,No
+left_chest,Left Chest,,,0.00,0.00,0.00,No,No,No
+right_chest,Right Chest,,,0.00,0.00,0.00,No,No,No
+cm_1_text_designation,Designation,,select,0.00,0.00,0.00,No,No,No
+straight_line_above,Straight Line Above,,,0.00,0.00,0.00,No,No,No
+straight_line_below,Straight Line Below,,,0.00,0.00,0.00,No,No,No
+arched_above,Arched Above,,,0.00,0.00,0.00,No,No,No
+cm_2_text_font,Option 02,,select,0.00,0.00,0.00,No,No,No
+cooper,Cooper,graphics/00000001/Cooper.jpg,,3.00,0.00,0.00,No,No,No
+block_large,Block Large,graphics/00000001/lg_block-large.jpg,,3.00,0.00,0.00,No,No,No
+athletic_swoosh,Athletic Swoosh,graphics/00000001/lg_Athletic-swoosh.jpg,,3.00,0.00,0.00,No,No,No
+curly,Curly,graphics/00000001/lg_Curly.jpg,,3.00,0.00,0.00,No,No,No
+times_large,Times Large,graphics/00000001/times-large.jpg,,3.00,0.00,0.00,No,No,No
+image_only,Image Only,,,0.00,0.00,0.00,No,No,No
+cm_2_text,Text 02,,text,0.00,0.00,0.00,No,No,No
+cm_2_stock_logo,Stock Logo 02,,select,0.00,0.00,0.00,No,No,No
+SL1,SL1,graphics/00000001/SL1.jpg,,8.00,0.00,0.00,No,No,No
+SL2,SL2,graphics/00000001/SL2.jpg,,8.00,0.00,0.00,No,No,No
+SL3_2,SL3_2,graphics/00000001/SL3_2.jpg,,8.00,0.00,0.00,No,No,No
+SL4,SL4,graphics/00000001/SL4.jpg,,8.00,0.00,0.00,No,No,No
+SL5,SL5,graphics/00000001/SL5.jpg,,8.00,0.00,0.00,No,No,No
+SL6,SL6,graphics/00000001/SL6.jpg,,8.00,0.00,0.00,No,No,No
+SL7,SL7,graphics/00000001/SL7.jpg,,8.00,0.00,0.00,No,No,No
+SL8,SL8,graphics/00000001/SL8.jpg,,8.00,0.00,0.00,No,No,No
+SL9,SL9,graphics/00000001/SL9.jpg,,8.00,0.00,0.00,No,No,No
+SL10,SL10,graphics/00000001/SL10.jpg,,8.00,0.00,0.00,No,No,No
+SL11,SL11,graphics/00000001/SL11.jpg,,8.00,0.00,0.00,No,No,No
+SL12,SL12,graphics/00000001/SL12.jpg,,8.00,0.00,0.00,No,No,No
+SL13,SL13,graphics/00000001/SL13.jpg,,8.00,0.00,0.00,No,No,No
+SL14,SL14,graphics/00000001/SL14.jpg,,8.00,0.00,0.00,No,No,No
+SL15,SL15,graphics/00000001/SL15.jpg,,8.00,0.00,0.00,No,No,No
+SL16,SL16,graphics/00000001/SL16.jpg,,8.00,0.00,0.00,No,No,No
+SL17,SL17,graphics/00000001/SL17.jpg,,8.00,0.00,0.00,No,No,No
+SL18,SL18,graphics/00000001/SL18.jpg,,8.00,0.00,0.00,No,No,No
+SL19,SL19,graphics/00000001/SL19.jpg,,8.00,0.00,0.00,No,No,No
+cm_2_text_color,Thread Color 02,,select,0.00,0.00,0.00,No,No,No
+black,Black,,,0.00,0.00,0.00,No,No,No
+brown,Brown,,,0.00,0.00,0.00,No,No,No
+dk_green,Dark Green,,,0.00,0.00,0.00,No,No,No
+gold,Gold,,,0.00,0.00,0.00,No,No,No
+gray,Gray,,,0.00,0.00,0.00,No,No,No
+irish_green,Irish Green,,,0.00,0.00,0.00,No,No,No
+khaki,Khaki,,,0.00,0.00,0.00,No,No,No
+lt_gray,Lite Gray,,,0.00,0.00,0.00,No,No,No
+maroon,Maroon,,,0.00,0.00,0.00,No,No,No
+navy,Navy,,,0.00,0.00,0.00,No,No,No
+red,Red,,,0.00,0.00,0.00,No,No,No
+orange,Orange,,,0.00,0.00,0.00,No,No,No
+royal_blue,Royal Blue,,,0.00,0.00,0.00,No,No,No
+rust,Rust,,,0.00,0.00,0.00,No,No,No
+tan,Tan,,,0.00,0.00,0.00,No,No,No
+teal,Teal,,,0.00,0.00,0.00,No,No,No
+white,White,,,0.00,0.00,0.00,No,No,No
+yellow,Yellow,,,0.00,0.00,0.00,No,No,No
+cm_2_text_placement,Text Placement 02,,radio,0.00,0.00,0.00,No,No,No
+left_chest,Left Chest,,,0.00,0.00,0.00,No,No,No
+right_chest,Right Chest,,,0.00,0.00,0.00,No,No,No
+cm_2_text_designation,Designation 02,,select,0.00,0.00,0.00,No,No,No
+straight_line_above,Straight Line Above,,,0.00,0.00,0.00,No,No,No
+straight_line_below,Straight Line Below,,,0.00,0.00,0.00,No,No,No
+arched_above,Arched Above,,,0.00,0.00,0.00,No,No,No
+cm_rrp,By checking the box to the left I indicate that I am aware that customized items cannot be returned,,checkbox,0.00,0.00,0.00,No,No,No

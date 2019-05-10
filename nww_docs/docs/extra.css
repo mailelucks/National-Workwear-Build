@@ -1,0 +1,10 @@
+table td{
+	border-left:.05rem solid rgba(0,0,0,.07);
+}
+table td:first-of-type{
+	border-left:none;
+}
+
+table tbody tr:nth-of-type(even){
+	background: #f8f6f6;
+}
